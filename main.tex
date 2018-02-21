@@ -1,0 +1,104 @@
+ \documentclass[a4paper,BCOR=15mm,bibtotoc,headings=optiontohead, cleardoubleplain]{scrbook}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Tex Gyre Pagella}
+  \setsansfont{Tex Gyre Heros}
+  \setmonofont{Latin Modern Mono}
+
+\setkomafont{caption}{\small}
+
+\usepackage{scrpage2}
+  \pagestyle{scrheadings}
+  \renewcommand*{\figureformat}{Abb.~\thefigure\autodot}
+  \renewcommand*{\tableformat}{Tab.~\thetable\autodot}
+
+
+\usepackage{csquotes}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+
+\usepackage[style=numeric-comp,sorting=none,backend=biber,firstinits=true]{biblatex}
+\DeclareFieldFormat[article]{title}{\enquote{#1},}
+\DeclareFieldFormat[report]{title}{\enquote{#1},}
+\DeclareFieldFormat[book]{title}{\enquote{#1},}
+\renewcommand*{\newunitpunct}{\addcomma\space}%Komma statt Punkt als trennzeichen zwischen autoren/titel
+\DefineBibliographyStrings{english}{andothers = {{et\:al\adddot}},}%et al statt u.a.
+\addbibresource{bibliography.bib}
+
+\usepackage{hyperref}
+\hypersetup{
+    %unicode=true,
+    %pdfencoding=auto,
+    pdfauthor = {N.N., n.n@uni.de},
+    pdftitle = {Generic Title},
+    pdfsubject = {Special Topic},
+    pdfkeywords = {Keyword One, Keyword Two},
+    pdfcreator = {LaTeX with hyperref package},
+    pdfproducer = {lualatex}
+    }
+\usepackage{slashed}
+
+\usepackage{microtype}
+
+\usepackage{mathtools}
+\usepackage[locale=DE,input-ignore={.},input-decimal-markers={,}]{siunitx}
+\usepackage{xfrac}
+\usepackage{unicode-math}
+\setmathfont{Tex Gyre Pagella Math}
+
+\usepackage{cleveref}
+\crefname{chapter}{Ch.\@}{Chs.\@}
+\crefname{section}{Sec.\@}{Secs.\@}
+\crefname{subsection}{Sec.\@}{Secs.\@}
+\crefname{figure}{Fig.\@}{Figs.\@}
+\crefname{table}{Tab.\@}{Tab.\@}
+\crefname{equation}{Eq.\@}{Eqs.\@}
+
+\usepackage{enumerate}
+
+\usepackage[ugly]{nicefrac}
+
+\usepackage{graphicx}
+
+% \usepackage{minted}
+
+\usepackage{booktabs}
+\usepackage{tabulary}
+\usepackage{threeparttable}
+
+% only for debugging and review
+\usepackage{blindtext}
+\usepackage{lineno}
+
+\usepackage{ifthen}
+\newboolean{uprightparticles}
+\setboolean{uprightparticles}{false} %Set true for upright particle symbols
+\usepackage{xspace}
+\usepackage{upgreek}
+\input{lhcb-symbols-def}
+
+\begin{document}
+
+\frontmatter
+  \input{titlepage}
+  \input{abstract}
+  \tableofcontents
+
+\mainmatter
+  \include{Einleitung}
+  \include{lhcb}
+  \include{FT}
+  \include{data}
+  \include{zusammenfassung}
+
+\backmatter
+  \printbibliography
+
+\newpage
+\pagestyle{empty}
+% \input{dank}
+\newpage
+% \input{versicherung}
+\end{document}
+
