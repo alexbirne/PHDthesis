@@ -1,2 +1,8 @@
 #pdf files, apart from the final thesis 
 main.pdf
+
+#Apple files
+*.DS_Store
+
+#tex files
+*.aux
