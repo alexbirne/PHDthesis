@@ -6,7 +6,7 @@
   \setsansfont{Tex Gyre Heros}
   \setmonofont{Latin Modern Mono}
 
-\newfontfamily{\titleparticles}[Scale=MatchUppercase]{Fira Sans}
+\newfontfamily{\titleparticles}[Scale=MatchUppercase]{XITS Math}
 
 \setkomafont{caption}{\small}
 
@@ -44,7 +44,7 @@
 \usepackage{mathtools}
 \usepackage[locale=DE,input-ignore={.},input-decimal-markers={,}]{siunitx}
 \usepackage{xfrac}
-\usepackage{unicode-math}
+\usepackage[bold-style=ISO, math-style=ISO]{unicode-math}
 \usepackage{bm}
 \setmathfont{Tex Gyre Pagella Math}
 
@@ -78,10 +78,10 @@
 \input{lhcb-symbols-def}
 
 %%% Workaround to get math bold & without serifs in title's and headings
-\DeclareMathAlphabet{\mathtestfit}{\encodingdefault}{\sfdefault}{m}{sl}
-\SetMathAlphabet{\mathtestfit}{bold}{\encodingdefault}{\sfdefault}{bx}{sl}
-\newcommand{\boldssmath}[1]{\bm{\mathtestfit{#1}}}
-\newcommand{\ssmath}[1]{\mathtestfit{#1}}
+% \DeclareMathAlphabet{\mathtestfit}{\encodingdefault}{\sfdefault}{m}{sl}
+% \SetMathAlphabet{\mathtestfit}{bold}{\encodingdefault}{\sfdefault}{bx}{sl}
+% \newcommand{\boldssmath}[1]{\bm{\mathtestfit{#1}}}
+% \newcommand{\ssmath}[1]{\mathtestfit{#1}}
 
 \begin{document}
 
