@@ -6,11 +6,13 @@
   \setsansfont{Tex Gyre Heros}
   \setmonofont{Latin Modern Mono}
 
+\newfontfamily{\titleparticles}[Scale=MatchUppercase]{Fira Sans}
+
 \setkomafont{caption}{\small}
 
 \usepackage{scrpage2}
   \pagestyle{scrheadings}
-  \renewcommand*{\figureformat}{Abb.~\thefigure\autodot}
+  \renewcommand*{\figureformat}{Fig.~\thefigure\autodot}
   \renewcommand*{\tableformat}{Tab.~\thetable\autodot}
 
 
@@ -28,12 +30,10 @@
 
 \usepackage{hyperref}
 \hypersetup{
-    %unicode=true,
-    %pdfencoding=auto,
-    pdfauthor = {N.N., n.n@uni.de},
-    pdftitle = {Generic Title},
-    pdfsubject = {Special Topic},
-    pdfkeywords = {Keyword One, Keyword Two},
+    pdfauthor = {Alex Birnkraut, alex.birnkraut@tu-dortmund.de},
+    pdftitle = {Measurement of CPV in Bd->Dpi},
+    pdfsubject = {Time dependent CP violation measurement},
+    pdfkeywords = {HEP, CERN, LHC, LHCb, CP violation, b physics, flavour physics},
     pdfcreator = {LaTeX with hyperref package},
     pdfproducer = {lualatex}
     }
@@ -45,6 +45,7 @@
 \usepackage[locale=DE,input-ignore={.},input-decimal-markers={,}]{siunitx}
 \usepackage{xfrac}
 \usepackage{unicode-math}
+\usepackage{bm}
 \setmathfont{Tex Gyre Pagella Math}
 
 \usepackage{cleveref}
@@ -61,8 +62,6 @@
 
 \usepackage{graphicx}
 
-% \usepackage{minted}
-
 \usepackage{booktabs}
 \usepackage{tabulary}
 \usepackage{threeparttable}
@@ -77,6 +76,12 @@
 \usepackage{xspace}
 \usepackage{upgreek}
 \input{lhcb-symbols-def}
+
+%%% Workaround to get math bold & without serifs in title's and headings
+\DeclareMathAlphabet{\mathtestfit}{\encodingdefault}{\sfdefault}{m}{sl}
+\SetMathAlphabet{\mathtestfit}{bold}{\encodingdefault}{\sfdefault}{bx}{sl}
+\newcommand{\boldssmath}[1]{\bm{\mathtestfit{#1}}}
+\newcommand{\ssmath}[1]{\mathtestfit{#1}}
 
 \begin{document}
 
