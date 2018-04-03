@@ -77,11 +77,8 @@
 \usepackage{upgreek}
 \input{lhcb-symbols-def}
 
-%%% Workaround to get math bold & without serifs in title's and headings
-% \DeclareMathAlphabet{\mathtestfit}{\encodingdefault}{\sfdefault}{m}{sl}
-% \SetMathAlphabet{\mathtestfit}{bold}{\encodingdefault}{\sfdefault}{bx}{sl}
-% \newcommand{\boldssmath}[1]{\bm{\mathtestfit{#1}}}
-% \newcommand{\ssmath}[1]{\mathtestfit{#1}}
+\usepackage{acronym}
+\acrodef{SM}{standard model}
 
 \begin{document}
 
@@ -94,14 +91,15 @@
   \include{01introduction/introduction}
   \include{02theory/theory}
   \include{03CPV/cpv}
-  \include{04lhcb/lhcb}
-  \include{05selection/selection}
-  \include{06MassFit/massfit}
-  \include{07FlavourTagging/tagging}
-  \include{08TimeFit/timefit}
-  \include{09Systematics/systematics}
-  \include{10Result/result}
-  \include{11Conclusion/conclusion}
+  \include{04gamma/gamma}
+  \include{05lhcb/lhcb}
+  \include{06selection/selection}
+  \include{07MassFit/massfit}
+  \include{08FlavourTagging/tagging}
+  \include{09TimeFit/timefit}
+  \include{10Systematics/systematics}
+  \include{11Result/result}
+  \include{12Conclusion/conclusion}
 
 \backmatter
   \printbibliography
