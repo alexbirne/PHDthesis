@@ -42,7 +42,7 @@
 \usepackage{microtype}
 
 \usepackage{mathtools}
-\usepackage[locale=DE,input-ignore={.},input-decimal-markers={,}]{siunitx}
+\usepackage[locale=DE,input-ignore={.}]{siunitx}
 \usepackage{xfrac}
 \usepackage[bold-style=ISO, math-style=ISO]{unicode-math}
 \usepackage{bm}
@@ -58,7 +58,7 @@
 
 \usepackage{enumerate}
 
-\usepackage[ugly]{nicefrac}
+\usepackage{nicefrac}
 
 \usepackage{graphicx}
 
@@ -78,6 +78,49 @@
 \input{lhcb-symbols-def}
 
 \usepackage[subpreambles=true]{standalone}
+
+\usepackage{tikz,pgfplots}
+\usepackage{pgfbaseimage}
+\usetikzlibrary{calc,positioning,shadows.blur,decorations.pathreplacing}
+% \usepgfplotslibrary{round}
+% \usepgfplotslibrary{fillbetween, polar}
+% \pgfrealjobname{main}
+
+\definecolor{fillQuarks}{HTML}{ffffb2}
+\definecolor{fillGluon}{HTML}{f6eff7}
+\definecolor{fillStrongForce}{HTML}{edf8fb}
+\definecolor{fillLeptons}{HTML}{fecc5c}
+\definecolor{fillPhoton}{HTML}{bdc9e1}
+\definecolor{fillEForce}{HTML}{b2e2e2}
+\definecolor{fillNeutrinos}{HTML}{fd8d3c}
+\definecolor{fillWeakBosons}{HTML}{67a9cf}
+\definecolor{fillWeakForce}{HTML}{66c2a4}
+\definecolor{fillSpinChargeFermions}{HTML}{e31a1c}
+
+\newcommand{\SMTikzSize}{1.6}
+
+\newcommand\particle[7][white]{%
+  \begin{tikzpicture}[x=\SMTikzSize cm, y=\SMTikzSize cm]
+    \path[fill=#1] (0.1*\SMTikzSize,0) -- (0.9,0)
+        arc (90:0:0.1*\SMTikzSize cm) -- (1.0,-0.9) arc (0:-90:0.1*\SMTikzSize cm) -- (0.1,-1.0)
+        arc (-90:-180:0.1*\SMTikzSize cm) -- (0,-0.1) arc(180:90:0.1*\SMTikzSize cm) -- cycle;
+    \ifstrempty{#7}{}{\path[fill=gray!40!white]
+        (0.55,-1) --(0.7,-1) -- (1.0,-0.7) -- (1.0,-0.55);}
+    \ifstrempty{#6}{}{\path[fill=fillSpinChargeFermions] (0.7,0) -- (0.9,0)
+        arc (90:0:0.1*\SMTikzSize cm) -- (1.0,-0.3);}
+    \ifstrempty{#5}{}{\path[fill=fillSpinChargeFermions] (1.0,-0.7) -- (1.0,-0.9)
+        arc (0:-90:0.1*\SMTikzSize cm) -- (0.7,-1.0);}
+    \draw[\ifstrempty{#2}{dashed}{black}] (0.1,0) -- (0.9,0)
+        arc (90:0:0.1*\SMTikzSize cm) -- (1.0,-0.9) arc (0:-90:0.1*\SMTikzSize cm) -- (0.1,-1.0)
+        arc (-90:-180:0.1*\SMTikzSize cm) -- (0,-0.1) arc(180:90:0.1*\SMTikzSize cm) -- cycle;
+    \ifstrempty{#7}{}{\node at(0.815,-0.815) [rotate=45,scale=0.4] {#7};}
+    \ifstrempty{#6}{}{\node at(0.9,-0.1)  [nosep,scale=0.39] {#6};}
+    \ifstrempty{#5}{}{\node at(0.91,-0.91)  [nosep,scale=0.41] {#5};}
+    \ifstrempty{#4}{}{\node at(0.08,-0.2)  [nosep,anchor=west,scale=0.5]{#4};}
+    \ifstrempty{#3}{}{\node at(0.1,-0.85) [nosep,anchor=west,scale=0.6] {#3};}
+    \ifstrempty{#2}{}{\node at(0.1,-0.5)  [nosep,anchor=west,scale=1.5] {#2};}
+  \end{tikzpicture}
+}
 
 \usepackage{acronym}
 \acrodef{SM}{standard model}
