@@ -3,9 +3,9 @@
 \label{chap:SM}
 
 The following chapter gives an overview about the fundamental particles and how they interact with each other. Therefore first
-the the elementary particles and forces are described following Refs.~\cite{Griffiths:111880} and \cite{Perkins:396126}. Following
-a short illustration how mediator particles emerge in the \ac{SM} is given and discrete symmetries in the \ac{SM} are introduced.
-Last a more detailed discussion of the weak force is presented.
+the the elementary particles and forces are described following Refs.~\cite{Griffiths:111880}, \cite{Perkins:396126} and
+\cite{Peskin:257493}. Following a short illustration how mediator particles emerge in the \ac{SM} is given and discrete symmetries
+in the \ac{SM} are introduced. Last a more detailed discussion of the weak force is presented.
 
 \section{Fundamental particles and forces}
 \label{sec:fundamentalparts}
@@ -54,10 +54,10 @@ Higgs field and interacts with all massive particles. It has a mass of $M_\H\app
 \section{Symmetries in the standard model}
 \label{sec:symmetriesInSM}
 
-The \ac{SM} distinguishes between discrete and continous gauge symmetries. The contious gauge symmetries require local invariance what
-leads to the interactions in the corresponding symmetry groups U(1) (electromagentic interaction), SU(2) (weak interaction) and SU(3)
-(strong interaction). The gauge bosons act as generators of the corresponding gauge transformation. This is illustrated for the U(1)
-group. The Lagrangian
+When discussing symmetries in the \ac{SM} continous gauge symmetries and discrete symmetries need to be distinguished. Requiring
+local invariance by the continous gauge symmetries leads to the interactions in the corresponding groups $U(1)$ (electromagnetic
+interaction), $SU(2)$ (weak interaction) and $SU(3)$ (strong interaction). In this instance the gauge bosons act as generators
+of the gauge transformation. This is exemplified for the $U(1)$ group, where the Lagrangian
 \begin{equation}
 \mathcal{L}=\overline{\psi}\left(i\slashed{\partial} - m\right)\psi
 - \frac{1}{4}F^{\mu\nu}F_{\mu\nu} - \underbrace{eQ\overline{\psi}\gamma^{\mu}\psi}_{j^{\mu}}A_{\mu}
@@ -67,32 +67,34 @@ is invariant under the transformation
 \psi\rightarrow\psi'=e^{-ieQ\theta\left(x\right)}\psi\\
 A_\mu\rightarrow A_\mu'=A_\mu+\partial_\mu\theta.
 \end{align}
-Hereby the gauge field $A_\mu$ can be identified with the photon and the interaction current $j^\mu A_\mu$ can be tracked down. Requiring
-equivalent gauge transformations for the higher symmetry groups further gauge bosons are produced.
+Recognising the gauge field $A_\mu$ as the photon the interaction term $j^\mu A_\mu$ can be identified. For the $SU(2)$ and $SU(3)$
+groups equivalent transformations yield to the weak and strong interaction, respectively, and the \Wpm and \Z and the gluons act as
+generators.
 
-Apart of these continous symmetries there are also three discrete symmetries in the \ac{SM}:
+Beside of these continous symmetries there are also three discrete symmetries in the \ac{SM}:
 \begin{itemize}
-	\item parity $P$ describes spacial inversion $P\psi\left(t,\vec{x}\right) = \psi\left(t,-\vec{x}\right)$. The operator
-		is unitary, so $P^{\dagger}=P^{-1}$ holds.
-	\item the charge conjugation $C$ changes the sign of all additive quantum numbers. As the parity operator, $C$ is unitary as well. Both
-		operations together change matter to antimatter.
-	\item The third discrete symmetry is the time inversion $T$. It changes the time of all temporal components
-		$T\psi\left(t,\vec{x}\right) = \psi\left(-t,\vec{x}\right)$. In contrast to $P$ and $C$ the operator is not unitary, but anit unitary,
-		\ie $T^2=1$.
+	\item The parity operator $P$ should reverse the moemntum wihtout flipping the spin of a particle. Hence, it describes spacial
+		inversion $P\psi\left(t,\vec{x}\right) = \psi\left(t,-\vec{x}\right)$. It is unitary, so $P^{\dagger}=P^{-1}$ holds.
+	\item The charge conjugation $C$ transforms particles into their corresponding antiparticles. Its name is slightly misleading
+		as the operator reverses not only the electric charge but changes also the sign of all internal quantum numbers. It is also
+		unitary.
+	\item The third discrete symmetry is the time reversal $T$. It changes the sign of all temporal components
+		$T\psi\left(t,\vec{x}\right) = \psi\left(-t,\vec{x}\right)$. Contrary to $P$ and $C$ the time reversal operator is not unitary,
+		but antiunitary, \ie $T^2=1$.
 \end{itemize}
-All discrete symmetries are violated both uniquely and in combination with any other discrete symmetry operation ($PT$, $CT$, $CP$) by the weak
-interaction, while the strong and electromagnetic interaction are symmetry conserving. Only the combination of all three symmetry operations
-$CPT$ is also conserved in the weak interaction. Due to this particles and antiparticles have the same invariant mass and lifetime.
+All discrete symmetries are conserved by the strong and electromagnetic interaction while the weak interaction breaks them both,
+indivudally and in combination with one other discrete symmetry ($PT$, $CT$, $CP$). However based on the $CPT$ theorem the combination
+of all operations is an exact symmetry akso for the weak interaction. It assures that particles and antiparticles have the same
+invariant masses and lifetimes.
 
 \section{The Unitarity triangle}
 \label{sec:unitarityTriangle}
 
-As described in \cref{sec:symmetriesInSM} the weak interaction has a special status in the \ac{SM} by breaking the symmetry of the discrete
-transformations. This symmetry breaking effect becomes more obvious when considering that the weak interaction only couples to the left handed
-duplets of the quarks and leptons. For the leptons the eigenstates of the weak interaction can be transformed into the eigensystem of the mass
-eigenstates assuming massless neutrinos. For the quarks this is not possible for both the Up- and Down-type quarks. By connvention the Up-type
-quarks are chosen, so that the mass eigenstates of the down-type quarks \dquark, \squark and \bquark need to be transformed into the eigenstates
-of the wek interaction \dquark', \squark' and \bquark':
+As explained previously the weak interaction plays a special role in the \ac{SM} by breaking the discrete symmetries. Consequently
+the eigenstates to the weak interaction are not the same as the mass eigenstates. Assuming the neutrinos to be massless, for the
+charged leptons a simple transformation can rotate the eigenstates to the weak interaction into the system of the mass eigenstates.
+On the other hand this is not possible for the up- and downtype quarks at the same time. By convention the weak eigenstates of the
+downtype quarks \dquark', \squark' and \bquark' are chosen to be mixtures of their mass eigenstates \dquark, \squark and \bquark:
 \begin{equation}
 \begin{pmatrix} \dquark' \\ \squark' \\ \bquark' \end{pmatrix}
 = \begin{pmatrix} \Vud & \Vus & \Vub \\ \Vcd & \Vcs & \Vcb \\ \Vtd & \Vts & \Vtb \end{pmatrix}
@@ -102,21 +104,26 @@ of the wek interaction \dquark', \squark' and \bquark':
                         A\lambda^3(1-\rho-i\eta) & -A\lambda^2 & 1 \end{pmatrix}
 \begin{pmatrix} \dquark' \\ \squark' \\ \bquark' \end{pmatrix} \label{eq:CKMmatrix}
 \end{equation}
-This so called $CKM$ matrix has four degrees of freedom and needs to be unitary by construction. As shown in Eq.~\cref{eq:CKMmatrix} the matrix
-elements can be parametrised in the Wolfenstein parametrisation with three real paramters ($A\approx0.81$, $\lambda\approx0.22$,
-$\rho\approx0.13$ \cite{PDG_2017}) and one complex phase ($\eta\approx0.36$ \cite{PDG_2017}). It can be seen that the matrix elements become
-smaller with larger distance to the diagonal.
+This so-called $CKM$ matrix has four degrees of freedom and is unitary by construction. As shown in Eq.~\cref{eq:CKMmatrix}
+the matrix elements can be parametrised in the Wolfenstein parametrisation with three real paramters ($A\approx0.81$,
+$\lambda\approx0.22$, $\rho\approx0.13$ \cite{PDG_2017}) and one complex phase ($\eta\approx0.36$ \cite{PDG_2017}).
+It can be seen, that the matrix elements become smaller with greater distance to the diagonal and therefore transitions between
+the quark families are suppressed.
 
-The unitarity of the matrix allows now put some constraints on the matrix elements:
+As a consequence of the unitarity of the matrix, its elements subject the following constraints:
 \begin{equation}
 \sum_{i} V_{{\kern -0.1em}ij}V_{{\kern -0.1em}ik}^{*} = \delta_{jk}\hspace{0.5cm}\text{and}\hspace{0.5cm}
-\sum_{j} V_{{\kern -0.1em}ij}V_{{\kern -0.1em}kj}^{*} = \delta_{ik}
+\sum_{j} V_{{\kern -0.1em}ij}V_{{\kern -0.1em}kj}^{*} = \delta_{ik}.
 \end{equation}
-These equations can be expressed as triangles in the complexe plane. The most commonly used equation is
+These equations can be represented as triangles in the complexe plane, which are of great importance in modern particle physics.
+Their angles and sides can be measured experimentally so that the triangles can be overconstrained and the unitarity of
+the matrix can be tested. Experimental hints of a non closing triangle would be a clear sign of physics beyond the \ac{SM}.
+Additionally, the complex phase of the $CKM$ matrix is the only source of $CP$ violation in the \ac{SM}. Therefore
+the size of the triangles is a measure for the theoretically described size of $CP$ violation. The most commonly used equation is
 \begin{equation}
 \Vud\Vubst + \Vcd\Vcbst + \Vtd\Vtbst = 0.
 \end{equation}
-Normalising it with \Vcd\Vcbst the triangle presented in Fig.~\ref{fig:ckmtheory} is obtained:
+After normalising it with \Vcd\Vcbst the triangle presented in Fig.~\ref{fig:ckmtheory} is obtained:
 \begin{equation}
 \frac{\Vud\Vubst}{\Vcd\Vcbst} + 1 + \frac{\Vtd\Vtbst}{\Vcd\Vcbst} = 0.
 \end{equation}
@@ -126,5 +133,3 @@ Normalising it with \Vcd\Vcbst the triangle presented in Fig.~\ref{fig:ckmtheory
 	\caption{$CKM$ triangle in the complex plane.}
 	\label{fig:ckmtheory}
 \end{figure}
-This representation allows a nice experimental tests of the \ac{SM} by overconstraining the triangle with measurements of all three
-angles and sides of the triangle.
