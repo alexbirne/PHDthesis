@@ -51,8 +51,10 @@ always oscillates with with the frequency \dm. The corresponding Feynmangraphs a
 
 \begin{figure}[tbp]
 	\centering
-	\includegraphics[width=0.9\textwidth]{03CPV/figs/FeynmanMixing.pdf}
-	\caption{box diagrams of lowest order for the \Bz-\Bzb-oscillation. Both diagrams are dominated by the \tquark-quark.}
+	\includestandalone{03CPV/figs/Bmixing_1}
+	\hspace{0.5cm}
+	\includestandalone{03CPV/figs/Bmixing_2}
+	\caption{Box diagrams of lowest order for the \Bz-\Bzb-oscillation. Both diagrams are dominated by the \tquark-quark \cite{Ellis:2016jkw}.}
 	\label{fig:FeynmanMixing}
 \end{figure}
 
@@ -94,9 +96,23 @@ $\left|\frac{q}{p}\right|\neq1$ and therefore also $\left|\Lf\right|\neq1$ and $
 \subsection[head={Interference \CP violation},tocentry={Interference \CP violation}]{Interference $\symbfsf{C{}P}$ violation}
 \label{sec:InterferenceCPV}
 
-The third type of \CP violation occurs in the interference of direct decay and decay after mixing.
+The third type of \CP violation occurs in the interference of direct decay and decay after mixing. In general this type of \CP
+violation means that $\left<\,f\,\Big|T\Big|\Bz\right>\neq\left<\,\fbar\,\Big|T\Big|\Bzb\right>$ and
+$\left<\,f\,\Big|T\Big|\Bzb\right>\neq\left<\,\fbar\,\Big|T\Big|\Bz\right>$. Looking at the quantities \Lf and \Lfbar this can
+be formulated also differently. Even without direct \CP violation or \CP violation in mixing ($\left|\Lf\right|=\pm1$ and
+$\left|\Lfbar\right|=\pm1$) for the imaginary part can be unequal zero. This means that \CP violation in the interference of
+direct decay and decay after mixing can appear.
 
 \section[head={Time dependent measurement of \CP violation},tocentry={Time dependent measurement of \CP violation}]
 {Time dependent measurement of $\symbfsf{C{}P}$ violation}
 \label{sec:TimeDependentCPV}
 
+In the same way as the probability of initially \B-mesons (\Bzb-mesons) to oscillate was calculated in \cref{sec:Bmixing} the
+probability for the transitions $\left|\left<\,f\,\Big|T\Big|\Bz\!(t)\right>\right|^2$ can be calculate, to afterwards define the
+\CP asymmetry which is accessible experimentally. Here $\Bz\!(t)$ ($\Bzb\!(t)$) denotes a \B meson which was produced as a \Bz
+(\Bzb) at $t=0$:
+\begin{align}
+\left|\left<\,f\,\Big|T\Big|\Bz\!(t)\right>\right|^2 &= \left|\left<\,f\,\Big|T\Big|\Bz\right>g_+-\frac{q}{p}\left<\,f\,\Big|T\Big|\Bzb\right>g_-\right|^2\\
+&=\Af^2\left|g_+ - \frac{q}{p}\frac{\Abarf}{\Af} g_-\right|^2=\Af\left|g_+ -\Lf\,g_-\right|^2\\
+&=\Af^2\left(g_+g_+^*+\left|\Lf\right|^2g_-g_-^*-\left(\Lf^*g_-^*g_+ + \Lf g_+^* g_-\right)\right)
+\end{align}

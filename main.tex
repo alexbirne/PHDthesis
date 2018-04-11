@@ -1,4 +1,4 @@
- \documentclass[a4paper,BCOR=15mm,bibtotoc,headings=optiontohead, cleardoublepage=pl]{scrbook}
+ \documentclass[a4paper,BCOR=15mm,bibliography=totoc,headings=optiontohead, cleardoublepage=plain]{scrbook}
 
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
@@ -6,11 +6,9 @@
   \setsansfont{Tex Gyre Heros}
   \setmonofont{Latin Modern Mono}
 
-\newfontfamily{\titleparticles}[Scale=MatchUppercase]{XITS Math}
-
 \setkomafont{caption}{\small}
 
-\usepackage{scrpage2}
+\usepackage{scrlayer-scrpage}
   \pagestyle{scrheadings}
   \renewcommand*{\figureformat}{Fig.~\thefigure\autodot}
   \renewcommand*{\tableformat}{Tab.~\thetable\autodot}
@@ -19,8 +17,9 @@
 \usepackage{csquotes}
 \usepackage{polyglossia}
 \setdefaultlanguage{english}
+\setotherlanguages{german}
 
-\usepackage[style=numeric-comp,sorting=none,backend=biber,firstinits=true]{biblatex}
+\usepackage[style=numeric-comp,sorting=none,backend=biber,giveninits=true]{biblatex}
 \DeclareFieldFormat[article]{title}{\enquote{#1},}
 \DeclareFieldFormat[report]{title}{\enquote{#1},}
 \DeclareFieldFormat[book]{title}{\enquote{#1},}
@@ -42,11 +41,12 @@
 \usepackage{microtype}
 
 \usepackage{mathtools}
-\usepackage[locale=DE,input-ignore={.}]{siunitx}
-\usepackage{xfrac}
 \usepackage[bold-style=ISO, math-style=ISO]{unicode-math}
-\usepackage{bm}
 \setmathfont{Tex Gyre Pagella Math}
+
+\usepackage[locale=UK,input-ignore={.}]{siunitx}
+\usepackage{xfrac}
+\usepackage{nicefrac}
 
 \usepackage{cleveref}
 \crefname{chapter}{Ch.\@}{Chs.\@}
@@ -58,17 +58,11 @@
 
 \usepackage{enumerate}
 
-\usepackage{nicefrac}
-
 \usepackage{graphicx}
 
 \usepackage{booktabs}
 \usepackage{tabulary}
 \usepackage{threeparttable}
-
-% only for debugging and review
-\usepackage{blindtext}
-\usepackage{lineno}
 
 \usepackage{ifthen}
 \newboolean{uprightparticles}
@@ -80,14 +74,16 @@
 \usepackage[subpreambles=true]{standalone}
 
 \usepackage{tikz,pgfplots}
-\usepackage{pgfbaseimage}
+\pgfplotsset{compat=1.15}
 \usetikzlibrary{calc,positioning,shadows.blur,decorations.pathreplacing}
-% \usepgfplotslibrary{round}
-% \usepgfplotslibrary{fillbetween, polar}
-% \pgfrealjobname{main}
+\usepackage[compat=1.1.0]{tikz-feynman}
 
 \usepackage{acronym}
 \acrodef{SM}{standard model}
+
+% only for debugging and review
+\usepackage{blindtext}
+\usepackage{lineno}
 
 \newcommand{\fbar}{\mbox{\ensuremath{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}}\xspace}
 \newcommand{\f}{\mbox{\ensuremath{f}}\xspace}

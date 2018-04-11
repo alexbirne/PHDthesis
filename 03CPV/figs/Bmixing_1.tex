@@ -1,0 +1,26 @@
+\documentclass[preview=true, border=10pt]{standalone}
+
+\usepackage[compat=1.1.0]{tikz-feynman}
+
+\newcommand{\BMixOneSize}{7.0}
+
+\begin{document}
+	\begin{tikzpicture}[x=\BMixOneSize cm, y=\BMixOneSize cm]
+		\begin{feynman}
+			\vertex (bbar) {\small$\overline{b}$};
+			\vertex [right=\BMixOneSize*0.25 cm of bbar] (inboxtl);
+			\vertex [right=\BMixOneSize*0.25 cm of inboxtl] (inboxtr);
+			\vertex [below=\BMixOneSize*0.25 cm of inboxtl] (inboxbl);
+			\vertex [right=\BMixOneSize*0.25 cm of inboxbl] (inboxbr);
+			\vertex [below=\BMixOneSize*0.25 cm of bbar] (d) {\small$d$};
+			\vertex [right=\BMixOneSize*0.25 cm of inboxtr] (dbar) {\small$\overline{d}$};
+			\vertex [right=\BMixOneSize*0.25 cm of inboxbr] (b) {\small$b$};
+			\diagram* {
+			(bbar) -- [plain] (inboxtl) -- [plain, edge label={\small$\overline{u},\overline{c},\overline{t}$}] (inboxtr) -- [plain] (dbar),
+			(inboxtl) -- [boson, edge label'={\small$W^{\pm}$}] (inboxbl),
+			(inboxtr) -- [boson, edge label={\small$W^{\pm}$}] (inboxbr),
+			(d) -- [plain] (inboxbl) -- [plain, edge label'={\small$u,c,t$}] (inboxbr) -- [plain] (b),
+			};
+		\end{feynman}
+	\end{tikzpicture}
+\end{document}
