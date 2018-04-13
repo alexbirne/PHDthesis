@@ -3,6 +3,17 @@
 {$\symbfsf{C{}P}$ violation in the $\symbfsf{B}$-meson sector}
 \label{chap:CPV}
 
+Before introducing the processes and formalism which describes \CP violation and the time evolution of neutral \B mesons it is important
+to mention that \CP violation means that from the theoretical description complex phases differ between different processes. This is
+further supported by the fact, that the source of \CP violation in the \ac{SM} is the complex phase of the $CKM$ matrix.
+
+Therefore it is further of importance to remind, that the absolute values of phases of the initial and finalstates are not physically meaningful,
+as they can be rephased at will. The physical meaningful quantities are the relative phase difference between coherent contributions to a transition,
+as they are invariant under gloabl rephasing. There are three types of transition amplitudes: Weak phases are phases which change sign under \CP
+transformation, they ar \CP-odd, strong phases do not change sign under \CP transformation, they are \CP even and last spurious phases which
+arise due to conventional, global rephasings. It may be noted, that the denotions 'weak' and 'strong' do not mean that they originate in weak or strong
+interactions, but only describe their behaviour under \CP transformation. The spurious phases will be set to \num{0} for convenience in the following.
+
 Due to the high mass of the \bquark-quark it offers a large variety of decays in which the elements of the $CKM$ marix can be analysed.
 It is therefore a perfect candidate to study effects of \CP violation and as a consequence thereof the complex phase of the matrix. This
 chapter describes first the process of neutral meson mixing by the example of uncharged \B-mesons before explaining the
@@ -81,9 +92,17 @@ Now the three types of \CP violation can be separated.
 \label{sec:DirectCPV}
 
 Direct \CP violation or \CP violation in decay means that a specific decay amplitude differs between the particle and  its
-corresponding antiparticle. So the conditions $\left|\Af\right|\neq\left|\Abarfbar\right|$ and
+corresponding antiparticle. One could expect that for such phenomenon it is sufficient to have an aomplitude with a weak phase,
+which changes sign under the \CP transformation. So the conditions $\left|\Af\right|\neq\left|\Abarfbar\right|$ and
 $\left|\Afbar\right|\neq\left|\Abarf\right|$ hold and following this also $\left|\Lf\right|\neq1$ and $\left|\Lfbar\right|\neq1$.
-For \B-mesons this has been measured in the decay mode $\Bp\to\kaon\pion$
+For \B-mesons this has been measured in the decay modes $\Bz\to\Kp\pim$ and $\Bs\to\Km\pip$ \cite{LHCb-PAPER-2013-018} to be
+\begin{equation}
+\begin{split}
+A_{\CP}\left(\Bz\to\Kp\pim\right) &= -0.080\pm0.007\stat \pm 0.003\syst\\
+A_{\CP}\left(\Bs\to\Km\pip\right) &= 0.27\pm0.04\stat \pm 0.01\syst
+\end{split}
+\end{equation}
+
 
 \subsection[head={Mixing \CP violation},tocentry={Mixing \CP violation}]{Mixing $\symbfsf{C{}P}$ violation}
 \label{sec:MixingCPV}
@@ -112,7 +131,62 @@ probability for the transitions $\left|\left<\,f\,\Big|T\Big|\Bz\!(t)\right>\rig
 \CP asymmetry which is accessible experimentally. Here $\Bz\!(t)$ ($\Bzb\!(t)$) denotes a \B meson which was produced as a \Bz
 (\Bzb) at $t=0$:
 \begin{align}
-\left|\left<\,f\,\Big|T\Big|\Bz\!(t)\right>\right|^2 &= \left|\left<\,f\,\Big|T\Big|\Bz\right>g_+-\frac{q}{p}\left<\,f\,\Big|T\Big|\Bzb\right>g_-\right|^2\\
-&=\Af^2\left|g_+ - \frac{q}{p}\frac{\Abarf}{\Af} g_-\right|^2=\Af\left|g_+ -\Lf\,g_-\right|^2\\
-&=\Af^2\left(g_+g_+^*+\left|\Lf\right|^2g_-g_-^*-\left(\Lf^*g_-^*g_+ + \Lf g_+^* g_-\right)\right)
+\left|\left<\,\f\,\Big|T\Big|\Bz\!(t)\right>\right|^2 =&
+\left|\left<\,\f\,\Big|T\Big|\Bz\right>g_+-\frac{q}{p}\left<\,\f\,\Big|T\Big|\Bzb\right>g_-\right|^2\nonumber\\
+=&\Af^2\left|g_+ - \frac{q}{p}\frac{\Abarf}{\Af} g_-\right|^2=\Af\left|g_+ -\Lf\,g_-\right|^2\nonumber\\
+=&\Af^2\left(g_+g_+^*+\left|\Lf\right|^2g_-g_-^*-\left(\lambda_{f}^*g_-^*g_+ + \Lf\,g_+^* g_-\right)\right)
 \end{align}
+In analogy the probabilites for an initially produced \Bzb and a second finalstate \fbar are defined as
+\begin{align}
+\left|\left<\,\f\,\Big|T\Big|\Bzb\!(t)\right>\right|^2 &=
+\Af^2\left|\frac{p}{q}\right|^2\left(g_+g_+^*\left|\Lf\right|^2+g_-g_-^*-\left(\Lfst g_+^*g_- + \Lf\,g_-^* g_+\right)\right)\\
+\left|\left<\,\fbar\,\Big|T\Big|\Bz\!(t)\right>\right|^2 &=
+\Abarfbar^2\left|\frac{q}{p}\right|^2\left(g_+g_+^*\left|\Lfbar\right|^2+g_-g_-^*-\left(\Lfbarst g_+^*g_- + \Lfbarst\,g_-^* g_+\right)\right)\\
+\left|\left<\,\fbar\,\Big|T\Big|\Bzb\!(t)\right>\right|^2 &=
+\Abarfbar^2\hphantom{\left|\frac{q}{p}\right|^2}\left(g_+g_+^*+\left|\Lfbar\right|^2g_-g_-^*-\left(\Lfbarst g_-^*g_+ + \Lfbar\,g_+^* g_-\right)\right)
+\end{align}
+Using
+\begin{align}
+g_{\pm}g_{\pm}^{*} &= \frac{1}{2}e^{-\Gamma t}\left(\cosh\left(\frac{\DG}{2}t\right)\pm\cos\left(\dm t\right)\right)\\
+g_{\pm}^*g_{\mp} &=  \frac{1}{2}e^{-\Gamma t}\left(\sinh\left(\frac{\DG}{2}t\right)\mp i\sin\left(\dm t\right)\right)
+\end{align}
+the probabilities can be expressed as
+\begin{align}
+\left|\left<\,\f\,\Big|T\Big|\Bz\!(t)\right>\right|^2 =&
+\frac{1}{2}e^{\Gamma t}\left|\Af\right|^2\left(1+\left|\Lf\right|^2\right)\hphantom{\left|\frac{p}{q}\right|^2}
+\Bigg[\cosh\left(\frac{\DG}{2}t\right) + A_f^{\DG}\sinh\left(\frac{\DG}{2}t\right)\nonumber\\
+&\hphantom{\frac{1}{2}e^{\Gamma t}\left|\Af\right|^2\left(1+\left|\Lf\right|^2\right)\left|\frac{p}{q}\right|^2\Bigg[}
+-\Sf\sin\left(\dm t\right)+\Cf\cos\left(\dm t\right)\Bigg]\\
+\left|\left<\,\f\,\Big|T\Big|\Bzb\!(t)\right>\right|^2 =&
+\frac{1}{2}e^{\Gamma t}\left|\Af\right|^2\left(1+\left|\Lf\right|^2\right)\left|\frac{p}{q}\right|^2
+\Bigg[\cosh\left(\frac{\DG}{2}t\right) + A_f^{\DG}\sinh\left(\frac{\DG}{2}t\right)\nonumber\\
+&\hphantom{\frac{1}{2}e^{\Gamma t}\left|\Af\right|^2\left(1+\left|\Lf\right|^2\right)\left|\frac{p}{q}\right|^2\Bigg[}
++\Sf\sin\left(\dm t\right)-\Cf\cos\left(\dm t\right)\Bigg]\\
+\left|\left<\,\fbar\,\Big|T\Big|\Bz\!(t)\right>\right|^2 =&
+\frac{1}{2}e^{\Gamma t}\left|\Abarfbar\right|^2\left(1+\left|\Lfbar\right|^2\right)\left|\frac{q}{p}\right|^2
+\Bigg[\cosh\left(\frac{\DG}{2}t\right) + A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}\sinh\left(\frac{\DG}{2}t\right)\nonumber\\
+&\hphantom{\frac{1}{2}e^{\Gamma t}\left|\Af\right|^2\left(1+\left|\Lf\right|^2\right)\left|\frac{q}{p}\right|^2\Bigg[}
+-\Sfbar\sin\left(\dm t\right)+\Cfbar\cos\left(\dm t\right)\Bigg]\\
+\left|\left<\,\fbar\,\Big|T\Big|\Bzb\!(t)\right>\right|^2 =&
+\frac{1}{2}e^{\Gamma t}\left|\Abarfbar\right|^2\left(1+\left|\Lfbar\right|^2\right)\hphantom{\left|\frac{q}{p}\right|^2}
+\Bigg[\cosh\left(\frac{\DG}{2}t\right) + A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}\sinh\left(\frac{\DG}{2}t\right)\nonumber\\
+&\hphantom{\frac{1}{2}e^{\Gamma t}\left|\Af\right|^2\left(1+\left|\Lf\right|^2\right)\left|\frac{q}{p}\right|^2\Bigg[}
++\Sfbar\sin\left(\dm t\right)-\Cfbar\cos\left(\dm t\right)\Bigg]
+\end{align}
+with the \CP coefficients
+\begin{align}
+A_f^{\DG}&=-\frac{2\mathcal{Re}\left(\Lf\right)}{1+\left|\Lf\right|^2}\hspace{0.5cm}
+\Sf=\frac{2\mathcal{Im}\left(\Lf\right)}{1+\left|\Lf\right|^2}\hspace{0.5cm}
+\Cf=\frac{1-\left|\Lf\right|^2}{1+\left|\Lf\right|^2}\\
+A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}&=-\frac{2\mathcal{Re}\left(\Lfbar\right)}{1+\left|\Lfbar\right|^2}\hspace{0.5cm}
+\Sfbar=-\frac{2\mathcal{Im}\left(\Lfbar\right)}{1+\left|\Lfbar\right|^2}\hspace{0.5cm}
+\Cfbar=-\frac{1-\left|\Lfbar\right|^2}{1+\left|\Lfbar\right|^2}.
+\end{align}
+Assuming no \CP violation in mixing ($\left|\frac{q}{p}\right|=1$) and no direct \CP violation ($\left|\Af\right|=\left|\Abarfbar\right|$)
+using these probabilities the \CP asymmetries can be defined as
+\begin{align}
+\frac{\left|\left<\,\f\,\Big|T\Big|\Bz\!(t)\right>\right|^2 - \left|\left<\,\f\,\Big|T\Big|\Bzb\!(t)\right>\right|^2}{\left|\left<\,\f\,\Big|T\Big|\Bz\!(t)\right>\right|^2 + \left|\left<\,\f\,\Big|T\Big|\Bzb\!(t)\right>\right|^2}
+= \frac{\Cf\cos\left(\dm t\right) - \Sf\sin\left(\dm t\right)}{\cosh\left(\frac{\DG}{2}t\right) + A_f^{\DG}\sinh\left(\frac{\DG}{2}t\right)}\\
+\frac{\left|\left<\,\fbar\,\Big|T\Big|\Bzb\!(t)\right>\right|^2 - \left|\left<\,\fbar\,\Big|T\Big|\Bz\!(t)\right>\right|^2}{\left|\left<\,\fbar\,\Big|T\Big|\Bzb\!(t)\right>\right|^2 + \left|\left<\,\fbar\,\Big|T\Big|\Bz\!(t)\right>\right|^2} = \frac{-\Cfbar\cos\left(\dm t\right) + \Sfbar\sin\left(\dm t\right)}{\cosh\left(\frac{\DG}{2}t\right) + A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}\sinh\left(\frac{\DG}{2}t\right)}
+\end{align}
+
