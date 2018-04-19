@@ -29,75 +29,88 @@ i\frac{d}{dt}\begin{pmatrix} \Bz \\ \Bzb \end{pmatrix} = H \begin{pmatrix} \Bz \
 with the hermitian 2x2 matrices $M$ and $H$ where $m_{11}=m_{22}\equiv m$, $\Gamma_{11}=\Gamma_{22}\equiv\Gamma$, $m_{12}=m_{21}^\ast$ and $\Gamma_{12}=\Gamma_{21}^\ast$ due to the $CPT$ theorem.
 The matrix $M$ describes virtual off-shell contributions to the transitions, while the matrix $\Gamma$ real physical states describe to which \Bz and \Bzb decay.
 For both matrices the diagonal elements of this matrix express transitions with quantum number transitions $\Delta F=1$ while the off diagonal elements are responsible for quantum number transitions with $\Delta F=2$.
-
-
-
-Diagonalising the matrix leads to the eigenvales $\mu_{1,2}=m_{1,2}-\frac{i}{2}\Gamma_{1,2}$ with the masses $m_{1,2}$ and decay widths
-$\Gamma_{1,2}$  of the mass eigenstates. In the \Bz-meson system the mass eigenstates are denoted as $\B_L$ and $\B_H$ and
-analogous both the masses with $m_L$ and $m_H$ and the decay widths with $\Gamma_L$ and $\Gamma_H$. The mass eigenstates
-can be expressed as
+Diagonalising the matrix leads to the masses and widths of the mass eigenstates.
+In the \Bz-meson system these are denoted with $\B_H$ and $\B_L$ referring to the heavier and lighter eigenstate, respectively.
+The eigenvalues are
+\begin{equation}
+\begin{split}
+\mu_H &= m_H-\frac{i}{2}\Gamma_H = m + \mathcal{Re}\left(F\right)-\frac{i}{2}\left(\Gamma-2\mathcal{Im}\left(F\right)\right)\\
+\mu_L &= m_L-\frac{i}{2}\Gamma_L = m - \mathcal{Re}\left(F\right)-\frac{i}{2}\left(\Gamma+2\mathcal{Im}\left(F\right)\right)\label{eq:Mass_eigenvalues}
+\end{split}
+\end{equation}
+with
+\begin{equation}
+F=\sqrt{\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)\left(m_{12}^\ast-\frac{i}{2}\Gamma_{12}^\ast\right)}.
+\end{equation}
+The eigenstates can be expressed as
 \begin{equation}
 \begin{split}
 \left|B_H\right>&\sim p\left|\Bz\right>-q\left|\Bzb\right>\\
-\left|B_L\right>&\sim p\left|\Bz\right>+q\left|\Bzb\right>
+\left|B_L\right>&\sim p\left|\Bz\right>+q\left|\Bzb\right>\label{eq:Mass_eigenstates}
 \end{split}
 \end{equation}
-where $p$ and $q$ are constrained to fulfil $\left|p\right|^2+\left|q\right|^2=1$. Further the quantities
-\begin{align}
-\dm&=m_H-m_L\\
-\DG&=\Gamma_L-\Gamma_H
-\end{align}
-can be defined. For the time evolution of the flavour eigenstates holds
+where $p$ and $q$ by construction are constrained to fulfil $\left|p\right|^2+\left|q\right|^2=1$.
+The ratio $\frac{q}{p}$ can also be expressed in terms of the matrix elements:
+\begin{equation}
+\frac{q}{p}=\sqrt{ \frac{ m_{12}^\ast-\frac{i}{2}\Gamma_{12}^\ast }{ m_{12}-\frac{i}{2}\Gamma_{12} }}
+=\frac{\dm-\frac{i}{2}\DG}{2\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)}
+\end{equation}
+The masses and widths of the initial states can be expressed as
+\begin{equation}
+m=\frac{m_L+m_H}{2}\hspace{0.5cm}\text{and}\hspace{0.5cm}\Gamma=\frac{\Gamma_L+\Gamma_H}{2}
+\end{equation}
+while the corresponding differences will be referred to as
+\begin{equation}
+\dm=m_H-m_L\hspace{0.5cm}\text{and}\hspace{0.5cm}\DG=\Gamma_L-\Gamma_H.
+\end{equation}
+Using the eigenstates from \cref{eq:Mass_eigenstates} and eigenvalues from \cref{eq:Mass_eigenvalues} the Schrödinger equation can be rewritten as
+\begin{equation}
+i\frac{d}{dt}\begin{pmatrix} B_L \\ B_H \end{pmatrix} = \begin{pmatrix} \mu_L & 0 \\ 0 & \mu_H \end{pmatrix}\begin{pmatrix} B_L \\ B_H \end{pmatrix},
+\end{equation}
+which can be easily solved and leads to the time evolution of the mass eigenstates with simple exponential functions $B_{L,H}=e^{-i\mu_{L,H}t}B_{L,H}$.
+Reverting \cref{eq:Mass_eigenstates} the time evolution for the flavour eigenstates follows straightforward:
 \begin{equation}
 \begin{split}
 \left|\Bz\!\left(t\right)\right>&=\left|\Bz\right>g_+-\frac{q}{p}\left|\Bzb\right>g_-\\
 \left|\Bzb\!\left(t\right)\right>&=\left|\Bzb\right>g_--\frac{p}{q}\left|\Bz\right>g_+
 \end{split}
 \end{equation}
-with $g_\pm=\frac{1}{2}\left(e^{-i\mu_Ht}\pm e^{-i\mu_Lt}\right)$. Using this the probability that an initially produced
-\Bz meson oscillates after a given time $t$ is
-\begin{equation}
-\left|\left<\Bz\Big|\Bzb\!\left(t\right)\right>\right|^2=\frac{1}{4}\left|\frac{q}{p}\right|^2
-\left(e^{-\Gamma_Ht}+e^{-\Gamma_Lt}-2e^{\frac{1}{2}\left(\Gamma_H+\Gamma_L\right)t}\cos\left(\dm t\right)\right)
-\end{equation}
-Analogous the probablity for an initially produced \Bzb and the unmixed cases can be calculated. One sees, that the probability
-always oscillates with with the frequency \dm. The corresponding Feynmangraphs are shown in \cref{fig:FeynmanMixing}.
-
-\begin{figure}[tbp]
-	\centering
-	\includestandalone{03CPV/figs/Bmixing_1}
-	\hspace{0.5cm}
-	\includestandalone{03CPV/figs/Bmixing_2}
-	\caption{Box diagrams of lowest order for the \Bz-\Bzb-oscillation. Both diagrams are dominated by the \tquark-quark \cite{Ellis:2016jkw}.}
-	\label{fig:FeynmanMixing}
-\end{figure}
+with $g_\pm=\frac{1}{2}\left(e^{-i\mu_Ht}\pm e^{-i\mu_Lt}\right)$.
 
 \section[head={Types of \CP violation},tocentry={Classes of \CP violation}]{Classes of $\symbfsf{C{}P}$ violation}
 \label{sec:CPVClasses}
 
-As described in \cref{sec:symmetriesInSM} the the \CP symmetry is broken by the weak interaction. To further understand
-the different types of \CP violation first the following decay amplitudes are introduced:
-\begin{equation}
-\begin{split}
-\Af = \left<\,f\,\Big|T\Big|\Bz\right>\hspace{1cm}\Afbar = \left<\,\fbar\,\Big|T\Big|\Bz\right>\\
-\Abarf = \left<\,f\,\Big|T\Big|\Bzb\right>\hspace{1cm}\Abarfbar = \left<\,\fbar\,\Big|T\Big|\Bzb\right>
-\end{split}
-\end{equation}
-Here $T$ denotes the transition matrix from the \B-meson in some final state \f or \fbar. Together with the
-mixing parameters $p$ and $q$ the helpful quantities $\lambda_f$ and $\lambda_{\fbar}$ can be introduced:
-\begin{equation}
-\Lf=\frac{q}{p}\frac{\Abarf}{\Af}\hspace{0.5cm}\text{and}
-\hspace{0.5cm}\Lfbar=\frac{p}{q}\frac{\Afbar}{\Abarfbar}
-\end{equation}
-Now the three types of \CP violation can be separated.
+As described in \cref{sec:symmetriesInSM} the the \CP symmetry is broken by the weak interaction.
+Further, as explained at the beginning of the chapter \CP affects the complex phases of the corresponding transitions.
+For this first the transitions shall be distinguished by the change in internal quantum number $N_q$ and assigned to the matrix elements of $H$.
+The digaonal matrix elements describe transitions with $\Delta F=1$, \ie pure decays, while the off diagonal elements describe transitions with $\Delta F=2$, \ie neutral meson mixing.
+Last transitions where both contirubtions cannot be distinguished can happen.
+Using these three different types of transitions the three different types of \CP violation will be introduced:
+Transitions with purely $\Delta F=1$ are affected by the so-called direct \CP violation, in transitions with $\Delta F=2$ \CP violation in the mixing can be observed potentially.
+However even wihtout \CP violation in the decay or in the mixing, in transitions which cannot be assigned directly to the diagonal or off-diagonal matrix elements \CP violation can occur.
+This type will be denoted as interference \CP violation.
 
 \subsection[head={Direct \CP violation},tocentry={Direct \CP violation}]{Direct $\symbfsf{C{}P}$ violation}
 \label{sec:DirectCPV}
 
-Direct \CP violation or \CP violation in decay means that a specific decay amplitude differs between the particle and  its
-corresponding antiparticle. One could expect that for such phenomenon it is sufficient to have an aomplitude with a weak phase,
-which changes sign under the \CP transformation. So the conditions $\left|\Af\right|\neq\left|\Abarfbar\right|$ and
-$\left|\Afbar\right|\neq\left|\Abarf\right|$ hold and following this also $\left|\Lf\right|\neq1$ and $\left|\Lfbar\right|\neq1$.
+Direct \CP violation or \CP violation in decay means that a specific decay amplitude differs between the particle and  its corresponding antiparticle.
+However contrary what one could naively expect it is not sufficient if one process with a strong and weak phase contributes to a transition.
+But considering decays with only one contributing amplitude
+\begin{equation}
+\begin{split}
+\left<\f|T|\Bz\right>&=Ae^{i\left(\delta+\phi\right)}\\
+\left<\f|T|\Bz\right>&=Ae^{i\left(\delta-\phi\right)}
+\end{split}
+\end{equation}
+where $A$ is a real positive number, $\phi$ is the weak phase and $\delta$ is the strong phase one notices immediately that the quantity $\left|\left<\f|T|\Bz\right>\right|-\left|\left<\f|T|\Bz\right>\right|$ vanishes and therefore \CP is conserved.
+Instead considering decays with two contributing amplitudes
+\begin{equation}
+\left<\f|T|\Bz\right>=A_1e^{i\left(\delta_1+\phi_1\right)}+A_2e^{i\left(\delta_2+\phi_2\right)}\hspace{0.5cm}\text{and}\hspace{0.5cm}\left<\f|T|\Bz\right>=A_1e^{i\left(\delta_1-\phi_1\right)}+A_2e^{i\left(\delta_2-\phi_2\right)}
+\end{equation}
+\CP violation is possible if both the weak and the strong phases differ:
+\begin{equation}
+\left|\left<\f|T|\Bz\right>\right|^2-\left|\left<\f|T|\Bz\right>\right|^2=-4A_1A_2\sin\left(\delta_1-\delta_2\right)\sin\left(\phi_1-\phi_2\right)
+\end{equation}
 For \B-mesons this has been measured in the decay modes $\Bz\to\Kp\pim$ and $\Bs\to\Km\pip$ \cite{LHCb-PAPER-2013-018} to be
 \begin{equation}
 \begin{split}
@@ -115,9 +128,41 @@ and the other way round are different. As the name implies this type of \CP viol
 which can oscillate in their antiparticle. In terms of the introduced quantities in \cref{sec:CPVClasses} this means that
 $\left|\frac{q}{p}\right|\neq1$ and therefore also $\left|\Lf\right|\neq1$ and $\left|\Lfbar\right|\neq1$.
 
+Using this the probability that an initially produced
+\Bz meson oscillates after a given time $t$ is
+\begin{equation}
+\left|\left<\Bz\Big|\Bzb\!\left(t\right)\right>\right|^2=\frac{1}{4}\left|\frac{q}{p}\right|^2
+\left(e^{-\Gamma_Ht}+e^{-\Gamma_Lt}-2e^{\frac{1}{2}\left(\Gamma_H+\Gamma_L\right)t}\cos\left(\dm t\right)\right)
+\end{equation}
+Analogous the probablity for an initially produced \Bzb and the unmixed cases can be calculated. One sees, that the probability
+always oscillates with with the frequency \dm. The corresponding Feynmangraphs are shown in \cref{fig:FeynmanMixing}.
+
+\begin{figure}[tbp]
+	\centering
+	\includestandalone{03CPV/figs/Bmixing_1}
+	\hspace{0.5cm}
+	\includestandalone{03CPV/figs/Bmixing_2}
+	\caption{Box diagrams of lowest order for the \Bz-\Bzb-oscillation. Both diagrams are dominated by the \tquark-quark \cite{Ellis:2016jkw}.}
+	\label{fig:FeynmanMixing}
+\end{figure}
+
 \subsection[head={Interference \CP violation},tocentry={Interference \CP violation}]{Interference $\symbfsf{C{}P}$ violation}
 \label{sec:InterferenceCPV}
 
+To further understand
+the different types of \CP violation they will be sorted by tfirst the following decay amplitudes are introduced:
+\begin{equation}
+\begin{split}
+\Af = \left<\,f\,\Big|T\Big|\Bz\right>\hspace{1cm}\Afbar = \left<\,\fbar\,\Big|T\Big|\Bz\right>\\
+\Abarf = \left<\,f\,\Big|T\Big|\Bzb\right>\hspace{1cm}\Abarfbar = \left<\,\fbar\,\Big|T\Big|\Bzb\right>
+\end{split}
+\end{equation}
+Here $T$ denotes the transition matrix from the \B-meson in some final state \f or \fbar. Together with the
+mixing parameters $p$ and $q$ the helpful quantities $\lambda_f$ and $\lambda_{\fbar}$ can be introduced:
+\begin{equation}
+\Lf=\frac{q}{p}\frac{\Abarf}{\Af}\hspace{0.5cm}\text{and}
+\hspace{0.5cm}\Lfbar=\frac{p}{q}\frac{\Afbar}{\Abarfbar}
+\end{equation}
 The third type of \CP violation occurs in the interference of direct decay and decay after mixing. In general this type of \CP
 violation means that $\left<\,f\,\Big|T\Big|\Bz\right>\neq\left<\,\fbar\,\Big|T\Big|\Bzb\right>$ and
 $\left<\,f\,\Big|T\Big|\Bzb\right>\neq\left<\,\fbar\,\Big|T\Big|\Bz\right>$. Looking at the quantities \Lf and \Lfbar this can
