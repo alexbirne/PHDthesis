@@ -140,7 +140,7 @@ In \cref{fig:DirectCPV} the corresponding mass spectra are shown.
 
 \begin{figure}[tbp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{03CPV/figs/DirectCPV}
+	\includegraphics[width=0.8\textwidth]{03CPV/figs/DirectCPV.pdf}
 	\caption{Invariant mass spectra for $A_{\CP}\left(\Bz\to\Kp\pim\right)$ (a,b) and $A_{\CP}\left(\Bs\to\Km\pip\right)$ (c,d). The figures (a) and (c) show the invariant mass distributions for \Kp\pim, figures (b) and (d) show the invariant mass distributions for \Km\pip.}
 	\label{fig:DirectCPV}
 \end{figure}
@@ -213,24 +213,30 @@ After eliminating the phases the conditions $\left|\Af\right|=\left|\Abarfbar\ri
 \end{equation}
 what can be combined with \cref{eq:CPconservationMixing} and yields that \CP conservation implies
 \begin{equation}
-\arg\left(\frac{p^2}{q^2}\right)
+\arg\left(\frac{p^2}{q^2}\Af A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^\ast\Afbar\overline{\kern -1.0pt A\kern -1.0pt}_{\kern 2.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^\ast\right)=0.
 \end{equation}
+However to obtain this reasoning the \CP phase of the initial states transform and the phase of the off-diagonal matrix elements $m_{12}$ and $\Gamma_{12}$ were chosen to be equal.
+If this would not be the case \CP would not be conserved in the interference of decay and decay after mixing.
+Following this last type of \CP violation arises from a clash of the phase of $\nicefrac{q}{p}$ and the phase of the decay amplitude.
 
-
-Even in the case that \CP is conserved in decay or mixing, \ie $\Af=\Abarfbar$ and $\left|\nicefrac{q}{p}\right|=1$, there can be \CP violation can occur.
-
-To show the effect happening in this third type of \CP violation the time evolution for decaying \B mesons will be presented using the parameters
+To investigate the effect on the decay rates of such processes it is useful to introduce first the following parameters:
 \begin{equation}
 \Lf=\frac{q}{p}\frac{\Abarf}{\Af}\hspace{0.5cm}\text{and}
 \hspace{0.5cm}\Lfbar=\frac{p}{q}\frac{\Afbar}{\Abarfbar}.
 \end{equation}
-
-
-
-
-
-
-Using the time evolution presented in \cref{sec:TimeEvolution} the probability for the transitions $\left|\left<\,f\,\Big|T\Big|\Bz\!(t)\right>\right|^2$ can be calculated.
+Using this parameters the conditions for \CP conervation simplify in the following way:
+\begin{itemize}
+	\item $\left|\Lf\right|=\left|\Lfbar\right| = 1$ means that \CP is conserved in decay and mixing
+	\item However, even if the first condition is fullfilled $\mathcal{Im}\left(\Lf\right)\neq0$ or $\mathcal{Im}\left(\Lfbar\right)\neq0$ can hold. This means that in case of
+	\begin{equation}
+	\arg\left(\Lf\right)-\arg\left(\Lfbar\right)\neq0 \label{eq:conditionCPV}
+	\end{equation}
+	\CP violation may be present. Inverting this means that \CP conservation implies
+	\begin{equation}
+	\Lf=\frac{1}{\Lfbar}
+	\end{equation}
+\end{itemize}
+Using then the time evolution presented in \cref{sec:TimeEvolution} the probability for the transitions $\left|\left<\,f\,\Big|T\Big|\Bz\!(t)\right>\right|^2$ can be calculated.
 Here $\Bz\!(t)$ ($\Bzb\!(t)$) denotes a \B meson which was produced as a \Bz (\Bzb) at $t=0$:
 \begin{align}
 \left|\left<\,\f\,\Big|T\Big|\Bz\!(t)\right>\right|^2 =&
@@ -284,10 +290,17 @@ A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}&=-\frac{2\mathcal{Re}\
 \Sfbar=-\frac{2\mathcal{Im}\left(\Lfbar\right)}{1+\left|\Lfbar\right|^2}\hspace{0.5cm}
 \Cfbar=-\frac{1-\left|\Lfbar\right|^2}{1+\left|\Lfbar\right|^2}.
 \end{align}
-Considering now the case where direct and indirect \CP violation are neglibile ($\left|\Lf\right|=\pm1$ and $\left|\Lfbar\right|=\pm1$) the asymmetries
-\begin{align}
-\frac{\left|\left<\,\f\,\Big|T\Big|\Bz\!(t)\right>\right|^2 - \left|\left<\,\f\,\Big|T\Big|\Bzb\!(t)\right>\right|^2}{\left|\left<\,\f\,\Big|T\Big|\Bz\!(t)\right>\right|^2 + \left|\left<\,\f\,\Big|T\Big|\Bzb\!(t)\right>\right|^2}
-= \frac{\Cf\cos\left(\dm t\right) - \Sf\sin\left(\dm t\right)}{\cosh\left(\frac{\DG}{2}t\right) + A_f^{\DG}\sinh\left(\frac{\DG}{2}t\right)}\\
-\frac{\left|\left<\,\fbar\,\Big|T\Big|\Bzb\!(t)\right>\right|^2 - \left|\left<\,\fbar\,\Big|T\Big|\Bz\!(t)\right>\right|^2}{\left|\left<\,\fbar\,\Big|T\Big|\Bzb\!(t)\right>\right|^2 + \left|\left<\,\fbar\,\Big|T\Big|\Bz\!(t)\right>\right|^2} = \frac{-\Cfbar\cos\left(\dm t\right) + \Sfbar\sin\left(\dm t\right)}{\cosh\left(\frac{\DG}{2}t\right) + A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}\sinh\left(\frac{\DG}{2}t\right)}
-\end{align}
-still yield to be non zero as both negelceted types of \CP violation do not influence the imaginary part of the quantities \Lf and \Lfbar.
+This type of \CP violation has been measured by the \B-factories \belle and \babar, as well as by \lhcb.
+The most prominent analysis is probably the measurement of $\sin\left(2\beta\right)$ in the so-called golden mode \BdToJPsiKS \cite{Aaij:2015vza}.
+As both \Bz mesons reach the same finalstate \f $\Lfbar=-\Lf$ holds and the condition in \cref{eq:conditionCPV} can be reduced to $\arg\left(\Lf\right)\neq0$.
+The \CP asymmetry in this case is defined as
+\begin{equation}
+A_{\CP}(t)=\frac{\Gamma\left(\BdToJPsiKS\right)}{\Gamma\left(\BdToJPsiKS\right)}=\Sf\sin\left(\dmd t\right)+\Cf\cos\left(\dmd t\right)
+\end{equation}
+As in this case $\Cf=0$ is expected the a sine oscillation is expected as can be seen in \cref{fig:sin2beta}.
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{03CPV/figs/InterferenceCPV.pdf}
+	\caption{Time-dependent signal yield asymmetry $\left(N_{\Bzb}-N_{\Bz}\right)/\left(N_{\Bzb}-N_{\Bz}\right)$. The black points represent the used datasample, the solid curve is the projection of the signal \PDF.}
+	\label{fig:sin2beta}
+\end{figure}
