@@ -3,23 +3,30 @@
 {$\symbfsf{C{}P}$ violation in the $\symbfsf{B}$-meson sector}
 \label{chap:CPV}
 
-According to the $CPT$ theorem \CP violation is equivalent to $T$ violation. As described in \cref{sec:symmetriesInSM} the $T$ operator
-is antiunitary and therefore transforms numbers into their complex conjugate.
-Hence the \CP transformation also affects the complex phases of the bras and kets describing arbitrary initial and final states.
-The absolute values of those phases are not physically meaningful as they can be rephased at will.
+Since $CPT$ is conserved in the \ac{SM} the violation of \CP is equivalent to a violation of the $T$ symmetry.
+As described in \cref{sec:symmetriesInSM} the $T$ operator is antiunitary and therefore it transforms numbers into their complex conjugate.
+Hence the \CP transformation also affects only the complex phases of the bras and kets describing initial and final states.
+However the absolute values of phases describing transitions between different states are not physically meaningful as the bras and kets can be rephased at will.
 The physical meaningful quantities are the relative phase differences between coherent contributions to a transition, as these are invariant under global rephasings.
-There are three types of transition amplitudes: Weak phases change sign under \CP transformation (\CP-odd) while strong phases do not change sign under \CP transformation (\CP-even).
-Spurious phases usually arise due to conventional rephasings and for convenience will be set to zero in the following .
-Also it may be noted, that the denotations 'weak' and 'strong' do not mean that the phases originate in weak or strong interactions, but only describe their behaviour under \CP transformation.
+There are three types of phases arising in transition amplitudes:
+\enquote{Weak} phases, which change sign under \CP transformation (\CP-odd), \enquote{strong} phases, which do not change sign under \CP transformation (\CP-even) and \enquote{spurious} phases, which usually arise due to conventional rephasings.
+The denotations \enquote{weak} and \enquote{strong} do not mean that the phases originate in weak or strong interactions, but only describe their behaviour under \CP transformation.
+Spurious phases are global and just arise due to conventional rephasings.
+As they do not originate in any dynamics they will be ignored below for simplification.
+Consequently the \CP transformation of the initial and final states are defined with \enquote{weak} phases $\xi_i$ and $\xi_f$ as follows
+\begin{equation}
+\begin{aligned}
+&\CP\left|\Bz\right> =e^{i\xi}\left|\Bzb\right>&&\CP\left|\Bzb\right>=e^{-i\xi}\left|\Bz\right>&\\
+&\CP\left|\,\f\,\right> =e^{i\xi_f}\left|\,\fbar\,\right>&&\CP\left|\,\fbar\,\right>=e^{-i\xi_f}\left|\,\f\,\right>.&
+\end{aligned}
+\end{equation}
 
-This chapter describes first the time evolution of neutral mesons by example of uncharged \B-mesons before discussing the three classes of \CP violation.
-More details can be found in Refs.~\cite{Branco:396964,Bigi:1295518}
-
+In this chapter first the time evolution of neutral mesons by example of uncharged \B-mesons is described and then the three classes of \CP violation are discussed. More details on these topics can be found in Refs.~\cite{Branco:396964,Bigi:1295518}
 
 \section[head={Time evolution of neutral \B-mesons},tocentry={Time evolution of neutral $\symbfsf{\B}$-mesons}]{Time evolution of neutral $\symbfsf{\B}$-mesons}
 \label{sec:TimeEvolution}
 
-As explained in \cref{sec:unitarityTriangle} the mass eigenstates and the eigenstates to the weak interaction are not identical for
+As previously described in \cref{sec:unitarityTriangle} the mass eigenstates and the eigenstates to the weak interaction are not identical for
 quarks. The same holds for bound states of quarks like \B-mesons. Studying the system of a \Bz (\bquarkbar\dquark) and a \Bzb-meson
 (\bquark\dquarkbar), the most general description to deduce the time evolution is the Schrödinger equation:
 \begin{equation}
@@ -292,8 +299,8 @@ A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}&=-\frac{2\mathcal{Re}\
 \end{align}
 This type of \CP violation has been measured by the \B-factories \belle and \babar, as well as by \lhcb.
 The most prominent analysis is probably the measurement of $\sin\left(2\beta\right)$ in the so-called golden mode \BdToJPsiKS \cite{Aaij:2015vza}.
-As both \Bz mesons reach the same finalstate \f $\Lfbar=-\Lf$ holds and the condition in \cref{eq:conditionCPV} can be reduced to $\arg\left(\Lf\right)\neq0$.
-The \CP asymmetry in this case is defined as
+As both \Bz mesons reach the same finalstate \f only the parameter \Lf exists and the condition in \cref{eq:conditionCPV} can be reduced to $\arg\left(\Lf\right)\neq0$.
+As $\DG=0$ the \CP asymmetry in this case is defined as
 \begin{equation}
 A_{\CP}(t)=\frac{\Gamma\left(\BdToJPsiKS\right)}{\Gamma\left(\BdToJPsiKS\right)}=\Sf\sin\left(\dmd t\right)+\Cf\cos\left(\dmd t\right)
 \end{equation}
