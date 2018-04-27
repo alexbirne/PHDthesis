@@ -17,7 +17,7 @@ Consequently the \CP transformation of the initial and final states are defined 
 \begin{equation}
 \begin{aligned}
 &\CP\left|\Bz\right> =e^{i\xi}\left|\Bzb\right>&&\CP\left|\Bzb\right>=e^{-i\xi}\left|\Bz\right>&\\
-&\CP\left|\,\f\,\right> =e^{i\xi_f}\left|\,\fbar\,\right>&&\CP\left|\,\fbar\,\right>=e^{-i\xi_f}\left|\,\f\,\right>.&
+&\CP\left|\,\f\,\right> =e^{i\xi_f}\left|\,\fbar\,\right>&&\CP\left|\,\fbar\,\right>=e^{-i\xi_f}\left|\,\f\,\right>.& \label{eq:CPTransInitFinal}
 \end{aligned}
 \end{equation}
 
@@ -170,149 +170,83 @@ Figure \ref{fig:DirectCPV} shows the corresponding invariant mass spectra.
 
 Indirect \CP violation, also denoted as \CP violation in mixing implies that the transition probabilities for a \Bz-meson to oscilate into a \Bzb meson and vice versa are different.
 As due to charge conservation mxing is only possible for uncharged mesons this type of \CP violation cannot occur for charged particles.
-Using the time evolution from \cref{eq:timeEvolution} the probabilities of initially produced \Bz and \Bzb mesons to have oscillated within a time $t$ are
+Using the time evolution from \cref{eq:timeEvolution} the probabilities of initially produced \Bz and \Bzb mesons to have oscillated within a proper-time $t$ are
 \begin{align}
 \left|\left<\Bz\Big|\Bzb\!\left(t\right)\right>\right|^2=\frac{1}{4}\left|\frac{p}{q}\right|^2
-\left(e^{-\GH t}+e^{-\GL t}-2e^{\frac{1}{2}\left(\GH+\GL\right)t}\cos\left(\dm t\right)\right),\\
+\left(e^{-\GH t}+e^{-\GL t}-2e^{\frac{1}{2}\left(\Gamma\right)t}\cos\left(\dm t\right)\right),\\
 \left|\left<\Bzb\Big|\Bz\!\left(t\right)\right>\right|^2=\frac{1}{4}\left|\frac{q}{p}\right|^2
-\left(e^{-\GH t}+e^{-\GL t}-2e^{\frac{1}{2}\left(\GH+\GL\right)t}\cos\left(\dm t\right)\right).\\
+\left(e^{-\GH t}+e^{-\GL t}-2e^{\frac{1}{2}\left(\Gamma\right)t}\cos\left(\dm t\right)\right).
 \end{align}
-Obviously to obtain the same probabilities $P(\Bz\to\Bzb)$ and $P(\Bzb\to\Bz)$
+To obtain the same probabilities for both processes obviously
 \begin{equation}
 \left|\frac{q}{p}\right|=\left|\frac{p}{q}\right| \Rightarrow \left|\frac{q}{p}\right|=1
 \end{equation}
 is required.
-Following \cref{eq:qoverp}, this implies that indirect \CP violation can only occur if the matrix elements $m_{12}$ and $\Gamma_{12}$ have different phases.
-The \CP asymmetry for indirect \CP violation is defined as
+According to \cref{eq:qoverp} this means that indirect \CP violation occurs if the matrix elements $m_{12}$ and $\Gamma_{12}$ have different complex phases.
+The \CP asymmetry in case of indirect \CP violation can be defined as
 \begin{equation}
-A_{\CP}=\frac{\Gamma\left(\Bz\to\Bzb\right) - \Gamma\left(\Bzb\to\Bz\right)}{\Gamma\left(\Bz\to\Bzb\right) + \Gamma\left(\Bzb\to\Bz\right)}
-= \frac{1-\left|\nicefrac{p}{q}\right|}{1+\left|\nicefrac{p}{q}\right|}
+A_{\CP}(t)=\frac{\Gamma\left(\Bz\to\Bzb\right) - \Gamma\left(\Bzb\to\Bz\right)}{\Gamma\left(\Bz\to\Bzb\right) + \Gamma\left(\Bzb\to\Bz\right)}
+= \frac{1-\left|\nicefrac{p}{q}\right|^4}{1+\left|\nicefrac{p}{q}\right|^4}
 \end{equation}
-The most prominent decay modes to measure \CP violation in mixing are semileptonic decays of neutral mesons.
-This is due to the fact that semileptonc decays are usually flavour specific, \ie only the transition $\Bz\to\f$, but not $\Bz\to\fbar$ is allowed and thus the flavour of the meson at decay can be determined by the charge of the lepton in the final state.
+However, as neutral \B-mesons do not just oscillate but also decay this asymmetry can not be used directly to measure \CP violation in mixing.
+Instead the \B-mesons need to be reconstructed in flavour specific decays, \ie only the transitions $\Bz\to\f$ and $\Bzb\to\fbar$, but not $\Bz\to\fbar$ and $\Bzb\to\f$ are allowed.
+Thus the flavour of the meson at decay can be determined by final state and compared to the initial production flavour.
 For the \Bz and \Bs meson system \CP violation in mixing has been measured to be negligible \cite{HFLAV2016} what is in good agreement with the \ac{SM} predictions.
 
 \subsection[head={Interference \CP violation},tocentry={Interference \CP violation}]{Interference $\symbfsf{C{}P}$ violation}
 \label{sec:InterferenceCPV}
 
-For this type of \CP violation we need to consider decays of \Bz and \Bzb mesons into a final state \f and its \CP-conjugate \fbar.
-As was presented in the previous sections \CP violation arises from the clash between phases.
-Indirect \CP violation arises if there is a clash between the phases of $m_{12}$ and $\Gamma_{12}$.
-Inversely this means that \CP is conserved when there is phase $\xi$ such that
-\begin{equation}
-\begin{split}
-m_{12}^\ast &= e^{2i\xi}m_{12}\\
-\Gamma_{12}^\ast &= e^{2i\xi}\Gamma_{12}\label{eq:CPconservationMixing}
-\end{split}
-\end{equation}
-what leads directly to $\nicefrac{q^2}{p^2} = e^{2i\xi}$ using \cref{eq:qoverp}.
-Direct \CP violation on the other hand arises from a clash between the phases of two interfering decay amplitudes.
-Considering the behaviour of the initial \Bz mesons
-\begin{equation}
-\CP\left|\Bz\right> =e^{i\xi}\left|\Bzb\right>\hspace{0.5cm}\text{and}\hspace{0.5cm}\CP\left|\Bzb\right>=e^{-i\xi}\left|\Bz\right>
-\end{equation}
-and of the final states
-\begin{equation}
-\CP\left|\f\right> =e^{i\xi_f}\left|\fbar\right>\hspace{0.5cm}\text{and}\hspace{0.5cm}\CP\left|\fbar\right>=e^{-i\xi_f}\left|\f\right>
-\end{equation}
-for the \CP conserving amplitudes the transformations can be expressed as
-\begin{equation}
-\begin{split}
-\Abarfbar&=e^{i\left(\xi_f-\xi\right)}\Af,\\
-\Afbar&=e^{i\left(\xi_f+\xi\right)}\Abarf. \label{eq:amplitudetransformation}
-\end{split}
-\end{equation}
-After eliminating the phases the conditions $\left|\Af\right|=\left|\Abarfbar\right|$ and $\left|\Abarf\right|=\left|\Afbar\right|$ for \CP conservation in the decay directly follows. From \cref{eq:amplitudetransformation} one derives
-\begin{equation}
-\Af\Afbar=e^{2i\xi}\Abarfbar\Abarf
-\end{equation}
-what can be combined with \cref{eq:CPconservationMixing} and yields that \CP conservation implies
-\begin{equation}
-\arg\left(\frac{p^2}{q^2}\Af A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^\ast\Afbar\overline{\kern -1.0pt A\kern -1.0pt}_{\kern 2.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^\ast\right)=0.
-\end{equation}
-However to obtain this reasoning the \CP phase of the initial states transform and the phase of the off-diagonal matrix elements $m_{12}$ and $\Gamma_{12}$ were chosen to be equal.
-If this would not be the case \CP would not be conserved in the interference of decay and decay after mixing.
-Following this last type of \CP violation arises from a clash of the phase of $\nicefrac{q}{p}$ and the phase of the decay amplitude.
+So far \CP violation arising due to a clash between the phases of two interfering decay amplitudes or a clash between the phases of $m_{12}$ and $\Gamma_{12}$ has been discussed.
+The third possibility is a clash between the phase of $\nicefrac{q}{p}$ and the phase of the decay amplitude what results in the so-called interference \CP violation.
+For this class of \CP violation decays of \Bz and \Bzb mesons into both the final state \f and its \CP-conjugate \fbar need to be considered.
 
-To investigate the effect on the decay rates of such processes it is useful to introduce first the following parameters:
+Inverting the requirement for \CP violation in mixing shows that \CP is conserved when there is a phase $\xi'$ such that
+\begin{equation}
+\begin{split}
+m_{12}^\ast &= e^{2i\xi'}m_{12}\\
+\Gamma_{12}^\ast &= e^{2i\xi'}\Gamma_{12}\label{eq:CPconservationMixing}
+\end{split}
+\end{equation}
+what leads directly to $\nicefrac{q^2}{p^2} = e^{2i\xi'}$.
+Using \cref{eq:CPTransInitFinal} the \CP conjugated amplitudes \Abarfbar and \Afbar can be expressed as
+\begin{align}
+\Abarfbar&=e^{i\left(\xi_f-\xi\right)}\Af,\label{eq:amplitudetransformation_1}\\
+\Afbar&=e^{i\left(\xi_f+\xi\right)}\Abarf.\label{eq:amplitudetransformation_2}
+\end{align}
+what leads to $\big|\,\Af\,\big|=\big|\,\Abarfbar\,\big|$ and $\big|\,\Abarf\,\big|=\big|\,\Afbar\,\big|$ after eliminating the phases and shows that these amplitudes are \CP conserving.
+Combining \cref{eq:amplitudetransformation_1} and \cref{eq:amplitudetransformation_2} then leads to
+\begin{equation}
+\Af\,\Afbar=e^{2i\xi}\,\Abarfbar\,\Abarf\,.
+\end{equation}
+Under the assumption that the phase of $\nicefrac{q}{p}$ and the phases of the decay amplitudes do not clash, \ie $\xi=\xi'$, \CP is conserved and
+\begin{equation}
+\arg\left(\frac{p^2}{q^2}\Af \,\overline{\kern -1.0pt A\kern -1.0pt}_{\kern 1.0pt f}^\ast\,\Afbar\overline{\kern -1.0pt \,A\kern -1.0pt}_{\kern 2.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^\ast\right)=0
+\end{equation}
+applies.
+This can be reformulated using the parameters
 \begin{equation}
 \Lf=\frac{q}{p}\frac{\Abarf}{\Af}\hspace{0.5cm}\text{and}
 \hspace{0.5cm}\Lfbar=\frac{p}{q}\frac{\Afbar}{\Abarfbar}.
 \end{equation}
-Using this parameters the conditions for \CP conervation simplify in the following way:
-\begin{itemize}
-	\item $\left|\Lf\right|=\left|\Lfbar\right| = 1$ means that \CP is conserved in decay and mixing
-	\item However, even if the first condition is fullfilled $\mathcal{Im}\left(\Lf\right)\neq0$ or $\mathcal{Im}\left(\Lfbar\right)\neq0$ can hold. This means that in case of
-	\begin{equation}
-	\arg\left(\Lf\right)-\arg\left(\Lfbar\right)\neq0 \label{eq:conditionCPV}
-	\end{equation}
-	\CP violation may be present. Inverting this means that \CP conservation implies
-	\begin{equation}
-	\Lf=\frac{1}{\Lfbar}
-	\end{equation}
-\end{itemize}
-Using then the time evolution presented in \cref{sec:TimeEvolution} the probability for the transitions $\left|\left<\,f\,\Big|T\Big|\Bz\!(t)\right>\right|^2$ can be calculated.
-Here $\Bz\!(t)$ ($\Bzb\!(t)$) denotes a \B meson which was produced as a \Bz (\Bzb) at $t=0$:
-\begin{align}
-\left|\left<\,\f\,\Big|T\Big|\Bz\!(t)\right>\right|^2 =&
-\left|\left<\,\f\,\Big|T\Big|\Bz\right>g_+-\frac{q}{p}\left<\,\f\,\Big|T\Big|\Bzb\right>g_-\right|^2\nonumber\\
-=&\Af^2\left|g_+ - \frac{q}{p}\frac{\Abarf}{\Af} g_-\right|^2=\Af\left|g_+ -\Lf\,g_-\right|^2\nonumber\\
-=&\Af^2\left(g_+g_+^*+\left|\Lf\right|^2g_-g_-^*-\left(\lambda_{f}^*g_-^*g_+ + \Lf\,g_+^* g_-\right)\right)
-\end{align}
-In analogy the probabilites for an initially produced \Bzb and a second finalstate \fbar are defined as
-\begin{align}
-\left|\left<\,\f\,\Big|T\Big|\Bzb\!(t)\right>\right|^2 &=
-\Af^2\left|\frac{p}{q}\right|^2\left(g_+g_+^*\left|\Lf\right|^2+g_-g_-^*-\left(\Lfst g_+^*g_- + \Lf\,g_-^* g_+\right)\right)\\
-\left|\left<\,\fbar\,\Big|T\Big|\Bz\!(t)\right>\right|^2 &=
-\Abarfbar^2\left|\frac{q}{p}\right|^2\left(g_+g_+^*\left|\Lfbar\right|^2+g_-g_-^*-\left(\Lfbarst g_+^*g_- + \Lfbarst\,g_-^* g_+\right)\right)\\
-\left|\left<\,\fbar\,\Big|T\Big|\Bzb\!(t)\right>\right|^2 &=
-\Abarfbar^2\hphantom{\left|\frac{q}{p}\right|^2}\left(g_+g_+^*+\left|\Lfbar\right|^2g_-g_-^*-\left(\Lfbarst g_-^*g_+ + \Lfbar\,g_+^* g_-\right)\right)
-\end{align}
-Using
-\begin{align}
-g_{\pm}g_{\pm}^{*} &= \frac{1}{2}e^{-\Gamma t}\left(\cosh\left(\frac{\DG}{2}t\right)\pm\cos\left(\dm t\right)\right)\\
-g_{\pm}^*g_{\mp} &=  \frac{1}{2}e^{-\Gamma t}\left(\sinh\left(\frac{\DG}{2}t\right)\mp i\sin\left(\dm t\right)\right)
-\end{align}
-the probabilities can be expressed as
-\begin{align}
-\left|\left<\,\f\,\Big|T\Big|\Bz\!(t)\right>\right|^2 =&
-\frac{1}{2}e^{\Gamma t}\left|\Af\right|^2\left(1+\left|\Lf\right|^2\right)\hphantom{\left|\frac{p}{q}\right|^2}
-\Bigg[\cosh\left(\frac{\DG}{2}t\right) + A_f^{\DG}\sinh\left(\frac{\DG}{2}t\right)\nonumber\\
-&\hphantom{\frac{1}{2}e^{\Gamma t}\left|\Af\right|^2\left(1+\left|\Lf\right|^2\right)\left|\frac{p}{q}\right|^2\Bigg[}
--\Sf\sin\left(\dm t\right)+\Cf\cos\left(\dm t\right)\Bigg]\\
-\left|\left<\,\f\,\Big|T\Big|\Bzb\!(t)\right>\right|^2 =&
-\frac{1}{2}e^{\Gamma t}\left|\Af\right|^2\left(1+\left|\Lf\right|^2\right)\left|\frac{p}{q}\right|^2
-\Bigg[\cosh\left(\frac{\DG}{2}t\right) + A_f^{\DG}\sinh\left(\frac{\DG}{2}t\right)\nonumber\\
-&\hphantom{\frac{1}{2}e^{\Gamma t}\left|\Af\right|^2\left(1+\left|\Lf\right|^2\right)\left|\frac{p}{q}\right|^2\Bigg[}
-+\Sf\sin\left(\dm t\right)-\Cf\cos\left(\dm t\right)\Bigg]\\
-\left|\left<\,\fbar\,\Big|T\Big|\Bz\!(t)\right>\right|^2 =&
-\frac{1}{2}e^{\Gamma t}\left|\Abarfbar\right|^2\left(1+\left|\Lfbar\right|^2\right)\left|\frac{q}{p}\right|^2
-\Bigg[\cosh\left(\frac{\DG}{2}t\right) + A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}\sinh\left(\frac{\DG}{2}t\right)\nonumber\\
-&\hphantom{\frac{1}{2}e^{\Gamma t}\left|\Af\right|^2\left(1+\left|\Lf\right|^2\right)\left|\frac{q}{p}\right|^2\Bigg[}
--\Sfbar\sin\left(\dm t\right)+\Cfbar\cos\left(\dm t\right)\Bigg]\\
-\left|\left<\,\fbar\,\Big|T\Big|\Bzb\!(t)\right>\right|^2 =&
-\frac{1}{2}e^{\Gamma t}\left|\Abarfbar\right|^2\left(1+\left|\Lfbar\right|^2\right)\hphantom{\left|\frac{q}{p}\right|^2}
-\Bigg[\cosh\left(\frac{\DG}{2}t\right) + A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}\sinh\left(\frac{\DG}{2}t\right)\nonumber\\
-&\hphantom{\frac{1}{2}e^{\Gamma t}\left|\Af\right|^2\left(1+\left|\Lf\right|^2\right)\left|\frac{q}{p}\right|^2\Bigg[}
-+\Sfbar\sin\left(\dm t\right)-\Cfbar\cos\left(\dm t\right)\Bigg]
-\end{align}
-with the \CP coefficients
-\begin{align}
-A_f^{\DG}&=-\frac{2\mathcal{Re}\left(\Lf\right)}{1+\left|\Lf\right|^2}\hspace{0.5cm}
-\Sf=\frac{2\mathcal{Im}\left(\Lf\right)}{1+\left|\Lf\right|^2}\hspace{0.5cm}
-\Cf=\frac{1-\left|\Lf\right|^2}{1+\left|\Lf\right|^2}\\
-A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}&=-\frac{2\mathcal{Re}\left(\Lfbar\right)}{1+\left|\Lfbar\right|^2}\hspace{0.5cm}
-\Sfbar=-\frac{2\mathcal{Im}\left(\Lfbar\right)}{1+\left|\Lfbar\right|^2}\hspace{0.5cm}
-\Cfbar=-\frac{1-\left|\Lfbar\right|^2}{1+\left|\Lfbar\right|^2}.
-\end{align}
-This type of \CP violation has been measured by the \B-factories \belle and \babar, as well as by \lhcb.
-The most prominent analysis is probably the measurement of $\sin\left(2\beta\right)$ in the so-called golden mode \BdToJPsiKS \cite{Aaij:2015vza}.
-As both \Bz mesons reach the same finalstate \f only the parameter \Lf exists and the condition in \cref{eq:conditionCPV} can be reduced to $\arg\left(\Lf\right)\neq0$.
-As $\DG=0$ the \CP asymmetry in this case is defined as
+Even without \CP violation in decay or mixing ($\big|\Lf\big|=\big|\Lfbar\big| = \pm1$) \CP is not conserved in case of
 \begin{equation}
-A_{\CP}(t)=\frac{\Gamma\left(\BdToJPsiKS\right)}{\Gamma\left(\BdToJPsiKS\right)}=\Sf\sin\left(\dmd t\right)+\Cf\cos\left(\dmd t\right)
+	\arg\left(\Lf\right)-\arg\left(\Lfbar\right)\neq0. \label{eq:conditionCPV}
 \end{equation}
-As in this case $\Cf=0$ is expected the a sine oscillation is expected as can be seen in \cref{fig:sin2beta}.
+
+This type of \CP violation was first measured by the \B-factories \babar \cite{Aubert:2001nu} and \belle \cite{Abe:2001xe}.
+The most prominent measurement is probably the anlysis of the so-called golden mode \BdToJPsiKS to determine $\sin{}\left(2\beta\right)$.
+For this decay channel the condition in \cref{eq:conditionCPV} can be simplified to $\arg\left(\Lf\right)\neq0$ as only one common finalstate for both \Bz and \Bzb exists.
+Furthermore no \CP violation in decay and mixing is expected for the decay \BdToJPsiKS and with the current experimental precision $\DG=0$ can be assumed.
+Therefore the \CP asymmetry can be expressed as
+\begin{equation}
+A_{\CP}(t)=\frac{\Gamma\left(\BdToJPsiKS\right)-\Gamma\left(\BdToJPsiKS\right)}{\Gamma\left(\BdToJPsiKS\right)+\Gamma\left(\BdToJPsiKS\right)}=\Sf\sin\left(\dmd t\right),
+\end{equation}
+with the parameter $\Sf=\sin{}\left(2\beta\right)$ (a more thoroughly description of the formalism will be given in \cref{ch:CKMAngleGamma}).
+The most recent measurement of \Sf was performed by \lhcb \cite{Aaij:2015vza} yielding a result of
+\begin{equation}
+\Sf=0.731\pm0.035\stat0.005\syst,
+\end{equation}
+what is consistent with the \ac{SM} expectations. The resulting \CP asymmetry is shown in \cref{fig:sin2beta}
 \begin{figure}[tbp]
 	\centering
 	\includegraphics[width=0.6\textwidth]{03CPV/figs/InterferenceCPV.pdf}
