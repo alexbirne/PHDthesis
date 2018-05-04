@@ -19,12 +19,36 @@
 \setdefaultlanguage{english}
 \setotherlanguages{german}
 
-\usepackage[style=numeric-comp,sorting=none,backend=biber,giveninits=true]{biblatex}
-\DeclareFieldFormat[article]{title}{\enquote{#1},}
-\DeclareFieldFormat[report]{title}{\enquote{#1},}
-\DeclareFieldFormat[book]{title}{\enquote{#1},}
-\renewcommand*{\newunitpunct}{\addcomma\space}%Komma statt Punkt als trennzeichen zwischen autoren/titel
+\usepackage[style=numeric-comp,sorting=none,backend=biber,giveninits=true,doi=false]{biblatex}
+% Define fields for "article' entries"
+\DeclareFieldFormat[article]{title}{\emph{#1},}
+% Define fields for "report' entries"
+\DeclareFieldFormat[report]{title}{\emph{#1},}
+% Define fields for "book' entries"
+\DeclareFieldFormat[book]{title}{\emph{#1},}
+\DeclareFieldFormat[book]{edition}{\emph{#1th ed.},}
+
 \DefineBibliographyStrings{english}{andothers = {{et\:al\adddot}},}%et al statt u.a.
+\renewcommand*{\newunitpunct}{\addcomma\space}%Komma statt Punkt als trennzeichen zwischen autoren/titel
+%skipping the "in" before editing the journal
+\renewbibmacro{in:}{}
+% proper usage of "collaboration" field in arrticles
+\DeclareSourcemap{
+ \maps[datatype=bibtex,overwrite=true]{
+  \map{
+    \step[fieldsource=Collaboration, final=true]
+    \step[fieldset=usera, origfieldval, final=true]
+  }
+ }
+}
+
+\renewbibmacro*{author}{%
+  \iffieldundef{usera}{%
+    \printnames{author}%
+  }{%
+    \printfield{usera}, \printnames{author}%
+  }%
+}%
 \addbibresource{bibliography.bib}
 
 \usepackage{hyperref}
