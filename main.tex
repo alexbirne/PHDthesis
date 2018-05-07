@@ -22,6 +22,8 @@
 \usepackage[style=numeric-comp,sorting=none,backend=biber,giveninits=true,doi=false]{biblatex}
 % Define fields for "article' entries"
 \DeclareFieldFormat[article]{title}{\emph{#1},}
+\DeclareFieldFormat[article]{journaltitle}{#1}
+\DeclareFieldFormat[article]{volume}{\textbf{#1}}
 % Define fields for "report' entries"
 \DeclareFieldFormat[report]{title}{\emph{#1},}
 % Define fields for "book' entries"
