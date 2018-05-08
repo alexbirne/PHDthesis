@@ -24,17 +24,36 @@
 \DeclareFieldFormat[article]{title}{\emph{#1},}
 \DeclareFieldFormat[article]{journaltitle}{#1}
 \DeclareFieldFormat[article]{volume}{\textbf{#1}}
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat[article]{year}{(#1)\nopunct}
 % Define fields for "report' entries"
 \DeclareFieldFormat[report]{title}{\emph{#1},}
 % Define fields for "book' entries"
 \DeclareFieldFormat[book]{title}{\emph{#1},}
-\DeclareFieldFormat[book]{edition}{\emph{#1th ed.},}
+\DeclareFieldFormat[book]{edition}{\ifnum#1=1%
+                                    \emph{#1st ed\adddot}
+                                   \else \ifnum#1=2%
+                                           \emph{#1nd ed\adddot}
+                                         \else \ifnum#1=3%
+                                                 \emph{#1rd ed\adddot}
+                                               \else \emph{#1th ed\adddot} \fi \fi \fi}
 
 \DefineBibliographyStrings{english}{andothers = {{et\:al\adddot}},}%et al statt u.a.
-\renewcommand*{\newunitpunct}{\addcomma\space}%Komma statt Punkt als trennzeichen zwischen autoren/titel
-%skipping the "in" before editing the journal
+\renewcommand*{\newunitpunct}{\addcomma\space}  % Komma statt Punkt als defaulttrennzeichen zwischen Einträgen in Bibliography
+
+% remove comma after date/before 'identifier' of journal - therefore at the moment no comma before pages is visible...TODO
+\renewbibmacro{issue+date}{%
+  \printtext[parens]{%
+    \iffieldundef{issue}
+      {\usebibmacro{date}}
+      {\printfield{issue}%
+       \setunit*{\addspace}%
+       \usebibmacro{date}}}%
+  \nopunct\newunit}
+
+% skipping the "in" before editing the journal
 \renewbibmacro{in:}{}
-% proper usage of "collaboration" field in arrticles
+% proper usage of "collaboration" field in arrticles (therefore also the author bibmacro needs to be redefined below)
 \DeclareSourcemap{
  \maps[datatype=bibtex,overwrite=true]{
   \map{
@@ -43,7 +62,6 @@
   }
  }
 }
-
 \renewbibmacro*{author}{%
   \iffieldundef{usera}{%
     \printnames{author}%
@@ -51,8 +69,10 @@
     \printfield{usera}, \printnames{author}%
   }%
 }%
+% adding the bibliography file
 \addbibresource{bibliography.bib}
 
+\usepackage{url}
 \usepackage{hyperref}
 \hypersetup{
     pdfauthor = {Alex Birnkraut, alex.birnkraut@tu-dortmund.de},
