@@ -21,21 +21,23 @@ Consequently the \CP transformation of the initial and final states are defined 
 \end{aligned}
 \end{equation}
 
-In this chapter first the time evolution of neutral mesons by example of uncharged \B-mesons is described and then the three classes of \CP violation are discussed. More details on these topics can be found in Refs.~\cite{Branco:396964,Bigi:1295518}
+In this chapter first the time evolution of neutral mesons is described.
+Following this formalism is applied to the \Bz-\Bzb mixing and then the three classes of \CP violation are discussed.
+More details on these topics can be found in Refs.~\cite{Branco:396964,Bigi:1295518}
 
-\section[head={Time evolution of neutral \B-mesons},tocentry={Time evolution of neutral \B-mesons}]{Time evolution of neutral $\symbfsf{\B}$-mesons}
+\section[head={Time evolution of neutral mesons},tocentry={Time evolution of neutral mesons}]{Time evolution of neutral mesons}
 \label{sec:TimeEvolution}
 
 As previously described in \cref{sec:unitarityTriangle} for the quarks the mass eigenstates and the eigenstates of the weak interaction are not identical.
-The same applies for bound states of quarks like \B-mesons. Studying the system of a \Bz (\bquarkbar\dquark) and a \Bzb-meson
-(\bquark\dquarkbar), the most general description to determine the time evolution is the Schrödinger equation:
+The same applies for bound states of quarks like \B-mesons.
+Studying the system of a neutral particle \Paz and its antiparticle \Pazb, the most general description to determine the time evolution is the Schrödinger equation:
 \begin{equation}
-i\frac{d}{dt}\begin{pmatrix} \Bz \\ \Bzb \end{pmatrix} = H \begin{pmatrix} \Bz \\ \Bzb \end{pmatrix}
-=\left(M-\frac{i}{2}\Gamma\right)\begin{pmatrix} \Bz \\ \Bzb \end{pmatrix}, \label{eq:mixMatrix}
+i\frac{d}{dt}\begin{pmatrix} \Paz \\ \Pazb \end{pmatrix} = H \begin{pmatrix} \Paz \\ \Pazb \end{pmatrix}
+=\left(M-\frac{i}{2}\Gamma\right)\begin{pmatrix} \Paz \\ \Pazb \end{pmatrix}, \label{eq:mixMatrix}
 \end{equation}
 with $M$ and $H$ being 2x2 hermitian 2x2 matrices.
 Hence, the matrix $H$ is not hermitian and allows the \B mesons to decay and not just to oscillate.
-In possible transitions virtual intermediate states contribute to the matrix $M$ while real physical states to which \Bz and \Bzb decay contribute to the matrix $\Gamma$.
+In possible transitions virtual intermediate states contribute to the matrix $M$ while real physical states to which \Paz and \Pazb decay contribute to the matrix $\Gamma$.
 Furthermore, as due to the $CPT$ theorem particle and antiparticles have the same masses and decay widths the following constraints apply for the matrix elements:
 \begin{equation}
 \begin{aligned}
@@ -43,21 +45,14 @@ Furthermore, as due to the $CPT$ theorem particle and antiparticles have the sam
 &\Gamma_{11}=\Gamma_{22}\equiv\Gamma&&\Gamma_{12}=\Gamma_{21}^\ast&
 \end{aligned}
 \end{equation}
-Interpreting \Bz and \Bzb as two states distinguished by an internal quantum number $F$ the matrix elements can also be classified by certain types of transitions:
-transitions with $\Delta F=1$ are driven by the diagonal elements, while the off diagonal elements are describe with $\Delta F=2$.
-These $\Delta F=2$ processes describe so-called particle-antiparticle-oscillations.
-The Feynman graphs of lowest order for these oscillations are shown in \cref{fig:FeynmanMixing}.
-\begin{figure}[tbp]
-	\centering
-	\includestandalone{03CPV/figs/Bmixing_1}
-	\hspace{0.5cm}
-	\includestandalone{03CPV/figs/Bmixing_2}
-	\caption{Box diagrams of lowest order for the \Bz-\Bzb-oscillation. Both diagrams are dominated by the \tquark-quark \cite{Ellis:2016jkw}.}
-	\label{fig:FeynmanMixing}
-\end{figure}
+Interpreting \Paz and \Pazb as two states distinguished by an internal quantum number $N_\quark$ the matrix elements can also be classified by certain types of transitions:
+transitions with $\Delta N_\quark=1$ are driven by the diagonal elements, while the off diagonal elements are describe with $\Delta N_\quark=2$.
+These $\Delta N_\quark=2$ processes describe so-called particle-antiparticle-oscillations.
 
 To solve \cref{eq:mixMatrix} and infer the time evolution the matrix $H$ needs to be diagonalised to obtain the mass eigenstates and the corresponding eigenvalues.
-In the \Bz-meson system the mass eigenstates are denoted with $\B_H$ and $\B_L$ referring to the heavier and lighter eigenstate, respectively.
+These eigenstates can have different masses and lifetimes, however the absolute sign of the mass difference \dm or decay-width difference \DG has no physical meaning, as interchanging the two eigenstates would lead to $\dm\to-\dm$ and $\DG\to-\DG$.
+Instead only the relative sign between both quantities is of physical interest.
+With regard to the \Bz-meson system, where the eigenstates have quite different masses, in the following the mass eigenstates are denoted with $P_\text{H}$ and $P_\text{L}$, referring to the heavier and lighter eigenstate, respectively.
 Using
 \begin{equation}
 F=\sqrt{\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)\left(m_{12}^\ast-\frac{i}{2}\Gamma_{12}^\ast\right)}.
@@ -65,15 +60,15 @@ F=\sqrt{\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)\left(m_{12}^\ast-\frac{i}{2}\
 the eigenvalues can be expressed as
 \begin{equation}
 \begin{split}
-\mu_H &= m_H-\frac{i}{2}\GH = m + \mathcal{Re}\left(F\right)-\frac{i}{2}\left(\Gamma-2\mathcal{Im}\left(F\right)\right)\\
-\mu_L &= m_L-\frac{i}{2}\GL = m - \mathcal{Re}\left(F\right)-\frac{i}{2}\left(\Gamma+2\mathcal{Im}\left(F\right)\right)\label{eq:Mass_eigenvalues}
+\mu_\text{H} &= m_\text{H}-\frac{i}{2}\GH = m + \mathcal{Re}\left(F\right)-\frac{i}{2}\left(\Gamma-2\mathcal{Im}\left(F\right)\right)\\
+\mu_\text{L} &= m_\text{L}-\frac{i}{2}\GL = m - \mathcal{Re}\left(F\right)-\frac{i}{2}\left(\Gamma+2\mathcal{Im}\left(F\right)\right)\label{eq:Mass_eigenvalues}
 \end{split}
 \end{equation}
 with the eigenstates
 \begin{equation}
 \begin{split}
-\left|B_H\right>&= p\left|\Bz\right>+q\left|\Bzb\right>\\
-\left|B_L\right>&= p\left|\Bz\right>-q\left|\Bzb\right>.\label{eq:Mass_eigenstates}
+\left|B_\text{H}\right>&= p\left|\Paz\right>+q\left|\Pazb\right>\\
+\left|B_\text{L}\right>&= p\left|\Paz\right>-q\left|\Pazb\right>.\label{eq:Mass_eigenstates}
 \end{split}
 \end{equation}
 The parameters $p$ and $q$ are constrained to fulfil $\left|p\right|^2+\left|q\right|^2=1$ by construction and their ratio $\frac{q}{p}$ can be expressed in terms of the matrix elements:
@@ -83,32 +78,113 @@ The parameters $p$ and $q$ are constrained to fulfil $\left|p\right|^2+\left|q\r
 \end{equation}
 Using the mass eigenvalues from \cref{eq:Mass_eigenvalues} and mass eigenstates from \cref{eq:Mass_eigenstates} and the Schrödinger equation can be rewritten as
 \begin{equation}
-i\frac{d}{dt}\begin{pmatrix} B_L \\ B_H \end{pmatrix} = \begin{pmatrix} \mu_L & 0 \\ 0 & \mu_H \end{pmatrix}\begin{pmatrix} B_L \\ B_H \end{pmatrix},
+i\frac{d}{dt}\begin{pmatrix} P_\text{L} \\ P_\text{H} \end{pmatrix} = \begin{pmatrix} \mu_\text{L} & 0 \\ 0 & \mu_\text{H} \end{pmatrix}\begin{pmatrix} P_\text{L} \\ P_\text{H} \end{pmatrix},
 \end{equation}
-which can be easily solved and leads to the time evolution of the mass eigenstates with simple exponential functions $B_{L,H}=e^{-i\mu_{L,H}t}B_{L,H}$.
+which can be easily solved and leads to the time evolution of the mass eigenstates with simple exponential functions $P_\text{L,H}=e^{-i\mu_\text{L,H}t}P_\text{L,H}$.
 Inverting \cref{eq:Mass_eigenstates} the time evolution for the flavour eigenstates follows straightforward:
 \begin{equation}
 \begin{split}
-\left|\Bz\!\left(t\right)\right>&=\left|\Bz\right>g_+-\frac{q}{p}\left|\Bzb\right>g_-\\
-\left|\Bzb\!\left(t\right)\right>&=\left|\Bzb\right>g_--\frac{p}{q}\left|\Bz\right>g_+ \label{eq:timeEvolution}
+\left|\Paz\!\left(t\right)\right>&=\left|\Paz\right>g_+-\frac{q}{p}\left|\Pazb\right>g_-\\
+\left|\Pazb\!\left(t\right)\right>&=\left|\Pazb\right>g_--\frac{p}{q}\left|\Paz\right>g_+ \label{eq:timeEvolution}
 \end{split}
 \end{equation}
-with $g_\pm=\frac{1}{2}\left(e^{-i\mu_Ht}\pm e^{-i\mu_Lt}\right)$.
+with $g_\pm=\frac{1}{2}\left(e^{-i\mu_\text{H}t}\pm e^{-i\mu_\text{L}t}\right)$.
 The associated masses and decay widths of the eigenstates of the weak interaction can be written as
 \begin{equation}
-m=\frac{m_L+m_H}{2}\hspace{0.5cm}\text{and}\hspace{0.5cm}\Gamma=\frac{\GL+\GH}{2}.
+m=\frac{m_\text{L}+m_\text{H}}{2}\hspace{0.5cm}\text{and}\hspace{0.5cm}\Gamma=\frac{\GL+\GH}{2}.
 \end{equation}
 The corresponding differences will be referred to as
 \begin{equation}
-\dm=m_H-m_L=2\mathcal{Re}\left(F\right)\hspace{0.5cm}\text{and}\hspace{0.5cm}\DG=\GL-\GH=4\mathcal{Im}\left(F\right).
+\dm=m_\text{H}-m_\text{L}=2\mathcal{Re}\left(F\right)\hspace{0.5cm}\text{and}\hspace{0.5cm}\DG=\GL-\GH=4\mathcal{Im}\left(F\right),
 \end{equation}
+to match the convention used by \ac{HFLAV}~\cite{HFLAV2016}.
+
+\section[head={\Bz-\Bzb mixing},tocentry={\Bz-\Bzb mixing}]{$\symbfsf{\Bz}$-$\symbfsf{\Bzb}$ mixing}
+\label{sec:BBbarMixing}
+
+As described above the mixing of the flavour eigenstates \Bq and \Bqb are characterised by mass difference \dm, the decay-width difference \DG and the ratio $\nicefrac{q}{p}$ the paramters.
+All of these quantities are connected to the off-diagonal matrix elements $m_{12}-\nicefrac{i}{2}\Gamma_{12}$, hence $m_{12}$ and $\Gamma_{12}$ must be calculated to further probe mixing phenomena.
+In the \ac{SM} transitions from \Bq to \Bqb mesons can only happen through $\Delta F=2$ which can be further separated into transitions happening at quark-level (short-distance transitions) and transitions at hadron-level (long-distance transitions).
+
+In the \ac{SM} long-distance transitions are expected to be negligible in the \Bq-\Bqb system due to the large mass of the \bquark-quark.
+
+Transitios at quark-level, at lowest order, can be represented by Feynman-diagrams as shown in \cref{fig:FeynmanMixing}.
+\begin{figure}[tbp]
+	\centering
+	\includestandalone{03CPV/figs/Bmixing_1}
+	\hspace{0.5cm}
+	\includestandalone{03CPV/figs/Bmixing_2}
+	\caption{Box diagrams of lowest order for the \Bz-\Bzb-oscillation. Both diagrams are dominated by the \tquark-quark \cite{Ellis:2016jkw}.}
+	\label{fig:FeynmanMixing}
+\end{figure}
+The first corresponding matrix element $m_{12}$ can be expressed as
+\begin{equation}
+m_{12}=-\frac{G_{\text{F}}^2M_\W^2}{12\pi^2}f^2m_{\Bq}B\mathcal{F}^\ast \label{eq:monetwo}
+\end{equation}
+where $G_{\text{F}}$ is the Fermi constant, $M_\W$ the \W-boson mass, $f_K$ the weak interaction constant and $B$ the \emph{bag} parameter, which describes strong interaction effects~\cite{Branco:396964}.
+The quantity $\mathcal{F}$ sums over the different box diagrams, containg a \uquark-, \cquark- or \tquark-quark, respectively.
+Using the short notation $\lambda_i=V^{*}_{{\kern -0.1em}i\bquark}V_{{\kern -0.1em}i\quark}$ it can be written as
+\begin{equation}
+\mathcal{F}=\eta_1\lambda_\cquark^2S_0\left(x_\cquark\right)+\eta_2\lambda_\tquark^2S_0\left(x_\tquark\right)
++2\eta_3\lambda_{\cquark}\lambda_{\tquark}S_0\left(x_\cquark,x_\tquark\right).
+\end{equation}
+Here $\eta_i$ are QCD correction factors and $S_0$ are the Inami-Lin functions~\cite{Inami:1980fz}, which go with the up-type-quark masses through the ratio $x_\quark\equiv\nicefrac{m_\quark^2}{m_\W^2}$.
+In case of $\quark=\dquark$ both $\lambda_\cquark$ and $\lambda_\tquark$ are of same magnitude $\lambda^3$, in case of $\quark=\squark$ both $\lambda_\cquark$ and $\lambda_\tquark$ are of same magnitude $\lambda^2$.
+Hence the summand containing $S_0\left(x_\tquark\right)$ is dominant and with the replacement $\eta_2=\eta_\Bq$ one can approximate
+\begin{equation}
+\mathcal{F}\approx\eta_\Bq\lambda_\tquark^2S_0\left(x_\tquark\right).
+\end{equation}
+
+The second matrix element $\Gamma_{12}$ corresponding to the short-distance transitions is given by
+\begin{equation}
+\Gamma_{12}=\sum_f\left<\,\f\,\Big|T\Big|\Bq\right>^\ast\left<\,\f\,\Big|T\Big|\Bqb\right>.\label{eq:gamma12}
+\end{equation}
+Here \f describes the possible physical states to which \Bq and \Bqb decay.
+As the mass of the \quark-quark is much larger than the mass of any \B meson, \Bq and \Bqb cannot decay in any \tquark-hadron.
+Therefore the contributing diagrams to \cref{eq:gamma12} must be dominated by the available mass, \ie by $m_\Bq$.
+
+Consequently the off-diagonal matrix elements $m_{12}-\nicefrac{i}{2}\Gamma_{12}$ are clearly dominated by $m_{12}$ as
+\begin{equation}
+\left|\frac{\Gamma_{12}}{m_{12}}\right|\propto\frac{m_\Bq^2}{m_\tquark^2}\propto10^{-3}.\label{eq:m12vsG12}
+\end{equation}
+This can be used to derive a prediction about relative size of \DG compared to \dm.
+The difference between the mass eigenvalues $\mu_\text{H}$ and $\mu_\text{L}$ can be expressed as
+\begin{equation}
+\Delta\mu=\mu_\text{H}-\mu_\text{L}=\dm-\frac{i}{2}\DG=2F.
+\end{equation}
+Squaring this and separating the real and imaginary parts leads to
+\begin{equation}
+\begin{aligned}
+\dm^2-\frac{1}{4}\DG^{\kern 3.4pt2}&=4\left|m_{12}\right|^2-\left|\Gamma_{12}\right|^2\\
+\dm\DG&=4\mathcal{Re}\left(m_{12}^\ast\Gamma_{12}\right).
+\end{aligned}
+\end{equation}
+Taking into account the GIM-enhancement of $m_{12}$ and the bound on $\Gamma_{12}$ to be of order $m_\Bq$ (\cref{eq:m12vsG12}) this can be simplied to
+\begin{equation}
+\begin{aligned}
+\dm&\approx2\left|m_{12}\right|\\
+\DG&\approx\frac{2\mathcal{Re}\left(m_{12}^\ast\Gamma_{12}\right)}{\left|m_{12}\right|},
+\end{aligned}
+\end{equation}
+what shows that for the B-system the decay width difference is expected to be much smaller than the mass difference.
+
+Applying the reasoning from \cref{eq:m12vsG12} further the ratio $\nicefrac{q}{p}$ it can be expressed as
+\begin{equation}
+\frac{q}{p}\approx\frac{\left|m_{12}\right|}{m_{12}}=\frac{m_{12}^\ast}{\left|m_{12}\right|},
+\end{equation}
+\ie the quantity $\nicefrac{q}{p}$ is a pure phase.
+Using \cref{eq:monetwo} the ratio can be connected to the CKM matrix elements:
+\begin{equation}
+\frac{q}{p}\approx-\frac{\Vtbst V_{\tquark\quark}}{\Vtb V_{\tquark\quark}^\ast}.
+\end{equation}
+Here the CKM combination $\Vtbst V_{\tquark\quark}$ appears because the box diagrams for $m_{12}$ shown in \cref{fig:FeynmanMixing} are dominated by the top-quark contribution as explained above.
 
 \section[head={Classes of \CP violation},tocentry={Classes of \CP violation}]{Classes of $\symbfsf{C{}P}$ violation}
 \label{sec:CPVClasses}
 
 Depending on the type of transition in which \CP violation occurs, its manifestation is different, yielding in three classes.
-Transitions with purely $\Delta F=1$ are affected by the so-called direct \CP violation, in transitions with $\Delta F=2$ \CP violation in mixing can potentially be observed.
-Transitions affected by both $\Delta F=1$ dynamics and $\Delta F=2$ dynamics can be additionally affected by the so-called interference \CP violation.
+Transitions with purely $\Delta N_\quark=1$ are affected by the so-called direct \CP violation, in transitions with $\Delta N_\quark=2$ \CP violation in mixing can potentially be observed.
+Transitions affected by both $\Delta N_\quark=1$ dynamics and $\Delta N_\quark=2$ dynamics can be additionally affected by the so-called interference \CP violation.
 Using the following notation for the decay amplitudes
 \begin{equation}
 \begin{split}
