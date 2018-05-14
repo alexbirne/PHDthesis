@@ -45,17 +45,32 @@ To measuring \gamma in interference \CP violation on first glimpse the decay $\B
 As $\rho\KS$ is a \CP eigenstate only the parameter \Lf has to be calculated using the amplitudes
 \begin{equation}
 \begin{aligned}
-\Af&=\left<\rho\KS\left|T\right|\Bs\right>=-\frac{1}{2q_{\kaon}}\left<\rho\Kzb\left|T\right|\Bs\right>\\
-\Abarf&=\left<\rho\KS\left|T\right|\Bsb\right>=\frac{1}{2p_{\kaon}}\left<\rho\Kz\left|T\right|\Bsb\right>
+\Af&=\left<\rho\KS\left|T\right|\Bs\right>=-\frac{1}{2q_{\kaon}}\left<\rho\Kzb\left|T\right|\Bs\right>=-\frac{1}{2q_{\kaon}}\Vubst\Vud\\
+\Abarf&=\left<\rho\KS\left|T\right|\Bsb\right>=\frac{1}{2p_{\kaon}}\left<\rho\Kz\left|T\right|\Bsb\right>=\frac{1}{2p_{\kaon}}\Vub\Vudst
 \end{aligned}
 \end{equation}
 where $q_{\kaon}$ and $p_{\kaon}$ are the same mixing parameters for the neutral kaon system as shwon in \cref{eq:qoverp} for the \B-meson system.
-Using $\nicefrac{q_{\Bs}}{p_{\Bs}}=\nicefrac{\Vtbst\Vts}{\Vtb\Vtsst}$ the parameter \Lf can be expressed as
+Using $\nicefrac{q_{\kaon}}{p_{\kaon}}=\nicefrac{\Vcsst\Vcd}{\Vcs\Vcdst}$ the parameter \Lf can be calculated as
 \begin{equation}
 \Lf=-\frac{q_{\kaon}}{p_{\kaon}}\frac{q}{p}\frac{\left<\rho\Kz\left|T\right|\Bsb\right>}{\left<\rho\Kzb\left|T\right|\Bs\right>}
-=-\frac{\Vcsst\Vcd}{\Vcs\Vcdst}\frac{\Vtbst\Vts}{\Vtb\Vtsst}\frac{\Vub\Vudst}{\Vubst\Vud}
+=-\frac{\Vcsst\Vcd}{\Vcs\Vcdst}\frac{\Vtbst\Vts}{\Vtb\Vtsst}\frac{\Vub\Vudst}{\Vubst\Vud}.
 \end{equation}
-However up to date \CP violation has only been detected in the quark sector and therefore strong interactions are unavoidable.
+With the CKM matrix developed up to third order in the parameter $\lambda$ (see \cref{eq:CKMmatrix}) this simplifies to a pure phase
+\begin{equation}
+\Lf=e^{-2i\gamma}
+\end{equation}
+and could provide a good candidate to measure the CKM angle $\gamma$.
+
+Though, up to date \CP violation has only been detected in the quark sector and therefore strong interactions are unavoidable.
+This means that beside tree-level diagrams there are also gluonic penguins, what complicates most analysis as these diagrams usually carry a weak phase different from the one in the tree-level diagram.
+Additionally the hadronic matrix elements cannot be calculated reliably, resulting in large uncertainties in the determination of the sides and angles of the unitarity triangle.
+To understand the effect of an additional weak phase contributing, one can consider two weak phases contributing to the transitions $\Af$ and $\Abarf$:
+\begin{equation}
+\begin{aligned}
+\Af&=A_1e^{i\left(\Phi_{A_1}+\delta_1\right)}+A_2e^{i\left(\Phi_{A_2}+\delta_2\right)}\\
+\Abarf&=\eta_f\left[A_1e^{i\left(-\Phi_{A_1}+\delta_1\right)}+A_2e^{i\left(-\Phi_{A_2}+\delta_2\right)}\right]
+\end{aligned}
+\end{equation}
 
 
 
