@@ -1,0 +1,29 @@
+\documentclass[preview=true, border=10pt]{standalone}
+
+\usepackage[compat=1.1.0]{tikz-feynman}
+
+\newcommand{\BsRhoKSTreeSize}{6.4}
+
+\begin{document}
+	\begin{tikzpicture}
+		\begin{feynman}
+			\vertex (a1) {\small$\overline b$};
+			\vertex[right=\BsRhoKSTreeSize*0.37 cm of a1] (a2);
+			\vertex[right=\BsRhoKSTreeSize*0.37 cm of a2] (a3) {\small$\overline u$};
+			\vertex[below=\BsRhoKSTreeSize*0.34 cm of a1] (b1) {\small$s$};
+			\vertex[below=\BsRhoKSTreeSize*0.34 cm of a3] (b2) {\small$s$};
+			\vertex[below=\BsRhoKSTreeSize*0.12 cm of a3] (c1) {\small$u$};
+			\vertex[below=\BsRhoKSTreeSize*0.10 cm of c1] (c3) {\small$\overline d$};
+			\vertex at ($(c1)!0.5!(c3) - (\BsRhoKSTreeSize*0.25 cm, 0)$) (c2);
+			\diagram* {
+			(a3) -- [plain] (a2) -- [plain] (a1),
+			(b1) -- [plain] (b2),
+			(c3) -- [plain] (c2) -- [plain] (c1),
+			(a2) -- [boson, edge label'={\small$W^{+}$}] (c2),
+			};
+			\draw [decoration={brace}, decorate] (b1.south west) -- (a1.north west) node [pos=0.5, left] {\small$B_{s}^{0}$};
+			\draw [decoration={brace}, decorate] (c3.north east) -- (b2.south east) node [pos=0.5, right] {\small$K_{\mathrm{S}}$};
+			\draw [decoration={brace}, decorate] (a3.north east) -- (c1.south east) node [pos=0.5, right] {\small$\rho$};
+		\end{feynman}
+	\end{tikzpicture}
+\end{document}
