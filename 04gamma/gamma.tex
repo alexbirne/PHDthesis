@@ -23,17 +23,6 @@ Then the effect of \CP violation in the decay mode \BdToDpi is described in \cre
 \section[head={Accessing the angle $\gamma$},tocentry={Accessing the angle $\gamma$}]{Accessing the angle $\symbfsf{\gamma}$}
 \label{sec:accessGamma}
 
-Ablauf:
-\begin{enumerate}
-	\item Gamma schlechtest bekannbte Winkelgemessen, phase des CKM Matrixelements Vub, messbar in b->c/b->u transitions
-	\item einzelmessungen liefern recht schlechte sensitivität, daher stragegie in verschiedenen Kanälen zu messen und Ergebnisse zu kombinieren
-	\item im B System zwei Arten CP Verletzung, direkte und interferenz
-	\item Messung in direkt CP verletzenden Zerfällen wie XXX in GLW, GGSZ, ...
-	\item Messung in interferenz Kanälen: bietet sich Bs->rho KS an, allerdings Pinguin Pollution gleich gross wie Tree Level beitrag (Branco Lavoura Penguin Pollution)
-	\item Messung in Kanälen mit Endzustand nicht CP Eigenzustand woie Bs2DsK und Bd2Dpi
-\end{enumerate}
-
-
 As mentioned above the angle $\gamma=\arg\left(-\Vud\Vcb\Vubst\Vcdst\right)$ is the least well know angle in the unitarity triangle.
 It is proportional to the phase of the matrix element \Vub and can consequently be determined by exploiting interference effects between the Cabibbo favoured transitions from \bquark's to \cquark's and the Cabibbo suppressed $\bquark\to\uquark$ transitions.
 Due to this in principle it can be measured using only tree-level decays.
@@ -90,12 +79,26 @@ where $\delta_{\Phi_1}$ is defined by
 \begin{equation}
 \tan\left(\delta_{\Phi_1}\right)=\frac{r\sin\left(\Phi_1-\Phi_2\right)}{1+r\cos\left(\Phi_1-\Phi_2\right)}.
 \end{equation}
-In the case of $\Bs\to\rho\KS$
+In the case of $\Bs\to\rho\KS$ the $\rho$ in the finalstate has a \uquark\uquarkbar and a \dquark\dquarkbar component.
+This means that alongside the spectator \squark-quark not only the tree level transition $\bquark\to\uquark\uquarkbar\dquarkbar$ but also the gluonic penguin transition $\bquark\to\dquark\dquarkbar\dquarkbar$ is possible (see \cref{fig:Bs2RhoKS}).
+\begin{figure}[tbp]
+	\centering
+	\includestandalone{03CPV/figs/Bmixing_1}
+	\hspace{0.5cm}
+	\includestandalone{03CPV/figs/Bmixing_2}
+	\caption{Tree-level diagram of $\Bs\to\rho\KS$ (left) and the dominantly contributing gluonic penguin (right). \cite{Ellis:2016jkw}.}
+	\label{fig:Bs2RhoKS}
+\end{figure}
+For both diagrams the CKM-factor is $\propto A\lambda^3$, but the weak phases are $\gamma$ and $beta$ for the tree-level diagram and the penguin, respectively.
+
+Due to this penguin pollution the angle $\gamma$ cannot be measured in interference \CP violation in a decay to a \CP eigenstate.
+Instead decays into non-\CP-eigenstates as \BsToDsK and \BdToDpi are needed.
+These require a study of both finalstates separately and are hence more demanding as \eg detection asymmetries between the finalstates need to be taken into account (see \cref{sec:cpvInBd2Dpi}).
 
 \section[head={Measuring the angle $\gamma$ in charged \B decays},tocentry={Measuring the angle $\gamma$ in charged \B decays}]{Measuring the angle $\symbfsf{\gamma}$ in charged $\symbfsf{\B}$ decays}
 \label{sec:gammainChargedModes}
 
-\Blindtext
+Here I'm going to write about the GLW and ADS methods
 
 \section[head={\CP violation in $\Bz\to\Dm\pip$},tocentry={\CP violation in $\Bz\to\Dm\pip$}]{$\symbfsf{\CP}$ violation in $\symbfsf{\Bz\to\Dm\pip}$}
 \label{sec:cpvInBd2Dpi}
