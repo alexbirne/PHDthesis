@@ -71,8 +71,26 @@ To understand the effect of an additional weak phase contributing, one can consi
 \Abarf&=\eta_f\left[A_1e^{i\left(-\Phi_{A_1}+\delta_1\right)}+A_2e^{i\left(-\Phi_{A_2}+\delta_2\right)}\right]
 \end{aligned}
 \end{equation}
+As shown in \cref{eq:qoverPPurePhase} the quantity $\nicefrac{q}{p}$ is a pure phase and hence one can write $\nicefrac{q}{p}=-e^{2i\Phi_\text{M}}$, what leads to
+\begin{equation}
+\Lf=-\eta_fe^{2i\Phi_\text{M}}\frac{ A_1 e^{i\left(-\Phi_{A_1}+\delta_1\right)} + A_2 e^{i\left(-\Phi_{A_2}+\delta_2\right)}}{A_1e^{i\left(\Phi_{A_1}+\delta_1\right)}+A_2e^{i\left(\Phi_{A_2}+\delta_2\right)}}
+\end{equation}
+The phases $\Phi_{A_1}$, $\Phi_{A_2}$ and $\Phi_\text{M}$ are not rephasing-invariant, but the relative phases $\Phi_1\equiv\Phi_{A_1}-\Phi_\text{M}$, $\Phi_1\equiv\Phi_{A_2}-\Phi_\text{M}$ and $\Delta=\delta_2-\delta_1$ can be measured. Therefore one finds
+\begin{align}
+\Lf&=-\eta_fe^{-2i\Phi_1}\frac{1+re^{i\left(\Delta-\Phi_2+\Phi_1\right)}}{1+re^{i\left(\Delta+\Phi_2-\Phi_1\right)}}\nonumber\\
+&\approx-\eta_fe^{-2i\Phi_1}\left[1+2r\sin\Delta\sin\left(\Phi_2-\Phi_1\right)-2ir\cos\Delta\sin\left(\Phi_2-\Phi_1\right)\right],
+\end{align}
+where the approximation that $r=\nicefrac{A_2}{A_1}$ is small was used.
 
-
+Now one finds, that in case a second penguin with a different weak phase from that of the tree-level diagram contributes the parameter and $r\neq0$, \Lf does not allow to measure a single weak phase. Though even in the case of vanishing final state interactions, \ie $\Delta=0$, \Lf can just be written as
+\begin{equation}
+\Lf=-\eta_fe^{-2i\left(\Phi_1-\delta_{\Phi_1}\right)}
+\end{equation}
+where $\delta_{\Phi_1}$ is defined by
+\begin{equation}
+\tan\left(\delta_{\Phi_1}\right)=\frac{r\sin\left(\Phi_1-\Phi_2\right)}{1+r\cos\left(\Phi_1-\Phi_2\right)}.
+\end{equation}
+In the case of $\Bs\to\rho\KS$
 
 \section[head={Measuring the angle $\gamma$ in charged \B decays},tocentry={Measuring the angle $\gamma$ in charged \B decays}]{Measuring the angle $\symbfsf{\gamma}$ in charged $\symbfsf{\B}$ decays}
 \label{sec:gammainChargedModes}
