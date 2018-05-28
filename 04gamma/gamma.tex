@@ -109,31 +109,79 @@ The initial \Bpm meson decays into \Dz\Kpm or \Dzb\Kpm and subsequently the \D m
 Therefore the amplitudes for the decay of the \B meson can be defined as
 \begin{equation}
 \begin{aligned}
-A\left(\Bp\to\Dz\Kp\right)&=\Vubst\Vcs=Ae^{i\left(\delta+\gamma\right)}\\
-A\left(\Bp\to\Dzb\Kp\right)&=\Vcbst\Vus=\overline{\kern -1.0pt A\kern -1.0pt}\,e^{i\left(\overline{\delta}\right)}
+A\!\left(\Bp\!\to\Dz\Kp\right)&=\Vubst\Vcs=Ae^{i\left(\delta+\gamma\right)}\\
+A\!\left(\Bp\!\to\Dzb\Kp\right)&=\Vcbst\Vus=\overline{\kern -1.0pt A\kern -1.0pt}\,e^{i\left(\overline{\delta}\right)}
 \end{aligned}
 \end{equation}
 where the \emph{weak} phase was directly idenitified as $\gamma$, $\delta$ and $\overline{\delta}$ are the \emph{strong} phases and $A$ and $\overline{\kern -1.0pt A\kern -1.0pt}$ are the moduli of the amplitudes.
 For the \D-meson decay the ampltiudes can be defined accordingly as
 \begin{equation}
 \begin{aligned}
-A\left(\Dz\to\f\right)&=A_De^{i\left(\delta_D\right)}\\
-A\left(\Dzb\to\f\right)&=\overline{\kern -1.0pt A\kern -1.0pt}_D\,e^{i\left(\overline{\delta}_D\right)}.
+A\!\left(\Dz\!\to\f\right)&=A_De^{i\left(\delta_D\right)}\\
+A\!\left(\Dzb\!\to\f\right)&=\overline{\kern -1.0pt A\kern -1.0pt}_D\,e^{i\left(\overline{\delta}_D\right)}.
 \end{aligned}
 \end{equation}
-Hence, the transition of $\Bp\to\f$ has two contributing amplitudes, which produce an interference term in the total decay rate
+Hence, the transition of $\Bp\to\f$ has two contributing amplitudes, which produce an interference term containing $\gamma$ in the total decay rate
 \begin{equation}
-\left|A\left(\Bp\to\f\,\Kp\right)\right|^2=\overline{\kern -1.0pt A\kern -1.0pt}{}^2A_D^2+A^2\overline{\kern -1.0pt A\kern -1.0pt}{}_D^2+2\,\overline{\kern -1.0pt A\kern -1.0pt}{}^2A_D^2A^2\overline{\kern -1.0pt A\kern -1.0pt}{}_D^2\cos\left(\gamma+\Delta+\Delta_D\right)
+\left|A\!\left(\Bp\!\to\f\,\Kp\right)\right|^2=A^2\overline{\kern -1.0pt A\kern -1.0pt}{}_D^2\left(1+r_\B^2r_\D^2+2\,r_\B r_\D\cos\left(\Delta+\Delta_\D+\gamma\right)\right)\label{eq:totDecRateChargedB}
 \end{equation}
-where the short notation $\Delta=\overline{\delta}-\delta$ and $\Delta_D=\delta_D-\overline{\delta}_D$ were used.
+where the short notations $r_\B=\nicefrac{\overline{\kern -1.0pt A\kern -1.0pt}}{A}$, $r_\D=\nicefrac{A_\D}{\overline{\kern -1.0pt A\kern -1.0pt}_\D}$, $\Delta=\overline{\delta}-\delta$ and $\Delta_\D=\delta_\D-\overline{\delta}_\D$ were used.
+To obtain the total decay rate for the \Bm decay just the sign of $\gamma$ must be reversed.
 
-The first method exploiting decays of charged \B mesons is the so-called GLW method \cite{GLW_1, GLW_2}.
-It should be noted that the same procedure can be applied to decays as $\Bpm\to\D\pipm$.
-% In \cref{sec:gammainChargedModes} methods for decays which suffer direct \CP violation as the $\Bu\to\Dz\Kp$ or the $\Bu\to\Dz\Kp\pip\pim$ as the GLW and the GGSZ method will be discussed.
+The first method exploiting this interference is the so-called GLW method \cite{GLW_1, GLW_2}.
+The ideas is simply to reconstruct the intermediate \D meson in \CP eigenstates such as \Kp\Km (\CP-even) or \KS\piz (\CP-odd).
+The consequences of such choice are that the unknowns from the \D decay can be reduced because $r_\D=1$ and $\Delta_\D=0$, so the total decay rates for \eg a \CP-even \D decay can be written as
+\begin{equation}
+\left|A\!\left(\Bpm\!\to f_{\CP}\Kpm\right)\right|^2=A^2A_\D^2\left(1+r_\B^2+2r_\B\cos\left(\Delta\pm\gamma\right)\right).\label{eq:totDecRateGLW}
+\end{equation}
+Experimentally for the \CP-even final state a \CP asymmetry
+\begin{equation}
+A_{\CP}^{\text{GLW}}=\frac{\left|A\!\left(\Bm\!\to f_{\CP}\Km\right)\right|^2-\left|A\!\left(\Bp\!\to f_{\CP}\Kp\right)\right|^2}{\left|A\!\left(\Bm\!\to f_{\CP}\Km\right)\right|^2+\left|A\!\left(\Bp\!\to f_{\CP}\Kp\right)\right|^2}=\frac{2r_\B\sin\left(\Delta\right)\sin\left(\gamma\right)}{1+r_\B^2+2r_\B\cos\left(\Delta\pm\gamma\right)}\label{eq:ACP_GLW}
+\end{equation}
+and a \CP ratio
+\begin{equation}
+R_{\CP}^{\text{GLW}}=\frac{\left|A\!\left(\Bm\!\to f_{\CP}\Km\right)\right|^2+\left|A\!\left(\Bp\!\to f_{\CP}\Kp\right)\right|^2}{2\left|A\!\left(\Bm\!\to\Dz\Km\right)\right|^2}=1+r_\B^2+2r_\B\cos\left(\Delta\right)\cos\left(\gamma\right)\label{eq:RCP_GLW}
+\end{equation}
+can be measured. If the \D meson in the denominator of $R_{\CP}^{\text{GLW}}$ is reconstructed in a hadronic final state as \kaon\pion decays proceeding via a \Dz or a \Dzb cannot distinguished as both decay into \Kp\pim and \Km\pip. However, this can be avoided by measuring instead the double ratio
+\begin{equation}
+R_{+}^{\text{GLW}}=\frac{\left|A\!\left(\Bm\!\to f_{\CP}\Km\right)\right|^2+\left|A\!\left(\Bp\!\to f_{\CP}\Kp\right)\right|^2}{\left|A\!\left(\Bm\!\to f_{\CP}\pim\right)\right|^2+\left|A\!\left(\Bp\!\to f_{\CP}\pip\right)\right|^2}\times\frac{1}{R_{\kaon/\pion}}
+\end{equation}
+with
+\begin{equation}
+R_{\kaon/\pion}=\frac{\left|A\!\left(\Bm\!\to \D\left(\to\Km\pip\right)\Km\right)\right|^2+\left|A\!\left(\Bp\!\to \D\left(\to\Kp\pim\right)\Kp\right)\right|^2}{\left|A\!\left(\Bm\!\to \D\left(\to\Km\pip\right)\pim\right)\right|^2+\left|A\!\left(\Bp\!\to \D\left(\to\Kp\pim\right)\pip\right)\right|^2}.
+\end{equation}
+This double ratio $R_{+}^{\text{GLW}}$ is identical to $R_{\CP}^{\text{GLW}}$ when neglecting all terms proportional to $r_\D$ or $r_{\B_\pion}=\nicefrac{A\!\left(\Bp\!\to\Dz\pip\right)}{A\!\left(\Bm\!\to\Dz\pim\right)}$.
+However the GLW method has two disadvantages: Firstly, the interference term is proportional to $r_\B$ which is of order \SI{10}{\percent} and therefore decreases the sensitivity on $\gamma$.
+Second, there is not only one solution for $\gamma$, but there is a eight-fold discrete ambiguity due to the fact that $\gamma$ and $\Delta$ always appear together in the product of two sine or cosine functions as in \cref{eq:ACP_GLW} and \cref{eq:RCP_GLW}.
+
+The second method directly counteracts to the first disadvantage of the GLW method.
+Instead of using decays into \CP-eigenstates of the \D meson, the \D is reconstructed in a final state for which $\Dz\!\to\f$ is suppressed relative to $\Dzb\!\to\f$ (\eg \f could be \Km\pip) \cite{ADS}.
+This enhances the interference term to be of the same order as the other ones, but on the other hand the $r_\D$ and $\Delta_\D$ do not cancel as before.
+Hence, to determine $\gamma$ from similar asymmetries and ratios as for the GLW method external input for both quantities is needed.
+
+The last method described in this section using charged \B decays is probably the most sophisticated one.
+The GGSZ method makes use of multibody \D decays.
+This requires an analysis of the Dalitz plane, but on the other hand $\gamma$ can be extracted without the disadvantages of the GLW or the ADS method.
+The basic idea however is the same as before, just that the strong phase originating from the \D decay varies over the Dalitz plane.
+Furthermore, the interference term can be expressed in the form $\cos\!\left(\phi\right)c_i\pm\sin\!\left(\phi\right)s_i$, where $\phi$ is the difference (sum) of the \emph{strong} phase $\delta_\B$ originating from the \Bm (\Bp) decay and $\gamma$.
+The coefficients $c_i$ and $s_i$ contain the \emph{strong} phases from the \D decay.
+Using $k$ pairs of bins which are symmetrically around the $m_{\KS\pim}\leftrightarrow m_{\KS\pip}$ line in the Dalitz plot, and exploiting the symmetry of the $c_i$ and $s_i$ around this line leads to $4k$ equations.
+This equations are related to the $2k+3$ unknowns $c_i$, $s_i$, $r_\B$, $\delta_\B$ and $\gamma$, so that a partition of the \D meson Dalitz plot into four or more bins allows to determine all unknowns.
+
+Finally it is important to note, that the described techniques can be applied as well to any decays of type $\Bpm\!\to\D X^{\pm}$ where X is any state with the flavour of a \Kpm.
+
+When exploiting decays of uncharged \B mesons such as \BsToDsK or \BdToDpi to determine the angle $\gamma$ the procedure is different.
+This type of decays is only affected by interference \CP violation and therefore a time-dependent analysis is needed to achieve sensitivity at $\gamma$.
+The basic formalism is already described in \cref{sec:formulaeCPV}.
+Due to the \CP conservation in the decay, $\Cfbar=-\Cf$ and the number of independent coefficients as given in \cref{eq:cpcoeff} and \cref{eq:cpcoeffbar} is reduced to five.
+Furthermore the \CP coefficient \Cf contains the ratio $r_\B$, while via the coefficients \Sf, \Sfbar, $A_f^{\DG}$, $A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}$ the phase information are measurable.
+This experimental technique to measure \CP violation can be also applied to \BdToDpi and therefore it will be described more thouroughly in \cref{sec:GammaInBd2Dpi}.
 
 \subsection[head={Determination of $\gamma$ in loop processes},tocentry={Determination of $\gamma$ in loop processes}]{Determination of $\symbfsf{\gamma}$ in loop processes}
 \label{sec:gamamInLoops}
-Read the fleischer paper and understand the experimental status
+Instead of exploiting decays where $\gamma$ can be accessed via the interference in tree-level diagrams between the transitions $\bquark\to\uquark$ and $\bquark\to\cquark$ also processes containing loop transitions can be used to infer information about $\gamma$.
+The first possibility is to derive a result for $\gamma$ from experimental mesaurments of the remaining two angles of the CKM triangle, $\alpha$ and $\beta$.
+The angle $\beta$ can be measured in the so-called golden mode \BdToJPsiKS, the angle $\alpha$ can be accessed via measurements of the decays $\Bz\!\to\piz\piz$ and $\Bz\!\to\rho\rho$
 
 \subsection[head={Comparison of tree-level and loop determinations of $\gamma$},tocentry={Comparison of tree-level and loop determinations of $\gamma$}]{Comparison of tree-level and loop determinations of $\symbfsf{\gamma}$}
 
