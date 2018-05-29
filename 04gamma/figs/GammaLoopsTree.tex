@@ -1,0 +1,27 @@
+\documentclass[preview=true, border=10pt]{standalone}
+
+\usepackage[compat=1.1.0]{tikz-feynman}
+
+\newcommand{\GammaLoopsTreeSize}{6.4}
+
+\begin{document}
+	\begin{tikzpicture}
+		\begin{feynman}
+			\vertex (a1) {\small$\overline b$};
+			\vertex[right=\GammaLoopsTreeSize*0.37 cm of a1] (a2);
+			\vertex[right=\GammaLoopsTreeSize*0.37 cm of a2] (a3) {\small$\overline u$};
+			\vertex[below=\GammaLoopsTreeSize*0.12 cm of a1] (b1) {\small$q$};
+			\vertex[below=\GammaLoopsTreeSize*0.12 cm of a3] (b2) {\small$q$};
+			\vertex[above=\GammaLoopsTreeSize*0.12 cm of a3] (c1) {\small$u$};
+			\vertex[above=\GammaLoopsTreeSize*0.12 cm of c1] (c3) {\small$\overline q$};
+			\vertex at ($(c1)!0.5!(c3) - (\GammaLoopsTreeSize*0.25 cm, 0)$) (c2);
+			\diagram* {
+			(a3) -- [plain] (a2) -- [plain] (a1),
+			(b1) -- [plain] (b2),
+			(c3) -- [plain] (c2) -- [plain] (c1),
+			(a2) -- [boson, edge label={\small$W^{+}$}] (c2),
+			};
+			\draw [decoration={brace}, decorate] (b1.south west) -- (a1.north west) node [pos=0.5, left] {\small$B_{q}^{0}$};
+		\end{feynman}
+	\end{tikzpicture}
+\end{document}

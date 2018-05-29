@@ -53,7 +53,7 @@ This means that alongside the spectator \squark-quark not only the tree-level tr
 	\centering
 	\includestandalone{04gamma/figs/BsToRhoKS_Tree}
 	\includestandalone{04gamma/figs/BsToRhoKS_Penguin}
-	\caption{Tree-level diagram of $\Bs\to\rho\KS$ (left) and the dominantly contributing gluonic penguin (right). \cite{Ellis:2016jkw}.}
+	\caption{Tree-level diagram of $\Bs\!\to\rho\KS$ (left) and the dominantly contributing gluonic penguin (right). \cite{Ellis:2016jkw}.}
 	\label{fig:Bs2RhoKS}
 \end{figure}
 For both diagrams the CKM-factor is $\propto A\lambda^3$, but the weak phases are $\gamma$ and $\beta$ for the tree-level diagram and the penguin, respectively.
@@ -180,8 +180,55 @@ This experimental technique to measure \CP violation can be also applied to \BdT
 \subsection[head={Determination of $\gamma$ in loop processes},tocentry={Determination of $\gamma$ in loop processes}]{Determination of $\symbfsf{\gamma}$ in loop processes}
 \label{sec:gamamInLoops}
 Instead of exploiting decays where $\gamma$ can be accessed via the interference in tree-level diagrams between the transitions $\bquark\to\uquark$ and $\bquark\to\cquark$ also processes containing loop transitions can be used to infer information about $\gamma$.
-The first possibility is to derive a result for $\gamma$ from experimental mesaurments of the remaining two angles of the CKM triangle, $\alpha$ and $\beta$.
-The angle $\beta$ can be measured in the so-called golden mode \BdToJPsiKS, the angle $\alpha$ can be accessed via measurements of the decays $\Bz\!\to\piz\piz$ and $\Bz\!\to\rho\rho$
+The first and probably most obvious possibility is to derive a result for $\gamma$ from experimental mesaurements of other CKM triangle quantities as the remaining two angles of the CKM triangle, $\alpha$ and $\beta$.
+As an example the angle $\beta$ can be measured quite precisely in the decay \BdToJPsiKS while the angle $\alpha$ is accessible via Isospin analyses of the decays $\Bd\!\to\pip\pim$, $\Bd\!\to\piz\piz$ and $\Bu\!\to\pip\piz$ \cite{IsospinAlpha} or measurements of longitudinally polarized $\Bz\!\to\rho\rho$ decays \cite{alpha_BaBar, alpha_Belle}. Though, the best precision is achieved performing a \emph{full} fit using all available inputs as performed by the CKMfitter and UTfit collaborations \cite{CKMfitter2015, UTfit-UT}.
+
+However such tests of a closing CKM triangle do not directly indicate certain processes that are affected effects of \ac{NP}.
+Therefore, a more direct determination of $\gamma$ is also important.
+A possibility for such determination is to extract $\gamma$ from \CP violation measurements in $\Bz\!\to\pip\pim$ and $\Bs\!\to\Kp\Km$ \cite{GammaInLoops}.
+To do this, the U-spin flavour symmetry of strong interactions between the two decay channels - \ie the decays are related by interchanging all \dquark-quarks with \squark-quarks - must be used.
+\begin{figure}[tbp]
+	\centering
+	\includestandalone{04gamma/figs/GammaLoopsTree}
+	\hfill
+	\includestandalone{04gamma/figs/GammaLoopsPenguin}
+	\caption{Feynman diagrams contributing to $\Bd\!\to\pip\pim$ ($\quark=\dquark$) and $\Bs\!\to\Kp\Km$($\quark=\squark$) \cite{Ellis:2016jkw}.}
+	\label{fig:feynmanGammaLoops}
+\end{figure}
+
+To briefly outline the strategy first the transition amplitudes and \CP observables for both decay modes will be introduced in the following:
+In \cref{fig:feynmanGammaLoops} the dominant $\bquark\!\to\uquarkbar\uquark\dquarkbar$ processes are shown, which leads to the transition amplitude
+\begin{equation}
+A\!\left(\Bd\!\to\pip\pim\right)=\lambda_\uquark\left(A_{\text{cc}}^\uquark+A_{\text{pen}}^\uquark\right)+\lambda_\cquark A_{\text{pen}}^\cquark+\lambda_\tquark A_{\text{pen}}^\tquark
+\end{equation}
+where the amplitudes $A_{\text{pen}}^\quark$ and $A_{\text{c}}^\quark$ describe the penguin and charged-current contributions respectively.
+Furthermore the short notation $\lambda_\quark=V_{{\kern -0.1em}\quark\dquark}V^{*}_{{\kern -0.1em}\quark\bquark}$ was used.
+Making use of the unitarity of the CKM matrix and applying the Wolfenstein parametrisation \cite{Wolfenstein:1983yz} allows to determine the parameter \Lf and the corresponding \CP coefficients
+\begin{equation}
+\begin{aligned}
+C_{f}^{\Bd\!\to\pip\pim}&=-\left[\frac{2d\sin\!\left(\theta\right)\sin\!\left(\gamma\right)}{1-2d\cos\!\left(\theta\right)\cos\!\left(\gamma\right)+d^2}\right]\\
+S_{f}^{\Bd\!\to\pip\pim}&=\left[\frac{\sin\!\left(2\beta+2\gamma\right)-2d\cos\!\left(\theta\right)\sin\!\left(2\beta+\gamma\right)+d^2\sin\!\left(2\beta\right)}{1-2d\cos\!\left(\theta\right)\cos\!\left(\gamma\right)+d^2}\right].
+\end{aligned}
+\end{equation}
+The quantities $d$ and $\theta$ are defined as
+\begin{equation}
+de^{i\theta}=\frac{1}{\left(1-\nicefrac{\lambda^2}{2}\right)R_b}\left(\frac{A_{\text{pen}}^{\cquark\tquark}}{A_{\text{cc}}^{\uquark}+A_{\text{pen}}^{\uquark\tquark}}\right)
+\end{equation}
+with $A_{\text{pen}}^{\quark\tquark}=A_{\text{pen}}^{\quark}-A_{\text{pen}}^{\tquark}$ and the CKM factor $R_b=\nicefrac{1}{\lambda}\left|\nicefrac{\Vub}{\Vcb}\right|$.
+The \CP coefficient $A_f^{\DG}$ is neglected as the decay width difference for \Bd mesons is expected to be negligibly small.
+
+Equivalent to this, the \CP coefficients for $\Bs\!\to\Kp\Km$ can be calculated as
+\begin{equation}
+\begin{aligned}
+C_{f}^{\Bs\!\to\Kp\Km}&=\left[\frac{2\tilde{d'}\!\sin\!\left(\theta'\right)\sin\!\left(\gamma\right)}{1-2\tilde{d'}\!\cos\!\left(\theta'\right)\cos\!\left(\gamma\right)+\tilde{d'}^2}\right]\\
+S_{f}^{\Bs\!\to\Kp\Km}&=\left[\frac{\sin\!\left(\phi_\squark+2\gamma\right)-2\tilde{d'}\!\cos\!\left(\theta\right)\sin\!\left(\phi_\squark+\gamma\right)+\tilde{d'}{}^2\!\sin\!\left(\phi_\squark\right)}{1-2\tilde{d'}\!\cos\!\left(\theta'\right)\cos\!\left(\gamma\right)+\tilde{d'}{}^2}\right]\\
+A_f^{\DG, \Bs\!\to\Kp\Km}&=-\left[\frac{\cos\!\left(\phi_\squark+2\gamma\right)+2\tilde{d'}\!\cos\!\left(\theta'\right)\cos\!\left(\phi_\squark+\gamma\right)+\tilde{d'}{}^2\cos\!\left(\phi_\squark\right)}{1-2\tilde{d'}\!\cos\!\left(\theta'\right)\cos\!\left(\gamma\right)+\tilde{d'}{}^2}\right]
+\end{aligned}
+\end{equation}
+where the short notation $\tilde{d'}=\left(\nicefrac{1-\lambda^2}{\lambda^2}\right)d'$ was used.
+
+Assuming the U-spin flavour symmetry to be exact implies that $d'=d$ and $\theta'=\theta$.
+% This means that
 
 \subsection[head={Comparison of tree-level and loop determinations of $\gamma$},tocentry={Comparison of tree-level and loop determinations of $\gamma$}]{Comparison of tree-level and loop determinations of $\symbfsf{\gamma}$}
 
