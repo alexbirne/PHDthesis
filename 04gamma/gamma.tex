@@ -185,7 +185,7 @@ As an example the angle $\beta$ can be measured quite precisely in the decay \Bd
 
 However such tests of a closing CKM triangle do not directly indicate certain processes that are affected effects of \ac{NP}.
 Therefore, a more direct determination of $\gamma$ is also important.
-A possibility for such determination is to extract $\gamma$ from \CP violation measurements in $\Bz\!\to\pip\pim$ and $\Bs\!\to\Kp\Km$ \cite{GammaInLoops}.
+A possibility for such determination is to extract $\gamma$ from \CP violation measurements in $B\!\to\pion\pion$ and $\Bs\!\to\Kp\Km$ \cite{GammaInLoops_Fleischer, GammaInLoops_Ciuchini}.
 To do this, the U-spin flavour symmetry of strong interactions between the two decay channels - \ie the decays are related by interchanging all \dquark-quarks with \squark-quarks - must be used.
 \begin{figure}[tbp]
 	\centering
@@ -196,7 +196,7 @@ To do this, the U-spin flavour symmetry of strong interactions between the two d
 	\label{fig:feynmanGammaLoops}
 \end{figure}
 
-To briefly outline the strategy first the transition amplitudes and \CP observables for both decay modes will be introduced in the following:
+To briefly outline the strategy first the transition amplitudes and \CP observables for the decay modes $\Bz\!\to\pip\pim$ and $\Bs\!\to\Kp\Km$ will be introduced in the following:
 In \cref{fig:feynmanGammaLoops} the dominant $\bquark\!\to\uquarkbar\uquark\dquarkbar$ processes are shown, which leads to the transition amplitude
 \begin{equation}
 A\!\left(\Bd\!\to\pip\pim\right)=\lambda_\uquark\left(A_{\text{cc}}^\uquark+A_{\text{pen}}^\uquark\right)+\lambda_\cquark A_{\text{pen}}^\cquark+\lambda_\tquark A_{\text{pen}}^\tquark
@@ -226,11 +226,33 @@ A_f^{\DG, \Bs\!\to\Kp\Km}&=-\left[\frac{\cos\!\left(\phi_\squark+2\gamma\right)+
 \end{aligned}
 \end{equation}
 where the short notation $\tilde{d'}=\left(\nicefrac{1-\lambda^2}{\lambda^2}\right)d'$ was used.
+Assuming the U-spin flavour symmetry to be exact even implies that $d'=d$ and $\theta'=\theta$.
 
-Assuming the U-spin flavour symmetry to be exact implies that $d'=d$ and $\theta'=\theta$.
-% This means that
+This theoretical setup can now be used in several strategies to determine $\gamma$ among other observables as $\beta$, $d$ and $\theta$.
+In the following the basic idea of most strategies will be outlined briefly.
+In the first approach the phase $\phi_s$ is taken as an external input, thus the four unknows $d$, $\theta$, $\beta$ and $\gamma$ can be determined using only the four observables $C_{f}^{B\!\to hh}$, and $S_{f}^{B\!\to hh}$.
+As shown in \cite{GammaInLoops_Fleischer}, the coefficient the parameters $d$ and $\theta$ can be expressed as functions of $\gamma$, $C_{f}^{\Bs\!\to\Kp\Km}$ and $S_{f}^{\Bs\!\to\Kp\Km}$.
+Inserting this into $C_{f}^{\Bd\!\to\pip\pim}$ allows then to determine $\gamma$ up to a two-fold ambiguity as shown in \cref{fig:gamma_beta_fleischer}.
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=0.4\textwidth]{04gamma/figs/GammaVsCf.pdf}
+	\includegraphics[width=0.4\textwidth]{04gamma/figs/BetaVsSf.pdf}
+	\caption{Dependence of $C_{f}^{\Bd\!\to\pip\pim}$ ($A^{\text{dir}}$) on $\gamma$ (left) and $S_{f}^{\Bd\!\to\pip\pim}$ ($A^{\text{mix}}$) on $\beta$ for a specific example as given in \cite{GammaInLoops_Fleischer}.}
+	\label{fig:gamma_beta_fleischer}
+\end{figure}
+Using these two solutions for $\gamma$ and inserting them together with the obtained expressions for $d$ and $\theta$ into $S_{f}^{\Bd\!\to\pip\pim}$ gives additionally a fourfold ambiguity for $\beta$ (see \cref{fig:gamma_beta_fleischer}).
+Hereby for both ambiguities the assumption is made, that $\gamma\in[0, 180]\si{\degree}$ and $\beta\in[0, 180]\si{\degree}$.
+If additionally the phase $\beta$ is used this ambiguities can be resolved by expressing $d$ and $\theta$ as functions of $\gamma$, $C_{f}^{\Bd\!\to\pip\pim}$ and $S_{f}^{\Bd\!\to\pip\pim}$ and consequently fixing the contours in the $\gamma-d$ plane.
+However assuming a \SI{15}{\percent} and \SI{20}{\percent} U-spin-breaking effect on the parameters $d$ and $\theta$, respectively, an additional uncertainty on the extracted value of $\gamma$ of roughly \SI{20}{\percent} could arise \cite{GammaInLoops_Fleischer2}.
+Adding also the modes $\Bd\!\to\piz\piz$ and $\Bu\!\to\piz\pip$ allows additionally to either constrain \ac{NP} effects in the $\bquark\!\to\squark$ penguin contributions or in mixing \cite{GammaInLoops_Ciuchini}.
 
 \subsection[head={Comparison of tree-level and loop determinations of $\gamma$},tocentry={Comparison of tree-level and loop determinations of $\gamma$}]{Comparison of tree-level and loop determinations of $\symbfsf{\gamma}$}
+
+Both strategies described in the previous two section have been used to determine the angle $\gamma$.
+The potential of determination via tree-level processes was studied in many different final states and is combined on a regular basis into one single determination from \lhcb. The most recent combination was presented in \cite{GammCombo} yielding a result of
+\begin{equation}
+\gamma=\left(74.0^{+5.0}_{-5.8}\right)\si{\degree}.
+\end{equation}
 
 \section[head={Measuring $\gamma$ in $\Bz\to\Dm\pip$},tocentry={Measuring $\gamma$ in $\Bz\to\Dm\pip$}]{Measuring $\symbfsf{\gamma}$ in $\symbfsf{\Bz\to\Dm\pip}$}
 \label{sec:GammaInBd2Dpi}
