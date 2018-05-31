@@ -248,11 +248,55 @@ Adding also the modes $\Bd\!\to\piz\piz$ and $\Bu\!\to\piz\pip$ allows additiona
 
 \subsection[head={Comparison of tree-level and loop determinations of $\gamma$},tocentry={Comparison of tree-level and loop determinations of $\gamma$}]{Comparison of tree-level and loop determinations of $\symbfsf{\gamma}$}
 
-Both strategies described in the previous two section have been used to determine the angle $\gamma$.
-The potential of determination via tree-level processes was studied in many different final states and is combined on a regular basis into one single determination from \lhcb. The most recent combination was presented in \cite{GammCombo} yielding a result of
+Both strategies described in the previous two section were and are used to determine the angle $\gamma$.
+As was shown the the determination from tree-level decays provides theoretically clean measurements, only affected by low sensitivity or discrete ambiguities.
+Comparing these measurements with determinations using loop-processes could provide an effective handle on \ac{NP} effects contributing.
+However to properly compare the different approaches, the experimental uncertainties need to be reduced to a sensible amount; therefore the current experimental status and required improvements in the experimental precision will be given below.
+
+At \lhcb the potential of determination via tree-level processes was studied in many different final states and is combined on a regular basis into one single $\gamma$-combination. The most recent combination was presented in \cite{GammCombo} yielding a result of
 \begin{equation}
-\gamma=\left(74.0^{+5.0}_{-5.8}\right)\si{\degree}.
+\gamma=\left(74.0^{+5.0}_{-5.8}\right)\!\si{\degree}.\label{eq:gammaResult_Trees}
 \end{equation}
+This result includes \num{15} different decay modes, of which ten were analysed using data correspionding to \SI{3}{\per\femto\barn} collected at centre-of-mass energies of \num{7} and \SI{8}{\tera\electronvolt} and five additionally using data corresponding to \SI{2}{\per\femto\barn} collected at centre-of-mass energies of \SI{13}{\tera\electronvolt}.
+Deriving constraints on $\gamma$ by performing a \emph{full} fit using all available inputs yields
+\begin{equation}
+\gamma=\left(65.4^{+0.97}_{-1.16}\right)\!\si{\degree}\,\,\,\,\,\text{and}\,\,\,\,\,\gamma=\left(65.8\pm1.9\right)\!\si{\degree}
+\end{equation}
+performed by the CKMfitter~\cite{CKMfitter2015} and UTfit~\cite{UTfit-UT} collaborations, respectively.
+Determining $\gamma$ with a similar strategy exploiting U-spin-symmetry as outlined in \cref{sec:gamamInLoops} yields
+\begin{equation}
+\gamma=\left(63.5^{+7.2}_{-6.7}\right)\!\si{\degree}.\label{eq:gammaResult_Loops}
+\end{equation}
+where inputs from \babar, \belle, \cdf and \lhcb were used~\cite{Aaij:2014xba}. In contrast to the combination of tree-level measurements, the inputs from \lhcb were based on analyses using only \SI{1}{\per\femto\barn} collected at a centre-of-mass energy of \SI{7}{\tera\electronvolt}.
+
+As can be seen, the determinations from the \emph{full} fits are by far the mose precise.
+Furthermore the results using loop processes seem to agree quite well, while there seems to be the potential for a tension between the determinations using loop-processes and tree-level transitions.
+Though the precision on both, the tree-level transition measurements given in \cref{eq:gammaResult_Trees} and the direct loop-process measurements given in \cref{eq:gammaResult_Loops} needs to be improved.
 
 \section[head={Measuring $\gamma$ in $\Bz\to\Dm\pip$},tocentry={Measuring $\gamma$ in $\Bz\to\Dm\pip$}]{Measuring $\symbfsf{\gamma}$ in $\symbfsf{\Bz\to\Dm\pip}$}
 \label{sec:GammaInBd2Dpi}
+
+The decay channel \BdToDpi suffers intereference \CP-violation. This is due to the fact that both finalstates $\Dm\pip$ and $\Dp\pim$ can be reached from both \Bz and \Bzb.
+The corresponding decays are happen either through $\bquark\to\uquark$ or $\bquark\to\cquark$ transitions as shown in \cref{fig:feynmanBd2Dpi} for the final state $\Dm\pip$.
+\begin{figure}[tbp]
+	\centering
+	\includestandalone{04gamma/figs/Bd2Dpi}
+	\includestandalone{04gamma/figs/Bdbar2Dpi}
+	\caption{Feynman diagrams of the Cabibbo-favoured $\Bz\!\to\Dm\pip$ (left) and Cabibbo-suppressed $\Bzb\!\to\Dm\pip$ (right) decays \cite{Ellis:2016jkw}.}
+	\label{fig:feynmanBd2Dpi}
+\end{figure}
+Measuring the resulting \CP asymmetries gives access to the weak and strong phases originating in those transitions.
+To determine which phases contribute the parameters \Lf and \Lfbar need to be calculated.
+Neglecting constant as the Fermi constant which cancel anyway in the ratio, the amplitudes of the four contributing transitions can be expressed in terms of the CKM matrix elements $V_{ij}^{\phantom{\ast}}$, hadronic matrix elements $M$ and $\overline{\kern -1.0pt M\kern -1.0pt}$ and potential \emph{strong} phases $\Delta$ and $\overline{\kern -1.0pt \Delta\kern -1.0pt}$ orginating in the decay:
+\begin{align}
+A\!\left(\Bz\!\to\Dm\pip\right)&=\Vud\Vcbst\times Me^{i\Delta}\\
+A\!\left(\Bzb\!\to\Dm\pip\right)&=\Vub\Vcdst\times \overline{\kern -1.0pt M\kern -1.0pt}\,e^{i\overline{\kern -1.0pt \Delta\kern -1.0pt}}\\
+A\!\left(\Bz\!\to\Dp\pim\right)&=\Vubst\Vcd\times \overline{\kern -1.0pt M\kern -1.0pt}\,e^{i\overline{\kern -1.0pt \Delta\kern -1.0pt}}\\
+A\!\left(\Bzb\!\to\Dp\pim\right)&=\Vudst\Vcb\times Me^{i\Delta}.
+\end{align}
+Denoting the finalstate \Dm\pip and \Dp\pim as \f and \fbar, respectively, and using the expression for $\nicefrac{q}{p}$ from \cref{eq:qoverpCKM} \Lf and \Lfbar can be expressed as
+\begin{align}
+\Lf&=\frac{q}{p}\frac{A\!\left(\Bzb\!\to\Dm\pip\right)}{A\!\left(\Bz\!\to\Dm\pip\right)}=-\frac{\Vtbst\Vtd}{\Vtb\Vtdst}\frac{\Vub\Vcdst}{\Vud\Vcbst}r_Me^{i\delta}\\
+\Lfbar&=\frac{q}{p}\frac{A\!\left(\Bzb\!\to\Dp\pim\right)}{A\!\left(\Bz\!\to\Dp\pim\right)}=-\frac{\Vtbst\Vtd}{\Vtb\Vtdst}\frac{\Vudst\Vcb}{\Vubst\Vcd}\frac{1}{r_M}e^{-i\delta}
+\end{align}
+where the abbreviations $\delta=\overline{\kern -1.0pt \Delta\kern -1.0pt}-\Delta$ and $r_M=\nicefrac{\overline{\kern -1.0pt M\kern -1.0pt}}{M}$ were used.
