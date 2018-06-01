@@ -273,11 +273,11 @@ As can be seen, the determinations from the \emph{full} fits are by far the mose
 Furthermore the results using loop processes seem to agree quite well, while there seems to be the potential for a tension between the determinations using loop-processes and tree-level transitions.
 Though the precision on both, the tree-level transition measurements given in \cref{eq:gammaResult_Trees} and the direct loop-process measurements given in \cref{eq:gammaResult_Loops} needs to be improved.
 
-\section[head={Measuring $\gamma$ in $\Bz\to\Dm\pip$},tocentry={Measuring $\gamma$ in $\Bz\to\Dm\pip$}]{Measuring $\symbfsf{\gamma}$ in $\symbfsf{\Bz\to\Dm\pip}$}
+\section[head={Measuring $\gamma$ in $\BdToDpi$},tocentry={Measuring $\gamma$ in $\BdToDpi$}]{Measuring $\symbfsf{\gamma}$ in $\symbfsf{\BdToDpi}$}
 \label{sec:GammaInBd2Dpi}
 
-The decay channel \BdToDpi suffers intereference \CP-violation. This is due to the fact that both finalstates $\Dm\pip$ and $\Dp\pim$ can be reached from both \Bz and \Bzb.
-The corresponding decays are happen either through $\bquark\to\uquark$ or $\bquark\to\cquark$ transitions as shown in \cref{fig:feynmanBd2Dpi} for the final state $\Dm\pip$.
+The decay channel \BdToDpi allows to measure interference \CP violation as both, the \Bz and the \Bzb meson, can decay in both finalstates $\Dm\pip$ and $\Dp\pim$ as shown in \cref{fig:feynmanBd2Dpi}.
+More precisely, the amplitudes of the $\bquark\!\to\cquark\left[\uquarkbar\dquark\right]$ and $\bquark\!\to\uquark\left[\cquarkbar\dquark\right]$ transitions interfer.
 \begin{figure}[tbp]
 	\centering
 	\includestandalone{04gamma/figs/Bd2Dpi}
@@ -285,18 +285,65 @@ The corresponding decays are happen either through $\bquark\to\uquark$ or $\bqua
 	\caption{Feynman diagrams of the Cabibbo-favoured $\Bz\!\to\Dm\pip$ (left) and Cabibbo-suppressed $\Bzb\!\to\Dm\pip$ (right) decays \cite{Ellis:2016jkw}.}
 	\label{fig:feynmanBd2Dpi}
 \end{figure}
-Measuring the resulting \CP asymmetries gives access to the weak and strong phases originating in those transitions.
-To determine which phases contribute the parameters \Lf and \Lfbar need to be calculated.
-Neglecting constant as the Fermi constant which cancel anyway in the ratio, the amplitudes of the four contributing transitions can be expressed in terms of the CKM matrix elements $V_{ij}^{\phantom{\ast}}$, hadronic matrix elements $M$ and $\overline{\kern -1.0pt M\kern -1.0pt}$ and potential \emph{strong} phases $\Delta$ and $\overline{\kern -1.0pt \Delta\kern -1.0pt}$ orginating in the decay:
+Consequently, measuring the resulting \CP asymmetries gives access to the weak and strong phases originating in these transitions.
+Neglecting constants as the Fermi constant which cancel anyway in the ratio, the amplitudes of the four contributing transitions can be expressed in terms of the CKM matrix elements $V_{ij}^{\phantom{\ast}}$, hadronic matrix elements $M$ and $\overline{\kern -1.0pt M\kern -1.0pt}$ and potential \emph{strong} phases $\Delta$ and $\overline{\kern -1.0pt \Delta\kern -1.0pt}$:
 \begin{align}
 A\!\left(\Bz\!\to\Dm\pip\right)&=\Vud\Vcbst\times Me^{i\Delta}\\
 A\!\left(\Bzb\!\to\Dm\pip\right)&=\Vub\Vcdst\times \overline{\kern -1.0pt M\kern -1.0pt}\,e^{i\overline{\kern -1.0pt \Delta\kern -1.0pt}}\\
 A\!\left(\Bz\!\to\Dp\pim\right)&=\Vubst\Vcd\times \overline{\kern -1.0pt M\kern -1.0pt}\,e^{i\overline{\kern -1.0pt \Delta\kern -1.0pt}}\\
 A\!\left(\Bzb\!\to\Dp\pim\right)&=\Vudst\Vcb\times Me^{i\Delta}.
 \end{align}
-Denoting the finalstate \Dm\pip and \Dp\pim as \f and \fbar, respectively, and using the expression for $\nicefrac{q}{p}$ from \cref{eq:qoverpCKM} \Lf and \Lfbar can be expressed as
+Denoting the finalstate \Dm\pip and \Dp\pim as \f and \fbar, respectively, and using the expression for $\nicefrac{q}{p}$ from \cref{eq:qoverpCKM} the parameters \Lf and \Lfbar can be expressed as
 \begin{align}
-\Lf&=\frac{q}{p}\frac{A\!\left(\Bzb\!\to\Dm\pip\right)}{A\!\left(\Bz\!\to\Dm\pip\right)}=-\frac{\Vtbst\Vtd}{\Vtb\Vtdst}\frac{\Vub\Vcdst}{\Vud\Vcbst}r_Me^{i\delta}\\
-\Lfbar&=\frac{q}{p}\frac{A\!\left(\Bzb\!\to\Dp\pim\right)}{A\!\left(\Bz\!\to\Dp\pim\right)}=-\frac{\Vtbst\Vtd}{\Vtb\Vtdst}\frac{\Vudst\Vcb}{\Vubst\Vcd}\frac{1}{r_M}e^{-i\delta}
+\Lf&=\frac{q}{p}\frac{A\!\left(\Bzb\!\to\Dm\pip\right)}{A\!\left(\Bz\!\to\Dm\pip\right)}=-\frac{\Vtbst\Vtd}{\Vtb\Vtdst}\frac{\Vub\Vcdst}{\Vud\Vcbst}\frac{\overline{\kern -1.0pt M\kern -1.0pt}}{M}e^{i\delta}\\
+\Lfbar&=\frac{q}{p}\frac{A\!\left(\Bzb\!\to\Dp\pim\right)}{A\!\left(\Bz\!\to\Dp\pim\right)}=-\frac{\Vtbst\Vtd}{\Vtb\Vtdst}\frac{\Vudst\Vcb}{\Vubst\Vcd}\frac{M}{\overline{\kern -1.0pt M\kern -1.0pt}}e^{-i\delta}
 \end{align}
-where the abbreviations $\delta=\overline{\kern -1.0pt \Delta\kern -1.0pt}-\Delta$ and $r_M=\nicefrac{\overline{\kern -1.0pt M\kern -1.0pt}}{M}$ were used.
+where the abbreviation $\delta=\overline{\kern -1.0pt \Delta\kern -1.0pt}-\Delta$ was used.
+Using the definition of the angles of the unitarity triangle from \cref{eq:CKMangles} the fraction of CKM matrix elements can be further simplified to
+\begin{align}
+\Lf&=-\left|\frac{\Vub\Vcd}{\Vud\Vcb}\right|\frac{\overline{\kern -1.0pt M\kern -1.0pt}}{M}e^{-i\left(2\beta+\gamma-\delta\right)}=re^{-i\left(2\beta+\gamma-\delta+\pi\right)}\\
+\Lfbar&=-\left|\frac{\Vudst\Vcbst}{\Vubst\Vcdst}\right|\frac{M}{\overline{\kern -1.0pt M\kern -1.0pt}}e^{-i\left(2\beta+\gamma+\delta\right)}=\frac{1}{r}re^{-i\left(2\beta+\gamma+\delta+\pi\right)}.
+\end{align}
+Here the ratio of the CKM matrix elements and the ratio of hadronic matrix elements were combined into the parameter $r$.
+Obviously the decay allows to probe $2\beta+\gamma$ together with a \emph{strong} phase difference $\delta$.
+
+Looking at the four contributing decay rates, the expressions from \crefrange{eq:Ptof}{eq:Pbartofbar} reduce to
+\begin{align}
+\Gamma\left(\Bz(t)\!\to\Dm\pip\right)&= \frac{A}{2}e^{\Gamma t}\left[1-\Sf\sin\left(\dm t\right)+\Cf\cos\left(\dm t\right)\right]\\
+\Gamma\left(\Bzb(t)\!\to\Dm\pip\right)&= \frac{A}{2}e^{\Gamma t}\left[1+\Sf\sin\left(\dm t\right)-\Cf\cos\left(\dm t\right)\right]\\
+\Gamma\left(\Bz(t)\!\to\Dp\pim\right)&= \frac{\overline{\kern -1.0pt A\kern -1.0pt}}{2}e^{\Gamma t}\left[1-\Sfbar\!\sin\left(\dm t\right)+\Cfbar\!\cos\left(\dm t\right)\right]\\
+\Gamma\left(\Bzb(t)\!\to\Dp\pim\right)&= \frac{\overline{\kern -1.0pt A\kern -1.0pt}}{2}e^{\Gamma t}\left[1+\Sfbar\!\sin\left(\dm t\right)-\Cfbar\!\cos\left(\dm t\right)\right]
+\end{align}
+when doing the assumptions that the decay width difference \DG is zero and $\nicefrac{q}{p}$ is a pure phase.
+Additionally the shortcut $\kern 0.18em\optbar{\kern -0.18em A}{}=A\!\left(\Bz\!\to\Dmp\pipm\right)\big(1+\big|\lambda_{\kern 0.18em\optbar{\kern -0.18em f}{}}\big|^2\big)$ was used.
+Accordingly, as $\DG=0$ is assumed, the parameters $A_f^{\DG}$ and $A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}$ are ignored while the remaining \CP parameters
+\begin{align}
+\Sf&=\frac{2r\sin\left(2\beta+\gamma-\delta\right)}{1+r^2}\\
+\Sfbar&=\frac{2r\sin\left(2\beta+\gamma+\delta\right)}{1+r^2}\\
+\Cf&=-\Cfbar=\frac{1-r^2}{1+r^2}
+\end{align}
+give access to the weak phase $2\beta+\gamma$ and the \emph{strong} phase difference $\delta$ up to a two-fold ambiguity in the range $[0, 180]\,\si{\degree}$.
+Alternatively using inputs from other measurements for $\beta$, the CKM angle $\gamma$ can be determined.
+Though, one caveats needs to be considered.
+The parameters \Sf and \Sfbar are proportional to the ratio of the interfering amplitudes.
+Estimating this ratio by expressing the CKM matrix elements in the Wolfenstein parametrisation and assuming $\nicefrac{\overline{\kern -1.0pt M\kern -1.0pt}}{M}\approx\mathcal{O}\!\left(1\right)$ leads to
+\begin{equation}
+r\approx\frac{\Vub\Vcd}{\Vud\Vcb}=\frac{\lambda^2\sqrt{\rho^2+\eta^2}}{1-\nicefrac{\lambda^2}{2}}\approx\SI{2}{\percent}
+\end{equation}
+what is in good agreement with the experimental determinations \cite{Das:2010be, Aubert:2008zi}.
+Hence, the interference and thus the sensitivity on $\gamma$ is expected to be quite small.
+
+So far only the tree-level contributions shown in \cref{fig:feynmanBd2Dpi} have been taken into account.
+Therefore also possible contributions from penguin contributions are briefly explained in the following.
+The first irreducible error on the determination of $\gamma$ arises from the box diagrams as shown in \cref{fig:feynmanBd2DpiPenguin}.
+\begin{figure}[tbp]
+	\centering
+	\includestandalone{04gamma/figs/Bd2Dpi_penguin}
+	\includestandalone{04gamma/figs/Bdbar2Dpi_penguin}
+	\caption{First higher-order corrections of the Cabibbo-favoured $\Bz\!\to\Dm\pip$ (left) and Cabibbo-suppressed $\Bzb\!\to\Dm\pip$ (right) decays \cite{Ellis:2016jkw}.}
+	\label{fig:feynmanBd2DpiPenguin}
+\end{figure}
+These contributions carry potentially a different weak phase and thus induce a shift $\delta_\gamma$ as shown in \cref{sec:accessGamma}.
+However only the contribution to the $\bquark\!\to\cquark\left[\uquarkbar\dquark\right]$ transition needs to be taken into account, as effects of $\bquark\!\to\uquark\left[\cquarkbar\dquark\right]$-transitions are suppressed by $\lambda^2$ and can be neglected.
+In good approximation $\delta_\gamma$ can be calculated by investigating the effect on effective couplings leading $\delta_\gamma\approx\,$\numrange{e-6}{e-4}~\cite{Brod:2014qwa}.
+This shift is much smaller than any expected experimental ucnertainty expected in the next years and can therefore be ignored.
