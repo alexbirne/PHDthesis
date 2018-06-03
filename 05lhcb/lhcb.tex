@@ -23,7 +23,7 @@ The first protons in the \lhc were accelerated in \num{2008}.
 
 The \lhc operates in running periods, the first from \numrange{2010}{2012} (Run I), followed by the long shutdown 1 (LS1) in \num{2013} and \num{2014}.
 During the Run I the proton beams consisted of about \num{1380} proton bunches, colliding at centre-of-mass energies of $\sqrt{s}=\SI{7}{\tera\electronvolt}$ (\num{2010} and \num{2011}) and \SI{8}{\tera\electronvolt} (\num{2012})~\cite{LHC_statistic}.
-For the currently ongoing second running period (Run II) the energy and the number of proton bunches per beam were increased to $\sqrt{s}=\SI{13}{\tera\electronvolt}$ and \SI{2220}{\per\cm\squared\per\second}, respectively~\cite{LHC_statistic}.
+For the currently ongoing second running period (Run II) the energy and the number of proton bunches per beam were increased to $\sqrt{s}=\SI{13}{\tera\electronvolt}$ and \num{2220}, respectively~\cite{LHC_statistic}.
 The latter was achieved by reducing the bunch spacing from \SI{50}{\nano\second} to \SI{25}{\nano\second}.
 
 Before the protons are injected into the \lhc accelerator ring, they must be pre-accelerated.
@@ -85,12 +85,12 @@ It is used to resolve primary and secondary vertices with high precision.
     \label{fig:velo}
 \end{figure}
 The \velo is composed of \num{21} semicircular silicon modules which can be moved up to \SI{8}{\milli\metre} to the beam.
-These measure the $r$ and $\phi$ coordinates of the hits left by a transversing particle and are mounted along the beam axis as shown in \cref{fig:velo}.
+These measure the $r$ and $\phi$ coordinates of the hits left by a traversing particle and are mounted along the beam axis as shown in \cref{fig:velo}.
 Furthermore, the inner part close to the collision point of the protons is distinguished from an outer part downstream.
 
 To reconstruct a track for a tranversing particle in the \velo it is required that the particle generates hits in at least three stations.
 To achieve an angular acceptance of \SI{300}{\milli\radian} of the \velo under this condition, the distance between the inner stations must not exceed \SI{5}{\centi\metre} with a sensor radius of \SI{42}{\milli\metre}.
-If one even requries it under the assumption, that individual modules do not trigger all transversing particles and hence particles must leave hits in four modules, the module distance in the inner part of the \velo has to be \SI{3.5}{\centi\metre}.
+If one even requries it under the assumption, that individual modules do not trigger all traversing particles and hence particles must leave hits in four modules, the module distance in the inner part of the \velo has to be \SI{3.5}{\centi\metre}.
 An advantage of this small distance is that the mean extrapolation distance from the first measured hit to the interaction point is reduced.
 
 For particles, which are created at $z=\SI{10.6}{\centi\metre}$ downstream of the nominal interaction point, the lower limit of the angular accceptance is \SI{15}{\milli\radian}
@@ -101,12 +101,152 @@ This is possible because the $z$-positions of the respective halves are shifted 
 \subsubsection*{Tracking stations}
 \label{sec:trackingStations}
 
+The tracking stations comprise the Tracker Turicensis (\ttracker) and the three tracking stations T1 to T3 .
+The stations T1 to T3 are further divided into an inner area close to the beam pipe, the Inner Tracker (\intr), and more distant areas from the beam pipe, denoted as Outer Tracker (\ot).
+A dipole magnet is located between the \ttracker and the tracking station T1 which will be described in \cref{sec:magnet}
+Technologically, the \ttracker and the \intr are silicon trackers (\st).
+
+The \st are made of silicon strips with a width of \SI{200}{\micro\metre}, what leads to spatial resolution of \SI{50}{\micro\metre} in the \intr and the \ttracker.
+The \ttracker is located directly behind the \richone.
+It is \SI{150}{\centi\metre} wide and \SI{130}{\centi\metre} high.
+The \intr is installed in the central part around the beam pipe of the three stations T1 to T3.
+It covers an region \SI{120}{\centi\metre} wide and \SI{40}{\centi\metre} high as shown in \cref{fig:InnerTracker}.
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{05lhcb/figs/IT.pdf}
+    \caption{Schematic view of a layer of \intr with readout electronics.
+    One station consists of four such layers, whereby the middle layers are rotated around the $z$-axis to obtain additional angular information.~\cite{Alves:2008zz}.}
+    \label{fig:InnerTracker}
+\end{figure}
+
+The OT is a detector made of drift tubes filled with gas.
+The drift time of ionized gas atoms and their electrons is measured in the drift tubes and from this drift time the ionization spot is determined .
+The gas mixture in the drift tubes consists of \SI{70}{\percent} argon, \SI{28.5}{\percent} \cotwo and \SI{1.5}{\percent} $\mathrm O_2$.
+This composition guarantees fast drift times of less than \SI{50}{\nano\second} and a high spatial resolution of \SI{200}{\micro\metre}.
+The momentum resolution of the \ot is $\nicefrac{\delta p}{p}\approx\SI{0.4}{\percent}$, with an overall reconstruction efficiency of \SI{80}{\percent}~\cite{Alves:2008zz}.
+
+All tracking stations, \ie both, the \ttracker and the stations T1 to T3, are constructed out of four layers each, with the middle layers rotated by $\pm\SI{5}{\degree}$ around the beam axis, so that the $y$-coordinate of a hit, left by a traversing particle, can be determined.
+
 \subsubsection*{The dipole magnet}
 \label{sec:magnet}
+
+As mentioned before, the dipole magnet is located between the \ttracker and the tracking station T1.
+It covers an acceptance of $\pm\SI{250}{\milli\radian}$ vertically and $\pm\SI{300}{\milli\radian}$ horizontally.
+The magnet is designed as a conventional magnet with saddle-shaped coils.
+The integrated magnetic field strength is \SI{4}{\tesla\metre} for tracks with a length of \SI{10}{\metre}.
+Its strength along the $z$ axis is shown in \cref{fig:MagField}.
+Tracks of charged particles are bended with in the accelerator plane ($x$-plane) due to the vertical magnetic field.
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{05lhcb/figs/magnetField.pdf}
+    \caption{Magnetic field along the $z$-axis~\cite{Alves:2008zz}.}
+    \label{fig:MagField}
+\end{figure}
+The magnet yoke consists of \SI{100}{\milli\metre} thick laminated low carbon steel plates with a maximum weight of \SI{25}{\tonne}.
+The relative precision of the magnetic field needed to achieve the desired momentum resolution is $\mathcal{O}\!\left(10^{-4}\right)$.
 
 \subsection{The particle identification system}
 \label{sec:PartID}
 
+The particle identification system consists of two \rich detectors, the first behind the \velo, the second directly behind the tracking station T3.
+Further, behind the second \rich detector, the electromagnetic and hadronic calorimeters are located, followed by the muon chambers.
+
+\subsubsection*{The \rich detectors}
+\label{sec:rich}
+
+An important factor at \lhcb is the particle identification, especially the distinction between pions and kaons.
+To realize this, \lhcb has two ring imaging Cherenkov detectors, \richone and \richtwo.
+These detectors use the Cherenkov effect, in which particles fly faster through a medium than the speed of light in that medium.
+These particles emit electromagnetic radiation with an opening angle $\theta$, where $\theta$ depends on the speed of the particles:
+\begin{equation}
+\cos\!\left(\theta\right) = \frac{1}{n\beta}.
+\end{equation}
+Here $n$ is the refractive index of the traversed medium and $\beta = \nicefrac{v}{c}$.
+Together with the momentum information from other detector components, different particles can then be distuingished.
+Since the momentum spectrum changes with the polar angle (angle of a particle to the beam axis), the \rich system consists of the two components \richone and \richtwo.
+\richone identifies particles with small momenta of about \SIrange{1}{60}{\giga\electronvolt}~\cite{Alves:2008zz} with a mixture of aerogel and \cfourften, while \richtwo uses a \cffour gas and distinguishes particles with larger momenta in the range of \SIrange{15}{100}{\giga\electronvolt}~\cite{Alves:2008zz}. Because of these different momentum ranges, \richone is located directly behind the \velo, while \richtwo is located downstream of the tracking stations T1 to T3.
+
+\subsubsection*{The calorimeters}
+\label{sec:calorimeters}
+
+The calorimeters have various functions.
+On the one hand they support the $\electron$-, $\gamma$- and hadron identifications, on the other hand they measure particle energies and positions.
+They also select candidates for the first trigger stage, the L0 trigger, which makes first decisions already \SI{4}{\second} after a proton-proton interaction.
+Overall, the calorimeter setup at \lhcb follows the classical arrangement.
+An electromagnetic calorimeter (\ecal) is followed by a hadronic calorimeter (\hcal), where the \ecal is responsible for the $\electron$ identification.
+
+To suppress backgrounds from charged pions, the Preshower (\presh) is installed in upstream of the \ecal.
+For the trigger, backgrounds from \piz with high transverse energy \et are suppressed by the scintillating pad detector (\spd).
+Since the hit density varies by two orders of magnitude over the calorimeter surface, the lateral division of the calorimeters varies depending on the distance to the beam pipe and increases with closer to the beam pipe (see Figure \cref{fig:calorimeter}).
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{05lhcb/figs/calorimeter.pdf}
+    \caption{Lateral division of the \presh, \spd and \ecal (left) and \hcal (right).
+    For all components one quarter of the front view of the detector can be seen.
+    The area cut out for the beam pipe is shown in black.~\cite{Alves:2008zz}.}
+    \label{fig:calorimeter}
+\end{figure}
+
+\subsubsection*{The muon chambers}
+\label{sec:muonchambers}
+
+The detection of muons is of fundamental importance at \lhcb.
+Both, in many \CP-sensitive decays, such as \BdToJPsiKS, in which the \jpsi is reconstructed in the decay into two muons, and in rare $B$ decays with flavour-changing neutral currents, such as \Bsmm, they can be found in the final states.
+There are five muon chambers at \lhcb.
+The chamber M1 is located in upstream of the calorimeters, while M2 to M5 are positioned downstream of the \hcal.
+The individual stations consist of \SI{80}{\centi\metre} thick iron absorbers, so that the minimum momentum of a muon to pass all five stations must be \SI{6}{\giga\electronvolt}.
+Stations M1 to M3 have a relatively high spatial resolution along the $x$-coordinate.
+They are mainly used to identify the track directions and to measure the transverse momentum \pt of the muon candidates with a resolution of \SI{20}{\percent}.
+The stations M4 and M5 are used for particle identification of traversing muons.
+
 \subsection{Trigger}
+\label{sec:trigger}
+
+In contrast to the multipurpose experiments \atlas and \cms, the \lhcb experiment does not operate at the maximum luminosity of $L=\SI{7e33}{\per\centi\metre\squared\per\second}$ provided by the \lhc in Run I, but at a luminosity of $L=\SI{4e32}{\per\centi\metre\squared\per\second}$, in order to ideally record exactly one proton-proton interaction per bunch crossing.
+Nevertheless, the data rate must still be reduced from about \SI{20}{\mega\hertz} to about \SI{4}{\kilo\hertz} in order to be stored.
+Two trigger stages are available for this purpose: The first stage (L0) works synchronously to the interaction rate of \SI{40}{\mega\hertz} and reduces it to \SI{1}{\mega\hertz}, whereupon the second trigger stage, the high-level trigger (HLT), processes the data independently of the interaction rate.
+At a luminosity of $L=\SI{4e32}{\per\centi\metre\squared\per\second}$, events containing a $B$ meson are generated at a rate of about \SI{15}{\kilo\hertz}.
+Furthermore, many partial decay widths of the $B$ mesons are smaller than \num{e-3}, so that the trigger system is optimized to select these interesting decays for subsequent analyses with maximum efficiency, while the backgrounds created in the hadronic environment at the \lhc are suppressed to the maximum.
+
+The Level 0 trigger is a pure hardware trigger.
+It identifies hadrons, electrons and photons which have maximum transverse energies \et, as well as the two muons with the highest transverse momenta \pt.
+The L0 consists of three components: An L0 pile-up system, the L0 calorimeter trigger and the L0 muon trigger.
+The aim of the pile-up system is to distinguish between events with one or more visible proton-proton interactions.
+The calorimeter and muon components search for the maximum \et or \pt for the corresponding particles.
+
+The HLT is a C++ application and runs on the Event Filter Farm (EFF), a large-capacity computer at cern.
+Every application has full access to all information of an event.
+Hence, selection steps could already be applied out here in principle.
+However, since the data rate coming from the L0 trigger is very high, the HLT consists of two stages.
+The HLT1 reconstructs the partial candidates in the \velo and in the tracking stations, which the L0 transfers.
+In addition for photons and neutral pions the absence of charged particles that could be associated with these candidates is confirmed .
+Overall, the HLT1 has the task of reducing the data rate to such an extent that a full full pattern recognition is possible in the next step, the HLT2.
+At a sufficiently low data rate, in some cases the HLT2 then even reconstructs specific $B$ decays .
 
 \section{The LHCb software stack}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{05lhcb/figs/software.pdf}
+    \caption{PLACEHOLDER: Sequence of data processing within the \lhcb software.
+    In red the steps to simulate data, in blue the processing of real data is shown.
+    The software packages are displayed in rectangles, the transferred data formats in circles.}
+    \label{fig:lhcbsoftware}
+\end{figure}
+The \lhcb software is based on the \gaudi framework[Gaudi Source], in which different software packages are executed.
+The order in which the various packages are executed is shown in \cref{fig:lhcbsoftware}.
+The first intervention in the data recorded by the detector happens, as described in \cref{sec:trigger}, in the HLT through the software package \moore [Quelle-Moore].
+Afterwards the raw data is reconstructed in \brunel [Quelle-Brunel] and the particles are combined in so-called protoparticles.
+These protoparticles then have both track information about the particle concerned and particle identification information (PID information).
+The data now available as Data Summary Tape Files (DST's) is then processed further for analysis in \davinci [DaVinci source].
+Here a first preselection, the so-called stripping, takes place, in which the individual analyses define sections on physical observables specifically for their needs, as well as the final reconstruction of the different processes.
+% Flavour tagging is also performed here.
+Now that the data is in the form of so-called nTuples, they can be analyzed with \root [ROOT Source], a collection of C++ libraries specializing in high-energy physics statistical analysis.
+The \roofit [ROOFIT-Source] is particularly noteworthy here.
+Library that already contains many parameterizations for statistical modelling of the data.
+
+The simulation of data is implemented by \lhcb in the \gauss package [GAUSS-Source].
+This first calls the program packages \evtgen [EVTGEN source], \pythia [Pythia sources], which runs with a special \lhcb configuration [PythiaLHCb source], and \geant [Geant sources], which successively simulate the proton-proton collisions, the hadronization process and the interaction with the detector.
+This is followed by \boole [Boole source], which digitizes the data so that it can then be used like the raw detector data.
+The truth information is also stored and can be retrieved at the end of processing during analysis.
+Thus, in addition to the detector responses, the initially generated states are also known in the simulations.
