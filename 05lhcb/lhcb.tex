@@ -225,28 +225,34 @@ At a sufficiently low data rate, in some cases the HLT2 then even reconstructs s
 
 \section{The LHCb software stack}
 
+% \begin{figure}[tbp]
+%     \centering
+%     \includegraphics[width=0.75\textwidth]{05lhcb/figs/software.pdf}
+%     \caption{PLACEHOLDER: Sequence of data processing within the \lhcb software.
+%     In red the steps to simulate data, in blue the processing of real data is shown.
+%     The software packages are displayed in rectangles, the transferred data formats in circles.}
+%     \label{fig:lhcbsoftware}
+% \end{figure}
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.75\textwidth]{05lhcb/figs/software.pdf}
-    \caption{PLACEHOLDER: Sequence of data processing within the \lhcb software.
+    \includestandalone{05lhcb/figs/LHCbSoftware}
+    \caption{Sequence of data processing within the \lhcb software.
     In red the steps to simulate data, in blue the processing of real data is shown.
     The software packages are displayed in rectangles, the transferred data formats in circles.}
     \label{fig:lhcbsoftware}
 \end{figure}
-The \lhcb software is based on the \gaudi framework[Gaudi Source], in which different software packages are executed.
+The \lhcb software is based on the \gaudi framework~\cite{Barrand:2001ny}, in which different software packages are executed.
 The order in which the various packages are executed is shown in \cref{fig:lhcbsoftware}.
-The first intervention in the data recorded by the detector happens, as described in \cref{sec:trigger}, in the HLT through the software package \moore [Quelle-Moore].
-Afterwards the raw data is reconstructed in \brunel [Quelle-Brunel] and the particles are combined in so-called protoparticles.
-These protoparticles then have both track information about the particle concerned and particle identification information (PID information).
-The data now available as Data Summary Tape Files (DST's) is then processed further for analysis in \davinci [DaVinci source].
-Here a first preselection, the so-called stripping, takes place, in which the individual analyses define sections on physical observables specifically for their needs, as well as the final reconstruction of the different processes.
-% Flavour tagging is also performed here.
-Now that the data is in the form of so-called nTuples, they can be analyzed with \root [ROOT Source], a collection of C++ libraries specializing in high-energy physics statistical analysis.
-The \roofit [ROOFIT-Source] is particularly noteworthy here.
-Library that already contains many parameterizations for statistical modelling of the data.
+The first action on the data recorded by the detector happens in the HLT through the software package \moore \cite{Aaij:2012me, Albrecht:2013fba}, as described in \cref{sec:trigger},.
+Afterwards the raw data is reconstructed in \brunel \cite{Szumlak:2007zz, VanderEijk:2001wqa, Kucharczyk:1756296} and the particles are combined in so-called protoparticles.
+These protoparticles contain track information and particle identification (PID) information of the concerning particle.
+The data is then available as so-called Data Summary Tape Files (DST's) and is processed further for analysis in \davinci.
+In the \davinci software project a first preselection (stripping) takes place and the final reconstruction of the different decays is done.
+After the stripping, the data has the form of so-called nTuples, which can be analysed by individual analysts.
 
-The simulation of data is implemented by \lhcb in the \gauss package [GAUSS-Source].
-This first calls the program packages \evtgen [EVTGEN source], \pythia [Pythia sources], which runs with a special \lhcb configuration [PythiaLHCb source], and \geant [Geant sources], which successively simulate the proton-proton collisions, the hadronization process and the interaction with the detector.
-This is followed by \boole [Boole source], which digitizes the data so that it can then be used like the raw detector data.
-The truth information is also stored and can be retrieved at the end of processing during analysis.
-Thus, in addition to the detector responses, the initially generated states are also known in the simulations.
+The generation and simulation of events within the \lhcb detector is implemented in the \gauss package.
+The proton-proton-collisions and the hadronisation process are generated using \pythia \cite{pythia6, pythia8}, which runs with a special \lhcb configuration \cite{LHCb-PROC-2010-056}.
+Decays and the interaction with the detector are then simulated using the \evtgen \cite{evtgen} and \geant \cite{geant1, geant2} packages, respectively.
+This is followed by the \boole project, in which the data is digitized so that it can then be further processed as the raw data collected by the detecor.
+Furthermore the generated information (truth information) is stored and can be retrieved after the simulated events have been processed.
+Thus, in addition to the detector response, the initially generated states are also known for simulated events.
