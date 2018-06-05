@@ -94,7 +94,12 @@
 \usepackage[bold-style=ISO, math-style=ISO]{unicode-math}
 \setmathfont{Tex Gyre Pagella Math}
 
-\usepackage[locale=UK,input-ignore={.}]{siunitx}
+\usepackage[locale=UK,input-ignore={.},separate-uncertainty=true]{siunitx}
+\DeclareSIUnit{\clight}{c}
+\DeclareSIUnit{\MeVc}{\mega\electronvolt\per\clight}
+\DeclareSIUnit{\GeVc}{\giga\electronvolt\per\clight}
+\DeclareSIUnit{\MeVcc}{\mega\electronvolt\per\clight\squared}
+\DeclareSIUnit{\GeVcc}{\giga\electronvolt\per\clight\squared}
 \usepackage{xfrac}
 \usepackage{nicefrac}
 
@@ -132,6 +137,8 @@
 \acrodef{SM}{standard model}
 \acrodef{HFLAV}{the Heavy Flavour Averaging Group}
 \acrodef{NP}{New Physics}
+\acrodef{PV}{primary vertex}
+\acrodef{SV}{secondary vertex}
 
 % only for debugging and review
 \usepackage{blindtext}
@@ -162,18 +169,18 @@
   \tableofcontents
 
 \mainmatter
-  \include{01introduction/introduction}
-  \include{02theory/theory}
-  \include{03CPV/cpv}
-  \include{04gamma/gamma}
-  \include{05lhcb/lhcb}
+  % \include{01introduction/introduction}
+  % \include{02theory/theory}
+  % \include{03CPV/cpv}
+  % \include{04gamma/gamma}
+  % \include{05lhcb/lhcb}
   \include{06selection/selection}
-  \include{07MassFit/massfit}
-  \include{08FlavourTagging/tagging}
-  \include{09TimeFit/timefit}
-  \include{10Systematics/systematics}
-  \include{11Result/result}
-  \include{12Conclusion/conclusion}
+  % \include{07MassFit/massfit}
+  % \include{08FlavourTagging/tagging}
+  % \include{09TimeFit/timefit}
+  % \include{10Systematics/systematics}
+  % \include{11Result/result}
+  % \include{12Conclusion/conclusion}
 
 \backmatter
   \printbibliography
