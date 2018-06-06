@@ -26,6 +26,7 @@
 \DeclareFieldFormat[article]{volume}{\textbf{#1}}
 \DeclareFieldFormat[article]{pages}{#1}
 \DeclareFieldFormat[article]{year}{(#1)\nopunct}
+% \DeclareFieldFormat[article]{year}{\ifstrempty{#1}{\nopunct}{(#1)\nopunct}}
 % Define fields for "report' entries"
 \DeclareFieldFormat[report]{title}{\emph{#1},}
 % Define fields for "book' entries"
@@ -116,6 +117,7 @@
 \usepackage{graphicx}
 
 \usepackage{booktabs}
+\usepackage{multirow}
 \usepackage{tabulary}
 \usepackage{threeparttable}
 
@@ -139,6 +141,8 @@
 \acrodef{NP}{New Physics}
 \acrodef{PV}{primary vertex}
 \acrodef{SV}{secondary vertex}
+\acrodef{MVA}{multivariate analysis}
+\acrodef{BDT}{boosted decision tree}
 
 % only for debugging and review
 \usepackage{blindtext}
