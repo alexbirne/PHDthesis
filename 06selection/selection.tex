@@ -13,6 +13,7 @@ Last the handling of multiple $B$-candidates in one event is presented (\cref{se
 Candidates for the decay \BdToDpi are reconstructed in the hadronic decay $\Dpm\!\to\Kmp\pipm\pipm$ with one additional pion, which will be denoted as bachelor pion in the following.
 Since the \D-decay is the one with the largest decay width it is chosen, despite the purely hadronic final state.
 It is reconstructed inclusively, \ie no resonances as the decay via a \Kstarz are excluded.
+For several tests and crosschecks the datasample can be split by year of datataking (\num{2011} and \num{2012}) and magnet polarity (up and down).
 
 To distinguish the charged hadrons in the finalstate a likelihood function assuming the respective particle to be a pion or a kaon is computed for every particle using information from the PID system.
 The difference between the two logarithmic likelihoods is then calculated, referred to as \dllkpi in the following.
@@ -53,7 +54,7 @@ For every candidate in the simulation the corresponding PID distribution of the 
 Last, to obtain the correct correlations and uncertainties between vertex positions, particle momenta, decay times and invariant masses decay tree fits (DTF) were performed on the data and simulations~\cite{2005NIMPA}.
 In total three DTFs were performed: To determine observables correlated with the decay time, the \ac{PV} was constrained to the known point of the proton-proton collision.
 Observables correlated to the invariant mass stem from a DTF where the mass of the \Dm-meson was constrained to its known mass of $m_\Dm^{\text{PDG}}=\SI[per-mode=symbol]{1869.61}{\MeVcc}$~\cite{PDG_2017}.
-A third DTF was performed without any constrain, as for selection steps like optimising the vetoes described in \cref{sec:vetoes}, constraints would lead to wrong results.
+A third DTF was performed without any constraint, as for selection steps like optimising the vetoes described in \cref{sec:vetoes}, constraints would lead to wrong results.
 
 \section{Selection}
 \label{sec:selection}
@@ -140,7 +141,7 @@ These cuts are listed in \cref{tab:preselection}.
     \centering
     \includegraphics[width=0.45\textwidth]{06selection/figs/Bmass_afterStrippingAndTrigger.pdf}
     \includegraphics[width=0.45\textwidth]{06selection/figs/Dmass_afterStrippingAndTrigger.pdf}
-    \caption{Invariant mass distributions of the $\Dm\pip$ combination using the DTF with a \Dm-mass constrain (right) and of the \Kp\pim\pim combination without any constrain (right).}
+    \caption{Invariant mass distributions of the $\Dm\pip$ combination using the DTF with a \Dm-mass constraint (right) and of the \Kp\pim\pim combination without any constraint (right).}
     \label{fig:BAndDmassAfterStripping}
 \end{figure}
 
@@ -308,7 +309,7 @@ Furthermore the $\chi^2$ of the DTF with a constraint on the \ac{PV} is added, a
 		\midrule
 		\Dm daughters					& $\text{IP}\chi^2$ of the associated \ac{PV}\\
 		\midrule
-		DTF 							& $\chi^2$ of the DTF with \ac{PV} constrain \\
+		DTF 							& $\chi^2$ of the DTF with \ac{PV} constraint \\
 		\bottomrule
 	\end{tabular}
 	\label{tab:BDTInput}
@@ -355,22 +356,65 @@ The final cut point is chosen at the right end of the plateau at \num{0.0}, to h
 \subsection{Multiple Candidates}
 \label{sec:MultCands}
 
-Should quote this here:~\cite{Koppenburg:2017zsh}
-
-% - nach Stripping 9% Events haben multiple Kandidaten, entsprechend 18-20% der B Kandidaten teilen ein Event
-% - nach Offline Selektion Zahl der Events mit multiplen Kandiadten auf 0.4% runter, und 0.8% der Kandiadten teilen das gleiche Event.
-% - im Falle mehrerer PVs wird nun der beste gewählt um konsistent mit Stripping und Trigger zu sein, Events in denen der ursprünglich beste PV nciht mehr da ist, werden entfernt
-% - in Anlehnung an Quelle Koppenburg werden alle weiteren verbleibenden Kandidaten als gleich wahrscheinlich Signal eingschätzt und daher wird jeweils ein Kandidate zufällig behalten
+In the stripping and trigger all used variables rely on the association of the \Bz candidate with the \ac{PV} to which the candidate has the smallest $\text{IP}\chi^2$, also denoted as best \ac{PV}.
+To be consistent with this strategy we also choose for each event the best \ac{PV}.
+Events where the formerly best \ac{PV} is no longer present after the selection are removed.
+Besides events can contain more than one \Bz candidate.
+After the stripping this is the case for \SI{9}{\percent} of the events and \SIrange{18}{20}{\percent} of the \Bz candidates share the same event.
+This is reduced after applying the described selection steps, so that after selection only \SI{0.4}{\percent} of the events contain multiple candidates and \SI{0.8}{\percent} of the \Bz candidates share one event.
+Following the proposal in \cite{Koppenburg:2017zsh} the remaining candidates are assumed to be equally likely signal candidates and one candidate per event is chosen at random.
 
 \subsection{Selection Performance}
 \label{sec:selectionPerformance}
 
-% - Selektions Performanzen wurden bestimmt auf oberem Massenseitenband der 2012 Daten (kombinatorischer Untergrund) und Signal MC für 2012
-% - Effizienzen in Tabelle X
-% -  Vetos zeigen schlechte Untergrundunterdrückung, da sie nciht kombinatorkik unterdrücken sollen
-% - Außerdem wurde als Crosscheck der BDT getrennt nach Jahr und Magnetpolarität auf Daten gecheckt, werte in Tabelle - die absoluten Werte sind nr bedingt aussagekräftig, da Sig+Bkg zu sehen ist. (Vorher noch Polarität am Anfang einführen)
-% - Schlussneldich nicht resonanten B->Kpipipi Komponente abgeschätzt mit zwei Strategien:
-%   - zunächst Anwendung aller Selektionsschnitte, dann:
-%   - erste Methode B-Massenfenster wird ausgeschnitte, anschließend wird die D-Masse für dieses Fenster angesehen - Kombinatorik im D-Massenfenster ist etwa 1% vom Signalpeak - allerdings zeigt D-Massenplot viel mehr Kandidaten??
-%   - zweite Methode: In der D-Masse wird der Peak ausgeschnitten, und das B-Massenfenster untersucht (nach Anwendung): Fit einer Exponentialfunktion für kombinatorischen Untergrund und Gaus mit gefixtem Mittelwert, ergibt X Kandidante, Plots zeigen ausgeschnittenens D-Massenfesnster und B-Fit
-%   - Verunreinigung durch nicht Resonante untergründe vernachlässigbar
+The selection performance was determined on the upper mass sideband with $m_{\left[\Km\pip\pip\right]\pim}>\SI[per-mode=symbol]{5500}{\MeVcc}$ of the data and simulation based on the conditions of the \num{2012} data taking.
+The corresponding signal efficiencies $\varepsilon_{\text{sig}}$ and background rejections $1-\varepsilon_{\text{bkg}}$ are given in \cref{tab:selPerform}.
+\begin{table}[tbp]
+	\centering
+	\caption{Performances of all selection steps, where background refers to combinatorial background candidates.
+	All efficiencies are calculated using the number of candidates after the previous selection step as \SI{100}{\percent}.
+	The overall performance is given in the last row.}
+	\begin{tabular}{ccc}
+		\toprule
+		Selection step						& $\varepsilon_{\text{sig}}$  & $1-\varepsilon_{\text{bkg}}$ \\
+		\midrule
+		preselection						& \SI{93.61\pm0.06}{\percent} & \SI{85.20\pm0.02}{\percent} \\
+		\midrule
+		$\Lz^\pm_\cquark$-veto				& \SI{93.48\pm0.06}{\percent} & \SI{9.85\pm0.03}{\percent} \\
+		semileptonic veto					& \SI{98.96\pm0.03}{\percent} & \SI{7.66\pm0.03}{\percent} \\
+		mass vetoes combined				& \SI{92.51\pm0.07}{\percent} & \SI{16.77\pm0.04}{\percent} \\
+		\midrule
+		wrongly associated \ac{PV}s veto	& \SI{97.75\pm0.04}{\percent} & \SI{15.81\pm0.04}{\percent} \\
+		BDT selection						& \SI{83.63\pm0.10}{\percent} & \SI{97.18\pm0.01}{\percent} \\
+		\midrule
+		overall								& \SI{70.7\pm0.1}{\percent}   & \SI{99.911\pm0.002}{\percent} \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:selPerform}
+\end{table}
+The low background suppression of the vetoes is expected, as the vetoes aim to suppress a specific backgrounds, but not the combinatorial background which is used to determine the given efficiencies.
+
+Finally the contamination with non resonant $\Bz\to\Kp\pim\pim\pip$ decays is determined, as such background would show the same structure as \BdToDpi candidates in the invariant $m_{\Kp\pim\pim\pip}$-distribution, but the \emph{weak} phase would be different.
+In order to to this, two strategies are implemented, both using the datasample after applying all selection steps, except for the cut on the invariant \Dm-mass described in \cref{tab:preselection}:
+For the first strategy then the invariant \Dm-mass is plotted for candidates in a tight \Bz signal window from \SIrange[per-mode=symbol]{5240}{5320}{\MeVcc} as shown in \cref{fig:nonRes_Try1}.
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{06selection/figs/BmassCut.pdf}
+    \includegraphics[width=0.45\textwidth]{06selection/figs/Resulting_Dmass.pdf}
+    \caption{Left: Invariant \Bz-mass distribution with the selected signal region between the red vertical lines.
+    Right: Resulting invariant \Dm-mass distribution.}
+    \label{fig:nonRes_Try1}
+\end{figure}
+From the invariant \Dm-mass distribution the non-resonant contamination can be estimated to be roughly \SI{1}{\percent}.
+In the second strategy a cut on the invariant \Dm-mass distribution removing the \Dm-peak is applied.
+Then the invariant \Bz-mass wihtout constraint on the \Dm-mass is inspected and a fit using an exponential to model the background and a gaussian with fixed shape to model the signal is performed to estimate the number of non-resonant $\Bz\!\to\Kp\pim\pim\pip$ candidates (see \cref{fig:nonRes_Try2}).
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{06selection/figs/DmassCut.pdf}
+    \includegraphics[width=0.45\textwidth]{06selection/figs/Resulting_Bmass.pdf}
+    \caption{Left: Invariant \Dm-mass distribution with the excluded signal region between the red vertical lines.
+    Right: Resulting invariant \Bz-mass distribution with the fit overlaid. The red dashed line describes the combinatorial background, the blue dotted line the signal component.}
+    \label{fig:nonRes_Try2}
+\end{figure}
+This fit yields \num{645\pm242} signal candidates.
+As both strategies do not show a significant amount of a non-resonant contamination of the sample, this is assumed to be negligible.

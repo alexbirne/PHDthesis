@@ -63,6 +63,12 @@ The fewer proton-proton collisions occur simultaneously, the easier this is.
 Therefore, \lhcb does not use the maximum luminosity provided by the \lhc, but a constant luminosity of about \SI{4e32}{\per\cm\squared\per\second}~\cite{LHC_statistic}.
 This is adjusted by reducing the overlap of the colliding proton bunches at \lhcb compared to the other experiments.
 However, since the collision rate with currently \SI{20}{\mega\hertz} is still too high to store all events directly, powerful triggers are also required, which already make an initial selection of the data and receive as many signal end states as possible.
+Furthermore, especially during the injection and accelerating phases of the \lhc beam instabilities may arise which could cause a significant damage in detector components close to the beam pipe.
+To protect the detector from such incidents, it is equipped with several safety systems.
+The main protection system is the beam conditions monitor (BCM), which measures the particle flux in close vicinity of the beam pipe at two locations downstream and upstream of the \velo~\cite{Ilgner:2010vu}.
+As a safety system it is able to remove the beam-permit signal and therefore to dump the \lhc beam.
+Accordingly, the BCM is powered by the \lhc-mains through an uninterruptible power supply.
+
 In the following, the individual components of the LHCb detector (see \cref{fig:lhcbdetector}) based on \cite{Alves:2008zz} are explained, separately for the components of the tracking system, the particle identification system and the \lhcb trigger. Though it is important to note, that neither the components described in \cref{sec:tracking} nor the components described in \cref{sec:PartID} are exclusively used for tracking or particle identification purposes, but always a combination of all components is needed for the final reconstruction.
 
 \subsection{The tracking system}
@@ -144,6 +150,7 @@ Tracks of charged particles are bended with in the accelerator plane ($x$-plane)
 \end{figure}
 The magnet yoke consists of \SI{100}{\milli\metre} thick laminated low carbon steel plates with a maximum weight of \SI{25}{\tonne}.
 The relative precision of the magnetic field needed to achieve the desired momentum resolution is $\mathcal{O}\!\left(10^{-4}\right)$.
+During datataking the polarity is inverted regularly to prevent systematic effects due to \eg different performances depending on the area of the detector where the particles traverses.
 
 \subsection{The particle identification system}
 \label{sec:PartID}
@@ -177,7 +184,7 @@ An electromagnetic calorimeter (\ecal) is followed by a hadronic calorimeter (\h
 
 To suppress backgrounds from charged pions, the Preshower (\presh) is installed in upstream of the \ecal.
 For the trigger, backgrounds from \piz with high transverse energy \et are suppressed by the scintillating pad detector (\spd).
-Since the hit density varies by two orders of magnitude over the calorimeter surface, the lateral division of the calorimeters varies depending on the distance to the beam pipe and increases with closer to the beam pipe (see Figure \cref{fig:calorimeter}).
+Since the hit density varies by two orders of magnitude over the calorimeter surface, the lateral division of the calorimeters varies depending on the distance to the beam pipe and increases closer to the beam pipe (see Figure \cref{fig:calorimeter}).
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.9\textwidth]{05lhcb/figs/calorimeter.pdf}
