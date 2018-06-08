@@ -2,12 +2,96 @@
 \chapter{Massfit}
 \label{ch:massfit}
 
-\blindtext
 
-\section{Probabity densitiy functions}
+After the selection the datasample is split into the two samples described in \cref{sec:Samples}, referred to as \emph{pion}- and \emph{kaon}-sample.
+The invariant \Bz mass distributions of candidates with a tag of one of the flavour tagging algorithms are fitted simultaneously in these samples in order to calculate \emph{sWeights}~\cite{Pivk:2004ty}, which are used in the following analysis steps to separate signal from background candidates statistically.
+Before reporting in greater detail about this fits, it is important to note, that the work described in this chapter was done by a collaborator.
+However it is not left out completely, as it is an essential part of the analysis and is needed to follow the analysis, but the extent to which \eg experimental techniques are described is less comprehensive compared to the other parts of the analysis.
 
-\Blindtext
+When parametrising the invariant \Bz mass all components contributing need to be described. Backgrounds from semileptonic decays, $\Lb\!\to\Lcbar\pip$ decays and $\Bs\!\to\Dsm\pip$ decays was either removed in the selection or found to be at a negligible level.
+However, beside the signal component and the combinatorial background both, the \emph{pion}- and \emph{kaon}-sample show additional backgrounds which arise due to missing neutral particles in the reconstruction or pion-kaon-misidentifications.
+The \pion{sample} shows contributions from $\Bz\!\to\Dm\rhop\!\left(\to\pip\piz\right)$ and $\Bz\!\to\Dstarm\!\left(\to\Dm\piz/\g\right)\pip$ decays, in the \emph{kaon}-sample components from $\Bz\!\to\Dm\Kstarp\!\left(\to\Kp\piz\right)$ and also $\Bz\!\to\Dm\rhop\!\left(\to\pip\piz\right)$  need to be described.
+Furthermore, both samples show a cross-feed component from each other.
+Using the efficiencies of the \dllkpi requirement on simulations $\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D X\right)_Y$ (with $X, Y=\pion, \kaon$) the number of cross-feed $\Bz\!\to\D\kaon$ candidates in the \emph{pion}-sample can be expressed from the yield in the \emph{kaon}-sample and vice versa as
+\begin{equation}
+\begin{aligned}
+N_{\Bz\!\to\D\pion}^{\kaon}&=\frac{1-\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \pion\right)_{\pion}}{\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \pion\right)_{\pion}}\times N_{\Bz\!\to\D\pion}^{\pion} \\
+N_{\Bz\!\to\D\kaon}^{\pion}&=\frac{1-\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \kaon\right)_{\kaon}}{\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \kaon\right)_{\kaon}}\times N_{\Bz\!\to\D\kaon}^{\kaon}.
+\end{aligned}
+\end{equation}
+Hereby the subscripts denote the sample and the superscript the component within the respectiv sample.
 
-\section{Fit ot data}
+Before describing the mass fit to data {\cref{sec:MassFitData}}, first the probability density functions (PDFs) used for the different components are introduced in the following (\cref{sec:PDFs}).
 
-\Blindtext
+\section{Probability densitiy functions}
+\label{sec:PDFs}
+
+The various peaking components in the invariant mass distributions are described by a phenomenological approach, where the description was first
+estimated on simulated decays.
+In contrast the combinatorial background was determined directly in the fit to data.
+In the fit to the \emph{pion}-sample the following the parametrisations and PDFs for the peaking components were used:
+\begin{itemize}
+	\item $\Bz\!\to\Dpm\pimp$: The signal component is described by a double-sided Hypatia and a Johnson SU function.
+	The Hypatia~\cite{Santos:2013ky} is defined as
+	\begin{equation}
+	\begin{aligned}
+	&\mathcal{I}(m;\mu,\sigma,\lambda,\zeta,\beta,a_1,n_1,a_2,n_2) \propto\\
+	&\hspace{2.8cm}\begin{cases}
+	G(m,\mu,\sigma,\lambda,\zeta,\beta,a,n), &\,   - a_1 < \frac{m - \mu}{\sigma} < a_2 \\
+	\frac{G(\mu - a_1 \sigma,\mu,\sigma,\lambda,\zeta,\beta)}{\left(1 - m/(n \frac{G(\mu - a_1\sigma,\mu,\sigma,\lambda,\zeta,\beta)}{G^\prime(\mu - a_1 \sigma,\mu,\sigma,\lambda,\zeta,\beta)} -a_1 \sigma)\right)^{n_1}},	&\,  - a_1 > \frac{m - \mu}{\sigma} \\
+	\frac{G(\mu - a_2 \sigma,\mu,\sigma,\lambda,\zeta,\beta)}{\left(1 - m/(n \frac{G(\mu - a_2\sigma,\mu,\sigma,\lambda,\zeta,\beta)}{G^\prime(\mu - a_2 \sigma,\mu,\sigma,\lambda,\zeta,\beta)} -a_2 \sigma)\right)^{n_2}},	&\quad a_2 < \frac{m - \mu}{\sigma} \\
+	\end{cases}
+	\label{eq:ipatia}
+	\end{aligned}
+	\end{equation}
+	with
+	\begin{equation}
+	\begin{aligned}
+	&G(m,\mu,\sigma,\lambda,\zeta,\beta,a,n)\propto\\
+	&\hspace{0.6cm}\left(\left(m-\mu\right)^2+A_\lambda^2(\zeta)\sigma^2\right)^{\frac{1}{2}\lambda-\frac{1}{4}}e^{\beta\left(m-\mu\right)}K_{\lambda-\frac{1}{2}}\left(\zeta\sqrt{1+\left(\frac{m-\mu}{A_\lambda(\zeta)\sigma}\right)^2}\right).
+	\end{aligned}
+	\end{equation}
+	Defining the quantities
+	\begin{align*}
+	&w=e^{r^2}&\\
+	&\omega=-\nu\tau&\\
+	&c=\frac{1}{\sqrt{\frac{1}{2}\left(w-1\right)\left(w\cosh\!\left(2\omega\right)+1\right)}}&\\
+	&z=\frac{m-\left(\mu+c+\sigma\sqrt{w}\sinh\omega\right)}{c\sigma}&\\
+	&r=-\nu+\frac{\sinh^{-1}z}{\tau}&
+	\end{align*}
+	the Johnson SU function~\cite{JohnsonSU} can be expressed as
+	\begin{equation}
+	\mathcal{J}\!\left(m;\mu,\sigma,\nu,\tau\right)\propto\frac{1}{2\pi c(\nu,\tau)\sigma}e^{-\frac{1}{2}r(m;\mu,\sigma,\nu,\tau)^2}\frac{1}{\tau\sqrt{z(m;\mu,\sigma,\nu,\tau)^2+1}}.\label{eq:johnsonsu}
+	\end{equation}
+	\item $\Bz\!\to\Dm\Kp$: The cross-feed component is parametrised by a double-sided Hypatia function as described in \cref{eq:ipatia}.
+	\item $\Bz\!\to\Dm\rhop$: The first partially reconstructed background is described by a single-sided Crystal Ball function and a Gaussian function.
+	The single-sided Crystal Ball function is defined as
+	\begin{equation}
+	\mathcal{C\!B}\!\left(m;\mu,\sigma,\alpha,n\right)\propto\begin{cases}
+	e^{-frac{(m-\mu)^2}{2\sigma^2}}, &\, \frac{m-\mu}{\sigma}>-\alpha\\
+	A\left(B-\frac{m-\mu}{\sigma}\right)^{-n}, &\, \frac{m-\mu}{\sigma}\leq-\alpha\\\end{cases}\label{eq:CrystalBall}
+	\end{equation}
+	with
+	\begin{equation}
+	A=\left(\frac{n}{\left|\alpha\right|}\right)^{n}e^{-\frac{\left|\alpha\right|^2}{2}}\hspace{0.5cm}\text{ and }\hspace{0.5cm}B=\frac{n}{\left|\alpha\right|}-\left|\alpha\right|.
+	\end{equation}
+	\item $\Bz\!\to\Dstarm\pip$: The second-partially reconstructed component is modelled with the sum of a single-sided Crystal Ball function (\cref{eq:CrystalBall}) and a Gaussian function.
+\end{itemize}
+For the \emph{kaon}-sample the peaking components are modelled as follows:
+\begin{itemize}
+	\item $\Bz\!\to\Dm\Kp$: The signal component ist described with a single-sided Hypatia function. The single-sided Hypatia can be derived from the double-sided Hypatia function as described in \cref{eq:ipatia} by setting the parameters $n_2=0$ and $a_2\to+\infty$, \ie fixing $a_2$ to a large value.
+	\item $\Bz\!\to\Dpm\pimp$: The cross-feed component is parametrised by a double-sided Hypatia function as described in \cref{eq:ipatia}.
+	\item $\Bz\!\to\Dm\rhop$: The partially-reconstructed and further misidentified background is parametrised by a sum of two Gaussian functions. The sum is normalised using fractions $f$ and $1-f$ for the two Gaussian functions.
+	\item $\Bz\!\to\Dm\Kstarp$: The partially reconstructed background is modelled with a Gaussian function.
+\end{itemize}
+The combinatorial background is described with a sum of two exponentials in the \emph{pion}-sample, while for the \emph{kaon}-sample a single exponential function is sufficient.
+
+\section{Fit to data}
+\label{sec:MassFitData}
+
+% - dann ist die Strategie: zwei Schritte: zunächst ein binned extended maximum likelihood fit auf dem Bereich [5090,6000]
+% - Parametrisierung beschreiben
+% - dann in zweitem Schritt alle Untergrundkomponenten in einer kombiniert und kleineres B-Massen Fenster von [5220,5600].
+% - Vereinfachung der Untergrundkomponenten mit beschreiben
+% - nur noch Fit im pion Sample, einzig Yields sind frei um sWeights zu bestimmen
+% - Yield aus dem zweiten Fit in Tabelle
