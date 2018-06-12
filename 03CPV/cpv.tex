@@ -11,8 +11,8 @@ The physical meaningful quantities are the relative phase differences between co
 There are three types of phases arising in transition amplitudes:
 \emph{Weak} phases, which change sign under \CP transformation (\CP-odd), \emph{strong} phases, which do not change sign under \CP transformation (\CP-even) and \emph{spurious} phases, which usually arise due to conventional rephasings.
 The denotations \emph{weak} and \emph{strong} do not mean that the phases originate in weak or strong interactions, but only describe their behaviour under \CP transformation.
-Spurious phases are global and just arise due to conventional rephasings.
-As they do not originate in any dynamics they will be ignored below for simplification.
+\emph{Spurious} phases are global and just arise due to conventional rephasings.
+For simplification they will be ignored below, as they do not originate in any dynamics.
 Consequently the \CP transformation of the initial and final states are defined with \emph{weak} phases $\xi_i$ and $\xi_f$ as follows
 \begin{equation}
 \begin{aligned}
@@ -23,7 +23,7 @@ Consequently the \CP transformation of the initial and final states are defined 
 
 In this chapter first the time evolution of neutral mesons is described and subsecently the formalism is applied to the \Bz-\Bzb mixing.
 Following the main equations describing \CP violation are derived and then the three classes of \CP violation are discussed.
-More details on these topics can be found in Refs.~\cite{Branco:396964,Bigi:1295518}
+More details on these topics can be found in Refs.~\cite{Branco:396964,Bigi:1295518}.
 
 \section[head={Time evolution of neutral mesons},tocentry={Time evolution of neutral mesons}]{Time evolution of neutral mesons}
 \label{sec:TimeEvolution}
@@ -46,16 +46,16 @@ Furthermore, as due to the $CPT$ theorem particle and antiparticles have the sam
 \end{aligned}
 \end{equation}
 Interpreting \Paz and \Pazb as two states distinguished by an internal quantum number $N_\quark$ the matrix elements can also be classified by certain types of transitions:
-transitions with $\Delta N_\quark=1$ are driven by the diagonal elements, while the off diagonal elements are describe with $\Delta N_\quark=2$.
-These $\Delta N_\quark=2$ processes describe so-called particle-antiparticle-oscillations.
+Transitions with $\Delta N_\quark=1$ are driven by the diagonal elements, while the off diagonal elements describe transitions with $\Delta N_\quark=2$.
+These $\Delta N_\quark=2$ processes include so-called particle-antiparticle-oscillations.
 
 To solve \cref{eq:mixMatrix} and infer the time evolution the matrix $H$ needs to be diagonalised to obtain the mass eigenstates and the corresponding eigenvalues.
 These eigenstates can have different masses and lifetimes, however the absolute sign of the mass difference \dm or decay-width difference \DG has no physical meaning, as interchanging the two eigenstates would lead to $\dm\to-\dm$ and $\DG\to-\DG$.
-Instead only the relative sign between both quantities is of physical interest.
-With regard to the \Bz-meson system, where the eigenstates have quite different masses, in the following the mass eigenstates are denoted with $P_\text{H}$ and $P_\text{L}$, referring to the heavier and lighter eigenstate, respectively.
+Instead, only the relative sign between both quantities is of physical interest.
+With regard to the \Bz-meson system, in which the eigenstates have quite different masses, in the following the mass eigenstates are denoted with $P_\text{H}$ and $P_\text{L}$, referring to the heavier and lighter eigenstate, respectively.
 Using
 \begin{equation}
-F=\sqrt{\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)\left(m_{12}^\ast-\frac{i}{2}\Gamma_{12}^\ast\right)}.
+F=\sqrt{\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)\left(m_{12}^\ast-\frac{i}{2}\Gamma_{12}^\ast\right)}
 \end{equation}
 the eigenvalues can be expressed as
 \begin{equation}
@@ -76,7 +76,7 @@ The parameters $p$ and $q$ are constrained to fulfil $\left|p\right|^2\!+\left|q
 \frac{q}{p}=\sqrt{ \frac{ m_{12}^\ast-\frac{i}{2}\Gamma_{12}^\ast }{ m_{12}-\frac{i}{2}\Gamma_{12} }}
 =\frac{\dm-\frac{i}{2}\DG}{2\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)}.\label{eq:qoverp}
 \end{equation}
-Using the mass eigenvalues from \cref{eq:Mass_eigenvalues} and mass eigenstates from \cref{eq:Mass_eigenstates} and the Schrödinger equation can be rewritten as
+Using the mass eigenvalues from \cref{eq:Mass_eigenvalues} and mass eigenstates from \cref{eq:Mass_eigenstates}, the Schrödinger equation can be rewritten as
 \begin{equation}
 i\frac{d}{dt}\begin{pmatrix} P_\text{L} \\ P_\text{H} \end{pmatrix} = \begin{pmatrix} \mu_\text{L} & 0 \\ 0 & \mu_\text{H} \end{pmatrix}\begin{pmatrix} P_\text{L} \\ P_\text{H} \end{pmatrix},
 \end{equation}
@@ -102,13 +102,13 @@ to match the convention used by \ac{HFLAV}~\cite{HFLAV2016}.
 \section[head={\Bz-\Bzb mixing},tocentry={\Bz-\Bzb mixing}]{$\symbfsf{\Bz}$-$\symbfsf{\Bzb}$ mixing}
 \label{sec:BBbarMixing}
 
-As described above the mixing of the flavour eigenstates \Bq and \Bqb are characterised by mass difference \dm, the decay-width difference \DG and the ratio $\nicefrac{q}{p}$ the paramters.
-All of these quantities are connected to the off-diagonal matrix elements $m_{12}-\nicefrac{i}{2}\Gamma_{12}$, hence $m_{12}$ and $\Gamma_{12}$ must be calculated to further probe mixing phenomena.
-In the \ac{SM} transitions from \Bq to \Bqb mesons can only happen through $\Delta F=2$ which can be further separated into transitions happening at quark-level (short-distance transitions) and transitions at hadron-level (long-distance transitions).
+As described above the mixing of the flavour eigenstates \Bq and \Bqb is characterised by the mass difference \dm, the decay-width difference \DG and the ratio $\nicefrac{q}{p}$.
+All of these quantities are connected to the off-diagonal matrix elements $m_{12}-\nicefrac{i}{2}\,\Gamma_{12}$, hence $m_{12}$ and $\Gamma_{12}$ must be calculated to further probe mixing phenomena.
+In the \ac{SM} transitions from \Bq to \Bqb mesons can only happen through $\Delta F=2$ dynamics, which can be further separated into transitions happening at quark-level (short-distance transitions) and transitions at hadron-level (long-distance transitions).
 
-In the \ac{SM} long-distance transitions are expected to be negligible in the \Bq-\Bqb system due to the large mass of the \bquark-quark.
+Due to the large mass of the \bquark-quark, long-distance transitions are expected to be negligible for the \Bq-\Bqb system in the \ac{SM}.
 
-Transitios at quark-level, at lowest order, can be represented by Feynman-diagrams as shown in \cref{fig:FeynmanMixing}.
+Transitions at quark-level, at lowest order, can be represented by Feynman-diagrams as shown in \cref{fig:FeynmanMixing}.
 \begin{figure}[tbp]
 	\centering
 	\includestandalone{03CPV/figs/Bmixing_1}
@@ -129,7 +129,7 @@ Using the short notation $\lambda_i=V^{*}_{{\kern -0.1em}i\bquark}V_{{\kern -0.1
 +2\eta_3\lambda_{\cquark}\lambda_{\tquark}S_0\left(x_\cquark,x_\tquark\right).
 \end{equation}
 Here $\eta_i$ are QCD correction factors and $S_0$ are the Inami-Lin functions~\cite{Inami:1980fz}, which go with the up-type-quark masses through the ratio $x_\quark\equiv\nicefrac{m_\quark^2}{m_\W^2}$.
-In case of $\quark=\dquark$ both $\lambda_\cquark$ and $\lambda_\tquark$ are of same magnitude $\lambda^3$, in case of $\quark=\squark$ both $\lambda_\cquark$ and $\lambda_\tquark$ are of same magnitude $\lambda^2$.
+In case of $\quark=\dquark$ both, $\lambda_\cquark$ and $\lambda_\tquark$, are of same magnitude $\lambda^3$, in case of $\quark=\squark$ both, $\lambda_\cquark$ and $\lambda_\tquark$, are of magnitude $\lambda^2$.
 Hence the summand containing $S_0\left(x_\tquark\right)$ is dominant and with the replacement $\eta_2=\eta_\Bq$ one can approximate
 \begin{equation}
 \mathcal{F}\approx\eta_\Bq\lambda_\tquark^2S_0\left(x_\tquark\right).
@@ -159,7 +159,7 @@ Squaring this and separating the real and imaginary parts leads to
 \dm\DG&=4\mathcal{Re}\left(m_{12}^\ast\Gamma_{12}\right).
 \end{aligned}
 \end{equation}
-Taking into account the GIM-enhancement of $m_{12}$ and the bound on $\Gamma_{12}$ to be of order $m_\Bq$ (\cref{eq:m12vsG12}) this can be simplied to
+Taking into account the GIM-enhancement of $m_{12}$ and the bound on $\Gamma_{12}$ to be of order $m_\Bq$ (\cref{eq:m12vsG12}) this can be simplified to
 \begin{equation}
 \begin{aligned}
 \dm&\approx2\left|m_{12}\right|\\
@@ -175,9 +175,9 @@ Applying the reasoning from \cref{eq:m12vsG12} further the ratio $\nicefrac{q}{p
 \ie the quantity $\nicefrac{q}{p}$ is a pure phase.
 Using \cref{eq:monetwo} the ratio can be connected to the CKM matrix elements:
 \begin{equation}
-\frac{q}{p}\approx-\frac{\Vtbst V_{\tquark\quark}}{\Vtb V_{\tquark\quark}^\ast}.\label{eq:qoverpCKM}
+\frac{q}{p}\approx-\frac{\Vtbst V_{\tquark\quark}}{\Vtb V_{\tquark\quark}^\ast}\label{eq:qoverpCKM}.
 \end{equation}
-Here the CKM combination $\Vtbst V_{\tquark\quark}$ appears because the box diagrams for $m_{12}$ shown in \cref{fig:FeynmanMixing} are dominated by the top-quark contribution as explained above.
+As explained above, the CKM combination $\Vtbst V_{\tquark\quark}$ appears here because the box diagrams for $m_{12}$ shown in \cref{fig:FeynmanMixing} are dominated by the top-quark contribution.
 
 
 \section[head={Master equations of \CP violation},tocentry={Master equations of \CP violation}]{Master equations of $\symbfsf{\CP}$ violation}
@@ -198,7 +198,7 @@ Denoting initially produced particles with $\Paz\!(t)$ the probability for the t
 =&\Af^2\left|g_+ + \frac{q}{p}\frac{\Abarf}{\Af} g_-\right|^2=\Af\left|g_+ +\Lf\,g_-\right|^2\nonumber\\
 =&\left|\Af\right|^2\left(g_+g_+^*+\left|\Lf\right|^2g_-g_-^*+\left(\lambda_{f}^*g_-^*g_+ + \Lf\,g_+^* g_-\right)\right).
 \end{align}
-In analogoy the probabilites for an initially produced antiparticle $\Pazb\!(t)$ and a second finalstate \fbar are given by
+In analogy the probabilites for an initially produced antiparticle $\Pazb\!(t)$ and a second finalstate \fbar are given by
 \begin{align}
 &\left|\left<\,\f\,\Big|T\Big|\Pazb\!(t)\right>\right|^2&\kern -8.5pt{=}
 &\kern 6.0pt{\left|\Af\,\right|^2}&&\kern -5.5pt{\left|\frac{p}{q}\right|^2}& &\kern -5.5pt{\left(\left|\Lf\right|^2g_+g_+^*+g_-g_-^*+\left(\Lfst g_+^*g_- + \Lf\,g_-^* g_+\right)\right)}&\\
@@ -250,8 +250,8 @@ These coefficients satisfy the conditions
 \begin{equation}
 \Sf+\Cf+A_f^{\DG}=1\,\,\,\,\,\text{and}\,\,\,\,\,\Sfbar+\Cfbar+A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}=1.\label{eq:CpCoeffCond}
 \end{equation}
-Also they are not necesarily constant over the whole phase space.
-For multibody decays, for example, the contributing phases originate as well from final state interactions (\ie \emph{strong} phases) which are not identical for different regions of phase space.
+Also they are not necessarily constant over the whole phase space.
+For example for multibody decays the contributing phases originate as well from final state interactions (\ie \emph{strong} phases) which are not identical for different regions of phase space.
 
 \section[head={Classes of \CP violation},tocentry={Classes of \CP violation}]{Classes of $\symbfsf{C{}P}$ violation}
 \label{sec:CPVClasses}
@@ -259,7 +259,7 @@ For multibody decays, for example, the contributing phases originate as well fro
 Depending on the type of transition in which \CP violation occurs, its manifestation is different, yielding in three classes.
 Transitions with purely $\Delta N_\quark=1$ are affected by the so-called direct \CP violation, in transitions with $\Delta N_\quark=2$ \CP violation in mixing can potentially be observed.
 Transitions affected by both $\Delta N_\quark=1$ dynamics and $\Delta N_\quark=2$ dynamics can be additionally affected by the so-called interference \CP violation.
-These three types will be described in more detail below.
+These three types will be described more detailedly below.
 
 
 \subsection[head={Direct \CP violation},tocentry={Direct \CP violation}]{Direct $\symbfsf{C{}P}$ violation}
@@ -273,15 +273,15 @@ Experimentally direct \CP violation can be measured with an asymmetry like
 A_{\CP}=\frac{\left|\left<\,\fbar\,|T|\,\kern 0.18em\overline{\kern -0.18em P}\,\right>\right|^2-\left|\left<\,\f\,|T|\,P\,\right>\right|^2}{\left|\left<\,\fbar\,|T|\,\kern 0.18em\overline{\kern -0.18em P}\,\right>\right|^2+\left|\left<\,\f\,|T|\,P\,\right>\right|^2} = \frac{\left|\,\nicefrac{\Abarfbar}{\Af}\,\right|^2-1}{\left|\,\nicefrac{\Abarfbar}{\Af}\,\right|^2+1}.
 \end{equation}
 
-Naively one could expect that it is sufficient that a single amplitude contributes to a transition.
-But considering a decay with just one amplitude
+Naively one could expect that it is sufficient that one single amplitude contributes to a transition.
+Instead, considering a decay with just one amplitude
 \begin{equation}
 \begin{split}
 \Af&=Ae^{i\left(\delta+\phi\right)}\\
 \Abarfbar&=Ae^{i\left(\delta-\phi\right)}
 \end{split}
 \end{equation}
-where $A$ is a real positive number, $\phi$ is the \emph{weak} phase and $\delta$ the \emph{strong} phase, it becomes immediately obvious that the quantity $\big|\,\Abarfbar\,\big|^2-\big|\,\Af\,\big|^2$ vanishes and therefore \CP is conserved.
+where $A$ is a real positive number, $\phi$ is the \emph{weak} phase and $\delta$ the \emph{strong} phase, it immediately becomes obvious that the quantity $\big|\,\Abarfbar\,\big|^2-\big|\,\Af\,\big|^2$ vanishes and therefore \CP is conserved.
 When instead considering a decay with two contributing amplitudes with different \emph{weak} and \emph{strong} phases
 \begin{equation}
 \begin{split}
@@ -301,7 +301,7 @@ A_{\CP}\left(\Bz\to\Kp\pim\right) &= -0.084\pm0.004\stat \pm 0.003\syst\\
 A_{\CP}\left(\Bs\to\Km\pip\right) &= 0.213\pm0.015\stat \pm 0.007\syst
 \end{split}
 \end{equation}
-what corresponds to a statistical significance of $16.8\sigma$ and $12.9\sigma$ for the \Bz and the \Bs mode, respectively.
+which corresponds to a statistical significance of $16.8\sigma$ and $12.9\sigma$ for the \Bz and the \Bs mode, respectively.
 Figure \ref{fig:DirectCPV} shows the time-dependent asymmetries.
 \begin{figure}[tbp]
 	\centering
@@ -316,7 +316,7 @@ Figure \ref{fig:DirectCPV} shows the time-dependent asymmetries.
 \label{sec:MixingCPV}
 
 Indirect \CP violation, also denoted as \CP violation in mixing implies that the transition probabilities for a \Bz-meson to oscillate into a \Bzb meson and vice versa are different.
-As due to charge conservation mxing is only possible for uncharged mesons this type of \CP violation cannot occur for charged particles.
+As due to charge conservation mixing is only possible for uncharged mesons this type of \CP violation cannot occur for charged particles.
 Using the time evolution from \cref{eq:timeEvolution} the probabilities of \eg initially produced \Bz and \Bzb mesons to have oscillated within a proper-time $t$ are
 \begin{align}
 \left|\left<\Bz\Big|\Bzb\!\left(t\right)\right>\right|^2=\frac{1}{4}\left|\frac{p}{q}\right|^2
@@ -324,11 +324,11 @@ Using the time evolution from \cref{eq:timeEvolution} the probabilities of \eg i
 \left|\left<\Bzb\Big|\Bz\!\left(t\right)\right>\right|^2=\frac{1}{4}\left|\frac{q}{p}\right|^2
 \left(e^{-\GH t}+e^{-\GL t}-2e^{\frac{1}{2}\left(\Gamma\right)t}\cos\left(\dm t\right)\right).
 \end{align}
-To obtain the same probabilities for both processes obviously
+To obtain the same probabilities for both processes
 \begin{equation}
 \left|\frac{q}{p}\right|=\left|\frac{p}{q}\right| \Rightarrow \left|\frac{q}{p}\right|=1
 \end{equation}
-is required.
+is required, obviously.
 According to \cref{eq:qoverp} this means that indirect \CP violation occurs if the matrix elements $m_{12}$ and $\Gamma_{12}$ have different complex phases.
 Using neutral \B-mesons as example, the \CP asymmetry in case of indirect \CP violation is accordingly defined as
 \begin{equation}
@@ -336,9 +336,9 @@ A_{\CP}(t)=\frac{\Gamma\left(\Bz\to\Bzb\right) - \Gamma\left(\Bzb\to\Bz\right)}{
 = \frac{1-\left|\nicefrac{p}{q}\right|^4}{1+\left|\nicefrac{p}{q}\right|^4}.
 \end{equation}
 However, as neutral \B-mesons do not just oscillate but also decay this asymmetry can not be used directly to measure \CP violation in mixing.
-Instead the \B-mesons need to be reconstructed in flavour specific decays, \ie only the transitions $\Bz\to\f$ and $\Bzb\to\fbar$, but not $\Bz\to\fbar$ and $\Bzb\to\f$ are allowed.
-Thus the flavour of the meson at decay can be determined by final state and compared to the initial production flavour.
-For the \Bz and \Bs meson system \CP violation in mixing has been measured to be negligible \cite{HFLAV2016} what is in good agreement with the \ac{SM} predictions (see \cref{sec:BBbarMixing}).
+Instead, the \B-mesons need to be reconstructed in flavour specific decays, \ie only the transitions $\Bz\to\f$ and $\Bzb\to\fbar$, but not $\Bz\to\fbar$ and $\Bzb\to\f$ are allowed.
+Thus the flavour of the meson at decay can be determined by the final state and compared to the initial production flavour.
+For the \Bz and \Bs meson system \CP violation in mixing has been measured to be negligible \cite{HFLAV2016}, what is in good agreement with the \ac{SM} predictions (see \cref{sec:BBbarMixing}).
 
 \subsection[head={Interference \CP violation},tocentry={Interference \CP violation}]{Interference $\symbfsf{C{}P}$ violation}
 \label{sec:InterferenceCPV}
@@ -361,7 +361,7 @@ Using \cref{eq:CPTransInitFinal} the \CP conjugated amplitudes \Abarfbar and \Af
 \Afbar&=e^{i\left(\xi_f+\xi\right)}\Abarf.\label{eq:amplitudetransformation_2}
 \end{align}
 what leads to $\big|\,\Af\,\big|=\big|\,\Abarfbar\,\big|$ and $\big|\,\Abarf\,\big|=\big|\,\Afbar\,\big|$ after eliminating the phases and shows that these amplitudes are \CP conserving.
-Combining \cref{eq:amplitudetransformation_1} and \cref{eq:amplitudetransformation_2} then leads to
+However, combining \cref{eq:amplitudetransformation_1} and \cref{eq:amplitudetransformation_2} gives the relation
 \begin{equation}
 \Af\,\Afbar=e^{2i\xi}\,\Abarfbar\,\Abarf\,.
 \end{equation}
@@ -375,14 +375,14 @@ Even without \CP violation in decay or mixing ($\big|\Lf\big|=\big|\Lfbar\big| =
 \begin{equation}
 	\arg\left(\Lf\right)+\arg\left(\Lfbar\right)\neq0. \label{eq:conditionCPV}
 \end{equation}
-This means that the \CP coefficients \Cf and \Cfbar are not affected by this type of \CP violation, while for the coefficients $(\Sf, \Sfbar)$ and  ($A_f^{\DG}, A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG})$ this condition can be reformulated to
+This means the \CP coefficients \Cf and \Cfbar are not affected by this type of \CP violation, while for the coefficients $(\Sf, \Sfbar)$ and  ($A_f^{\DG}, A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG})$ this condition can be reformulated to
 \begin{equation}
-\Sf\neq-\Sfbar\,\,\,\,\,\text{and}\,\,\,\,\,A_f^{\DG}\neq A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}
+\Sf\neq-\Sfbar\,\,\,\,\,\text{and}\,\,\,\,\,A_f^{\DG}\neq A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}.
 \end{equation}
-In the case that both particle and antiparticle decay into only one common finalstate this conditions simplify to $\arg\left(\Lf\right)\neq0$ and $\Sf\neq0$, $A_f^{\DG}\neq0$.
+In case that both, particle and antiparticle, decay into only one common finalstate this conditions simplify to $\arg\left(\Lf\right)\neq0$ and $\Sf\neq0$, $A_f^{\DG}\neq0$.
 
 This type of \CP violation was first measured by the \B-factories \babar \cite{Aubert:2001nu} and \belle \cite{Abe:2001xe}.
-The most prominent measurement is probably the anlysis of the so-called golden mode \BdToJPsiKS to determine $\sin\!\left(2\beta\right)$.
+The most prominent measurement probably is the analysis of the so-called golden mode \BdToJPsiKS to determine $\sin\!\left(2\beta\right)$.
 For this decay channel no \CP violation in decay and mixing is expected and with the current experimental precision $\DG=0$ can be assumed.
 Therefore the \CP asymmetry in this case can be expressed as
 \begin{equation}
