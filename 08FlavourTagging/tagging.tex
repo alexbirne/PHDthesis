@@ -165,13 +165,124 @@ p(\bquarkbar)=\prod_{i}\left(\frac{1-d_i}{2}+d_i\left(1-\eta_i\right)\right)
 where $d_i$ ($\eta_i$) are the tag decisions (mistag estimates) of the individual tagging algorithms.
 The combined tag decision and mistag are now defined as $d=-1$ and $\eta=1-P(\bquark)$ if $P(\bquark)>P(\bquarkbar)$ and as $d=+1$ and $\eta=P(\bquark)$ if $P(\bquark)<P(\bquarkbar)$.
 
-As mentioned before the output of the flavour tagging algorithms is the result of multivariate classifiers, which estimate the mistag.
+As mentioned before the output of the flavour tagging algorithms is mostly the result of multivariate classifiers, which are trained on flavour specific \B decays.
+This output is then transformed into a mistag estimate $\eta$ and crosschecked on another flavour specific validation sample.
+However, the training and validation sample are usually different from the signal decay used in a \CP-violation measurement.
+This differences are caused by different trigger and seelction criteria and can influence the distributions which are used by the multivariate classifier to estimate the mistag.
+Consequently, the mistag must be calibrated on a dedicated flavour specific decay, which shows at best kinematically similar distributions as the signal sample.
+For the OS taggers this is most often done using charged decay modes, as the charge of the final state particles allows to directly infer the production flavour.
+Instead, to calibrate the SS taggers a decay mode with the same initial \B flavour is needed, as these taggers highly depend on the hadronisation process.
+In this analysis the OS taggers are calibrated using $\Bu\!\to\Dz\pip$, where the bachelor pion allows to infer the initial flavour, while the SS taggers are calibrated using $\Bz\!\to\jpsi\Kstarz$.
 
-% - notizen dazu machen
+So far, for all analyses at \lhcb a linear calibration function of the form
+\begin{equation}
+\omega(\eta)=\tilde{p}_0+\tilde{p}_1\left(\eta-\left<\eta\right>\right)\label{eq:linCalib}
+\end{equation}
+where the arithmetic mean $\left<\eta\right>$ of the estimated mistag is used to decorrelate the calibration parameters $p_0$ and $p_1$, was sufficient.
+Using this calibration function a perfect calibration would result in $\tilde{p}_0=\left<\eta\right>$ and $\tilde{p}_1=1$.
+Yet, the performance of the tagger can depend on the initial \B flavour:
+If the interaction rates of charged decay products as kaons used by the OS kaon tagger with the detector material depend on the charge, the mistags will also depend on the flavour of the initial \B meson.
+Such asymmetry yields in an additional dilution factor, which needs to be understood and properly described.
+This can be achieved by using different calibration functions for \Bz- and \Bzb-mesons.
+In the simple linear case these calibration functions are
+\begin{equation}
+\begin{aligned}
+\omega=p_0+p_1+\left(\eta-\left<\eta\right>\right)\\
+\overline{\omega}=\overline{p}_0+\overline{p}_1+\left(\eta-\left<\eta\right>\right).
+\end{aligned}
+\end{equation}
+These different calibration parameters are furthermore linked to each other via the average calibration parameters used in \cref{eq:linCalib} and corresponding differences:
+\begin{equation}
+\tilde{p}_i=\frac{p_i+\overline{p}_i}{2}\hspace{0.5cm}\text{and}\hspace{0.5cm}\Delta p_i=p_i-\overline{p}_i.
+\end{equation}
+
+However, this analysis requires more sophisticated calibration models, mainly due to the large number of signal candidates in the \BdToDpi sample.
+This makes small effects that were hidden in previous \CP-violation analyses by the statistical ucnertainties significant.
+The adopted models are called generalised linear models (GLM)~\cite{GLM} and have the following form:
+\begin{equation}
+\WorWbar(\eta) = g\left(h(\eta)\right) = g\left( g^{-1} (\eta) + \sum_{i=1}^{N} \left(\tilde{p}_i \kern 0.0em\optbar{\kern -0.0em +} \frac{\Delta p_i}{2}\right) f_i(\eta)\right)\,.
+\end{equation}
+The functions $f_i$ are the so-called \emph{basis functions}, which for example can be simple poynomials or natural spline functions~\cite{Nsplines}.
+To minimise the correlation between the $\tilde{p}_i$ and $\Delta p_i$ parameters the \emph{basis functions} are orthogonalised using the Gram-Schmidt method~\cite{GramSchmidt}.
+The function $g$ is referred to as the \emph{link function}, which is usually defined as the inverse cumulative distribution function, to map all input values to the range $[0,1]$, \ie an interval which can be interpreted as a probability.
+As the mistag is only defined in the range $[0, 0.5]$ and therefore it is possible, that after applying a calibration function with this \emph{link function} the mistag is larger than \num{0.5}.
+In this case an arbitrary decision has to be taken how such candidates are further treated.
+Possible options are to either flip the corresponding tag decision $d\to-d$ and adjust the mistag $\omega\to1-\omega$ or to mark the candidate as untagged with a mistag of \num{0.5}.
+The latter possibility leads to fit instabilities in the decay-time fit when the calibration parameters are not fixed, but allowed to float or constrained by means of a Gaussian function.
+This is due to the fact, that for a floating or constrained calibration the ratio of tagged and untagged candidates varies during the minimisation and the changes to the likeihood are not continous.
+On the other hand, a flip of the tagdesicion may yield in a bias of the \CP-parameters as shown in \cref{sec:decTimeFitVal}.
+Therefore, the modified logistic function
+\begin{equation}
+g(h)=\frac{1}{2\left(1+e^h\right)}
+\end{equation}
+is used as \emph{link function}, which maps all input values into the range $[0, 0.5]$ and hence assures that all calibrated mistags are well defined.
+
+To not rely on possible binning effects on the estimated msitag $\eta$ or the mistag probabilitz $\omega$, the calibration functions are determined using an unbinned maximum-likelihood method, the so-called binomial regression~\cite{BinRegression}.
 
 \section{Flavour tagging strategy}
 \label{sec:taggingstrategy}
 
+In this analysis the combination of all available OS taggers is used, while for the SS both taggers designed to tag the initial flavour of \Bz-mesons are combined into one single tag decision and mistag.
+The OS taggers were all developed and trained on a datasample of $\Bu\!\to\jpsi\Kp$ decays, except for the OS charm tagger, whose BDT was trained on a mixed sample of simulated $\Bu\!\to\jpsi\Kp$, $\Bz\!\to\jpsi\Kstarz$ and $\Bs\!\to\jpsi\phi$ decays.
+As the OS taggers are independent of the initial signal \B they can be used in this default version.
+As control channel the decay $\Bu\!\to\Dz\pip$ is used.
+As mentioned before, the SS pion and the SS proton taggers were deveolped and trained on a datasample of \BdToDpi decays, assuming no \CP-violation.
+The use of these algorithms could therefor bias the measurement of \Sf and \Sfbar and hence both taggers are retrained (more details given in \cref{sec:retrainSSpion} and \cref{sec:retrainSSproton}).
+
+To include the flavour tagging in the decay rates given in \crefrange{eq:DecRateB2Dmpip}{eq:DecRateBb2Dppim} the expressions for the \CP-parameters \Sf and \Cf need to be extended to
+\begin{equation}
+\begin{aligned}
+\Sf\to\left(\Delta^--\Delta^+\right)\Sf\\
+\Cf\to\left(\Delta^--\Delta^+\right)\Cf.
+\end{aligned}
+\end{equation}
+Similar equations hold also for \Sfbar and \Cfbar.
+The coefficients $\Delta^\pm$ contain the calibration functions and tagging efficiencies $\varepsilon_{\text{tag}}^{\text{OS}}$ and $\varepsilon_{\text{tag}}^{\text{SS}}$.
+They are defined as
+\begin{align}
+\Delta^\pm&=\frac{1}{2}\varepsilon_{\text{\tiny tag}}^{\text{\tiny OS}}\left[1-\varepsilon_{\text{\tiny tag}}^{\text{\tiny SS}}+d^{\text{\tiny OS}}\left(1-\varepsilon_{\text{\tiny tag}}^{\text{\tiny SS}}-2\omega(\eta^{\text{\tiny OS}})\left(1+\varepsilon_{\text{\tiny tag}}^{\text{\tiny SS}}\right)\right)\right]\nonumber\\
+&\pm\frac{1}{2}\varepsilon_{\text{\tiny tag}}^{\text{\tiny OS}}\left[1-\varepsilon_{\text{\tiny tag}}^{\text{\tiny SS}}+d^{\text{\tiny OS}}\left(1-\varepsilon_{\text{\tiny tag}}^{\text{\tiny SS}}-2\overline{\omega}(\eta^{\text{\tiny OS}})\left(1+\varepsilon_{\text{\tiny tag}}^{\text{\tiny SS}}\right)\right)\right]
+\end{align}
+for candidates which are only tagged by the OS tagger combination.
+To obtain the expression for candidates only tagged by the SS taggers, all superscripts need to be exchanged with $\text{OS}\leftrightarrow\text{SS}$.
+For candidates which are tagged by both, the OS tagger combination and the SS taggers the coefficients can be written as
+\begin{align}
+\Delta^\pm&=\frac{1}{4}\varepsilon_{\text{\tiny tag}}^{\text{\tiny OS}}\varepsilon_{\text{\tiny tag}}^{\text{\tiny SS}}\left[1+\hspace{-3mm}\sum_{j=\text{\tiny OS, SS}}\hspace{-2mm}d_j\left(1-2\omega(\eta_j)\right)+d^{\text{\tiny OS}}d^{\text{\tiny SS}}\left(1-2\omega(\eta_j)+2\omega(\eta^{\text{\tiny OS}})\omega(\eta^{\text{\tiny SS}})\right)\right]\nonumber\\
+&\pm\frac{1}{4}\varepsilon_{\text{\tiny tag}}^{\text{\tiny OS}}\varepsilon_{\text{\tiny tag}}^{\text{\tiny SS}}\left[1+\hspace{-3mm}\sum_{j=\text{\tiny OS, SS}}\hspace{-2mm}d_j\left(1-2\overline{\omega}(\eta_j)\right)+d^{\text{\tiny OS}}d^{\text{\tiny SS}}\left(1-2\overline{\omega}(\eta_j)+2\overline{\omega}(\eta^{\text{\tiny OS}})\overline{\omega}(\eta^{\text{\tiny SS}})\right)\right].
+\end{align}
+
+The flavour specific control samples ($\Bu\!\to\Dz\pip$ for the OS, $\Bz\!\to\jpsi\Kstarz$ for the SS) are used to determine the functional form of the calibration function $\omega(\eta)$.
+Unlike other flavour tagged analyses at \lhcb the calibration parameter are determined directly in the decay-time fit as floating nuisance parameter of the likelihood function in \BdToDpi.
+This is possible because the parameters \Cf and \Cfbar are fixed to \num{1} and \num{-1} as the ratio $r$ (see \cref{eq:ratioDpi}) is expected too small to allow a significant measurement of both parameters.
+As a result, the cosine term allows to determine the calibration parameters independently of the sine term.
+A qualitative explaination is given in \cref{fig:FTstrategy}.
+A more quantitative validation was done by a collaboratoron pseudoexperiments:
+Generating pseudoexperiments and floating the parameters \Cf and \Cfbar in the fit showed a non-negligible bias for the parameters \Sf and \Sfbar, while fixing the coefficients \Cf and \Cfbar in the fit showed unbiased results on all fitted parameters.
+Finally it should be noted here, that possible deviations from the assumption of $\Cf=-\Cfbar=1$ are taken into account in the systematic uncertainties.
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/oscillation_f.pdf}
+    \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/oscillation_fbar.pdf}
+    \caption{Time-dependent asymmetries for \Bzb versus \Bz for the \Dm\pip (left) and \Dp\pim (right) final states.
+    The values for the \CP parameters are taken from simulation and no experimental dilutions are included.
+    Since the deviation of the sum of both trigonometric functions from a single cosine function is very small due to the tiny values of \Sf and \Sfbar, the maximum sensitivity is achieved in the regions of the zero-points, \ie where the amplitude of $\cos(\dm t)$ and $\sin(\dm t)$ are of similar size.
+    These regions are denoted as \enquote{sensitive regions} in both plots.
+    In the \enquote{non-sensitive regions}, where the cosine-function is completely dominating, additional diluting effects due to the tagging calibration can be determined.}
+    \label{fig:FTstrategy}
+\end{figure}
+
+As all calibration parameters are directly determined in the signal sample no assumptions for the portability of the calibration from a control channel is needed.
+However, the additional degrees of freedom in the final decay-time fit lead to an increased statistical uncertainty on the \CP-parameters \Sf and \Sfbar.
+This is compensated by the fact, that the systematic uncertainty for the portability of the calibration, which is often the largest systematic uncertainty for flavour tagged analyses at \lhcb, is needed.
+Such systematic uncertainty would be accounting for kinematic differences between the control sample and the signal sample leading to different flavour tagging calibrations.
+To check the portability simulated events of both, the control sample and the signal sample are used.
+When checking the portability of the calibrations from $\Bu\!\to\Dz\pip$ and $\Bz\!\to\jpsi\Kstarz$ to \BdToDpi a bias on \Sf and \Sfbar of roughly the size of their statistical uncertainty arises.
+This bias can be reduced, when floating the calibration parameters (more details on this are given in \cref{sec:decTimeFitVal}).
+Furthermore, the precision of the calibration parameters for the SS tagger combination obtained in the decay-time fit to \BdToDpi is much smaller compared to the precision on the control channel, while for the OS tagger combination the uncertainty on the signal sample increases only slightly compared to the uncertainty obtained on the control sample.
+
+Therefore, the studies presented in the following sections do not aim, to obtain the calibration parameters.
+Instead, on the one hand, they are used to determine the functional form of the calibration function, which is used in the decay-time fit described in \cref{sec:ExtractCPobs}.
+On the other hand, the obtained parameter values of the calibration function can be used as reference values for the decay-time fit, as even if they are not expected to agree perfectly, both parameter sets should be in the same interval.
 
 \section{Opposite side tagging calibration}
 \label{sec:OScalibration}
@@ -184,9 +295,10 @@ As mentioned before the output of the flavour tagging algorithms is the result o
 
 
 \subsection{Retraining of the SS pion tagger}
+\label{sec:retrainSSpion}
 
 
 \subsection{Retraining of the SS proton tagger}
-
+\label{sec:retrainSSproton}
 
 \subsection{Calibration portability}
