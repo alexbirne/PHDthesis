@@ -56,8 +56,9 @@ As the hadronisation and the decay of the OS \bquark-hadron is independent of th
 The SS algorithms use remnants of the hadronisation of the signal \B-meson to infer the initial flavour.
 As the companion quark of the \bquark-quark is different for \Bz and \Bs-mesons, different algorithms must be used to deduce the initial flavour of the signal \B.
 
-In case of a \Bz (\bquarkbar\dquark) a free \dquarkbar-quark is produced which can hadronise to a pion or proton~\cite{Aaij:2016rdg}.
-The SS pion and SS proton taggers use the charge of these particles to infer a tag decision.
+In case of a \Bz (\bquarkbar\dquark) a free \dquarkbar-quark is produced which can hadronise to a pion or proton.
+Additionally the production mechanisms, \eg via the strong decay of an excited $B^{**+}\!\to B^{(*)0}\pip$ can be exploited~\cite{Aaij:2016rdg}.
+The SS pion and SS proton taggers use the charge of these companion particles to infer a tag decision.
 They were developed on \BdToDpi decays assuming $\Sf=\Sfbar=0$, \ie the decay \BdToDpi is \CP-conserving.
 Therefore a potential bias of the analysis cannot be excluded when using these algorithms and they are retrained on $\Bz\!\to\jpsi\Kstarz$.
 The basic strategy is similar to the one in Ref.~\cite{Aaij:2016rdg}:
@@ -284,15 +285,154 @@ Therefore, the studies presented in the following sections do not aim, to obtain
 Instead, on the one hand, they are used to determine the functional form of the calibration function, which is used in the decay-time fit described in \cref{sec:ExtractCPobs}.
 On the other hand, the obtained parameter values of the calibration function can be used as reference values for the decay-time fit, as even if they are not expected to agree perfectly, both parameter sets should be in the same interval.
 
-\section{Opposite side tagging calibration}
-\label{sec:OScalibration}
-
-
 \section{Same side tagging calibration}
 \label{sec:SScalibration}
 
-\subsection[head={Selection and mass fit of $\Bz\!\to\jpsi\Kstarz$ candidates},tocentry={Selection and mass fit of $\Bz\!\to\jpsi\Kstarz$ candidates}]{Selection and mass fit of $\symbfsf{\Bz\!\to\jpsi\Kstarz}$ candidates}
+The SS tagger combination is retrained and calibrated on the datasample of $\Bz\!\to\jpsi\Kstarz$ candidates corresponding to \SI{3}{\per\femto\barn}, recorded in \num{2011} and \num{2012} at centre-of-mass energies of \SI{7}{\tera\electronvolt} and \SI{8}{\tera\electronvolt}, respectively.
+It is used, because $\Bz\!\to\jpsi\Kstarz$ is the only flavour-specific decay mode of \Bz-mesons wiht a sufficient large statistic beside the signal mode of \BdToDpi at \lhcb.
+The strategy follows mainly the one, which was used to train the original taggers on \BdToDpi what is described in Ref.~\cite{Aaij:2016rdg}.
+Only one additional step is implemented:
+The distributions of $\Bz\!\to\jpsi\Kstarz$ candidates are kinematically weighted to match the distributions of \BdToDpi candidates.
+The general procedure is quite similar for both tagging algorithms and looks as follows:
+\begin{itemize}
+	\item The $\Bz\!\to\jpsi\Kstarz$ sample is selected and a fit to the invariant mass is performed, in order to separate the signal and background components statistically.
+	Using the \emph{sPlot} method weights are calculated, which allow to obtain the distributions of other variables for the signal component. This is reported in \cref{sec:PrepBd2JpsiKstSample}
+	\item The distributions of transverse momentum \pt, pseudo-rapidity $\eta'$ and azimuthal angle $\phi$ of the \Bz candidate, the number of tracks and the number of \ac{PV}s in the event and a distribution of Hlt2 trigger decisions for $\Bz\!\to\jpsi\Kstarz$ candidates are weighted to match those of the \BdToDpi candidates.
+	This has two reasons: First the performance of the BDT is potentially improved when applying to \BdToDpi, second the portability of the functional form of the calibration is assured, and the obtained reference values better suited as such.
+	\item The tagging particles, whose charge is correlated with the initial \B flavour are selected
+	\item Finally the datasample is divided into three subsamples:
+	\begin{itemize}
+		\item The first third of the sample is used to train a BDT to separate correctly and wrongly charged tagging particles.
+		Hereby correctly tagged means that the charge of the tagging particle would indicate the correct tag, while wrongly tagged denotes exactly the opposite situation: The tagging particles charge would indicate the wrong tag decision.
+		To reduce the number of oscillated \Bz-mesons only \Bz-mesons with a decay time smaller than the first maximum of the oscillation are used.
+		Therefore, following the procedure in Ref.~\cite{Aaij:2016rdg}, \Bz-mesons used in the training are required to have a a decay time smaller than \SI{2.2}{\pico\second}.
+		\item On the second subsample is the BDT is tested in order to avoid effects as overtraining.
+		Furthermore both subsamples, the first training sample and this second testing sample, are used to determine the mistag as a function of the BDT response. For this latter step the requirement on the \Bz decay time is removed, as a full time-dependent analysis of the \Bz oscillation is needed.
+		\item Finally on the last third the functional form of the calibration is determined together with reference values for the calibration parameters obtained in the decay-time fit described in \cref{sec:ExtractCPobs}.
+	\end{itemize}
+\end{itemize}
 
+\subsection[head={Preparation of the $\Bz\!\to\jpsi\Kstarz$ samples},tocentry={Preparation of the $\Bz\!\to\jpsi\Kstarz$ samples}]{Preparation of the $\symbfsf{\Bz\!\to\jpsi\Kstarz}$ samples}
+\label{sec:PrepBd2JpsiKstSample}
+
+
+The decay $\Bz\!\to\jpsi\Kstarz$ is reconstructed using the decays $\jpsi\!\to\mup\mun$ and $\Kstarz\!\to\Kp\pim$.
+The cuts applied in the stripping are listed in \cref{tab:JpsiKstStripping}.
+\begin{table}[tbp]
+	\centering
+	\caption{Stripping cuts for the decay $\Bz\!\to\jpsi\Kstarz$ with $\jpsi\!\to\mup\mun$ and $\Kstarz\!\to\Kp\pim$.
+	For the charged tracks the more stringent requirements for the bachelore track are given in brackets.
+	For the impact parameter the shortcut IP is used, DOCA denotes the distance of closest approach of the respective \Kstarz or \jpsi mesons and $m_{p^+p^-}$ denotes the invariant mass of the \mup\mun or \Kp\pim combination.}
+	\begin{tabular}{ccc}
+		\toprule
+		\multicolumn{3}{c}{\muon requirements}\\
+		\midrule
+		transverse momentum \pt 	& \multicolumn{2}{c}{$>\SI[per-mode=symbol]{500}{\MeVc}$} \\
+		\dllmupi					& \multicolumn{2}{c}{$>0.0$} \\
+		\midrule
+		resonances-requirements & \jpsi & \Kstarz\\
+		\midrule
+		transverse momentum \pt 							& - 								& $>\SI[per-mode=symbol]{500}{\MeVc}$ \\
+		DOCA $\chi^2$										& $<20.0$ 							& $<30.0$ \\
+		$\left|m_{p^+p^-}-m_{\jpsi}^{\text{PDG}}\right|$	& \SI[per-mode=symbol]{150}{\MeVcc} & \SI[per-mode=symbol]{300}{\MeVcc} \\
+		decay vertex $\chi^2$ 									& $<16.0$ 						& $<25.0$ \\
+		\midrule
+		\multicolumn{3}{c}{\Bz-meson requirements}\\
+		\midrule
+		reconstructed decay time $t$ 	& \multicolumn{2}{c}{$>\SI{0.2}{\pico\second}$} \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:JpsiKstStripping}
+\end{table}
+Again, to achieve  better compatibility between $\Bz\!\to\jpsi\Kstarz$ and the signal decay \BdToDpi, the same trigger requirements as for the signal mode are applied.
+After the trigger requirements the \Kstarz- and the \jpsi-meson are requried to fulfill the cuts shown in \cref{tab:selJpsiKst}.
+\begin{table}[tbp]
+	\centering
+	\caption{Cuts to select $\Bz\!\to\jpsi\Kstarz$ candidates.
+	The transverse momentum is denoted as \pt, for the impact parameter the shortcut IP is used and $h$ denotes a kaon or pion.}
+	\begin{tabular}{cc}
+		\toprule
+		\jpsi/\muon requirements & \Kstarz/(\kaon, \pion) requirements\\
+		\midrule
+		$\dllmupi>0$											& $\dllkpi>0$ \hspace{0,2cm} for kaons \\
+		track $\nicefrac{\chi^2}{\text{ndof}}<4$ 				& track $\nicefrac{\chi^2}{\text{ndof}}<4$ \\
+		$\pt(\mup)>\SI{500}{\MeVc}||\pt(\mun)>\SI{500}{\MeVc}$  & $\pt(\Kstarz)>\SI{1000}{\MeVc}$\\
+		vertex $\chi^2$/ndof$<16$ of \jpsi 						& vertex $\chi^2$/ndof$<16$ of \Kstarz\\
+		$\left|m_{J/\psi}-m_\text{PDG}\right|<\SI{80}{\MeVcc}$ 	& $\left|m_{\Kstarz}-m^\text{PDG}\right|<\SI{70}{\MeVcc}$\\
+		\bottomrule
+	\end{tabular}
+	\label{tab:selJpsiKst}
+\end{table}
+Additionally only \Bz-candidates with an invariant mass within the range $[5100, 5450]\,$\si[per-mode=symbol]{\MeVcc}, a transverse momentum larger than \SI{1}{\GeVc}, the minimal $\chi^2$ of the impact parameter w.r.t. the \ac{PV} smaller than \num{25} and $\nicefrac{\chi^2}{\text{ndof}}$ of the decay vertex smaller than ten are selected.
+Last the DTF $\nicefrac{\chi^2}{\text{ndof}}$ is required to be smaller than five and the number of \ac{PV}s in the event is has to be one, or in case an event has more than one \ac{PV} the impact parameter $\chi^2$ has to be larger than \num{50}.
+In case of multiple \Bz candidates the one with the smallest DTF $\nicefrac{\chi^2}{\text{ndof}}$ is chosen.
+
+To extract \emph{sWeights} a fit to the invariant \Bz mass, stemming from the DTF with a contraint on the known \jpsi, mass is performed.
+The signal model consists of a sum of two double-sided Hypatia functions with a shared mean value, the background is parametrised using an exponential function.
+The first Hypatia function describes mainly $\Bz\!\to\jpsi\Kstarz$ candidates without photon radiation in the final state, while the second Hypatia shows a large tail towards smaller invariant masses.
+The tail parameters $a_i$ and $n_i$ of both Hypatia functions are determined on simulated events.
+Moreover the fraction between both signal components and the parameter $\lambda$ of the Hypatia describing the \Bz candidates with harder photon radiation are taken from fits to simulated samples.
+All remaining parameters are left free.
+The fit, which is performed in the range $[5200, 5350]\,$\si[per-mode=symbol]{\MeVcc}, is shown in \cref{fig:massFitJpsiKst} and the resulting yields are given in \cref{tab:yieldsJpsiKst}.
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{08FlavourTagging/figs/BmassJpsiKst_pull.pdf}
+    \caption{Fit to the invariant mass of the $\Bz\!\to\jpsi\Kstarz$ candidates with a constraint on the known \jpsi mass.
+    The data is represented by the black points, the black solid line shows the full PDF, the blue dashed line shows the signal componente and the background component is represented by the dotted yellow line.}
+    \label{fig:massFitJpsiKst}
+\end{figure}
+\begin{table}[tbp]
+	\centering
+	\caption{Fitted Yields of the $\Bz\!\to\jpsi\Kstarz$ component and the combinatorial background.}
+	\begin{tabular}{cc}
+		\toprule
+		Parameter & Yield \\
+		\midrule
+		$N_{\Bz\!\to\D\pion}^{\pion}$	& \num{351507\pm662} \\
+		$N_{\text{bkg}}^{\pion}$		& \num{88630\pm419} \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:yieldsJpsiKst}
+\end{table}
+
+The last preparation step for the data sample is then to weight certain \emph{sWeighted} distributions of $\Bz\!\to\jpsi\Kstarz$ candidates to match the corresponding distributions of the \BdToDpi candidates.
+The observables which are weighted are chosen as they are known to most influence the tagging responses.
+These observables are the transverse momentum \pt, the pseudo-rapidity $\eta'$ and the azimuthal angle $\phi$ of the \Bz candidate as well as the number of tracks and the number of \ac{PV}s in the event.
+Additionally an observable containing the composition of the used trigger lines is weighted.
+For this observables the categories \num{1}, \num{2} and \num{3} contain candidates which are exclusively triggered TOS by the \verb!Hlt2Topo2BodyBBDTDecision!, \verb!Hlt2Topo3BodyBBDTDecision! or \verb!Hlt2Topo4BodyBBDTDecision! line, respectively.
+Categroy \num{4} contains candidates triggered TOS exculsively by the overlap of the \verb!Hlt2Topo2BodyBBDTDecision! and \verb!Hlt2Topo3BodyBBDTDecision! lines, category \num{5} contains candidates triggered TOS exculsively by the overlap of the \verb!Hlt2Topo2BodyBBDTDecision! and \verb!Hlt2Topo4BodyBBDTDecision! lines and category \num{6} contains candidates triggered TOS exculsively by the overlap of the \verb!Hlt2Topo3BodyBBDTDecision! and \verb!Hlt2Topo4BodyBBDTDecision! lines.
+The last category (\num{7}) contains candidates which are triggered by all three Hlt2 lines.
+
+Instead of weighting of the six-dimensional parameter space using a six-dimensional histogram a BDT based appraoch is chosen.
+In this appraoch, the parameter space is split in several large regions, which are separated using binary decision trees.
+These trees maximise a symmetrised $\chi^2$
+\begin{equation}
+\chi^2=\sum_{i}\frac{\left(N_{i,\text{source}}-N_{i,\text{target}}\right)^2}{N_{i,\text{source}}+N_{i,\text{target}}}
+\end{equation}
+where $N_{i,\text{source}}$ are the number of candidates in the $i$th bin of the distribution which should be weighted and $N_{i,\text{target}}$ are the number of candidates in the $i$th bin of the target distribution.
+For all leaves of a decision tree a prediction $p$ is calculated following
+\begin{equation}
+p=\log\frac{N_{i,\text{target}}}{N_{i,\text{source}}},
+\end{equation}
+what is used to calculate the weights as
+\begin{equation}
+w=\begin{cases} w, &\, \text{if event from target distribution}\\ we^{p}, &\, \text{if event from source distribution\,\,.} \end{cases}
+\end{equation}
+These steps are then repeated for each decision tree.
+In this case the BDT is built out of \num{40} trees with a maximum depth of three.
+Each leave has to contain a minimum number of \num{200} candidates and the boosting method is Gradient boosting.
+The distributions of the original and weighted $\Bz\!\to\jpsi\Kstarz$ and \BdToDpi candidates is shown in \cref{fig:reweightingSS}.
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/pT_weighted.pdf}
+    \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/eta_weighted.pdf}\\
+    \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/phi_weighted.pdf}
+    \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/nTracks_weighted.pdf}\\
+    \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/nPV_weighted.pdf}
+    \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/Trigger_weighted.pdf}
+    \caption{TODO}
+    \label{fig:reweightingSS}
+\end{figure}
 
 \subsection{Retraining of the SS pion tagger}
 \label{sec:retrainSSpion}
@@ -302,3 +442,6 @@ On the other hand, the obtained parameter values of the calibration function can
 \label{sec:retrainSSproton}
 
 \subsection{Calibration portability}
+
+\section{Opposite side tagging calibration}
+\label{sec:OScalibration}
