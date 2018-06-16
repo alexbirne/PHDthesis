@@ -420,7 +420,7 @@ w=\begin{cases} w, &\, \text{if event from target distribution}\\ we^{p}, &\, \t
 \end{equation}
 These steps are then repeated for each decision tree.
 In this case the BDT is built out of \num{40} trees with a maximum depth of three.
-Each leave has to contain a minimum number of \num{200} candidates and the boosting method is Gradient boosting.
+Each leave has to contain a minimum number of \num{200} candidates and the boosting method is Gradient boosting~\cite{Friedman00greedyfunction}.
 The distributions of the original and weighted $\Bz\!\to\jpsi\Kstarz$ and \BdToDpi candidates is shown in \cref{fig:reweightingSS}.
 \begin{figure}[tbp]
     \centering
@@ -430,13 +430,160 @@ The distributions of the original and weighted $\Bz\!\to\jpsi\Kstarz$ and \BdToD
     \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/nTracks_weighted.pdf}\\
     \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/nPV_weighted.pdf}
     \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/Trigger_weighted.pdf}
-    \caption{TODO}
+    \caption{Left, top to bottom: Normalised \emph{sWeighted} distributions of the transverse momentum, azimuthal angle and number of tracks per event.
+    Right, top to bottom: Normalised \emph{sWeighted} distributions of the pseudo-rapidity, logarithm of number of tracks per event and distribution of trigger decisions.}
     \label{fig:reweightingSS}
 \end{figure}
 
 \subsection{Retraining of the SS pion tagger}
 \label{sec:retrainSSpion}
 
+First the tagging particles have to fulfull a set of selection cuts, which are partly only applied to the tagging track and partly to the system of the tagging track and the \B candidate. These cuts have two aims:
+First separating pions form other charged tracks in the event and second selecting particles which are in the same region of phase space as the \B candidate.
+\begin{table}[tbp]
+	\centering
+	\caption{Selection cuts for the SS pion algorithm. The first set of cuts is applied only top the tagging-particle track, while the second set is applied to the \enquote{tagging-particle track+\B} system.}
+	\begin{tabular}{cc}
+		\toprule
+		Variable & Cut \\
+		\midrule
+		transverse momentum \pt 											& $>\SI{0.4}{\GeVc}$ \\
+		$\nicefrac{\text{IP}}{\sigma_{\text{IP}}}$							& $<4$ \\
+		track ghost probability $g_{\text{prob}}$ 							& $<0.5$ \\
+		\dllppi 															& $<5$ \\
+		\dllkpi 															& $<5$ \\
+		track $\nicefrac{\chi^2}{\text{ndof}}$ 								& $<5$ \\
+		$\nicefrac{\text{IP}_{\text{PU}}}{\sigma_{\text{IP}_{\text{PU}}}}$ 	& $>3$ \\
+		\midrule
+		transverse momentum \pt 					& $>\SI{3}{\GeVc}$ \\
+		$\Delta Q=m_{\B+\pion}-m_{\B}-m_{\pion}$ 	& $<\SI{1.2}{\GeVcc}$ \\
+		$\Delta\eta'$								& $<1.2$ \\
+		$\Delta\phi$								& $<1.1$ \\
+		\B decay vertex $\chi^2$ 					& $<100$ \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:SSPionselectionCuts}
+\end{table}
+For each taggin-particle candidate passing the requirements shown in \cref{tab:SSPionselectionCuts}, the \B-meson gets a preliminary tag decision assigned, corresponding to the charge of the tagging particle ($\pip\rightarrow d=+1$, $\pim\rightarrow d=-1$).
+The quantities $\Delta\eta'$ and $\Delta\phi$ describe the difference between the signal and tagging-particle track pseudo-rapidity and azimuthal angle, respectively.
+To further assure, that the tagging-particle is also produced at the \ac{PV} with which the \B candidate has the smallest $\text{IP}\chi^2$, the impact parameter significance with this \enquote{best} other PVs in the event (denoted as pile-up vertices) are used.
+The corresponding quantities are $\nicefrac{\text{IP}}{\sigma_{\text{IP}}}$ and $\nicefrac{\text{IP}_{\text{PU}}}{\sigma_{\text{IP}_{\text{PU}}}}$, respectively.
+
+After that a BDT is trained to determine the mistag and to select the best tagging-particle candidate in events with more than one tagging-particle candidate after the selection.
+In the training, all candidates with the correct correlation between the preliminary tag and the \B-flavour are considered as signal, all with the wrong correlation are considered background.
+A correct or wrong correlation for the SS pion algorithm mean
+\begin{align*}
+	\text{Correct tag: }& \Bz\pip \text{ or } \Bzb\pim\\
+	\text{Wrong tag: }& \Bz\pim \text{ or } \Bzb\pip.
+\end{align*}
+where only \B candidates with a decay time smaller than \SI{2.2}{\pico\second} are used in the BDT training to reduce the number of oscillated \B candidates.
+The BDT further consists of \num{3000} trees with a maximum depth of two.
+Each tree uses up to five of the input variables scanned at 30 points to find the optimal cut point.
+As boost algorithm AdaBoost~\cite{AdaBoost} is chosen with a boost factor of $\beta=0.005$.
+A list of the input variables is given in \cref{tab:BDTInputSSPion}.
+\begin{table}[tbp]
+	\centering
+	\caption{List of input variables used in the training of the BDT for the SS pion tagger.
+	The quantity $\mathrm{ProbNNK}$ is the probability for a particle to be a kaon, calculated by an artificial neural network using information from the \lhcb PID system.
+	The momentum of a particle is denoted as $p$.}
+	\begin{tabular}{cc}
+		\toprule
+		\multirow{6}{*}{tagging-particle inputs} 	& $\log\left(\pt\right)$ \\
+													& $\log\left(p\right)$ \\
+													& $\log\left(\text{IP}/\sigma_\text{IP}\right)$\\
+													& $\log\left(g_\text{prob}\right)$\\
+													& $\log\left(\text{track} \nicefrac{\chi^2}{\text{ndof}}\right)$ \\
+													& $\log\left(\text{ProbNNK}\right)$\\
+		\midrule
+		\multirow{5}{*}{tagging-particle + $\Bz$ inputs}	& $\Delta Q$\\
+															& $\Delta R$\\
+															& $\log\left(\Delta\eta\right)$\\
+															& $\log\left(\Delta\phi\right)$\\
+															& $\log\left(\pt\right)$\\
+		\midrule
+		\multirow{1}{*}{event properties}	& PVndof\\
+		\bottomrule
+	\end{tabular}
+	\label{tab:BDTInputSSPion}
+\end{table}
+\begin{figure}[tbp]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{08FlavourTagging/figs/SSpionBDT_input1.pdf}\\
+		\includegraphics[width=0.8\textwidth]{08FlavourTagging/figs/SSpionBDT_input2.pdf}
+	\end{center}
+	\caption{Distributions of the input variables used in the BDT training.
+	The blue curve represents the right charge correlation while the red curve corresponds to the wrong ones.}
+	\label{fig:BDTInputSSPion}
+\end{figure}
+Most of these variables were already used in the selection, PVndof is the number of degrees of freedom in the fit to determine the position of the \ac{PV} and $\Delta R=\sqrt{\Delta\phi^2+\Delta\eta'^2}$.
+Moreover a logarithmic transformation is applied to some of the input variables to improve the performance of the BDT.
+As one can see in \cref{fig:BDTInputSSPion} the distributions of the signal and background samples are quite similar, showing the challenge developing flavour tagging algorithms in an hadronic environment.
+The same small, but significant difference can be seen in the distribution of the BDT response in \cref{fig:BDTovertrainSSPion}.
+\begin{figure}[tbp]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{08FlavourTagging/figs/SSPionBDT_overtrain.pdf}
+	\end{center}
+	\caption{Output of the SS pion BDT ($\alpha^{\text{SS}\pion}_\text{BDT}$).
+	The blue distribution represents the right charge correlated tracks while the red distribution corresponds to the wrong charge correlated tracks.}
+	\label{fig:BDTovertrainSSPion}
+\end{figure}
+For events with more than one tagging particle, the best one is identified as the particle with the largest BDT output.
+
+Subsequently, due to the flavour oscillations, a time-dependent analysis is necessary to transform the BDT response into a mistag.
+For this, an unbinded maximum-likelhihood fit to the decay-time $t$, the tag decisions $d$ and the mixing state $\xi$ is performed.
+The mixing state state takes values of $+1$ when the \B-meson flavour at decay is the same as the tag decision and $-1$ otherwise.
+As the fit is performed to the \emph{sWeighted} decay-time distribution the describing PDF consists only of a signal-component
+\begin{equation}
+\mathcal{M}(t;d,\xi)=\mathcal{N}a(t)e^{-t'/\tau}\left(\left(1-d\Delta\omega\right)+\xi\left(1-2\omega\right)\cos\!\left(\dm t'\right)\right)\otimes\mathcal{R}(t-t')
+\end{equation}
+where $\mathcal{N}$ is a normalisation factor and $\omega$ and $\Delta\omega$ are the mistag and mistag difference for initial \Bz- and \Bzb-mesons, respectively.
+$\mathcal{R}(t-t')$ describes an average decay time resolution of \SI{50}{\femto\second}.
+The lifetime is constrained by means of a Gaussian function to be $\tau=\num{1.518\pm0.004}$ what allows to float the coefficients of cubic-splines describing a decay-time dependent efficiency $a(t)$, the so-called acceptance (more details in \cref{sec:acceptance}).
+The cubic-splines have five knots placed at $[0.2, 0.25, 2.0, 13.8, 14.5]\,$\si{\pico\second}.
+At first the fit is performed in bins of the BDT response to determine pairs of the BDT response and the mistag.
+These pairs are then used to determine the functional form of the transformation and a $3^{\text{rd}}$ order polynomial of the form
+\begin{equation}
+\omega\left(\alpha^{\text{SS}\pion}_\text{BDT}\right)=b_0+b_1\times\alpha^{\text{SS}\pion}_\text{BDT}+b_2\times{\alpha^{\text{SS}\pion}_\text{BDT}}^2+b_3\times{\alpha^{\text{SS}\pion}_\text{BDT}}^3
+\end{equation}
+is found to describe the relation well.
+However, to determine the final transformation parameters, an unbinned fit, where the mistag is parametrised directly in the PDF, is performed.
+Figure \eqref{fig:MixingSSPion} shows the projected mixing asymmetry from the decay-time fit, defined as
+\begin{equation}
+A(t)=\frac{N_{\text{unmix}}(t)-N_{\text{mix}}(t)}{N_{\text{unmix}}(t)+N_{\text{mix}}(t)}\propto\left(1-2\omega\right)\cos\!\left(\dm t\right)
+\end{equation}
+where $N_{\text{unmix}}(t)$ and $N_{\text{mix}}(t)$ are the number of unmixed  and mixed \Bz candidates for a decay time $t$, respectively.
+\begin{figure}[tbp]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{08FlavourTagging/figs/Asymmetry_SSPion.pdf}
+	\end{center}
+	\caption{Mixing asymmetry for $\Bz\!\to\jpsi\Kstarz$ candidates tagged by the SS pion tagger.
+	The curve overlaid is the fit projection of the decay-time fit.}
+	\label{fig:MixingSSPion}
+\end{figure}
+The resulting transformation parameters are given in \cref{tab:transformationSSPion}, while \cref{fig:transformationSSPion} shows the corresponding $3^{\text{rd}}$ order polynomial.
+\begin{table}[tbp]
+	\centering
+	\caption{Final transformation parameters for the BDT responst of the SS pion tagger.}
+	\begin{tabular}{cccc}
+		\toprule
+		$b_0$ & $b_1$ & $b_2$ & $b_3$ \\
+		\midrule
+		\num{0.469\pm0.003} & \num{-0.066\pm0.012} & \num{-0.022\pm0.048} & \num{-0.026\pm0.056} \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:transformationSSPion}
+\end{table}
+\begin{figure}[tbp]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{08FlavourTagging/figs/SSPionBDTTrafo.pdf}
+	\end{center}
+	\caption{Polynomial curve of $\omega$ versus $\alpha^{\text{SS}\pion}_\text{BDT}$ on the first two thirds of the $\Bz\!\to\jpsi\Kstarz$ data sample.
+	In orange the fit from the binned approach is shown, in grey the curved of the nominal unbinned method is shown.
+	The parameter values in the plot correspond to the orange curve/binned approach.}
+	\label{fig:transformationSSPion}
+\end{figure}
+Using this transformation for each \Bz candidate the mistag final mistag $\eta$ is calculated.
+In case the computed mistag $\eta'$ is larger than \num{0.5}, the tag decision is inverted and the final mistag is calculated as $\eta=1-\eta'$.
 
 \subsection{Retraining of the SS proton tagger}
 \label{sec:retrainSSproton}
