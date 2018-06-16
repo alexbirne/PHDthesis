@@ -335,7 +335,7 @@ The cuts applied in the stripping are listed in \cref{tab:JpsiKstStripping}.
 		transverse momentum \pt 							& - 								& $>\SI[per-mode=symbol]{500}{\MeVc}$ \\
 		DOCA $\chi^2$										& $<20.0$ 							& $<30.0$ \\
 		$\left|m_{p^+p^-}-m_{\jpsi}^{\text{PDG}}\right|$	& \SI[per-mode=symbol]{150}{\MeVcc} & \SI[per-mode=symbol]{300}{\MeVcc} \\
-		decay vertex $\chi^2$ 									& $<16.0$ 						& $<25.0$ \\
+		decay vertex $\chi^2$ 								& $<16.0$ 							& $<25.0$ \\
 		\midrule
 		\multicolumn{3}{c}{\Bz-meson requirements}\\
 		\midrule
@@ -442,7 +442,8 @@ First the tagging particles have to fulfull a set of selection cuts, which are p
 First separating pions form other charged tracks in the event and second selecting particles which are in the same region of phase space as the \B candidate.
 \begin{table}[tbp]
 	\centering
-	\caption{Selection cuts for the SS pion algorithm. The first set of cuts is applied only top the tagging-particle track, while the second set is applied to the \enquote{tagging-particle track+\B} system.}
+	\caption{Selection cuts for the SS pion algorithm.
+	The first set of cuts is applied only top the tagging-particle track, while the second set is applied to the \enquote{tagging-particle track+\B} system.}
 	\begin{tabular}{cc}
 		\toprule
 		Variable & Cut \\
@@ -459,7 +460,7 @@ First separating pions form other charged tracks in the event and second selecti
 		$\Delta Q=m_{\B+\pion}-m_{\B}-m_{\pion}$ 	& $<\SI{1.2}{\GeVcc}$ \\
 		$\Delta\eta'$								& $<1.2$ \\
 		$\Delta\phi$								& $<1.1$ \\
-		\B decay vertex $\chi^2$ 					& $<100$ \\
+		vertex $\chi^2$ 							& $<100$ \\
 		\bottomrule
 	\end{tabular}
 	\label{tab:SSPionselectionCuts}
@@ -497,7 +498,7 @@ A list of the input variables is given in \cref{tab:BDTInputSSPion}.
 		\midrule
 		\multirow{5}{*}{tagging-particle + $\Bz$ inputs}	& $\Delta Q$\\
 															& $\Delta R$\\
-															& $\log\left(\Delta\eta\right)$\\
+															& $\log\left(\Delta\eta'\right)$\\
 															& $\log\left(\Delta\phi\right)$\\
 															& $\log\left(\pt\right)$\\
 		\midrule
@@ -534,7 +535,7 @@ For this, an unbinded maximum-likelhihood fit to the decay-time $t$, the tag dec
 The mixing state state takes values of $+1$ when the \B-meson flavour at decay is the same as the tag decision and $-1$ otherwise.
 As the fit is performed to the \emph{sWeighted} decay-time distribution the describing PDF consists only of a signal-component
 \begin{equation}
-\mathcal{M}(t;d,\xi)=\mathcal{N}a(t)e^{-t'/\tau}\left(\left(1-d\Delta\omega\right)+\xi\left(1-2\omega\right)\cos\!\left(\dm t'\right)\right)\otimes\mathcal{R}(t-t')
+\mathcal{M}(t;d,\xi)=\mathcal{N}a(t)e^{-t'/\tau}\left(\left(1-d\Delta\omega\right)+\xi\left(1-2\omega\right)\cos\!\left(\dm t'\right)\right)\otimes\mathcal{R}(t-t')\label{eq:mixPDF}
 \end{equation}
 where $\mathcal{N}$ is a normalisation factor and $\omega$ and $\Delta\omega$ are the mistag and mistag difference for initial \Bz- and \Bzb-mesons, respectively.
 $\mathcal{R}(t-t')$ describes an average decay time resolution of \SI{50}{\femto\second}.
@@ -543,7 +544,7 @@ The cubic-splines have five knots placed at $[0.2, 0.25, 2.0, 13.8, 14.5]\,$\si{
 At first the fit is performed in bins of the BDT response to determine pairs of the BDT response and the mistag.
 These pairs are then used to determine the functional form of the transformation and a $3^{\text{rd}}$ order polynomial of the form
 \begin{equation}
-\omega\left(\alpha^{\text{SS}\pion}_\text{BDT}\right)=b_0+b_1\times\alpha^{\text{SS}\pion}_\text{BDT}+b_2\times{\alpha^{\text{SS}\pion}_\text{BDT}}^2+b_3\times{\alpha^{\text{SS}\pion}_\text{BDT}}^3
+\omega\left(\alpha^{\text{SS}\pion}_\text{BDT}\right)=b_0+b_1\times\alpha^{\text{SS}\pion}_\text{BDT}+b_2\times{\alpha^{\text{SS}\pion}_\text{BDT}}^2+b_3\times{\alpha^{\text{SS}\pion}_\text{BDT}}^3\label{eq:tranformfunc}
 \end{equation}
 is found to describe the relation well.
 However, to determine the final transformation parameters, an unbinned fit, where the mistag is parametrised directly in the PDF, is performed.
@@ -588,7 +589,115 @@ In case the computed mistag $\eta'$ is larger than \num{0.5}, the tag decision i
 \subsection{Retraining of the SS proton tagger}
 \label{sec:retrainSSproton}
 
-\subsection{Calibration portability}
+The procedure for tuning the SS proton tagger BDT and transforming the BDT response is very similar to that described in \cref{sec:retrainSSpion} for the SS pion tagger.
+
+Besides pions, protons, which have a correlation with the initial flavour of the \B-meson, may also be formed in initial the hadronization process.
+These tagging-proton candidates must first meet a set of requirements for the proton track itself and the system of the tagging-proton candidate and the \B-meson.
+These cuts are listed in \cref{tab:selectionSSProton}.
+Based on the charge of the selected particles, a preliminary tag is then assigned to the \B candidates ($\proton\rightarrow  d=-1$, $\antiproton\rightarrow d=+1$).
+\begin{table}[bp]
+	\centering
+	\caption{Selection cuts for the SS proton algorithm.
+	The first set of cuts is applied only on the tagging-particle track, while the second set is applied to the \enquote{tagging-particle track+\B} system.
+	The quantity $\Delta Q$ is defined as $\Delta Q=m_{\B+\proton}-m_{\B}-m_{\proton}$.}
+	\begin{tabular}{cccccc}
+		\toprule
+		Variable & \pt & $\text{IP}/\sigma_\text{IP}$ & $g_\text{prob}$ & $\dllppi$ & $\text{IP}_\text{PU}/\sigma_{\text{IP}_\text{PU}}$ \\
+		Cut & $>\SI{0.4}{\GeVc}$ & $<4$ & $<0.5$ & $>5$ & $>3$ \\
+		\midrule
+		Variable & \pt & $\Delta Q$ & $\Delta\eta'$ & $\Delta\phi$  & vertex $\chi^2$ \\
+		Cut & $>\SI{3}{\GeVc}$ & $<\SI{1.2}{\GeVcc}$ & $<1.2$ & $<1.1$ & $<100$ \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:selectionSSProton}
+\end{table}
+
+The correlation between charge of the proton and the \B-meson flavour for the SS proton tagger is as follows:
+\begin{align*}
+	\text{Correct tag: }& \Bz\antiproton \text{ or } \Bzb\proton\\
+	\text{Wrong tag: }& \Bz\proton \text{ or } \Bzb\antiproton.
+\end{align*}
+Here it is important to note that the correlation is exactly opposite to that of the SS pion tagger.
+As a consequence, a misidentification of pions and protons would lead to a degraded performance of both taggers and the requirement on \dllppi is chosen exactly the opposite for both algorithms.
+
+In the same way as for the SS pion tagger, proton candidates with the correct charge correlation with the flavor of the initial \B-meson are assumed to be signal while proton candidates with the incorrect charge correlation are considered as background for the BDT training.
+The input variables for the BDT are listed in \cref{tab:BDTInputSSProton}, most of them again the same as used for the selection.
+\begin{table}[tbp]
+	\centering
+	\caption{List of input variables used in the training of the BDT for the SS proton tagger.
+	The momentum of a particle is denoted as $p$.}
+	\begin{tabular}{cc}
+		\toprule
+		\multirow{4}{*}{tagging particle inputs} 	&	$\log\left(\pt\right)$ \\
+													&	$\log\left(p\right)$\\
+													&	$\log\left(\text{IP}/\sigma_\text{IP}\right)$\\
+													&	$\log\left(\dllppi\right)$\\
+		\midrule
+		\multirow{3}{*}{tagging particle + $\Bz$ inputs} 	& $\Delta Q$\\
+															& $\Delta R$\\
+															& $\log\left(\Delta\eta'\right)$\\
+		\midrule
+		\multirow{1}{*}{event properties} 	& PVndof\\
+		\bottomrule
+	\end{tabular}
+	\label{tab:BDTInputSSProton}
+\end{table}
+As in \cref{sec:retrainSSpion}, the distributions of the input variables are very similar for the datasets considered as signal and background.
+Again, only \B candidates with a decay time below \SI{2.2}{\pico\second} are used for the BDT training and some of the input variables are logarithmically transformed to improve the performance.
+All further configurations of the BDT are same as described in \cref{sec:retrainSSpion}, in \cref{fig:SSProtonBDTOutput} the BDT response is shown.
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{08FlavourTagging/figs/SSProton_overtrain.pdf}
+	\end{center}
+	\caption{Output of the SS proton BDT ($\alpha^{\text{SS}\proton}_\text{BDT}$).
+	The blue distribution represents the right charge correlated tracks while the red distribution corresponds to the wrong charge correlated tracks.}
+	\label{fig:SSProtonBDTOutput}
+\end{figure}
+Again, a small but significant separation power of the BDT can be seen.
+In addition, the test and training samples show some small differences, which are probably a result of a slight overtraining.
+However, possible effects arrising due to this are corrected when transforming and calibrating the BDT response.
+As for the SS pion algorithm, in case of multiple tagging-proton candidates per event the tag decision and the mistag are defined by the candidate with the largest BDT output.
+
+To determine the relation between the mistag and the BDT output, a time-dependent mixing analysis is performed.
+This means, an unbinded maximum-likelihood fit to the distribution of the decay-time $t$, the tag decision $d$ and the mixing state $\xi$ is done.
+Since the \emph{sWeigthed} distributions are used again for the fit, only the signal component must be described with the PDF from \cref{eq:mixPDF}.
+With a fit, binned in the BDT output $\alpha^{\text{SS}\proton}_\text{BDT}$, firstly the functional relation between the mistag and $\alpha^{\text{SS}\proton}_\text{BDT}$ is determined; a $3^{\text{rd}}$ order polynomial as described in \cref{eq:tranformfunc} again describes the data well.
+An unbinned fit, in which the mistag is parameterised directly in the PDF, then provides the final transformation parameters, which can be found in \cref{tag:transformSSProton}.
+\begin{table}[tbp]
+	\centering
+	\caption{Final transformation parameters for the BDT responst of the SS proton tagger.}
+	\begin{tabular}{cccc}
+		\toprule
+		$b_0$ & $b_1$ & $b_2$ & $b_3$ \\
+		\midrule
+		\num{0.479\pm0.004} & \num{-0.097\pm0.016} & \num{0.009\pm0.043} & \num{-0.215\pm0.064} \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:transformSSProton}
+\end{table}
+Figure \ref{fig:MixasymmetrieSSProton} shows the time-dependent mixing asymmetry for the SS proton tagger, in \cref{fig:transformationSSProton} the transformation functions of the binned and unbinned approach are presented.
+\begin{figure}[tbp]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{08FlavourTagging/figs/Asymmetry_SSProton.pdf}
+	\end{center}
+	\caption{Mixing asymmetry for $\Bz\!\to\jpsi\Kstarz$ candidates tagged by the SS proton tagger.
+	The curve overlaid is the fit projection of the decay-time fit.}
+	\label{fig:MixasymmetrieSSProton}
+\end{figure}
+\begin{figure}[tbp]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{08FlavourTagging/figs/SSProtonBDTTrafo.pdf}
+	\end{center}
+	\caption{Polynomial curve of $\omega$ versus $\alpha^{\text{SS}\proton}_\text{BDT}$ on the first two thirds of the $\Bz\!\to\jpsi\Kstarz$ data sample.
+	In orange the fit from the binned approach is shown, in grey the curved of the nominal unbinned method is shown.
+	The parameter values in the plot correspond to the orange curve/binned approach.}
+	\label{fig:transformationSSProton}
+\end{figure}
+
+Finally, the mistag $\eta$ is then determined using the parameterisation from \cref{tab:transformSSProton}
+If the calculated mistag $\eta'$ is greater than \num{0.5}, the tag decision is inverted and the mistag is calculated as $\eta=1-\eta'$.
+
+\subsection{Calibration of the SS tagger combination}
 
 \section{Opposite side tagging calibration}
 \label{sec:OScalibration}
