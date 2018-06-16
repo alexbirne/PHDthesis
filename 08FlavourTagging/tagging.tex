@@ -7,8 +7,10 @@ At \lhcb this is inferred using the so-called flavour tagging.
 The flavour tagging algorithms (taggers) provide for each candidate both, a decision (tag) $d$ whether it initiallly was a \Bz-meson or a \Bzb-meson and a probability-estimate (mistag) $\eta$ of being wrong with this decision.
 They can be divided into two classes: Opposite side (OS) and same side (SS) algorithms.
 In this chapter first a general description of the different algorithms available at \lhcb, their performance characteristics and their calibration is given (\cref{sec:taggingalgorithms}).
-Following, the tagging strategy for this analysis is outlined in \cref{sec:taggingstrategy} and the calibration of the OS tagging algorithms is summarised (\cref{sec:OScalibration}).
-Last the required retraining and the calibration of the SS tagging algorithms presented (\cref{sec:SScalibration}).
+Following, the tagging strategy for this analysis is outlined in \cref{sec:taggingstrategy} and the required retraining and calibration of the SS tagging algorithms is presented (\cref{sec:SScalibration}).
+In the last section the calibration of the OS tagging algorithms is summarised (\cref{sec:OScalibration}).
+It should be said, that the work presented in this last section was done by a collaborator and is added to delineate the whole analysis procedure, but the explanations are less extensive than for the same side tagging algorithms.
+
 
 \section{Tagging algorithms}
 \label{sec:taggingalgorithms}
@@ -214,7 +216,7 @@ This is due to the fact, that for a floating or constrained calibration the rati
 On the other hand, a flip of the tagdesicion may yield in a bias of the \CP-parameters as shown in \cref{sec:decTimeFitVal}.
 Therefore, the modified logistic function
 \begin{equation}
-g(h)=\frac{1}{2\left(1+e^h\right)}
+g(h)=\frac{1}{2\left(1+e^h\right)}\label{eq:modlink}
 \end{equation}
 is used as \emph{link function}, which maps all input values into the range $[0, 0.5]$ and hence assures that all calibrated mistags are well defined.
 
@@ -699,5 +701,94 @@ If the calculated mistag $\eta'$ is greater than \num{0.5}, the tag decision is 
 
 \subsection{Calibration of the SS tagger combination}
 
+After training the taggers of the same side in \cref{sec:retrainSSpion} and \cref{sec:retrainSSproton} they need to be combined.
+This is achieved using the formalism from \cref{sec:CombAndCalib}, yielding in one global SS tagger with a tag decision $dS{\text{\tiny SS}}$ and a mistag $\eta^{\text{\tiny SS}}$.
+
+This global SS combination then needs to be calibrated.
+In order to do this the adopted model is a GLM with a $1^{text{st}}$ order polynomial as the \emph{basis function} and the modified logistic function from \cref{eq:modlink} as \emph{link function}.
+The number of free parameters (\num{4}) in the model was selected to achieves several satisfactory goodness-of-fit (GOF) metrics.
+The comparisons of GOF metrics are shown in Table \cref{tab:GOFSS}.
+\begin{table}[htbp]
+        \centering
+        \caption{GOF metrics for two different calibration models.}
+        \begin{tabular}{ccc}
+                \toprule
+                GOF metric & Score (4 parameters) & Score (6 parameters)\\
+                \midrule
+                $\chi^2$ & $3.3214$ & $-2.0864$ \\
+                $G^2$ & $2.5524$ & $-2.6624$ \\
+                $CR$ & $3.1819$ & $-2.7763$ \\
+                $S$ & $1.5426$ & $-2.3908$ \\
+                \bottomrule
+        \end{tabular}
+        \label{tab:gGOFSS}
+\end{table}
+Since the deviance $G^2$ and the le Cessie-van Houwelingen-Copas-Hosmer metric ($S$) seem to prefer the simpler model, while the Pearson $\chi^2$ and the Cressie-Read ($CR$) metric prefer the more complicated model, but are assumed to fit the data equally well and the simpler model is chosen (all metrics are described in Ref.~\cite{GOFmetric}).
+The Calibration is then performed using the \emph{sWeights} together with the weights from \cref{sec:PrepBd2JpsiKstSample}, giving the calibration parameters shown in \cref{tab:CalibSS}.
+A graphical representation can be found in \cref{fig:CalibSS}.
+\begin{table}[tbp]
+	\centering
+	\caption{SS calibration parameters obtained on the last third of the $\Bz\to\jpsi\Kstarz$ data sample.}
+	\begin{tabular}{cccc}
+		\toprule
+		$p_0$ & $p_1$ & $\Delta p_0$ & $\Delta p_1$ \\
+		\midrule
+		\num{-0.091\pm0.059}  & \num{-0.027\pm0.065} & \num{0.034\pm0.084} &\num{0.032\pm0.094}\\
+		\bottomrule
+	\end{tabular}
+	\label{tab:CalibSS}
+\end{table}
+\begin{figure}[tbp]
+	\begin{center}
+		\includegraphics[width=0.45\textwidth]{08FlavourTagging/figs/CalibrationSS.pdf}
+	\end{center}
+	\caption{Calibration retreived by the for the SS tagger combination.
+	The black histogram is the distributions of the mistag probabilities in arbitrary units.
+	The shaded areas correspond to the \SI{68}{\percent} and \SI{95}{\percent} confidence level regions of the calibration functions.}
+	\label{fig:CalibSS}
+\end{figure}
+
+The portability of the SS tagger combination is tested on simulated \BdToDpi and $\Bz\!\to\jpsi\Kstarz$ candidates.
+This is done using the simulated truth information such that the calibration can be performed in the same way as on a charged decay mode, after equalising the number of innitial \Bz- and \Bzb-mesons to separate tagging asymmetries from asymmetries due to \CP-violation or production asymmetries.
+Both, the individual calibration parameters and a \enquote{full} comparison from a $\chi^2$ test including the correlations between the parameters, show good agreement (\eg $0.09\sigma$ for the full test).
+Despite this good agreement, the parameters in \CP-fit on \BdToDpi are left free.
+On the one hand, this is  motivated by the higher accuracy of the \BdToDpi data sample.
+On the other hand this strategy matches the approach for the OS tagger combination, where the portabilty.
+In addition, this approach does not require any systematic uncertainty accounting for the portability of the calibration parameters.
+
 \section{Opposite side tagging calibration}
 \label{sec:OScalibration}
+
+As mentioned before, the work in this section was done by a collaborator and therefore the explanations will be less detailed than in most other parts of this document.
+
+As control channel for the OS tagger combination (namely the OS muon, OS electron, OS kaon, OS vertex charge and OS charm) the charged decay mode $\Bu\!\to\Dz\pip$ is used.
+As this decay mode is kinematically  similar with the signal decay \BdToDpi, the same triggers requirements can be applied with a high signal efficiency.
+The $\Bu\!\to\Dz\pip$ candidates are further selected by simple rectangular cuts on track quality variables, PID variables, the decay time of the \B-candidate and the invariant mass of the \Dz.
+Then a fit to the invariant \Bu mass is performed to extract \emph{sWeights} using the same strategy as in \cref{ch:massfit}.
+The invariant mass distribution with the fit projection from Fit B overlaid is shown in \cref{fig:OStaggerMassFit} while \cref{tab:OStaggerMassFitYields} shows the resulting signal and background yields.
+\begin{figure}[tbp]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{08FlavourTagging/figs/MDFitForSWeights_BeautyMass_Bu2D0Pi.pdf}
+	\end{center}
+	\caption{Invariant mass distributions of the $\Dz\pip$ mass.
+    The fit projection of Fit B is overlaid.}
+	\label{fig:OStaggerMassFit}
+\end{figure}
+\begin{table}
+	\begin{center}
+	\caption{Fitted yields of the $\Bu\!\to\Dz\pip$ control channel from Fit B.}
+	\begin{tabular}{cc}
+		\toprule
+		Parameter & Yield \\
+		\midrule
+		$N_{\Bu\!\to\Dz\pip}$	& \num{319974\pm612} \\
+		$N_{\text{bkg}}$		& \num{85687\pm377} \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:OStaggerMassFitYields}
+  \end{center}
+\end{table}
+Furthermore, the $\Bu\!\to\Dz\pip$ candidates  are weighted in the transverse momentum, pseudo-rapidity and decay time of the \B candidate, the number of tracks and PVs in the event and a distribution of trigger decisions to match the distributions of the \BdToDpi candidates.
+
+% - Kalibration
+% - Übertragbarkeit
