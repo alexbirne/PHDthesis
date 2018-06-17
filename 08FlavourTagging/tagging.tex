@@ -700,6 +700,7 @@ Finally, the mistag $\eta$ is then determined using the parameterisation from \c
 If the calculated mistag $\eta'$ is greater than \num{0.5}, the tag decision is inverted and the mistag is calculated as $\eta=1-\eta'$.
 
 \subsection{Calibration of the SS tagger combination}
+\label{sec:SScombinationcalibration}
 
 After training the taggers of the same side in \cref{sec:retrainSSpion} and \cref{sec:retrainSSproton} they need to be combined.
 This is achieved using the formalism from \cref{sec:CombAndCalib}, yielding in one global SS tagger with a tag decision $dS{\text{\tiny SS}}$ and a mistag $\eta^{\text{\tiny SS}}$.
@@ -710,10 +711,10 @@ The number of free parameters (\num{4}) in the model was selected to achieves se
 The comparisons of GOF metrics are shown in Table \cref{tab:GOFSS}.
 \begin{table}[htbp]
         \centering
-        \caption{GOF metrics for two different calibration models.}
+        \caption{GOF metrics for two different calibration models for the SS taggers.}
         \begin{tabular}{ccc}
                 \toprule
-                GOF metric & Score (4 parameters) & Score (6 parameters)\\
+                GOF metric & Score (\num{4} parameters) & Score (\num{6} parameters)\\
                 \midrule
                 $\chi^2$ & $3.3214$ & $-2.0864$ \\
                 $G^2$ & $2.5524$ & $-2.6624$ \\
@@ -788,7 +789,57 @@ The invariant mass distribution with the fit projection from Fit B overlaid is s
 	\label{tab:OStaggerMassFitYields}
   \end{center}
 \end{table}
-Furthermore, the $\Bu\!\to\Dz\pip$ candidates  are weighted in the transverse momentum, pseudo-rapidity and decay time of the \B candidate, the number of tracks and PVs in the event and a distribution of trigger decisions to match the distributions of the \BdToDpi candidates.
+Furthermore, the $\Bu\!\to\Dz\pip$ candidates are weighted in the transverse momentum, pseudo-rapidity and decay time of the \B candidate, the number of tracks and PVs in the event and a distribution of trigger decisions to match the distributions of the \BdToDpi candidates.
 
-% - Kalibration
-% - Übertragbarkeit
+The calibration model is a GLM with a natural spline function as \emph{basis function} and also the modified logistic function from \cref{eq:modlink} as \emph{link function}.
+The number of free parameters (\num{10}) in the calibration model is again chosen so that the goodness-of-fit metrics used in \cref{sec:SScombinationcalibration} provide sufficiently satisfactory results.
+The comparison with the next simpler model with \num{8} parameters is shown in \cref{tab:GOFOS}.
+\begin{table}[tbp]
+        \centering
+        \caption{GOF metrics for two different calibration models for the OS taggers.}
+        \begin{tabular}{ccc}
+            \toprule
+            GOF metric & Score (8 parameters) & Score (10 parameters)\\
+            \midrule
+            $\chi^2$ 	& $4.1312$  & $-2.197$ \\
+            $G^2$ 		& $-3.8699$ & $0.7199$ \\
+            $CR$ 		& $2.9273$  & $-1.6896$ \\
+            $S$ 		& $-4.2701$ & $1.8470$ \\
+            \bottomrule
+        \end{tabular}
+        \label{tab:GOFOS}
+\end{table}
+The Calibration is then performed using the \emph{sWeights} together with the weights to match calculated before such that the $\Bu\!\to\Dz\pip$ distributions matcht the \BdToDpi ones, giving the calibration parameters shown in \cref{tab:CalibOS}.
+A graphical representation can be found in \cref{fig:CalibOS}.
+\begin{table}[tbp]
+	\centering
+	\caption{OS calibration parameters obtained on the $\Bu\!\to\Dz\pip$ data sample.}
+	\begin{tabular}{ccccc}
+		\toprule
+		$p_0$ & $p_1$ & $p_2$ & $p_3$ & $p_4$ \\
+		\midrule
+		\num{-0.136\pm0.019}  & \num{-0.006\pm0.022} & \num{-0.0107\pm0.0083} &\num{-0.45\pm0.10} &\num{-0.85\pm0.46}\\
+		\midrule
+		$\Delta p_0$ & $\Delta p_1$ & $\Delta p_2$ & $\Delta p_3$ & $\Delta p_4$ \\
+		\midrule
+		\num{-0.129\pm0.038}  & \num{0.042\pm0.045} & \num{-0.020\pm0.017} &\num{0.42\pm0.21} &\num{1.91\pm0.92}\\
+		\bottomrule
+	\end{tabular}
+	\label{tab:CalibOS}
+\end{table}
+\begin{figure}[tbp]
+	\begin{center}
+		\includegraphics[width=0.45\textwidth]{08FlavourTagging/figs/CalibrationOS.pdf}
+	\end{center}
+	\caption{Calibration retreived by the for the OS tagger combination.
+	The black histogram is the distributions of the mistag probabilities in arbitrary units.
+	The shaded areas correspond to the \SI{68}{\percent} and \SI{95}{\percent} confidence level regions of the calibration functions.}
+	\label{fig:CalibOS}
+\end{figure}
+
+The portability of the calibration is checked on simulated candidates.
+The calibration is determined using the simulated true initial flavours on both decay channels after equalising the number of initial \Bz (\Bu) and \Bzb (\Bm) mesons.
+The parameters $p_0$ and $p_1$ show deviations of more than $2.5\sigma$, while the full comparison taking into account the correlations between the parameters shows a discrepancy of $2.0\sigma$.
+Although one could presume this overall disrepancy is sufficiently small, a study on simulated events presented in \cref{sec:decTimeFitVal} shows that applying the calibration determined on $\Bu\!\to\Dz\pip$ causes a bias for the \CP-parameters \Sf and \Sfbar.
+Presumably some residual discrepancies remain despite the weighting of the $\Bu\!\to\Dz\pip$ candidates.
+For this reason, the portability is not considered given and the calibration is determined directly in the \CP fit on \BdToDpi.
