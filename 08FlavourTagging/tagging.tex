@@ -356,11 +356,11 @@ After the trigger requirements the \Kstarz- and the \jpsi-meson are requried to 
 		\toprule
 		\jpsi/\muon requirements & \Kstarz/(\kaon, \pion) requirements\\
 		\midrule
-		$\dllmupi>0$											& $\dllkpi>0$ \hspace{0,2cm} for kaons \\
-		track $\nicefrac{\chi^2}{\text{ndof}}<4$ 				& track $\nicefrac{\chi^2}{\text{ndof}}<4$ \\
-		$\pt(\mup)>\SI{500}{\MeVc}||\pt(\mun)>\SI{500}{\MeVc}$  & $\pt(\Kstarz)>\SI{1000}{\MeVc}$\\
-		vertex $\chi^2$/ndof$<16$ of \jpsi 						& vertex $\chi^2$/ndof$<16$ of \Kstarz\\
-		$\left|m_{J/\psi}-m_\text{PDG}\right|<\SI{80}{\MeVcc}$ 	& $\left|m_{\Kstarz}-m^\text{PDG}\right|<\SI{70}{\MeVcc}$\\
+		$\dllmupi>0$																& $\dllkpi>0$ \hspace{0,2cm} for kaons \\
+		track $\nicefrac{\chi^2}{\text{ndof}}<4$ 									& track $\nicefrac{\chi^2}{\text{ndof}}<4$ \\
+		$\pt(\mup)>\SI{500}{\MeVc}||\pt(\mun)>\SI[per-mode=symbol]{500}{\MeVc}$ 	& $\pt(\Kstarz)>\SI[per-mode=symbol]{1000}{\MeVc}$\\
+		vertex $\chi^2$/ndof$<16$ of \jpsi 											& vertex $\chi^2$/ndof$<16$ of \Kstarz\\
+		$\left|m_{J/\psi}-m_\text{PDG}\right|<\SI[per-mode=symbol]{80}{\MeVcc}$ 	& $\left|m_{\Kstarz}-m^\text{PDG}\right|<\SI[per-mode=symbol]{70}{\MeVcc}$\\
 		\bottomrule
 	\end{tabular}
 	\label{tab:selJpsiKst}
@@ -386,12 +386,12 @@ The fit, which is performed in the range $[5200, 5350]\,$\si[per-mode=symbol]{\M
 \begin{table}[tbp]
 	\centering
 	\caption{Fitted Yields of the $\Bz\!\to\jpsi\Kstarz$ component and the combinatorial background.}
-	\begin{tabular}{cc}
+	\begin{tabular}{SS}
 		\toprule
-		Parameter & Yield \\
+		{Parameter} & {Yield} \\
 		\midrule
-		$N_{\Bz\!\to\D\pion}^{\pion}$	& \num{351507\pm662} \\
-		$N_{\text{bkg}}^{\pion}$		& \num{88630\pm419} \\
+		{$N_{\Bz\!\to\D\pion}^{\pion}$}	& 351507\pm662 \\
+		{$N_{\text{bkg}}^{\pion}$}		& 88630\pm419 \\
 		\bottomrule
 	\end{tabular}
 	\label{tab:yieldsJpsiKst}
@@ -450,7 +450,7 @@ First separating pions form other charged tracks in the event and second selecti
 		\toprule
 		Variable & Cut \\
 		\midrule
-		transverse momentum \pt 											& $>\SI{0.4}{\GeVc}$ \\
+		transverse momentum \pt 											& $>\SI[per-mode=symbol]{0.4}{\GeVc}$ \\
 		$\nicefrac{\text{IP}}{\sigma_{\text{IP}}}$							& $<4$ \\
 		track ghost probability $g_{\text{prob}}$ 							& $<0.5$ \\
 		\dllppi 															& $<5$ \\
@@ -706,23 +706,23 @@ After training the taggers of the same side in \cref{sec:retrainSSpion} and \cre
 This is achieved using the formalism from \cref{sec:CombAndCalib}, yielding in one global SS tagger with a tag decision $dS{\text{\tiny SS}}$ and a mistag $\eta^{\text{\tiny SS}}$.
 
 This global SS combination then needs to be calibrated.
-In order to do this the adopted model is a GLM with a $1^{text{st}}$ order polynomial as the \emph{basis function} and the modified logistic function from \cref{eq:modlink} as \emph{link function}.
+In order to do this the adopted model is a GLM with a $1^{\text{st}}$ order polynomial as \emph{basis function} and the modified logistic function from \cref{eq:modlink} as \emph{link function}.
 The number of free parameters (\num{4}) in the model was selected to achieves several satisfactory goodness-of-fit (GOF) metrics.
 The comparisons of GOF metrics are shown in Table \cref{tab:GOFSS}.
-\begin{table}[htbp]
+\begin{table}[tbp]
         \centering
         \caption{GOF metrics for two different calibration models for the SS taggers.}
-        \begin{tabular}{ccc}
+        \begin{tabular}{SSS}
                 \toprule
-                GOF metric & Score (\num{4} parameters) & Score (\num{6} parameters)\\
+                {GOF metric} & {Score (\num{4} parameters)} & {Score (\num{6} parameters)}\\
                 \midrule
-                $\chi^2$ & $3.3214$ & $-2.0864$ \\
-                $G^2$ & $2.5524$ & $-2.6624$ \\
-                $CR$ & $3.1819$ & $-2.7763$ \\
-                $S$ & $1.5426$ & $-2.3908$ \\
+                {$\chi^2$} 	& 3.3214 & -2.0864 \\
+                {$G^2$} 	& 2.5524 & -2.6624 \\
+                {$CR$} 		& 3.1819 & -2.7763 \\
+                {$S$} 		& 1.5426 & -2.3908 \\
                 \bottomrule
         \end{tabular}
-        \label{tab:gGOFSS}
+        \label{tab:GOFSS}
 \end{table}
 Since the deviance $G^2$ and the le Cessie-van Houwelingen-Copas-Hosmer metric ($S$) seem to prefer the simpler model, while the Pearson $\chi^2$ and the Cressie-Read ($CR$) metric prefer the more complicated model, but are assumed to fit the data equally well and the simpler model is chosen (all metrics are described in Ref.~\cite{GOFmetric}).
 The Calibration is then performed using the \emph{sWeights} together with the weights from \cref{sec:PrepBd2JpsiKstSample}, giving the calibration parameters shown in \cref{tab:CalibSS}.
@@ -778,12 +778,12 @@ The invariant mass distribution with the fit projection from Fit B overlaid is s
 \begin{table}
 	\begin{center}
 	\caption{Fitted yields of the $\Bu\!\to\Dz\pip$ control channel from Fit B.}
-	\begin{tabular}{cc}
+	\begin{tabular}{SS}
 		\toprule
-		Parameter & Yield \\
+		{Parameter} & {Yield} \\
 		\midrule
-		$N_{\Bu\!\to\Dz\pip}$	& \num{319974\pm612} \\
-		$N_{\text{bkg}}$		& \num{85687\pm377} \\
+		{$N_{\Bu\!\to\Dz\pip}$}	& 319974\pm612 \\
+		{$N_{\text{bkg}}$}		& 85687\pm377 \\
 		\bottomrule
 	\end{tabular}
 	\label{tab:OStaggerMassFitYields}
@@ -797,19 +797,19 @@ The comparison with the next simpler model with \num{8} parameters is shown in \
 \begin{table}[tbp]
         \centering
         \caption{GOF metrics for two different calibration models for the OS taggers.}
-        \begin{tabular}{ccc}
+        \begin{tabular}{SSS}
             \toprule
-            GOF metric & Score (8 parameters) & Score (10 parameters)\\
+            {GOF metric} & {Score (8 parameters)} & {Score (10 parameters)} \\
             \midrule
-            $\chi^2$ 	& $4.1312$  & $-2.197$ \\
-            $G^2$ 		& $-3.8699$ & $0.7199$ \\
-            $CR$ 		& $2.9273$  & $-1.6896$ \\
-            $S$ 		& $-4.2701$ & $1.8470$ \\
+            {$\chi^2$} 	& 4.1312  & -2.197 \\
+            {$G^2$} 	& -3.8699 & 0.7199 \\
+            $CR$ 		& 2.9273  & -1.6896 \\
+            $S$ 		& -4.2701 & 1.8470 \\
             \bottomrule
         \end{tabular}
         \label{tab:GOFOS}
 \end{table}
-The Calibration is then performed using the \emph{sWeights} together with the weights to match calculated before such that the $\Bu\!\to\Dz\pip$ distributions matcht the \BdToDpi ones, giving the calibration parameters shown in \cref{tab:CalibOS}.
+The Calibration is then performed using the \emph{sWeights} together with the weights to match calculated before such that the $\Bu\!\to\Dz\pip$ distributions match the \BdToDpi ones, giving the calibration parameters shown in \cref{tab:CalibOS}.
 A graphical representation can be found in \cref{fig:CalibOS}.
 \begin{table}[tbp]
 	\centering
