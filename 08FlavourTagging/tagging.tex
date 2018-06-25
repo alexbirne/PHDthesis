@@ -6,10 +6,10 @@ To measure interference \CP-violation the production flavour of $B$-mesons under
 At \lhcb this is inferred using the so-called flavour tagging.
 The flavour tagging algorithms (taggers) provide for each candidate both, a decision (tag) $d$ whether it initiallly was a \Bz-meson or a \Bzb-meson and a probability-estimate (mistag) $\eta$ of being wrong with this decision.
 They can be divided into two classes: Opposite side (OS) and same side (SS) algorithms.
-In this chapter first a general description of the different algorithms available at \lhcb, their performance characteristics and their calibration is given (\cref{sec:taggingalgorithms}).
+First, a general description of the different algorithms available at \lhcb, their performance characteristics and their calibration is given in this chapter (\cref{sec:taggingalgorithms}).
 Following, the tagging strategy for this analysis is outlined in \cref{sec:taggingstrategy} and the required retraining and calibration of the SS tagging algorithms is presented (\cref{sec:SScalibration}).
 In the last section the calibration of the OS tagging algorithms is summarised (\cref{sec:OScalibration}).
-It should be said, that the work presented in this last section was done by a collaborator and is added to delineate the whole analysis procedure, but the explanations are less extensive than for the same side tagging algorithms.
+It should be said that the work presented in this last section was done by a collaborator and is added to delineate the whole analysis procedure, but the explanations are less extensive than for the same side tagging algorithms.
 
 
 \section{Tagging algorithms}
@@ -27,56 +27,56 @@ They can be separated into so-called opposite side (OS) and same side (SS) algor
 
 The OS algorithms exploit the production and decay of the second \bquark-quark which is produced in the proton-proton collision.
 By partially reconstructing single decay products as electrons, muons, kaons and \D-mesons associated with the decay of the opposite side \bquark-hadron the initial flavour is inferred.
-Furthermore charged tracks which originate from a secondary vertex which is displaced from the \ac{PV} are used to make a decision on the production flavour of the signal $B$-meson.
+Furthermore, charged tracks which originate from a secondary vertex, which is displaced from the \ac{PV}, are used to make a decision on the production flavour of the signal $B$-meson.
 As the hadronisation and the decay of the OS \bquark-hadron is independent of the signal \B-meson these algorithms can be used for both \Bz and \Bs mesons. Based on \cite{LHCb-PAPER-2011-027, LHCb-PAPER-2015-027} the OS algorithms are shortly described in the following:
 \begin{itemize}
 	\item The OS muon and OS electron tagger use the charge of muons and electrons from semileptonic $\bquark\!\to Xl^-$ decays to take a decision on the initial $B$-flavour.
 	The charged leptons are selected using a simple cut-based selection.
-	To suppress contributions from $\bquark\!\to\cquark\!\to l^+$ decays, which would give the wrong tag decision for example the transverse momentum of the muon (electron) is required to be larger than \SI[per-mode=symbol]{1.2}{\GeVc} (\SI[per-mode=symbol]{1.0}{\GeVc}).
+	To suppress contributions from $\bquark\!\to\cquark\!\to l^+$ decays, which would give the wrong tag decision, for example the transverse momentum of the muon (electron) is required to be larger than \SI[per-mode=symbol]{1.2}{\GeVc} (\SI[per-mode=symbol]{1.0}{\GeVc}).
 	Electrons have additionally to satisfy criteria on electron identification variables such as the ratio $\nicefrac{E}{p}>0.8$.
 	Here $E$ denotes the energy deposited in the ECAL and $p$ the electron momentum.
-	If more than one muon or electron per event survives the selection, the lepton with highest transverse momentum is chosen to define the flavour of the signal $B$.
-	The mistag is estimated with an artificial neural-network, which takes as inputs event properties as the number of \ac{PV}s and tracks in the event, $B$-properties as the transverse momentum, and various geometrical and kinematic properties of the tagging lepton.
+	If more than one muon or electron per event survives the selection, the lepton with the highest transverse momentum is chosen to define the flavour of the signal $B$.
+	The mistag is estimated with an artificial neural network, which takes as inputs event properties as the number of \ac{PV}s and tracks in the event, $B$-properties as the transverse momentum and various geometrical and kinematic properties of the tagging lepton.
 	\item The OS kaon tagger explores the charge of kaons produced in the decay chain $\bquark\!\to\cquark\!\to\squark$.
-	Very similar to the lepton taggers the tagging kaon is selected using a cut-based selection based on kinematic and PID observables.
-	In case multiple kaons per event pass this selection, the kaon with highest transverse momentum is fed into an artificial neural network with similar inputs as for the lepton taggers to calculate the mistag estimate $\eta$.
+	Very similar to the lepton taggers the tagging kaon is selected using rectangular cuts based on kinematic and PID observables.
+	In case multiple kaons per event pass this selection, the kaon with the highest transverse momentum is fed into an artificial neural network with similar inputs as for the lepton taggers to calculate the mistag estimate $\eta$.
 	\item The OS charm tagger selects \D-mesons produced via $\bquark\!\to\cquark$ decays.
 	In case of a charged \D-meson the charge of the meson directly hints at the initial flavour, in case of an uncharged \D-meson the charge of the produced kaon is used to infer the flavour of the signal $B$-meson.
 	In contrast to the other single track taggers a \ac{BDT} is used to select the \D-meson and estimate the mistag.
 	As the OS charm is the newest development on the OS it was developed to have a small overlap concerning the used tagging particles with the other taggers.
-	\item The OS vertex charge tagger is the only algorithm which does not reconstruct single particles, but instead uses the weighted charge of a \ac{SV} associated with the opposite side \bquark-hadron.
-	In order to to this, the track pair with the highest probability of originating from the opposite side \bquark-hadron is used to build a vertex.
+	\item The OS vertex charge tagger is the only algorithm which does not reconstruct single particles, but uses the weighted charge of a \ac{SV} associated with the opposite side \bquark-hadron instead.
+	In order to do this, the track pair with the highest probability of originating from the opposite side \bquark-hadron is used to build a vertex.
 	Following, particles which are compatible with coming from this two-track vertex but not from the \ac{PV} are added to it.
 	Finally all tracks of the final \ac{SV} are weighted with their transverse momentum, \pt, and used to calculate a charge
 	\begin{equation}
-	Q_{\text{vtx}}=\frac{\sum_{i}p_{\mathrm T}^k(i)Q_i}{\sum_{i}p_{\mathrm T}^k(i)}.
+	Q_{\text{vtx}}=\frac{\sum_{i}p_{\mathrm T}^k(i)Q_i}{\sum_{i}p_{\mathrm T}^k(i)}
 	\end{equation}
 	where the parameter $k$ is optimised to maximise the performance of the tagging algorithm.
-	Based on this charge then the initial flavour of the signal $B$-meson is determined.
+	Based on this charge the initial flavour of the signal $B$-meson is then determined.
 \end{itemize}
 
 The SS algorithms use remnants of the hadronisation of the signal \B-meson to infer the initial flavour.
 As the companion quark of the \bquark-quark is different for \Bz and \Bs-mesons, different algorithms must be used to deduce the initial flavour of the signal \B.
 
 In case of a \Bz (\bquarkbar\dquark) a free \dquarkbar-quark is produced which can hadronise to a pion or proton.
-Additionally the production mechanisms, \eg via the strong decay of an excited $B^{**+}\!\to B^{(*)0}\pip$ can be exploited~\cite{Aaij:2016rdg}.
+Additionally, the production mechanisms, \eg via the strong decay of an excited $B^{**+}\!\to B^{(*)0}\pip$ can be exploited~\cite{Aaij:2016rdg}.
 The SS pion and SS proton taggers use the charge of these companion particles to infer a tag decision.
 They were developed on \BdToDpi decays assuming $\Sf=\Sfbar=0$, \ie the decay \BdToDpi is \CP-conserving.
 Therefore a potential bias of the analysis cannot be excluded when using these algorithms and they are retrained on $\Bz\!\to\jpsi\Kstarz$.
 The basic strategy is similar to the one in Ref.~\cite{Aaij:2016rdg}:
 First, tagging particles from the same region of phase space as the signal \B are selected using requirements on PID, kinematic and geometrical observables.
-These particles are then all used to train a \ac{BDT}, which further selects the final tagging particle and estimates the mistag.
-In case multiple particles per event pass the selection, the SS pion and SS proton taggers do not select the particle with highest transverse momentum, but all particles are used to train the \ac{BDT} and the tagging candidate with the largest \ac{BDT} response is chosen afterwards to infer the initial flavour of the signal \B.
+Then, these particles are all used to train a \ac{BDT}, which further selects the final tagging particle and estimates the mistag.
+This means in case multiple particles per event pass the selection, the SS pion and SS proton taggers do not select the particle with highest transverse momentum but all particles are used to train the \ac{BDT} and the tagging candidate with the largest \ac{BDT} response is chosen afterwards to infer the initial flavour of the signal \B.
 
 On the other hand the hadronisation of a \Bs (\bquarkbar\squark) leads to a \squarkbar-quark which can hadronise to a kaon~\cite{Aaij:2016psi}.
 The SS kaon tagger was developed to identify such kaons and works similar for kaons as the SS pion tagger for pions produced in \Bz events.
-Since this analysis covers decays of neutral \Bz mesons and the SS kaon tagger is not used, this algorithm is not discussed here any further.
+Since this analysis covers decays of neutral \Bz mesons and the SS kaon tagger is not used, this algorithm is not discussed any further.
 
 \subsection{Performance characteristics}
 
 The performance of the flavour tagging algorithms is not perfect.
 Of $N$ reconstructed candidates only $N'$ candidates get a tag $d$ and mistag $\eta$ assigned, while $N_{\text{U}}$ are untagged.
-The $N'$ candidates can be further divided into $N_{\text{W}}$ candidates which are are wrongly tagged and $N_{\text{R}}$ correctly tagged candidates.
+The $N'$ candidates can be further divided into $N_{\text{W}}$ candidates which are wrongly tagged and $N_{\text{R}}$ correctly tagged candidates.
 These imperfections can be reflected by a tagging efficiency
 \begin{equation}
 \varepsilon_{\text{tag}}=\frac{N_{\text{R}}+N_{\text{W}}}{N_{\text{R}}+N_{\text{W}}+N_{\text{R}}+N_{\text{U}}}\label{eq:tageff}
@@ -96,19 +96,19 @@ These quantities need to be transferred further into measurements of \CP-asymmet
 \begin{equation}
 A_{\CP}(t)=\frac{N_{\Bz}^{\text{true}}(t)-N_{\Bzb}^{\text{true}}(t)}{N_{\Bz}^{\text{true}}(t)+N_{\Bzb}^{\text{true}}(t)}.
 \end{equation}
-For a measured asymmetry the true numbers of initial \Bz- and \Bzb-mesons need to be replaced with the observed yields what leads to
+For a measured asymmetry the true numbers of initial \Bz- and \Bzb-mesons need to be replaced with the observed yields which leads to
 \begin{equation}
 A_{\CP}^{\text{meas}}(t)=\frac{N_{\Bz}(t)-N_{\Bzb}(t)}{N_{\Bz}(t)+N_{\Bzb}(t)}=(1-2\omega)A_{\CP}^{\text{theo}}(t),
 \end{equation}
 with the dilution $D=1-2\omega$.
-However, experimentally not only the dilution affects the measured asymmetry, but also intrinsic asymmetries $I$ like an asymmetric production of \Bz- and \Bzb-mesons might influence a measurement so that the measured asymmetry can be expressed as
+However, experimentally not only the dilution affects the measured asymmetry but also intrinsic asymmetries $I$ like an asymmetric production of \Bz- and \Bzb-mesons might influence a measurement so that the measured asymmetry can be expressed as
 \begin{equation}
 A_{\CP}^{\text{meas}}(t)=DA_{\CP}(t)+I.
 \end{equation}
 As the mistag probability is defined in the range $[0, 0.5]$ the dilution can take values between \num{0} and \num{1}.
 A large dilution factor is equivalent to a vanishing mistag and hence leads to a larger experimental sensitivity as will be shown below.
 To simplify the following discussion the intrinsic asymmetries and dilution are assumed to be time-independent, even if that is not generally valid.
-The theoretical asymmetry then can be expressed as
+The theoretical asymmetry can then be expressed as
 \begin{equation}
 A_{\CP}(t)=\frac{1}{D}\left(A_{\CP}^{\text{meas}}(t)-I\right).
 \end{equation}
@@ -125,20 +125,20 @@ Neglecting the uncertainties on the intrinsic asymmetries and dilution factor an
 \end{equation}
 Here it is useful to identify the number of measured \Bz- and \Bzb-candidates as
 \begin{equation}
-N_{\Bz}(t)+N_{\Bzb}(t)=\varepsilon(t)N.
+N_{\Bz}(t)+N_{\Bzb}(t)=\varepsilon(t)N
 \end{equation}
-where $\varepsilon$ includes all efficiencies in the trigger, reconstruction, selection or the flavour tagging.
+where $\varepsilon$ includes all efficiencies either in the trigger, reconstruction, selection or the flavour tagging.
 Regarding the flavour tagging this means that the uncertainty on a \CP-asymmetry is given by
 \begin{equation}
 \sigma_{A_{\CP}}=\frac{1}{\sqrt{\varepsilon_{\text{tag}}D^2N}}=\frac{1}{\sqrt{\varepsilon_{\text{eff}}N}}
 \end{equation}
 where the effective tagging efficiency $\varepsilon_{\text{eff}}=\varepsilon_{\text{tag}}D^2$ was introduced.
-As one can see this efficiency defines the experimental sensitivity of the measurement as it effectively reduces the number of candidates.
-It also becomes obvious, that the tagging efficiency introduced in \cref{eq:tageff} and the mistag probability defined in \cref{eq:mistag} are not individually suitable for determining the performance of different tagging algorithms.
-Instead the tagging efficiency, which is also denoted as tagging power must be used.
+As one can see, this efficiency defines the experimental sensitivity of the measurement as it effectively reduces the number of candidates.
+It also becomes obvious that the tagging efficiency introduced in \cref{eq:tageff} and the mistag probability defined in \cref{eq:mistag} are not individually suitable for determining the performance of different tagging algorithms.
+Instead the tagging efficiency, which is also denoted as tagging power, must be used.
 
 Rather than using an average mistag $\omega$ the mistag estimate $\eta$ of the various tagging algorithms can be used.
-To do this, the estimated mistag has to be calibrated with a calibration function $\omega(\eta)$ (more details on the calibration is given in \cref{sec:CombAndCalib}), what gives a per-event tagging power, defined as
+To do this, the estimated mistag has to be calibrated with a calibration function $\omega(\eta)$ (more details on the calibration are given in \cref{sec:CombAndCalib}), what gives a per-event tagging power, defined as
 \begin{equation}
 \varepsilon_{\text{eff}}=\frac{1}{N}\sum_{i=1}^{N}D_i^2=\frac{1}{N}\sum_{i=1}^{N}\left(1-2\omega(\eta_i)\right)^2.
 \end{equation}
@@ -168,10 +168,10 @@ p(\bquarkbar)=\prod_{i}\left(\frac{1-d_i}{2}+d_i\left(1-\eta_i\right)\right)
 where $d_i$ ($\eta_i$) are the tag decisions (mistag estimates) of the individual tagging algorithms.
 The combined tag decision and mistag are now defined as $d=-1$ and $\eta=1-P(\bquark)$ if $P(\bquark)>P(\bquarkbar)$ and as $d=+1$ and $\eta=P(\bquark)$ if $P(\bquark)<P(\bquarkbar)$.
 
-As mentioned before the output of the flavour tagging algorithms is mostly the result of multivariate classifiers, which are trained on flavour specific \B decays.
+As mentioned before, the output of the flavour tagging algorithms is mostly the result of multivariate classifiers, which are trained on flavour specific \B decays.
 This output is then transformed into a mistag estimate $\eta$ and crosschecked on another flavour specific validation sample.
 However, the training and validation sample are usually different from the signal decay used in a \CP-violation measurement.
-This differences are caused by different trigger and seelction criteria and can influence the distributions which are used by the multivariate classifier to estimate the mistag.
+This differences are caused by different trigger and selection criteria and can influence the distributions which are used by the multivariate classifier to estimate the mistag.
 Consequently, the mistag must be calibrated on a dedicated flavour specific decay, which shows at best kinematically similar distributions as the signal sample.
 For the OS taggers this is most often done using charged decay modes, as the charge of the final state particles allows to directly infer the production flavour.
 Instead, to calibrate the SS taggers a decay mode with the same initial \B flavour is needed, as these taggers highly depend on the hadronisation process.
@@ -184,7 +184,7 @@ So far, for all analyses at \lhcb a linear calibration function of the form
 where the arithmetic mean $\left<\eta\right>$ of the estimated mistag is used to decorrelate the calibration parameters $p_0$ and $p_1$, was sufficient.
 Using this calibration function a perfect calibration would result in $\tilde{p}_0=\left<\eta\right>$ and $\tilde{p}_1=1$.
 Yet, the performance of the tagger can depend on the initial \B flavour:
-If the interaction rates of charged decay products as kaons used by the OS kaon tagger with the detector material depend on the charge, the mistags will also depend on the flavour of the initial \B meson.
+If the interaction rates of charged decay products (\eg the kaons used by the OS kaon tagger) with the detector material depend on the charge, the mistags will also depend on the flavour of the initial \B meson.
 Such asymmetry yields in an additional dilution factor, which needs to be understood and properly described.
 This can be achieved by using different calibration functions for \Bz- and \Bzb-mesons.
 In the simple linear case these calibration functions are
@@ -196,23 +196,23 @@ In the simple linear case these calibration functions are
 \end{equation}
 These different calibration parameters are furthermore linked to each other via the average calibration parameters used in \cref{eq:linCalib} and corresponding differences:
 \begin{equation}
-\tilde{p}_i=\frac{p_i+\overline{p}_i}{2}\hspace{0.5cm}\text{and}\hspace{0.5cm}\Delta p_i=p_i-\overline{p}_i.
+\tilde{p}_i=\frac{p_i+\overline{p}_i}{2}\hspace{0.5cm}\text{and}\hspace{0.5cm}\Delta p_i=p_i-\overline{p}_i\,\,.
 \end{equation}
 
 However, this analysis requires more sophisticated calibration models, mainly due to the large number of signal candidates in the \BdToDpi sample.
-This makes small effects that were hidden in previous \CP-violation analyses by the statistical ucnertainties significant.
+This makes small effects that were hidden in previous \CP-violation analyses by the statistical uncertainties significant.
 The adopted models are called generalised linear models (GLM)~\cite{GLM} and have the following form:
 \begin{equation}
 \WorWbar(\eta) = g\left(h(\eta)\right) = g\left( g^{-1} (\eta) + \sum_{i=1}^{N} \left(\tilde{p}_i \kern 0.0em\optbar{\kern -0.0em +} \frac{\Delta p_i}{2}\right) f_i(\eta)\right)\,.
 \end{equation}
 The functions $f_i$ are the so-called \emph{basis functions}, which for example can be simple poynomials or natural spline functions~\cite{Nsplines}.
 To minimise the correlation between the $\tilde{p}_i$ and $\Delta p_i$ parameters the \emph{basis functions} are orthogonalised using the Gram-Schmidt method~\cite{GramSchmidt}.
-The function $g$ is referred to as the \emph{link function}, which is usually defined as the inverse cumulative distribution function, to map all input values to the range $[0,1]$, \ie an interval which can be interpreted as a probability.
-As the mistag is only defined in the range $[0, 0.5]$ and therefore it is possible, that after applying a calibration function with this \emph{link function} the mistag is larger than \num{0.5}.
+The function $g$ is referred to as \emph{link function}, which is usually defined as the inverse cumulative distribution function, to map all input values to the range $[0,1]$, \ie an interval which can be interpreted as a probability.
+As the mistag is only defined in the range $[0, 0.5]$ it is possible, that after applying a calibration function with this \emph{link function} the mistag is larger than \num{0.5}.
 In this case an arbitrary decision has to be taken how such candidates are further treated.
 Possible options are to either flip the corresponding tag decision $d\to-d$ and adjust the mistag $\omega\to1-\omega$ or to mark the candidate as untagged with a mistag of \num{0.5}.
 The latter possibility leads to fit instabilities in the decay-time fit when the calibration parameters are not fixed, but allowed to float or constrained by means of a Gaussian function.
-This is due to the fact, that for a floating or constrained calibration the ratio of tagged and untagged candidates varies during the minimisation and the changes to the likeihood are not continous.
+This is due to the fact that for a floating or constrained calibration the ratio of tagged and untagged candidates varies during the minimisation and the changes to the likelihood are not continous.
 On the other hand, a flip of the tagdesicion may yield in a bias of the \CP-parameters as shown in \cref{sec:ValLinkFunction}.
 Therefore, the modified logistic function
 \begin{equation}
@@ -220,23 +220,23 @@ g(h)=\frac{1}{2\left(1+e^h\right)}\label{eq:modlink}
 \end{equation}
 is used as \emph{link function}, which maps all input values into the range $[0, 0.5]$ and hence assures that all calibrated mistags are well defined.
 
-To not rely on possible binning effects on the estimated msitag $\eta$ or the mistag probabilitz $\omega$, the calibration functions are determined using an unbinned maximum-likelihood method, the so-called binomial regression~\cite{BinRegression}.
+To not rely on possible binning effects on the estimated mistag $\eta$ or the mistag probability $\omega$, the calibration functions are determined using an unbinned maximum-likelihood method, the so-called binomial regression~\cite{BinRegression}.
 
 \section{Flavour tagging strategy}
 \label{sec:taggingstrategy}
 
-In this analysis the combination of all available OS taggers is used, while for the SS both taggers designed to tag the initial flavour of \Bz-mesons are combined into one single tag decision and mistag.
+In this analysis the combination of all available OS algorithms is used, while for the SS both taggers designed to infer the initial flavour of \Bz-mesons are combined into one single tag decision and mistag.
 The OS taggers were all developed and trained on a datasample of $\Bu\!\to\jpsi\Kp$ decays, except for the OS charm tagger, whose BDT was trained on a mixed sample of simulated $\Bu\!\to\jpsi\Kp$, $\Bz\!\to\jpsi\Kstarz$ and $\Bs\!\to\jpsi\phi$ decays.
 As the OS taggers are independent of the initial signal \B they can be used in this default version.
 As control channel the decay $\Bu\!\to\Dz\pip$ is used.
 As mentioned before, the SS pion and the SS proton taggers were deveolped and trained on a datasample of \BdToDpi decays, assuming no \CP-violation.
-The use of these algorithms could therefor bias the measurement of \Sf and \Sfbar and hence both taggers are retrained (more details given in \cref{sec:retrainSSpion} and \cref{sec:retrainSSproton}).
+The use of these algorithms could therefore bias the measurement of \Sf and \Sfbar and hence both taggers are retrained (more details given in \cref{sec:retrainSSpion} and \cref{sec:retrainSSproton}).
 
 To include the flavour tagging in the decay rates given in \crefrange{eq:DecRateB2Dmpip}{eq:DecRateBb2Dppim} the expressions for the \CP-parameters \Sf and \Cf need to be extended to
 \begin{equation}
 \begin{aligned}
 \Sf\to\left(\Delta^--\Delta^+\right)\Sf\\
-\Cf\to\left(\Delta^--\Delta^+\right)\Cf.\label{eq:decRateCorrectFT}
+\Cf\to\left(\Delta^--\Delta^+\right)\Cf\,\,.\label{eq:decRateCorrectFT}
 \end{aligned}
 \end{equation}
 Similar equations hold also for \Sfbar and \Cfbar.
@@ -258,10 +258,10 @@ The flavour specific control samples ($\Bu\!\to\Dz\pip$ for the OS, $\Bz\!\to\jp
 Unlike other flavour tagged analyses at \lhcb the calibration parameter are determined directly in the decay-time fit as floating nuisance parameter of the likelihood function in \BdToDpi.
 This is possible because the parameters \Cf and \Cfbar are fixed to \num{1} and \num{-1} as the ratio $r$ (see \cref{eq:ratioDpi}) is expected too small to allow a significant measurement of both parameters.
 As a result, the cosine term allows to determine the calibration parameters independently of the sine term.
-A qualitative explaination is given in \cref{fig:FTstrategy}.
-A more quantitative validation was done by a collaboratoron pseudoexperiments:
+A qualitative explanation is given in \cref{fig:FTstrategy}.
+A more quantitative validation was done by a collaborator on pseudoexperiments:
 Generating pseudoexperiments and floating the parameters \Cf and \Cfbar in the fit showed a non-negligible bias for the parameters \Sf and \Sfbar, while fixing the coefficients \Cf and \Cfbar in the fit showed unbiased results on all fitted parameters.
-Finally it should be noted here, that possible deviations from the assumption of $\Cf=-\Cfbar=1$ are taken into account in the systematic uncertainties.
+Finally it should be noted here that possible deviations from the assumption of $\Cf=-\Cfbar=1$ are taken into account in the systematic uncertainties.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/oscillation_f.pdf}
@@ -276,14 +276,14 @@ Finally it should be noted here, that possible deviations from the assumption of
 
 As all calibration parameters are directly determined in the signal sample no assumptions for the portability of the calibration from a control channel is needed.
 However, the additional degrees of freedom in the final decay-time fit lead to an increased statistical uncertainty on the \CP-parameters \Sf and \Sfbar.
-This is compensated by the fact, that the systematic uncertainty for the portability of the calibration, which is often the largest systematic uncertainty for flavour tagged analyses at \lhcb, is needed.
+This is compensated by the fact that the systematic uncertainty for the portability of the calibration, which is often the largest systematic uncertainty for flavour tagged analyses at \lhcb, is needed.
 Such systematic uncertainty would be accounting for kinematic differences between the control sample and the signal sample leading to different flavour tagging calibrations.
 To check the portability simulated events of both, the control sample and the signal sample are used.
 When checking the portability of the calibrations from $\Bu\!\to\Dz\pip$ and $\Bz\!\to\jpsi\Kstarz$ to \BdToDpi a bias on \Sf and \Sfbar of roughly the size of their statistical uncertainty arises.
-This bias can be reduced, when floating the calibration parameters (more details on this are given in \cref{sec:decTimeFitVal}).
+This bias can be reduced when floating the calibration parameters (more details on this are given in \cref{sec:decTimeFitVal}).
 Furthermore, the precision of the calibration parameters for the SS tagger combination obtained in the decay-time fit to \BdToDpi is much smaller compared to the precision on the control channel, while for the OS tagger combination the uncertainty on the signal sample increases only slightly compared to the uncertainty obtained on the control sample.
 
-Therefore, the studies presented in the following sections do not aim, to obtain the calibration parameters.
+Therefore, the studies presented in the following sections do not aim to obtain the calibration parameters.
 Instead, on the one hand, they are used to determine the functional form of the calibration function, which is used in the decay-time fit described in \cref{sec:ExtractCPobs}.
 On the other hand, the obtained parameter values of the calibration function can be used as reference values for the decay-time fit, as even if they are not expected to agree perfectly, both parameter sets should be in the same interval.
 
@@ -291,25 +291,25 @@ On the other hand, the obtained parameter values of the calibration function can
 \label{sec:SScalibration}
 
 The SS tagger combination is retrained and calibrated on the datasample of $\Bz\!\to\jpsi\Kstarz$ candidates corresponding to \SI{3}{\per\femto\barn}, recorded in \num{2011} and \num{2012} at centre-of-mass energies of \SI{7}{\tera\electronvolt} and \SI{8}{\tera\electronvolt}, respectively.
-It is used, because $\Bz\!\to\jpsi\Kstarz$ is the only flavour-specific decay mode of \Bz-mesons wiht a sufficient large statistic beside the signal mode of \BdToDpi at \lhcb.
-The strategy follows mainly the one, which was used to train the original taggers on \BdToDpi what is described in Ref.~\cite{Aaij:2016rdg}.
+It is used because $\Bz\!\to\jpsi\Kstarz$ is the only flavour-specific decay mode of \Bz-mesons with a sufficient large statistic beside the signal mode of \BdToDpi at \lhcb.
+The strategy follows mainly the one which was used to train the original taggers on \BdToDpi what is described in Ref.~\cite{Aaij:2016rdg}.
 Only one additional step is implemented:
 The distributions of $\Bz\!\to\jpsi\Kstarz$ candidates are kinematically weighted to match the distributions of \BdToDpi candidates.
-The general procedure is quite similar for both tagging algorithms and looks as follows:
+The general procedure is quite similar for both tagging algorithms and looks as following:
 \begin{itemize}
 	\item The $\Bz\!\to\jpsi\Kstarz$ sample is selected and a fit to the invariant mass is performed, in order to separate the signal and background components statistically.
-	Using the \emph{sPlot} method weights are calculated, which allow to obtain the distributions of other variables for the signal component. This is reported in \cref{sec:PrepBd2JpsiKstSample}
+	Using the \emph{sPlot} method weights are calculated, which allow to obtain the signal-component distributions of other variables. This is reported in \cref{sec:PrepBd2JpsiKstSample}
 	\item The distributions of transverse momentum \pt, pseudo-rapidity $\eta'$ and azimuthal angle $\phi$ of the \Bz candidate, the number of tracks and the number of \ac{PV}s in the event and a distribution of Hlt2 trigger decisions for $\Bz\!\to\jpsi\Kstarz$ candidates are weighted to match those of the \BdToDpi candidates.
 	This has two reasons: First the performance of the BDT is potentially improved when applying to \BdToDpi, second the portability of the functional form of the calibration is assured, and the obtained reference values better suited as such.
 	\item The tagging particles, whose charge is correlated with the initial \B flavour are selected
 	\item Finally the datasample is divided into three subsamples:
 	\begin{itemize}
 		\item The first third of the sample is used to train a BDT to separate correctly and wrongly charged tagging particles.
-		Hereby correctly tagged means that the charge of the tagging particle would indicate the correct tag, while wrongly tagged denotes exactly the opposite situation: The tagging particles charge would indicate the wrong tag decision.
+		Hereby correctly tagged means that the charge of the tagging particle would indicate the correct tag, while wrongly tagged denotes exactly the opposite situation: The tagging particles' charge would indicate the wrong tag decision.
 		To reduce the number of oscillated \Bz-mesons only \Bz-mesons with a decay time smaller than the first maximum of the oscillation are used.
 		Therefore, following the procedure in Ref.~\cite{Aaij:2016rdg}, \Bz-mesons used in the training are required to have a a decay time smaller than \SI{2.2}{\pico\second}.
 		\item On the second subsample is the BDT is tested in order to avoid effects as overtraining.
-		Furthermore both subsamples, the first training sample and this second testing sample, are used to determine the mistag as a function of the BDT response. For this latter step the requirement on the \Bz decay time is removed, as a full time-dependent analysis of the \Bz oscillation is needed.
+		Furthermore, both subsamples, the first training sample and this second testing sample are used to determine the mistag as a function of the BDT response. For this latter step the requirement on the \Bz decay time is removed, as a full time-dependent analysis of the \Bz oscillation is needed.
 		\item Finally on the last third the functional form of the calibration is determined together with reference values for the calibration parameters obtained in the decay-time fit described in \cref{sec:ExtractCPobs}.
 	\end{itemize}
 \end{itemize}
@@ -323,7 +323,7 @@ The cuts applied in the stripping are listed in \cref{tab:JpsiKstStripping}.
 \begin{table}[tbp]
 	\centering
 	\caption{Stripping cuts for the decay $\Bz\!\to\jpsi\Kstarz$ with $\jpsi\!\to\mup\mun$ and $\Kstarz\!\to\Kp\pim$.
-	For the charged tracks the more stringent requirements for the bachelore track are given in brackets.
+	For the charged tracks the more stringent requirements for the bachelor track are given in brackets.
 	For the impact parameter the shortcut IP is used, DOCA denotes the distance of closest approach of the respective \Kstarz or \jpsi mesons and $m_{p^+p^-}$ denotes the invariant mass of the \mup\mun or \Kp\pim combination.}
 	\begin{tabular}{ccc}
 		\toprule
@@ -366,16 +366,16 @@ After the trigger requirements the \Kstarz- and the \jpsi-meson are requried to 
 	\label{tab:selJpsiKst}
 \end{table}
 Additionally only \Bz-candidates with an invariant mass within the range $[5100, 5450]\,$\si[per-mode=symbol]{\MeVcc}, a transverse momentum larger than \SI{1}{\GeVc}, the minimal $\chi^2$ of the impact parameter w.r.t. the \ac{PV} smaller than \num{25} and $\nicefrac{\chi^2}{\text{ndof}}$ of the decay vertex smaller than ten are selected.
-Last the DTF $\nicefrac{\chi^2}{\text{ndof}}$ is required to be smaller than five and the number of \ac{PV}s in the event is has to be one, or in case an event has more than one \ac{PV} the impact parameter $\chi^2$ has to be larger than \num{50}.
+Last the DTF $\nicefrac{\chi^2}{\text{ndof}}$ is required to be smaller than five and the number of \ac{PV}s in the event has to be one, or in case an event has more than one \ac{PV} the impact parameter $\chi^2$ has to be larger than \num{50}.
 In case of multiple \Bz candidates the one with the smallest DTF $\nicefrac{\chi^2}{\text{ndof}}$ is chosen.
 
-To extract \emph{sWeights} a fit to the invariant \Bz mass, stemming from the DTF with a contraint on the known \jpsi, mass is performed.
+To extract \emph{sWeights} a fit to the invariant \Bz mass, stemming from the DTF with a constraint on the known \jpsi mass is performed.
 The signal model consists of a sum of two double-sided Hypatia functions with a shared mean value, the background is parametrised using an exponential function.
 The first Hypatia function describes mainly $\Bz\!\to\jpsi\Kstarz$ candidates without photon radiation in the final state, while the second Hypatia shows a large tail towards smaller invariant masses.
 The tail parameters $a_i$ and $n_i$ of both Hypatia functions are determined on simulated events.
 Moreover the fraction between both signal components and the parameter $\lambda$ of the Hypatia describing the \Bz candidates with harder photon radiation are taken from fits to simulated samples.
 All remaining parameters are left free.
-The fit, which is performed in the range $[5200, 5350]\,$\si[per-mode=symbol]{\MeVcc}, is shown in \cref{fig:massFitJpsiKst} and the resulting yields are given in \cref{tab:yieldsJpsiKst}.
+The fit which is performed in the range $[5200, 5350]\,$\si[per-mode=symbol]{\MeVcc} is shown in \cref{fig:massFitJpsiKst} and the resulting yields are given in \cref{tab:yieldsJpsiKst}.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.5\textwidth]{08FlavourTagging/figs/BmassJpsiKst_pull.pdf}
@@ -400,13 +400,13 @@ The fit, which is performed in the range $[5200, 5350]\,$\si[per-mode=symbol]{\M
 The last preparation step for the data sample is then to weight certain \emph{sWeighted} distributions of $\Bz\!\to\jpsi\Kstarz$ candidates to match the corresponding distributions of the \BdToDpi candidates.
 The observables which are weighted are chosen as they are known to most influence the tagging responses.
 These observables are the transverse momentum \pt, the pseudo-rapidity $\eta'$ and the azimuthal angle $\phi$ of the \Bz candidate as well as the number of tracks and the number of \ac{PV}s in the event.
-Additionally an observable containing the composition of the used trigger lines is weighted.
+Additionally, an observable containing the composition of the used trigger lines is weighted.
 For this observables the categories \num{1}, \num{2} and \num{3} contain candidates which are exclusively triggered TOS by the \verb!Hlt2Topo2BodyBBDTDecision!, \verb!Hlt2Topo3BodyBBDTDecision! or \verb!Hlt2Topo4BodyBBDTDecision! line, respectively.
-Categroy \num{4} contains candidates triggered TOS exculsively by the overlap of the \verb!Hlt2Topo2BodyBBDTDecision! and \verb!Hlt2Topo3BodyBBDTDecision! lines, category \num{5} contains candidates triggered TOS exculsively by the overlap of the \verb!Hlt2Topo2BodyBBDTDecision! and \verb!Hlt2Topo4BodyBBDTDecision! lines and category \num{6} contains candidates triggered TOS exculsively by the overlap of the \verb!Hlt2Topo3BodyBBDTDecision! and \verb!Hlt2Topo4BodyBBDTDecision! lines.
+Category \num{4} contains candidates triggered TOS exclusively by the overlap of the \verb!Hlt2Topo2BodyBBDTDecision! and \verb!Hlt2Topo3BodyBBDTDecision! lines, candidates triggered exculsively TOS by the overlap of the \verb!Hlt2Topo2BodyBBDTDecision! and \verb!Hlt2Topo4BodyBBDTDecision! lines are classified in category \num{5} and candidates triggered exclusively TOS by the overlap of the \verb!Hlt2Topo3BodyBBDTDecision! and \verb!Hlt2Topo4BodyBBDTDecision! lines are in category \num{6}.
 The last category (\num{7}) contains candidates which are triggered by all three Hlt2 lines.
 
-Instead of weighting of the six-dimensional parameter space using a six-dimensional histogram a BDT based appraoch is chosen.
-In this appraoch, the parameter space is split in several large regions, which are separated using binary decision trees.
+Instead of weighting the six-dimensional parameter space using a six-dimensional histogram a BDT based approach is chosen.
+In this approach, the parameter space is split in several large regions, which are separated using binary decision trees.
 These trees maximise a symmetrised $\chi^2$
 \begin{equation}
 \chi^2=\sum_{i}\frac{\left(N_{i,\text{source}}-N_{i,\text{target}}\right)^2}{N_{i,\text{source}}+N_{i,\text{target}}}
@@ -440,7 +440,7 @@ The distributions of the original and weighted $\Bz\!\to\jpsi\Kstarz$ and \BdToD
 \subsection{Retraining of the SS pion tagger}
 \label{sec:retrainSSpion}
 
-First the tagging particles have to fulfull a set of selection cuts, which are partly only applied to the tagging track and partly to the system of the tagging track and the \B candidate. These cuts have two aims:
+First the tagging particles have to fulfill a set of selection cuts, which are partly applied only to the tagging track and partly to the system of the tagging track and the \B candidate. These cuts have two aims:
 First separating pions form other charged tracks in the event and second selecting particles which are in the same region of phase space as the \B candidate.
 \begin{table}[tbp]
 	\centering
@@ -467,9 +467,9 @@ First separating pions form other charged tracks in the event and second selecti
 	\end{tabular}
 	\label{tab:SSPionselectionCuts}
 \end{table}
-For each taggin-particle candidate passing the requirements shown in \cref{tab:SSPionselectionCuts}, the \B-meson gets a preliminary tag decision assigned, corresponding to the charge of the tagging particle ($\pip\rightarrow d=+1$, $\pim\rightarrow d=-1$).
+For each tagging-particle candidate passing the requirements shown in \cref{tab:SSPionselectionCuts}, the \B-meson gets a preliminary tag decision assigned, corresponding to the charge of the tagging particle ($\pip\rightarrow d=+1$, $\pim\rightarrow d=-1$).
 The quantities $\Delta\eta'$ and $\Delta\phi$ describe the difference between the signal and tagging-particle track pseudo-rapidity and azimuthal angle, respectively.
-To further assure, that the tagging-particle is also produced at the \ac{PV} with which the \B candidate has the smallest $\text{IP}\chi^2$, the impact parameter significance with this \enquote{best} other PVs in the event (denoted as pile-up vertices) are used.
+To further assure that the tagging-particle is also produced at the \ac{PV} with which the \B candidate has the smallest $\text{IP}\chi^2$, the impact parameter significance with this \enquote{best} other PVs in the event (denoted as pile-up vertices) are used.
 The corresponding quantities are $\nicefrac{\text{IP}}{\sigma_{\text{IP}}}$ and $\nicefrac{\text{IP}_{\text{PU}}}{\sigma_{\text{IP}_{\text{PU}}}}$, respectively.
 
 After that a BDT is trained to determine the mistag and to select the best tagging-particle candidate in events with more than one tagging-particle candidate after the selection.
@@ -477,7 +477,7 @@ In the training, all candidates with the correct correlation between the prelimi
 A correct or wrong correlation for the SS pion algorithm mean
 \begin{align*}
 	\text{Correct tag: }& \Bz\pip \text{ or } \Bzb\pim\\
-	\text{Wrong tag: }& \Bz\pim \text{ or } \Bzb\pip.
+	\text{Wrong tag: }& \Bz\pim \text{ or } \Bzb\pip
 \end{align*}
 where only \B candidates with a decay time smaller than \SI{2.2}{\pico\second} are used in the BDT training to reduce the number of oscillated \B candidates.
 The BDT further consists of \num{3000} trees with a maximum depth of two.
@@ -534,7 +534,7 @@ For events with more than one tagging particle, the best one is identified as th
 
 Subsequently, due to the flavour oscillations, a time-dependent analysis is necessary to transform the BDT response into a mistag.
 For this, an unbinded maximum-likelhihood fit to the decay-time $t$, the tag decisions $d$ and the mixing state $\xi$ is performed.
-The mixing state state takes values of $+1$ when the \B-meson flavour at decay is the same as the tag decision and $-1$ otherwise.
+The mixing state takes values of $+1$ when the \B-meson flavour at decay is the same as the tag decision and $-1$ otherwise.
 As the fit is performed to the \emph{sWeighted} decay-time distribution the describing PDF consists only of a signal-component
 \begin{equation}
 \mathcal{M}(t;d,\xi)=\mathcal{N}a(t)e^{-t'/\tau}\left(\left(1-d\Delta\omega\right)+\xi\left(1-2\omega\right)\cos\!\left(\dm t'\right)\right)\otimes\mathcal{R}(t-t')\label{eq:mixPDF}
@@ -581,7 +581,7 @@ The resulting transformation parameters are given in \cref{tab:transformationSSP
 		\includegraphics[width=0.6\textwidth]{08FlavourTagging/figs/SSPionBDTTrafo.pdf}
 	\end{center}
 	\caption{Polynomial curve of $\omega$ versus $\alpha^{\text{SS}\pion}_\text{BDT}$ on the first two thirds of the $\Bz\!\to\jpsi\Kstarz$ data sample.
-	In orange the fit from the binned approach is shown, in grey the curved of the nominal unbinned method is shown.
+	The fit from the binned approach is shown in orange, the curved of the nominal unbinned method is shown in grey .
 	The parameter values in the plot correspond to the orange curve/binned approach.}
 	\label{fig:transformationSSPion}
 \end{figure}
@@ -591,7 +591,7 @@ In case the computed mistag $\eta'$ is larger than \num{0.5}, the tag decision i
 \subsection{Retraining of the SS proton tagger}
 \label{sec:retrainSSproton}
 
-The procedure for tuning the SS proton tagger BDT and transforming the BDT response is very similar to that described in \cref{sec:retrainSSpion} for the SS pion tagger.
+The procedure for tuning the SS proton tagger BDT and transforming the BDT response is very similar to the one described in \cref{sec:retrainSSpion} for the SS pion tagger.
 
 Besides pions, protons, which have a correlation with the initial flavour of the \B-meson, may also be formed in initial the hadronization process.
 These tagging-proton candidates must first meet a set of requirements for the proton track itself and the system of the tagging-proton candidate and the \B-meson.
@@ -619,11 +619,11 @@ The correlation between charge of the proton and the \B-meson flavour for the SS
 	\text{Correct tag: }& \Bz\antiproton \text{ or } \Bzb\proton\\
 	\text{Wrong tag: }& \Bz\proton \text{ or } \Bzb\antiproton.
 \end{align*}
-Here it is important to note that the correlation is exactly opposite to that of the SS pion tagger.
+Here it is important to note that the correlation is the exact opposite to the one of the SS pion tagger.
 As a consequence, a misidentification of pions and protons would lead to a degraded performance of both taggers and the requirement on \dllppi is chosen exactly the opposite for both algorithms.
 
 In the same way as for the SS pion tagger, proton candidates with the correct charge correlation with the flavor of the initial \B-meson are assumed to be signal while proton candidates with the incorrect charge correlation are considered as background for the BDT training.
-The input variables for the BDT are listed in \cref{tab:BDTInputSSProton}, most of them again the same as used for the selection.
+The input variables for the BDT are listed in \cref{tab:BDTInputSSProton}, most of them again already used for the selection.
 \begin{table}[tbp]
 	\centering
 	\caption{List of input variables used in the training of the BDT for the SS proton tagger.
@@ -656,18 +656,18 @@ All further configurations of the BDT are same as described in \cref{sec:retrain
 	\label{fig:SSProtonBDTOutput}
 \end{figure}
 Again, a small but significant separation power of the BDT can be seen.
-In addition, the test and training samples show some small differences, which are probably a result of a slight overtraining.
+In addition, the test and training samples show some small differences, which probably are a result of a slight overtraining.
 However, possible effects arrising due to this are corrected when transforming and calibrating the BDT response.
 As for the SS pion algorithm, in case of multiple tagging-proton candidates per event the tag decision and the mistag are defined by the candidate with the largest BDT output.
 
 To determine the relation between the mistag and the BDT output, a time-dependent mixing analysis is performed.
 This means, an unbinded maximum-likelihood fit to the distribution of the decay-time $t$, the tag decision $d$ and the mixing state $\xi$ is done.
-Since the \emph{sWeigthed} distributions are used again for the fit, only the signal component must be described with the PDF from \cref{eq:mixPDF}.
-With a fit, binned in the BDT output $\alpha^{\text{SS}\proton}_\text{BDT}$, firstly the functional relation between the mistag and $\alpha^{\text{SS}\proton}_\text{BDT}$ is determined; a $3^{\text{rd}}$ order polynomial as described in \cref{eq:tranformfunc} again describes the data well.
-An unbinned fit, in which the mistag is parameterised directly in the PDF, then provides the final transformation parameters, which can be found in \cref{tag:transformSSProton}.
+Since the \emph{sWeigthed} distributions are used for the fit again, only the signal component must be described with the PDF from \cref{eq:mixPDF}.
+With a fit, binned in the BDT output $\alpha^{\text{SS}\proton}_\text{BDT}$, firstly the functional relation between the mistag and $\alpha^{\text{SS}\proton}_\text{BDT}$ is determined; a $3^{\text{rd}}$ order polynomial as described in \cref{eq:tranformfunc} describes the data well again.
+An unbinned fit, in which the mistag is parametrised directly in the PDF, then provides the final transformation parameters, which can be found in \cref{tab:transformSSProton}.
 \begin{table}[tbp]
 	\centering
-	\caption{Final transformation parameters for the BDT responst of the SS proton tagger.}
+	\caption{Final transformation parameters for the BDT response of the SS proton tagger.}
 	\begin{tabular}{cccc}
 		\toprule
 		$b_0$ & $b_1$ & $b_2$ & $b_3$ \\
@@ -691,7 +691,7 @@ Figure \ref{fig:MixasymmetrieSSProton} shows the time-dependent mixing asymmetry
 		\includegraphics[width=0.6\textwidth]{08FlavourTagging/figs/SSProtonBDTTrafo.pdf}
 	\end{center}
 	\caption{Polynomial curve of $\omega$ versus $\alpha^{\text{SS}\proton}_\text{BDT}$ on the first two thirds of the $\Bz\!\to\jpsi\Kstarz$ data sample.
-	In orange the fit from the binned approach is shown, in grey the curved of the nominal unbinned method is shown.
+	The fit from the binned approach is shown in orange, the curved of the nominal unbinned method is shown in grey.
 	The parameter values in the plot correspond to the orange curve/binned approach.}
 	\label{fig:transformationSSProton}
 \end{figure}
@@ -707,7 +707,7 @@ This is achieved using the formalism from \cref{sec:CombAndCalib}, yielding in o
 
 This global SS combination then needs to be calibrated.
 In order to do this the adopted model is a GLM with a $1^{\text{st}}$ order polynomial as \emph{basis function} and the modified logistic function from \cref{eq:modlink} as \emph{link function}.
-The number of free parameters (\num{4}) in the model was selected to achieves several satisfactory goodness-of-fit (GOF) metrics.
+The number of free parameters (\num{4}) in the model was selected to achieve several satisfactory goodness-of-fit (GOF) metrics.
 The comparisons of GOF metrics are shown in Table \cref{tab:GOFSS}.
 \begin{table}[tbp]
         \centering
@@ -724,7 +724,7 @@ The comparisons of GOF metrics are shown in Table \cref{tab:GOFSS}.
         \end{tabular}
         \label{tab:GOFSS}
 \end{table}
-Since the deviance $G^2$ and the le Cessie-van Houwelingen-Copas-Hosmer metric ($S$) seem to prefer the simpler model, while the Pearson $\chi^2$ and the Cressie-Read ($CR$) metric prefer the more complicated model, but are assumed to fit the data equally well and the simpler model is chosen (all metrics are described in Ref.~\cite{GOFmetric}).
+Since the deviance $G^2$ and the le Cessie-van Houwelingen-Copas-Hosmer metric ($S$) seem to prefer the more simple, while the Pearson $\chi^2$ and the Cressie-Read ($CR$) metric prefer the more complicated model, but are assumed to fit the data equally well and the more simple is chosen (all metrics are described in Ref.~\cite{GOFmetric}).
 The Calibration is then performed using the \emph{sWeights} together with the weights from \cref{sec:PrepBd2JpsiKstSample}, giving the calibration parameters shown in \cref{tab:CalibSS}.
 A graphical representation can be found in \cref{fig:CalibSS}.
 \begin{table}[tbp]
@@ -743,30 +743,30 @@ A graphical representation can be found in \cref{fig:CalibSS}.
 	\begin{center}
 		\includegraphics[width=0.45\textwidth]{08FlavourTagging/figs/CalibrationSS.pdf}
 	\end{center}
-	\caption{Calibration retreived by the for the SS tagger combination.
+	\caption{Calibration retreived for the SS tagger combination.
 	The black histogram is the distributions of the mistag probabilities in arbitrary units.
-	The shaded areas correspond to the \SI{68}{\percent} and \SI{95}{\percent} confidence level regions of the calibration functions.}
+	The green areas correspond to the \SI{68}{\percent} and \SI{95}{\percent} confidence level regions of the calibration functions.}
 	\label{fig:CalibSS}
 \end{figure}
 
 The portability of the SS tagger combination is tested on simulated \BdToDpi and $\Bz\!\to\jpsi\Kstarz$ candidates.
-This is done using the simulated truth information such that the calibration can be performed in the same way as on a charged decay mode, after equalising the number of innitial \Bz- and \Bzb-mesons to separate tagging asymmetries from asymmetries due to \CP-violation or production asymmetries.
+This is done using the simulated truth information such that the calibration can be performed in the same way as on a charged decay mode, after equalising the number of initial \Bz- and \Bzb-mesons to separate tagging asymmetries from asymmetries due to \CP-violation or production asymmetries.
 Both, the individual calibration parameters and a \enquote{full} comparison from a $\chi^2$ test including the correlations between the parameters, show good agreement (\eg $0.09\sigma$ for the full test).
 Despite this good agreement, the parameters in \CP-fit on \BdToDpi are left free.
 On the one hand, this is  motivated by the higher accuracy of the \BdToDpi data sample.
-On the other hand this strategy matches the approach for the OS tagger combination, where the portabilty.
+On the other hand this strategy matches the approach for the OS tagger combination, where the portability is not given (\cref{sec:OScalibration}).
 In addition, this approach does not require any systematic uncertainty accounting for the portability of the calibration parameters.
 
 \section{Opposite side tagging calibration}
 \label{sec:OScalibration}
 
-As mentioned before, the work in this section was done by a collaborator and therefore the explanations will be less detailed than in most other parts of this document.
+As mentioned before, the work in this section was done by a collaborator and therefore the explanations will be less detailed than in most other parts of this thesis.
 
 As control channel for the OS tagger combination (namely the OS muon, OS electron, OS kaon, OS vertex charge and OS charm) the charged decay mode $\Bu\!\to\Dz\pip$ is used.
 As this decay mode is kinematically  similar with the signal decay \BdToDpi, the same triggers requirements can be applied with a high signal efficiency.
 The $\Bu\!\to\Dz\pip$ candidates are further selected by simple rectangular cuts on track quality variables, PID variables, the decay time of the \B-candidate and the invariant mass of the \Dz.
 Then a fit to the invariant \Bu mass is performed to extract \emph{sWeights} using the same strategy as in \cref{ch:massfit}.
-The invariant mass distribution with the fit projection from Fit B overlaid is shown in \cref{fig:OStaggerMassFit} while \cref{tab:OStaggerMassFitYields} shows the resulting signal and background yields.
+The invariant mass distribution overlaid with the fit projection from Fit B is shown in \cref{fig:OStaggerMassFit} while \cref{tab:OStaggerMassFitYields} shows the resulting signal and background yields.
 \begin{figure}[tbp]
 	\begin{center}
 		\includegraphics[width=0.7\textwidth]{08FlavourTagging/figs/MDFitForSWeights_BeautyMass_Bu2D0Pi.pdf}
@@ -840,6 +840,6 @@ A graphical representation can be found in \cref{fig:CalibOS}.
 The portability of the calibration is checked on simulated candidates.
 The calibration is determined using the simulated true initial flavours on both decay channels after equalising the number of initial \Bz (\Bu) and \Bzb (\Bm) mesons.
 The parameters $p_0$ and $p_1$ show deviations of more than $2.5\sigma$, while the full comparison taking into account the correlations between the parameters shows a discrepancy of $2.0\sigma$.
-Although one could presume this overall disrepancy is sufficiently small, a study on simulated events presented in \cref{sec:decTimeFitVal} shows that applying the calibration determined on $\Bu\!\to\Dz\pip$ causes a bias for the \CP-parameters \Sf and \Sfbar.
+Although one could presume this overall discrepancy is sufficiently small, a study on simulated events presented in \cref{sec:decTimeFitVal} shows that applying the calibration determined on $\Bu\!\to\Dz\pip$ causes a bias for the \CP-parameters \Sf and \Sfbar.
 Presumably some residual discrepancies remain despite the weighting of the $\Bu\!\to\Dz\pip$ candidates.
-For this reason, the portability is not considered given and the calibration is determined directly in the \CP fit on \BdToDpi.
+For this reason, the portability is not considered to be given and the calibration is determined directly in the \CP fit on \BdToDpi.
