@@ -2,18 +2,18 @@
 \chapter{Decay-time fit}
 
 In this chapter the decay-time fit on \BdToDpi to extract the \CP observables \Sf and \Sfbar is presented.
-Section \ref{sec:resolution} and \ref{sec:acceptance} describe the parameterization of the decay time resolution and acceptance before the extraction of the \CP parameters is presented in \cref{sec:ExtractCPobs}.
-Following this fit needs to be validated.
-This can be achieved by first comparing other results from the fit than the \CP parameters with references.
+Section \ref{sec:resolution} and \ref{sec:acceptance} describe the parameterisation of the decay time resolution and acceptance before the extraction of the \CP parameters is presented in \cref{sec:ExtractCPobs}.
+Following, this fit needs to be validated.
+This can be achieved by first comparing the resulting values of nuisance parameters with reference values.
 Further the \emph{link function} used for the calibration function of the OS and SS taggers needs to be validated (\cref{sec:ValLinkFunction}).
-Last the fit to extract the CP parameters is repeated on different subsamples of the data set (\cref{sec:valOnSubSample}) and the entire strategy is also checked on simulated events (\cref{sec:valOnSim}).
+At last, the fit to extract the CP parameters is repeated on different subsamples of the data set (\cref{sec:valOnSubSample}) and the entire strategy is also checked on simulated events (\cref{sec:valOnSim}).
 
 \section{Fit to data}
 
-In the following the last preparatpory studies and the decay-time fit to extract \Sf and \Sfbar are presented.
+In the following the last preparatory studies and the decay-time fit to extract \Sf and \Sfbar are presented.
 The fit is performed on the decay-time range from \SIrange{0.4}{12}{\pico\second}.
 This lower limit was chosen in order to obtain a good description of the decay-time distribution at low decay-times without losing sensitivity on the parameters \Sf and \Sfbar.
-The upper limit was set to a value such that the statistics is already too small that an enlarged range would no longer be useful add sensitivity on the \CP parameters.
+The upper limit was set to a value such that the statistics is already too small so that an enlarged range would no longer be useful to add sensitivity on the \CP parameters.
 
 \subsection{Decay time resolution}
 \label{sec:resolution}
@@ -21,8 +21,8 @@ The upper limit was set to a value such that the statistics is already too small
 Since the work in this section was done by a collaborator, the contents are described for the sake of completeness, but smaller details are omitted.
 
 The decay-time resolution is determined on a sample of \emph{fake} \Bz-candidates, formed from a prompt \Dpm candidate and another track originating from the PV.
-The candidates are selected with the same selection as presented in \cref{sec:selection} except for the cut on the BDT output.
-Additioanally, the \emph{fake} \Bz-candidates are required to have an impact parameter $\chi^2$ with the PV is less than nine and the number of \ac{PV}s in the event must be one to exclude wrong \ac{PV} associations.
+The candidates are selected with the same selection as presented in \cref{sec:selection}, except for the cut on the BDT output.
+Additionally, the \emph{fake} \Bz-candidates are required to have an impact parameter $\chi^2$ with the PV less than nine and the number of \ac{PV}s in the event must be one to exclude wrong \ac{PV} associations.
 Subsequently \emph{sWeights} are determined by a fit to the invariant mass of the \Dpm meson in order to examine only signal distributions in the following.
 Since the time resolution depends on the transverse momentum of the bachelor particle, as a last preparatory step, this need to be corrected in the sample of \emph{fake} \Bz-candidates.
 Therefore the prompt sample is weighted by the ratio of the distributions of the logarithmic transverse momenta of the bachelor candidate in the signal \BdToDpi and the prompt sample.
@@ -40,36 +40,36 @@ The fit is shown for one representative bin in \cref{fig:resolutionRepresentativ
     Right: Measured resolution versus average per-candidate decay-time error, determined from fits to the decay time in bins of decay-time error.}
     \label{fig:resolutionRepresentativeBin}
 \end{figure}
-From this fit a measured resolution $\left<\sigma\right>_i$ per bin is obtained, which can be related to the corresponding average decay-time error $\left<\delta\right>_i$.
+A measured resolution $\left<\sigma\right>_i$ per bin is obtained from this fit, which can be related to the corresponding average decay-time error $\left<\delta\right>_i$.
 Following a $\chi^2$ is fit to the $(\left<\delta\right>_i, \left<\sigma\right>_i)$ pairs of the form
 \begin{equation}
 \left<\sigma\right>_i=\left<\sigma\right>+p_1\times\left(\left<\delta\right>_i-\left<\delta\right>\right)+p_2\times\left(\left<\delta\right>_i-\left<\delta\right>\right)^2
 \end{equation}
 is performed, where $\left<\delta\right>$ is the average per-event decay-time error of the whole unbinned sample.
-This $\chi^2$ fit, shown in \cref{fig:resolutionRepresentativeBin}, provides an average decay time resolution $\left<\sigma\right>$ and a trend.
-From this, a global average resolution of \mbox{$\sigma\!\left(\left<\delta\right>\right)=\SI{0.05491\pm0.00038}{\pico\second}$} can be determined.
+This $\chi^2$ fit is shown in \cref{fig:resolutionRepresentativeBin}.
+It provides an average decay time resolution $\left<\sigma\right>$ and a trend, from which a global average resolution of \mbox{$\sigma\!\left(\left<\delta\right>\right)=\SI{54.91\pm0.38}{\femto\second}$} can be determined.
 
 \subsection{Decay-time dependent efficiency}
 \label{sec:acceptance}
 
 Due to some selection criteria and trigger requirements, as well as inefficiencies in \velo reconstruction, the detector efficiency is not constant over the \Bz decay-time.
-This efficiency, hereinafter referred to as acceptance, goes very quickly towards zero for low decay times, reaches a plateau for intermediate decay times, and drops slightly again at high decay times.
+This efficiency, hereinafter referred to as acceptance, decreases very quickly towards zero for low decay times, reaches a plateau for intermediate decay times, and slightly drops again at high decay times.
 
 For this analysis two models were developed in parallel, which give almost identical results for the \CP parameters \Sf and \Sfbar.
 The model used in the final decay-time fit was developed by a collaborator and has one degree of freedom more, while the model described below is used as a crosscheck and for estimating systematic uncertainties.
 In both models the acceptance is defined by splines, which are defined analytically in the decay-time fit as described in Ref.~\cite{Karbach:2014qba}.
 These splines consist of cubic polynomials defined piecewise in decay-time.
-The model is then defined by the limits of the ranges on which the cubic polynomials (also denoted as knots) are defined and associated coefficients, of which two more than knots are required.
+The model is then defined by the limits of the ranges on which the cubic polynomials are defined (also denoted as knots) and associated coefficients.
 
 The parameterisation described below belongs to the second model developed by myself.
-The model is optimised in order to to find the ideal knot  positions giving a good descirption of the decay-time with the minimum number of knots at the same time.
+The model is optimised in order to find the ideal knot  positions giving a good descirption of the decay-time with the minimum number of knots at the same time.
 This is done on simulated events by performing a maximum-likelihood fit to the decay-time with the PDF defined as
 \begin{equation}
 \mathcal{A}(t)\propto a(t)\int dt' \mathcal{R}\!\left(t-t'\right)e^{\,\nicefrac{t'}{\tau}}
 \end{equation}
 where the resolution $\mathcal{R}\!\left(t-t'\right)$ is taken from \cref{sec:resolution} and the lifetime $\tau$ is fixed to the value used in the generation.
-Then it is further checked if the obtained model also describes the \emph{sWeighted} decay-time distribution in the \BdToDpi sample satisfactorily.
-Instead of fixing the lifetime, on data it is constraint by means of a Gaussian function to the world average $\tau=\SI{1.518\pm0.004}{\pico\second}$~\cite{PDG_2017}.
+It is further checked if the obtained model also describes the \emph{sWeighted} decay-time distribution in the \BdToDpi sample satisfactorily.
+Instead of fixing the lifetime on data it is constraint by means of a Gaussian function to the world average $\tau=\SI{1.518\pm0.004}{\pico\second}$~\cite{PDG_2017}.
 A good description was found using seven knots at $[0.4, 0.45, 0.8, 1.3, 2.5, 6.0, 12.0]\,$\si{\pico\second}, where the coefficient at \SI{2.5}{\pico\second} is set to one to fix the overall normalisation.
 Figure \ref{fig:acceptance} shows a graphical representation of the used parameterisation with the coefficients obtained on \BdToDpi data (the numerical values of the coefficients are given in \cref{tab:acceptance}).
 \begin{figure}[tbp]
@@ -102,18 +102,18 @@ Figure \ref{fig:acceptance} shows a graphical representation of the used paramet
 \label{sec:ExtractCPobs}
 
 The \CP parameters \Sf and \Sfbar are determined through a multidimensional unbinned maximum-likelihood fit to the by \emph{sWeights} background-subtracted distributions of \BdToDpi.
-The PDF to describe the decay time $t$, the tags $\vec{d}=(d^{\text{\tiny OS}}, d^{\text{\tiny SS}})$ and final state $F$ taking the values \f and \fbar, given the mistags $\vec{\eta}=(\eta^{\text{\tiny OS}}, \eta^{\text{\tiny SS}})$ is given by
+The PDF to describe the decay time $t$, the tags $\vec{d}=(d^{\text{\tiny OS}}, d^{\text{\tiny SS}})$ and the final state $F$ taking the values \f and \fbar, given the mistags $\vec{\eta}=(\eta^{\text{\tiny OS}}, \eta^{\text{\tiny SS}})$ is defined by
 \begin{equation}
 \mathcal{P}(t, F, \vec{d}|\vec{\eta})\propto a(t)\left(P(t', F, \vec{d}|\vec{\eta})\otimes R(t'-t)\right)\label{eq:FinalDecayTimePDF}
 \end{equation}
 where $P(t', F, \vec{d}|\vec{\eta})$ describes the true decay time, $R(t'-t)$ is the resolution from \cref{sec:resolution} and $a(t)$ parametrises the acceptance described in \cref{sec:acceptance}.
-Furthermore the function $P(t', F, \vec{d}|\vec{\eta})$ corresponds to the decay rates from \crefrange{eq:DecRateB2Dmpip}{eq:DecRateBb2Dppim} taking into account the corrections from \cref{eq:decRateCorrectFT}.
+Furthermore the function $P(t', F, \vec{d}|\vec{\eta})$ corresponds to the decay rates from \crefrange{eq:DecRateB2Dmpip}{eq:DecRateBb2Dppim}, taking into account the corrections from \cref{eq:decRateCorrectFT}.
 Besides, production and detection asymmetry must be described.
 These are defined as
 \begin{equation}
 A_{\text{P}}=\frac{\sigma(\Bzb)-\sigma(\Bz)}{\sigma(\Bzb)+\sigma(\Bz)}\hspace{0.5cm}\text{and}\hspace{0.5cm}A_{\text{D}}=\frac{\varepsilon(\,\f)-\varepsilon(\,\fbar)}{\varepsilon(\,\f)+\varepsilon(\,\fbar)}
 \end{equation}
-where $\varepsilon$ is the decay-time integrated reconstruction and selection efficiency for the finalstates states \f and \fbar and $\sigma$ is the production cross-section for \Bz and \Bzb mesons.
+where $\varepsilon$ is the decay time integrated reconstruction and selection efficiency for the finalstates \f and \fbar and $\sigma$ is the production cross-section for \Bz and \Bzb mesons.
 Both asymmetries were determined to be at the percent level in independent measurements at \lhc energies.
 As both are further known to be decay-time independent they can be described by modifying the expressions for the \CP coefficients from \cref{eq:decRateCorrectFT} further to
 \begin{equation}
@@ -124,20 +124,20 @@ As both are further known to be decay-time independent they can be described by 
 \end{equation}
 The same expressions also apply to \Sfbar and \Cfbar with the substitution $A_{\text{D}}\to -A_{\text{D}}$.
 
-As explained in \cref{sec:taggingstrategy}, due to the expected small value of $r$ (see cref{sec:GammaInBd2Dpi}), the parameters \Cf and \Cfbar are fixed to \num{1} and \num{-1}.
+As explained in \cref{sec:taggingstrategy}, due to the expected small value of $r$ (see \cref{sec:GammaInBd2Dpi}), the parameters \Cf and \Cfbar are fixed to \num{1} and \num{-1}.
 Moreover, since possible tagging efficiency asymmetries are measured in simulation to be compatible with zero, they are fixed to this value for the OS and SS taggers.
 Possible systematic effects due to one of both assumptions are taken into account in the systematic uncertainties.
 Furthermore, the following parameters are constrained by means of a Gaussian function:
 \begin{equation}
 \begin{aligned}
 \tau&=\SI{1.518\pm0.004}{\pico\second}\\
-\dm&=\SI{0.5050\pm0.0023}{\per\pico\second}
+\dm&=\SI{0.5050\pm0.0023}{\per\pico\second}.
 \end{aligned}
 \end{equation}
-where for the lifetime $\tau$ the world average~\cite{PDG_2017} is taken and for the oscillation frequency \dm the result of the semi-leptonic \lhcb measurement~\cite{Aaij:2016fdk} is used.
+For the lifetime $\tau$ the world average~\cite{PDG_2017} is taken and for the oscillation frequency \dm the result of the semi-leptonic \lhcb measurement~\cite{Aaij:2016fdk} is used.
 Hence, the free parameters in the fit are the \CP parameters \Sf and \Sfbar, the production and detection asymmetry, the calibration parameters of the OS and SS taggers and the acceptance parameters.
 The fitted values for the parameters \Sf, \Sfbar, \dm, \DG, $A_{\text{P}}$ and $A_{\text{P}}$ are shown in \cref{tab:DecTimeProjection}, \cref{fig:DecTimeProjection} shows the projection of the PDF onto the decay-time distribution.
-For the \CP parameters \Sf and \Sfbar it is important to note, that the given uncertainties are not purely statistical, but also include the systematic contributions from \dm and $\tau$ via the applied constraints.
+For the \CP parameters \Sf and \Sfbar it is important to note that the given uncertainties are not purely statistical, but also include the systematic contributions from \dm and $\tau$ via the applied constraints.
 Repeating the fit with \dm and $\tau$ fixed to the central values of the constraints, the central values for \Sf and \Sfbar stay unchanged, but the uncertainties decrease to \num{0.020}.
 \begin{figure}[tbp]
     \centering
@@ -182,25 +182,25 @@ A_{\text{S}}(t)=\frac{\Gamma\!\left(\Bzb\!\to\Dm\pip\right)-\Gamma\!\left(\Bz\!\
 \end{aligned}
 \end{equation}
 are presented in \cref{fig:AsymProjection}.
-For this second asymmetries in addition to the fit projection of the nominal fit also the fit projection of an alternative fit assuming no \CP violation, \ie $\Sf=-\Sfbar$, is shown.
+For this asymmetries in addition to the projection of the nominal fit also the projection of an alternative fit assuming no \CP violation, \ie $\Sf=-\Sfbar$, is shown.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.48\textwidth]{09TimeFit/figs/Asym_f.pdf}
     \includegraphics[width=0.48\textwidth]{09TimeFit/figs/Asym_fbar.pdf}\\
     \includegraphics[width=0.48\textwidth]{09TimeFit/figs/Asym_favour.pdf}
     \includegraphics[width=0.48\textwidth]{09TimeFit/figs/Asym_suppress.pdf}
-    \caption{Top: Decay-time dependetn signal yield asymmetry for the \Dm\pip (left) and the \Dp\pim (right) finalstate.
+    \caption{Top: Decay-time dependent signal yield asymmetry for the \Dm\pip (left) and the \Dp\pim (right) finalstate.
     The solid curve represent the projection of the fitted PDF.
-    Bottom: Decay-time dependetn signal yield asymmetry for the favoured (left) and the suppressed (right) transitions.
+    Bottom: Decay-time dependent signal yield asymmetry for the favoured (left) and the suppressed (right) transitions.
     The asymmetries are defined in \cref{eq:AsymeSuppFav}.
-    The blue solid curve is the porjection of the fitted PDF from the nominal fit, the red dotted curve shows the projection of a second fit imposing no \CP violation.}
+    The blue solid curve is the projection of the fitted PDF from the nominal fit, the red dotted curve shows the projection of a second fit imposing no \CP violation.}
     \label{fig:AsymProjection}
 \end{figure}
 
 Using the results of the fitted calibration parameters (the results themselves are discussed in \cref{sec:decTimeFitVal}) and the fitted tagging efficiencies of $\varepsilon_{\text{tag}}^{\text{\tiny OS}}=\SI{43.24\pm0.07}{\percent}$ and $\varepsilon_{\text{tag}}^{\text{\tiny SS}}=\SI{93.05\pm0.04}{\percent}$ the tagging performances in the sample can be computed.
-The average dilution is \SI{9.53\pm0.03}{\percent} and \SI{2.789\pm0.009}{\percent} for the OS and SS taggers, repsectively.
+The average dilution is \SI{9.53\pm0.03}{\percent} and \SI{2.789\pm0.009}{\percent} for the OS and SS taggers, respectively.
 This leads to an overall average dilution of \SI{6.55\pm0.02}{\percent}.
-Including also the untagged candidates which were removed in \cref{ch:massfit}, the total effective tagging efficiency can be calculated to be \SI{5.59\pm0.01}{\percent}.
+Also including the untagged candidates which were removed in \cref{ch:massfit}, the total effective tagging efficiency is calculated to be \SI{5.59\pm0.01}{\percent}.
 
 \section{Fit validation}
 \label{sec:decTimeFitVal}
@@ -208,10 +208,10 @@ Including also the untagged candidates which were removed in \cref{ch:massfit}, 
 To validate the decay-time fit, first it is possible to compare the fitted nuisance parameters like the production and detection asymmetry and the flavour tagging calibration parameters with reference values.
 The production and detection asymmetries are directly compared with values from independent measurements from \lhcb.
 The results of $A_{\text{P}}=\SI{-0.64\pm0.28}{\percent}$ and $A_{\text{D}}=\SI{0.86\pm0.19}{\percent}$ are well in agreement with the results from Ref.~\cite{Aaij:2017mso}, which \eg range from \SIrange{-1.43\pm0.86}{-0.56\pm0.30}{\percent} for measurements of the production asymmetry at centre-of-mass energies of \num{7} and \SI{8}{\tera\electronvolt} in the decay channels $\Bz\!\to\jpsi\Kstarz$ and $\Bs\!\to\Dsm\pip$.
-The obtained calibration parameters are compared to those computed on the control channels $\Bu\!to\Dz\pip$ and $\Bz\!\to\jpsi\Kstarz$ for the OS and SS, respectively.
-In \cref{tab:taggingCalibCompare} the parameters from the decay-time fit in \BdToDpi are listed together with the deviations from the calibration parameters given in \cref{tab:CalibSS} and \cref{tab:CalibOS}.
+The obtained calibration parameters are compared to those computed on the control channels $\Bu\!\to\Dz\pip$ and $\Bz\!\to\jpsi\Kstarz$ for the OS and SS, respectively.
+In \cref{tab:taggingCalibCompare} the parameters from the decay-time fit in \BdToDpi are listed and the deviation of each parameter with the calibrations given in \cref{tab:CalibSS} and \cref{tab:CalibOS} are calculated.
 The largest deviation can be found for $\Delta p_{X}$ and $\Delta p_{Y}$ being of the size of two standard deviations.
-Additionally an overall discrepancy taking into account the correlations between the parameters is calculated yielding $0.91\sigma$ and $0.29\sigma$ for the OS and SS taggers, respectively.
+Additionally, taking into account the correlations between the parameters an overall discrepancy is calculated yielding $0.91\sigma$ for the OS and $0.29\sigma$ for the SS taggers.
 \begin{table}[tbp]
 	\centering
 	\caption{Calibration parameters obtained in the decay-time fit in \BdToDpi.
@@ -238,7 +238,7 @@ Additionally an overall discrepancy taking into account the correlations between
 \end{table}
 
 Next, the two-dimensional contour plots for the \CP parameters \Sf and \Sfbar and for the detection and production asymmetries can be checked.
-As shown in \cref{fig:corrPlots} both do not show any unexpected behaviour but only the expected Gaussian ellipses, indicating that the corresponding uncertainties are well understood.
+As shown in \cref{fig:corrPlots} both do not show any unexpected behaviour, only the expected Gaussian ellipses, indicating that the corresponding uncertainties are well understood.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.48\textwidth]{09TimeFit/figs/SfvsSfbar.pdf}
@@ -251,29 +251,29 @@ As shown in \cref{fig:corrPlots} both do not show any unexpected behaviour but o
 \subsection{Validation of link funktion for mistags}
 \label{sec:ValLinkFunction}
 
-As mentiond before the handling of candidates with a mistag close to \num{0.5} is important both in case of a calibrtion with parametes constrained by means of a Gaussian function and completely floating calibration parameters, to guarantee a stable and unbiased decay-time fit.
+As mentioned before, the handling of candidates with a mistag close to \num{0.5} is important, both in case of a calibration with parameters constrained by means of a Gaussian function and completely floating calibration parameters, to guarantee a stable and unbiased decay-time fit.
 Therefore the two scenarios presented additionally to the nominal scenario in \cref{sec:CombAndCalib} are tested using pseudoexperiments.
 
 In each study presented below \num{1000} pseudoexperiments are generated according to the PDF from \cref{eq:FinalDecayTimePDF}.
-To simplify the used model and reduce the number of parameters the flavour tagging calibration functions are reduced to linear models as \emph{basis function} (see \cref{eq:linCalib}) and the identity as \emph{link function}.
+To simplify the used model and reduce the number of parameters, the flavour tagging calibration functions are reduced to linear models as \emph{basis function} (see \cref{eq:linCalib}) and the identity as \emph{link function}.
 The calibration parameters used for the generation are obtained from linear calibration with the identity as \emph{link function} on the control channels $\Bu\!to\Dz\pip$ and $\Bz\!\to\jpsi\Kstarz$.
-It should be noted that the calibration for the OS taggers is shifting the estimated mistags to higher values (\ie $p_1^{\text{\tiny OS}}>1$), while the calibration for the SS taggers does the opposite (\ie $p_1^{\text{\tiny SS}}<1$).
-Furthermore the calibration function is implemented such, that the mistag probability $\omega$ is not defined outside the range $[0, 0.5]$, \ie if the mistag probability exceeds \num{0.5} the tag-decision is set to $d=0.5$ and the corresponding mistag to $\omega=0.5$.
-For all studies presented below then the pull distributions of the floating parameters are checked, whereby the pull is defined as the fitted value minus the value used in the generation of the simulated sample divided by the uncertainty of the fitted value.
+It should be noted that the calibration for the OS taggers is shifting the estimated mistags to higher values (\ie $p_1^{\text{\tiny OS}}>1$), while the calibration for the SS taggers shows the opposite (\ie $p_1^{\text{\tiny SS}}<1$) behaviour.
+Furthermore, the calibration function is implemented such that the mistag probability $\omega$ is not defined outside the range $[0, 0.5]$, \ie if the mistag probability exceeds \num{0.5} the tag-decision is set to $d=0.5$ and the corresponding mistag to $\omega=0.5$.
+For all studies presented below the pull distributions of the floating parameters are checked, whereby the pull is defined as the fitted value minus the value used in the generation of the simulated sample divided by the uncertainty of the fitted value.
 This pull distributions are then fitted with a Gaussian function in order to determine the mean and width.
 A deviation of more than one standard deviation of the mean value from zero indicates a possible bias, while a deviation of more than three standard deviations is interpreted as a clear bias.
 These generated samples are then fitted with different approaches:
 \begin{itemize}
-	\item In the first approach the tag decision is flipped in case the mistag probabiltity $\omega'$ exceeds \num{0.5} and the mistag probability is calculated as $\omega=1-\omega'$.
+	\item In the first approach the tag decision is flipped in case the mistag probability $\omega'$ exceeds \num{0.5} and the mistag probability is calculated as $\omega=1-\omega'$.
 	During the fit the calibration parameters are constrained by means of a Gaussian function. This leads to biased calibration parameters for the OS algorithm.
 	To understand if a possible bias on \Sf and \Sfbar is just \enquote{absorbed} by the calibration parameters, the same samples are also fitted with the calibration parameters fixed.
 	In this case the \CP parameters show a small deviation of $2\sigma$ and $1.3\sigma$ for \Sf and \Sfbar, respectively.
 	\item To further understand if this small deviation is just a fluctuation or a real bias two possible sources are investigated:
 	The tagging asymmetry parameters $\Delta p_i^{\text{\tiny OS}}$ and the parameter $p_1^{\text{\tiny OS}}$ are artificially increased in two separate studies, \ie the parameters are increased in both steps during generation and fitting.
-	In the fit the tag decision is again flipped in case the mistag probabiltity $\omega'$ exceeds \num{0.5} and the mistag probability is calculated as $\omega=1-\omega'$.
-	To assure that a possible bias is not \enquote{absorbed} by the calibration parameters the calibration parameters are fixed in the fit.
+	In the fit the tag decision is again flipped in case the mistag probability $\omega'$ exceeds \num{0.5} and the mistag probability is calculated as $\omega=1-\omega'$.
+	To assure that a possible bias is not \enquote{absorbed} by the calibration parameters the calibration parameters in the fit are fixed.
 	The resulting pull distributions for \Sf and \Sfbar are shown in \cref{fig:linkFunctionValid}.
-	One can see, that in case of the increased flavour tagging asymmetry parameters the \CP parameters are clearly biased by more than ten standard deviations, while the result is unbiased in case of the enlarged $p_1^{\text{\tiny OS}}$ parameter.
+	One can see that in case of the increased flavour tagging asymmetry parameters the \CP parameters are clearly biased by more than ten standard deviations, while the result is unbiased in case of the enlarged $p_1^{\text{\tiny OS}}$ parameter.
 	\begin{figure}[tbp]
     \centering
     	\includegraphics[width=0.48\textwidth]{09TimeFit/figs/Sf_pull_LinkValid_asym.pdf}
@@ -284,31 +284,31 @@ These generated samples are then fitted with different approaches:
     Bottom: Pull distribution of \Sf (left) and \Sfbar (right) when generating pseudoexperiments with the artificially enlarged parameter $p_1^{\text{\tiny OS}}$ and a flip of the tag decision if $\omega'>0.5$.}
     \label{fig:linkFunctionValid}
 \end{figure}
-	\item In a last study the pseudoexeriments are again generated with artificially increased tagging asymmetry parameters.
+	\item In a last study the pseudoexeriments again are generated with artificially increased tagging asymmetry parameters.
 	But instead of flipping the tag decision the distribution of estimated mistags $\eta$ for the OS and SS is reduced beforehand to
 	\begin{equation}
 	\eta<\frac{0.5-(p_0+\delta p_0)+(p_1+\delta p_1\left<\eta\right>}{p_1+\delta p_1}
 	\end{equation}
 	where $\delta p_i$ are the uncertainties of the calibration parameters.
-	This assures, that the mistag probability barely exceeds \num{0.5}.
+	This assures that the mistag probability barely exceeds \num{0.5}.
 	Using this strategy yields unbiased results for \Sf and \Sfbar.
 \end{itemize}
 
 From this studies it can be concluded that the flip of the tag decision can bias the measurement of \CP parameters.
 However, the size of the bias depends on the set of calibration parameters and one would need to study each specific set.
-On the other hand, reducing the allowed range of estimated mistags, prevents a bias on the measurement of \CP parameters, but depending on the cut which need to be applied, this could in principle reduce the statistical sensitivity of an analysis.
-Therefore the modified \emph{link function} as used in the nominal approach provides currently the best appraoch as will be shown in \cref{sec:valOnSim}.
+On the other hand, reducing the allowed range of estimated mistags prevents a bias on the measurement of \CP parameters, but depending on the cut which needs to be applied, this could in principle reduce the statistical sensitivity of an analysis.
+Therefore the modified \emph{link function} as used in the nominal approach currently provides the best appraoch as will be shown in \cref{sec:valOnSim}.
 
 \subsection{Decay-time fits in subsamples}
 \label{sec:valOnSubSample}
 
-The stability of the fit is checked by performing the fit also in different sub samples of full dataset.
-For this the dataset can be split several ways, namely by data taking conditions, used tagging algorithms or kinematic properties of the \Bz meson or properties of the event.
+The stability of the fit is checked by also performing the fit in different sub samples of full dataset.
+This the dataset can be split several ways, namely by data taking conditions, used tagging algorithms or kinematic properties of the \Bz meson or properties of the event.
 
 When splitting according to data taking conditions, the \BdToDpi sample is divided according to the year of data taking and magnetic polarity.
 For each subsample the \emph{sWeights} are determined with a dedicated mass fit according to the procedure from \cref{ch:massfit}.
 A comparison of the fitted values for \Sf and \Sfbar between the four subsamples is shown in \cref{fig:splitByDataTaking}.
-The obtained results for \Sf and \Sfbar show good agreement and the average of the results from the fits in the subsamples is well compatible with the result from the global fit.
+The obtained results for \Sf and \Sfbar show good agreement and the average result from the fits in the subsamples is well compatible with the result of the global fit.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.48\textwidth]{09TimeFit/figs/Sf_splits_Year.pdf}
@@ -316,13 +316,13 @@ The obtained results for \Sf and \Sfbar show good agreement and the average of t
     \includegraphics[width=0.48\textwidth]{09TimeFit/figs/Sf_splits_Polarity.pdf}
     \includegraphics[width=0.48\textwidth]{09TimeFit/figs/Sfbar_splits_Polarity.pdf}
     \caption{Comparison between the fitted values of \Sf (left) and \Sfbar (right) in subsamples split by year of data taking (top) and magnet polarity (bottom).
-    The blue points are the results of the fits in the subsamples, the red dashed area represents the result of the gloabl fit and the black line is the average of the results obtained in the subsamples.}
+    The blue points are the results of the fits in the subsamples, the red dashed area represents the result of the global fit and the black line is the average of the results obtained in the subsamples.}
     \label{fig:splitByDataTaking}
 \end{figure}
 
 When using two classes of tagging algorithms, the full sample can be divided into three independent samples.
-The first subsample contains candidates tagged exclusively by the OS algorithms while the second sample contains candidates which only got a tag assigned on the SS .
-The third class then contains candidates which are tagged by both, the OS taggers and SS taggers.
+The first subsample contains candidates tagged exclusively by the OS algorithms while the second sample consists of candidates which only got a tag assigned on the SS .
+The third class contains candidates which are tagged by both, the OS taggers and SS taggers.
 Again, the results for all subsamples show good agreement (see \cref{fig:splitByTagger}).
 Furthermore, this agreement gives additional confidence that the strategy of floating the calibration parameters in the decay-time fit provides a stable result for the \CP parameters \Sf and \Sfbar.
 \begin{figure}[tbp]
@@ -330,25 +330,24 @@ Furthermore, this agreement gives additional confidence that the strategy of flo
     \includegraphics[width=0.48\textwidth]{09TimeFit/figs/Sf_splits_SSOSExclusive.pdf}
     \includegraphics[width=0.48\textwidth]{09TimeFit/figs/Sfbar_splits_SSOSExclusive.pdf}
     \caption{Comparison between the fitted values of \Sf (left) and \Sfbar (right) when considering candidates exclusively tagged by the OS, SS or both classes of tagging algorithms.
-    The blue points are the results of the fits in the subsamples, the red dashed area represents the result of the gloabl fit and the black line is the average of the results obtained in the subsamples.}
+    The blue points are the results of the fits in the subsamples, the red dashed area represents the result of the global fit and the black line is the average of the results obtained in the subsamples.}
     \label{fig:splitByTagger}
 \end{figure}
 
 Finally, the dataset is split according to the transverse momentum of the \Bz mesons (\num{4} bins), the number of reconstructed \ac{PV}s (\num{3} bins) and tracks (\num{3} bins) in the event and the difference in pseudo-rapidity between the \Dpm-meson and the bachelor particle (\num{4} bins).
 The reason for these splits is that the flavour tagging calibrations partly depend on these observables, and therefore could show a trend in the corresponding splits.
-Moreover, the difference in pseudo-rapidity is also sensitive to possible misalignments in the detector, which could have influence the measurement of the \Sf and \Sfbar.
+Moreover, the difference in pseudo-rapidity is also sensitive to possible misalignments in the detector, which could have influenced the measurement of \Sf and \Sfbar.
 However, all results show compatible results and no trends can be observed, so that the stability of the result can also be confirmed with these splits.
 
 \subsection{Decay-time fits to simulated events}
 \label{sec:valOnSim}
 
-Furthermore, the fit is validated using simulated events.
-For this purpose the simulated events are bootstrapped, \ie the simulated data sample is resampled $n$ times, whereby it is allowed that single events can be taken more than once, \eg a bootstrapped sample can contain the same event multiple times.
-This is statisitically valid because individual events are not correlated with each other.
+To validate the fit using simulated events, these are are bootstrapped, \ie the simulated data sample is resampled $n$ times, whereby it is allowed that single events can be taken more than once, \eg a bootstrapped sample can contain the same event multiple times.
+This is statistically valid because individual events are not correlated with each other.
 Each sample generated then contains as many candidates as signal candidates in the full \BdToDpi data sample used in \cref{sec:ExtractCPobs} in order to obtain the same statistical uncertainties as possible.
 
-Each sample is then fitted with the same strategy as the nominal fit extracting the \CP observables.
-The constrained parameters $\tau$ and \dm are treated as follows:
+Each sample then is fitted with the same strategy as the nominal fit extracting the \CP observables.
+The constrained parameters $\tau$ and \dm are treated as following:
 For each fit a value is generated randomly from the Gaussian function with which $\tau$ and \dm are constrained, respectively.
 This new value is then used in the fit as the mean value of the constraints.
 This allows the correct fluctuation for both parameters and prevents an underestimation of the fitted uncertainties.
@@ -367,23 +366,23 @@ This corresponds a deviation of roughly one third of the statistical uncertainty
     \caption{Distribution of residuals for \Sf (left) and \Sfbar (right) using the nominal fit strategy with floating calibration.}
     \label{fig:BootstrapStudy}
 \end{figure}
-Furthermore the following configurations are investigated also with \num{1000} bootstrapped samples each:
+Furthermore, the following configurations are also investigated with \num{1000} bootstrapped samples each:
 \begin{itemize}
-	\item Using the true generated flavour of the \B candidate instead of the tag decision and mistag estimate provided by some tagging algorithm leads an unbiased distribution of residuals for \Sf and \Sfbar.
+	\item Using the true generated flavour of the \B candidate instead of the tag decision and mistag estimate provided by some tagging algorithm leads to an unbiased distribution of residuals for \Sf and \Sfbar.
 	\item A \emph{cheated} tagger can be implemented for simulated data.
 	Instead of using the perfect tagging, as in the first appraoch the truth information for each candidate can be resampled, depending on the mistag probability.
-	In this way the mistag is used as conditional observable as in the nominal fit, but still the truth information from the simulation is exploited.
-	Also this appraoch gives unbiased results for \Sf and \Sfbar.
+	This way, the mistag is used as conditional observable as in the nominal fit, but still the truth information from the simulation is exploited.
+	This appraoch also gives unbiased results for \Sf and \Sfbar.
 	\item The retraining of the SS tagging algorithms is performed on simulated samples in the same way as described in \cref{sec:SScalibration}.
 	Afterwards the calibration for the OS and SS algorithms is obtained, using the true generated flavour as done for the portability checks in \cref{sec:SScalibration} and \cref{sec:OScalibration}.
-	Performing the fits to the bootstrapped simulation samples of \BdToDpi no bias of \Sf and \Sfbar appears.
+	Performing the fits to the bootstrapped simulation samples of \BdToDpi, no bias of \Sf and \Sfbar appears.
 	\item The retraining and calibration of the tagging algorithms is performed on simulated samples in the same way as described in \cref{sec:SScalibration} and \cref{sec:OScalibration}, \ie not using any truth information from the simulation.
 	This calibration is applied in the fits to the bootstrapped simulation samples of \BdToDpi, what leads to a bias on \Sf and \Sfbar of the size of the statistical uncertainty of both parameters.
-	\item Instead of fixing the calibration parameters, obtained on simulated samples in the same way as described in \cref{sec:SScalibration} and \cref{sec:OScalibration}, in the decay-time fits to the  bootstrapped simulation samples of \BdToDpi they can be also constrained by means of Gaussian functions.
+	\item Instead of fixing the calibration parameters obtained on simulated samples in the same way as described in \cref{sec:SScalibration} and \cref{sec:OScalibration}, in the decay-time fits to the  bootstrapped simulation samples of \BdToDpi they can also be constrained by means of Gaussian functions.
 	These constraints are implented by multidimensional Gaussian functions taking into account the correlations on the simulated control samples.
 	This approach reduces the bias on \Sf and \Sfbar to a value of the order of half the statistical uncertainty of both parameters.
 \end{itemize}
 This confirms that leaving the flavour tagging calibration parameters free in the \CP-fit is the best choice.
-However, since the source of this small, potential bias cannot be narrowed down further than that it comes from the flavour tagging calibration, it is included as systematic uncertainty.
+However, since the source of this small, potential bias cannot be narrowed down further than coming from the flavour tagging calibration, it is included as systematic uncertainty.
 To confirm the size of the bias, a second study was performed by a collaborator yielding as mean values of the distribution of residuals \num{0.0071\pm0.0006} and \num{-0.0013\pm0.0006} for \Sf and \Sfbar, respectively.
-Finally, the average value from both studies, \ie \num{0.0068\pm0.0005} and \num{-0.0018\pm0.0005} for \Sf and \Sfbar, respectively, is assumed as systematic uncertainty in \cref{ch:systeamticUncerts}.
+Finally, the average value from both studies, \ie \num{0.0068\pm0.0005} for \Sf and \num{-0.0018\pm0.0005} for \Sfbar is assumed as systematic uncertainty in \cref{ch:systeamticUncerts}.
