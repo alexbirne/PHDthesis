@@ -6,7 +6,7 @@
 After selection the datasample is split into the two samples described in \cref{sec:Samples}, referred to as \emph{pion}- and \emph{kaon}-sample.
 The invariant \Bz mass distributions of candidates with a tag of one of the flavour tagging algorithms are fitted simultaneously in these samples in order to calculate \emph{sWeights}~\cite{Pivk:2004ty}, which are used in the following analysis steps to separate signal from background candidates statistically.
 Before reporting in greater detail about these fits it is important to note that the work described in this chapter was done by a collaborator.
-However, as it is an essential part and needed to follow the analysis it is not left out completely, but the extent to which \eg experimental techniques are described is less comprehensive compared to the other parts of the analysis.
+However, since this is an essential part of the analysis required to follow the subsequent steps, it is not omitted completely, but the extent to which \eg experimental techniques are described is less comprehensive compared to the other parts.
 
 When parametrising the invariant \Bz mass all components contributing need to be described. Backgrounds from semileptonic decays, $\Lb\!\to\Lcbar\pip$ decays and $\Bs\!\to\Dsm\pip$ decays is either removed in the selection or found to be at a negligible level.
 However, beside the signal component and the combinatorial background both, the \emph{pion}- and \emph{kaon}-sample show additional backgrounds which arise due to missing neutral particles in the reconstruction or pion-kaon-misidentifications.
@@ -93,7 +93,7 @@ To determine \emph{sWeights} the invariant \Bz mass is fitted with a two-stage s
 First, a simultaneous binned extended maximum-likelihood fit in the invariant-mass range $[5090, 6000]\,\si[per-mode=symbol]{\MeVcc}$ is performed (Fit A).
 This allows to control the contamination with $\Bz\!\to\Dm\Kp$ candidates in the \emph{pion}-samples.
 A binned fit is performed due to the very large number of candidates.
-In this fit the mean and width parameters of the signal components in the \emph{pion}- and \emph{kaon}-samples are floated, while for the tail parameters the values are taken from simulation, multiplied with a scale factor which is then floated.
+In this fit the mean and width parameters of the signal components in the \emph{pion}- and \emph{kaon}-samples are floated, while for the tail parameters the values are taken from simulation, multiplied by a scale factor which is then floated.
 All yields in the fit are floating, except for the cross-feed yields which are constrained as shown \cref{eq:ConstrainCrossFeed}, \ie the efficiencies $\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \pion\right)_{\pion}$ and $\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \kaon\right)_{\kaon}$ are constrained by means of a Gaussian function.
 Furthermore, the mean parameters of the $\Bz\!\to\Dm\Kstarp$ in the \emph{kaon}-sample and of the cross-feed $\Bz\!\to\Dm\Kp$ and \BdToDpi components are floated.
 All other parameters are fixed to values determined on simulated events.
@@ -109,7 +109,7 @@ In \cref{fig:MassFitPlot} the invariant $\D\pion$  and $\D\kaon$ mass distributi
 
 After Fit A, a unbinned maximum-likelihood fit in the \emph{pion}-sample is performed for which all background components are combined into one single background component and the shapes are fixed to the values found in Fit A.
 Futhermore, the fit range is reduced to $[5220, 5600]\,\si[per-mode=symbol]{\MeVcc}$, in order to prevent a dilution of the \emph{sWeights} in later steps of the analysis, as all background components which are neither combinatorial nor close to the signal are removed.
-In this second fit (Fit B) only the two parameters are floating: The yield $N_{\Bz\!\to\D\pion}^{\pion}$ of the signal \BdToDpi component and a yield $N_{\text{bkg}}^{\pion}$ for the combination of all backgrounds.
+In this second fit (Fit B) only two parameters are floating: The yield $N_{\Bz\!\to\D\pion}^{\pion}$ of the signal \BdToDpi component and a yield $N_{\text{bkg}}^{\pion}$ for the combination of all backgrounds.
 These fitted yields are given in \cref{tab:fittedSignalYield}.
 \begin{table}[tbp]
 	\centering

@@ -3,11 +3,11 @@
 \label{ch:systeamticUncerts}
 
 Systematic uncertainties are estimated in several ways.
-First, parameters are constraint by means of Gaussian functions in various steps of the analysis and the influence of these constraints on the resulting uncertainties must be estimated (\cref{sec:SystUncertsGauss}).
+First, parameters are constraint by means of Gaussian functions in various steps of the analysis and the influence of these constraints on the resulting uncertainties have to be estimated (\cref{sec:SystUncertsGauss}).
 Second, pseudoexperiments are used to test the systematic effects of certain assumptions such as $\DG=0$ (\cref{sec:systUncertsPseudo}).
 Finally, systematic effects related to the mass model and the associated determination of the \emph{sWeights} are also determined (\cref{sec:SystUncertMass}).
 
-Furthermore, it is important to mention that also all work in this chapter related to the mass fit was done by a collaborator.
+Furthermore, it is important to mention that all work in this chapter related to the mass fit was also done by a collaborator.
 This includes parts of the estimated uncertainties in \cref{sec:SystUncertsGauss} and the estimations presented in \cref{sec:SystUncertMass}.
 
 Table \ref{tab:SystUncertsFull} shows a list of all effects investigated.
@@ -46,7 +46,7 @@ The total uncertainty is calculated from the sum of the squared individual contr
 \label{sec:SystUncertsGauss}
 
 Gaussian constraints have been used in two places of the analysis.
-On the one hand, external measurements of the \Bz oscillation frequency \dm and the \Bz lifetime $\tau$ are used and implemented such constraints in the decay-time fit.
+On the one hand, external measurements of the \Bz oscillation frequency \dm and the \Bz lifetime $\tau$ are used and implemented by such constraints in the decay-time fit.
 On the other hand, the uncertainties of the efficiencies of the \dllkpi cuts in \cref{ch:massfit} are propagated through constraints by means of Gaussian functions in the mass fit.
 This second uncertainty was calculated by a collaborator and the procedure is described shortly for completeness.
 
@@ -56,7 +56,7 @@ From the difference of the squared uncertainties with and without constraint, th
 For \dm this results in a fully anticorrelated systematic uncertainty of \num{0.0073} and \num{0.0061} for \Sf and \Sfbar, respectively.
 The systematic uncertainty for the \Bz lifetime $\tau$ is negligible.
 
-The efficiency of the requirement on \dllkpi depends on the binning of several observables used the determinaton.
+The efficiency of the requirement on \dllkpi depends on the binning of several observables used in the determinaton of the \dllkpi.
 This effect is refleceted in the uncertainties of the efficiency which are further propagated to the mass fit by Gaussian constraints.
 The mass fit is repeated with the \dllkpi requirement efficiencies fixed to the mean value of the Gaussian constraint.
 The resulting \emph{sWeights} are then used in an alternative decay-time fit to extract the \CP parameters.
@@ -68,16 +68,16 @@ It follows an uncertainty of \num{0.0008} for both, \Sf and \Sfbar.
 
 Systematic uncertainties are determined using pseudoexperiments by generating data samples of the same as the \BdToDpi signal yield.
 In this generation all parameters are set to the values found in the nominal decay-time fit, except for \Sf and \Sfbar.
-In order to prevent observer bias, the analysis was performed blind for these parameters, and therefore for \Sf and \Sfbar the values used in the generation of the simulated events are used.
+In order to prevent observer bias, the analysis was performed blind for these parameters and therefore for \Sf and \Sfbar the values used in the generation of the simulated events are adopted.
 For each pseudoexperiment in the generation the PDF from \cref{eq:FinalDecayTimePDF} is modified with alternate models, corresponding to the various assumptions which are made in the analysis and fitted back with the nominal model.
-Each study consists of \num{1000} pseudoexperiments for which the distribution of residuals of \Sf and \Sfbar are studied, whereby the residual is defined as the difference the generation value and the fitted value.
+Each study consists of \num{1000} pseudoexperiments for which the distribution of residuals of \Sf and \Sfbar are studied, whereby the residual is defined as the difference between the generation value and the fitted value.
 Like in \cref{sec:valOnSim}, this residual distributions are fitted with Gaussian functions.
 The deviation from zero of the mean value of this function is taken as systematic uncertainty; if the mean value is compatible within one standard deviation with zero, the error on the mean is taken as systematic uncertainty.
-In this way, uncertainties are determined for the flavour tagging calibration model, the acceptance model, the decay-time resolution, and the assumptions on \DG and \Cf.
+In this way, uncertainties are determined for the flavour tagging calibration model, the acceptance model, the decay-time resolution and the assumptions on \DG and \Cf.
 
-\subsection*{flavour tagging calibration model}
+\subsection*{Flavour tagging calibration model}
 
-For the SS taggers the nominal model with a first-order polynomial is used in the generation, while the model for the OS taggers is reduced by one degree compared to the nominal one.
+For the SS taggers the nominal model with a first-order polynomial is used in the generation while the model for the OS taggers is reduced by one degree compared to the nominal one.
 In the fit, the polynomials of the calibration models are then increased by one degree for both types of tagging algorithms, compared to what is used during generation. Figure \ref{fig:systUncertFTmodel} shows the distribution of residuals. The systematic uncertainty is \num{0.0011} and \num{0.0015} for \Sf and \Sfbar.
 \begin{figure}[tbp]
     \centering
@@ -90,7 +90,7 @@ In the fit, the polynomials of the calibration models are then increased by one 
 \subsection*{Decay-time resolution}
 
 Two different sets of samples are generated to determine the systematic uncertainty due to the decay-time resolution, each with an average resolution \SI{20}{\femto\second} higher and lower than the nominal resolution of \SI{54.91}{\femto\second}.
-In both cases in the fit the nominal resolution is used.
+In both cases the nominal resolution is used in the fit.
 The residual distributions of both studies are shown in \cref{fig:systUncertRes}.
 The larger uncertainty resulting from the two studies for \Sf and \Sfbar is then chosen as systematic uncertainty.
 The result is \num{0.0012} and \num{0.0008} for \Sf and \Sfbar, respectively.
@@ -101,7 +101,7 @@ The result is \num{0.0012} and \num{0.0008} for \Sf and \Sfbar, respectively.
     \includegraphics[width=0.48\textwidth]{10Systematics/figs/ResLow_Sf_res.pdf}
     \includegraphics[width=0.48\textwidth]{10Systematics/figs/ResLow_Sfbar_res.pdf}
     \caption{Distribution of residuals for \Sf (left) and \Sfbar (right) to determine the systematic uncertainty due to the decay-time resolution.
-    In the top row the resolution \SI{20}{\femto\second} higher than the nominal model is used, in the bottom row the resolution \SI{20}{\femto\second} lower than the nominal model.}
+    In the top  (bottom) row the resolution \SI{20}{\femto\second} higher (lower) than the nominal model is used.}
     \label{fig:systUncertRes}
 \end{figure}
 
@@ -124,7 +124,7 @@ Since the mean values of the fitted distributions are compatible with zero, a sy
 
 The value of \DG is set to the world average plus one time its uncertainty, namely \SI{0.0079}{\per\pico\second}~\cite{HFLAV2016} in the generation.
 Since the hyperbolic sine from \crefrange{eq:Ptof}{eq:Pbartofbar} does not vanish with $\DG\neq0$, the values for $A_f^{\DG}$ and $A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}$ need to be defined.
-The same values as used in the generation of simulated evenbtsare used, namely \num{-0.0103} and \num{-0.0155}.
+The same values as used in the generation of simulated events are used, namely \num{-0.0103} and \num{-0.0155}.
 Then, the samples are fitted with the nominal strategy providing the residuals shown in \cref{fig:systUncertDG}.
 As systematic uncertainty follows \num{0.0007} for both, \Sf and \Sfbar.
 \begin{figure}[tbp]
@@ -139,7 +139,7 @@ As systematic uncertainty follows \num{0.0007} for both, \Sf and \Sfbar.
 
 In the generation, the values for \Cf and \Cfbar are calculated from the average measurements by \belle and \babar for the parameter $r$ plus the statistical uncertainty, namely 0.993 (\cite{Aubert:2008zi, Das:2010be}).
 In the Fit, \Cf and \Cfbar are then set to \num{1} and {-1} as in the nominal strategy.
-The distribution of residuals for \Sf and \Sfbar is shown in \cref{fig:systUncertC} and provides \num{0.0006} as a systematic uncertainty for both parameters
+The distribution of residuals for \Sf and \Sfbar is shown in \cref{fig:systUncertC} and provides \num{0.0006} as a systematic uncertainty for both parameters.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.48\textwidth]{10Systematics/figs/C_Sf_res.pdf}
@@ -151,16 +151,16 @@ The distribution of residuals for \Sf and \Sfbar is shown in \cref{fig:systUncer
 \section{Mass model}
 \label{sec:SystUncertMass}
 
-Before describing the estimation of systematic uncertainties due to mass parameterisation, it should be mentioned again that the studies related to this were completely carried out by a collaborator.
+Before describing the estimation of systematic uncertainties due to mass parameterisation, it should again be mentioned that the studies related to this were completely carried out by a collaborator.
 
 Since the model to describe the invariant mass is the essential ingredient for the calculation of the \emph{sWeights}, which are used in all subsequent steps of the analysis to make distributions look background subtracted, systematic effects from the parameterisation of the invariant mass can also influence the measurement of \Sf and \Sfbar.
 To estimate a systematic uncertainty, the fit strategy, \ie the restriction of the invariant-mass range in Fit B, is checked.
-For this purpose, Fit B is also performed in the wide range of the invaraint mass, which leads to a larger background contamination in the subsequently used data sample.
+For this purpose, Fit B is also performed in the wide range of the invariant mass, which leads to a larger background contamination in the subsequently used data sample.
 With the \emph{sWeights} extracted from this fit, the decay-time fit is performed again.
 The result shows a deviation of $2.3\sigma$ and $1.8\sigma$ for \Sf and \Sfbar, respectively.
 Therefore, the difference between these newly obtained values and the nominal results for \Sf and \Sfbar parameters is taken as systematic uncertainty, namely \num{0.0042} and \num{0.0023}.
-Additionally a second test, to check the strategy of splitting of the data sample in order to control the $\Bu\!\to\Dm\Kp$ component is performed.
-This test yields a good agreement of $0.4\sigma$ and $1.5\sigma$ for \Sf and \Sfbar, respectively, and therefore no additional systematic uncertainty is assigned, especially given the fact, that a systematic uncertainty concering the requirement on \dllkpi is already assigned in \cref{sec:SystUncertsGauss}.
+Additionally a second test to check the strategy of splitting of the data sample in order to control the $\Bu\!\to\Dm\Kp$ component is performed.
+This test yields a good agreement of $0.4\sigma$ and $1.5\sigma$ for \Sf and \Sfbar, respectively, and therefore no additional systematic uncertainty is assigned, especially given the fact that a systematic uncertainty concerning the requirement on \dllkpi is already assigned in \cref{sec:SystUncertsGauss}.
 
 As a last test, the fit of the invariant mass as a tool to subtract the background is simply \enquote{replaced} by a narrow mass range of $[5250,5330]\,$\si[per-mode=symbol]{\MeVcc}, \ie no \emph{sWeights} are calculated.
 This is possible due to the high purity in the signal range,
