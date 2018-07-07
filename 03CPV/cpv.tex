@@ -3,41 +3,40 @@
 {$\symbfsf{C{}P}$ violation in the $\symbfsf{B}$-meson sector}
 \label{chap:CPV}
 
-Since $CPT$ is conserved in the \ac{SM} the violation of \CP is equivalent to a violation of the $T$ symmetry.
-As described in \cref{sec:symmetriesInSM} the $T$ operator is antiunitary and therefore it transforms numbers into their complex conjugate.
-Hence the \CP transformation also affects only the complex phases of the bras and kets describing initial and final states.
-However the absolute values of phases describing transitions between different states are not physically meaningful as the bras and kets can be rephased at will.
+Since in the \ac{SM} all physical interactions are conserved under the $CPT$-transformation, the violation of \CP is equivalent to a violation of the $T$ symmetry.
+As described in \cref{sec:symmetriesInSM} the $T$ operator is antiunitary and it therefore transforms numbers into their complex conjugate.
+Hence, also \CP transformations only affect the complex phases of the bras and kets describing initial and final states.
+However, the absolute values of phases describing transitions between different states are not physically meaningful as the bras and kets can be rephased at will.
 The physical meaningful quantities are the relative phase differences between coherent contributions to a transition, as these are invariant under global rephasings.
 There are three types of phases arising in transition amplitudes:
-\emph{Weak} phases, which change sign under \CP transformation (\CP-odd), \emph{strong} phases, which do not change sign under \CP transformation (\CP-even) and \emph{spurious} phases, which usually arise due to conventional rephasings.
+\emph{weak} phases, which change sign under \CP transformation (\CP-odd), \emph{strong} phases, which do not change sign under \CP transformation (\CP-even) and \emph{spurious} phases, which usually arise due to conventional rephasings.
 The denotations \emph{weak} and \emph{strong} do not mean that the phases originate in weak or strong interactions, but only describe their behaviour under \CP transformation.
-\emph{Spurious} phases are global and just arise due to conventional rephasings.
-For simplification they will be ignored below, as they do not originate in any dynamics.
-Consequently the \CP transformation of the initial and final states are defined with \emph{weak} phases $\xi_i$ and $\xi_f$ as follows
+\emph{Spurious} phases are global and, for simplification, will be ignored below, as they do not originate in any dynamics.
+Consequently, the \CP transformation of the initial and final states are defined with \emph{weak} phases $\xi_i$ and $\xi_f$ as
 \begin{equation}
 \begin{aligned}
-&\CP\left|\Bz\right> =e^{i\xi}\left|\Bzb\right>&&\CP\left|\Bzb\right>=e^{-i\xi}\left|\Bz\right>&\\
+&\CP\left|\Bz\right> =e^{i\xi}\left|\Bzb\right>&&\CP\left|\Bzb\right>=e^{-i\xi}\left|\Bz\right>&\,,\\
 &\CP\left|\,\f\,\right> =e^{i\xi_f}\left|\,\fbar\,\right>&&\CP\left|\,\fbar\,\right>=e^{-i\xi_f}\left|\,\f\,\right>.& \label{eq:CPTransInitFinal}
 \end{aligned}
 \end{equation}
 
-In this chapter first the time evolution of neutral mesons is described and subsecently the formalism is applied to the \Bz-\Bzb mixing.
-Following the main equations describing \CP violation are derived and then the three classes of \CP violation are discussed.
+In this chapter the time evolution of neutral mesons is described and subsecently the formalism is applied to the \Bz-\Bzb mixing.
+Following, the main equations describing \CP violation are derived and then the three classes of \CP violation are discussed.
 More details on these topics can be found in Refs.~\cite{Branco:396964,Bigi:1295518}.
 
 \section[head={Time evolution of neutral mesons},tocentry={Time evolution of neutral mesons}]{Time evolution of neutral mesons}
 \label{sec:TimeEvolution}
 
-As previously described in \cref{sec:unitarityTriangle} for the quarks the mass eigenstates and the eigenstates of the weak interaction are not identical.
+As previously described in \cref{sec:unitarityTriangle} the mass eigenstates and the eigenstates of the weak interaction are not identical for quarks.
 The same applies for bound states of quarks like \B-mesons.
 Studying the system of a neutral particle \Paz and its antiparticle \Pazb, the most general description to determine the time evolution is the Schrödinger equation:
 \begin{equation}
 i\frac{d}{dt}\begin{pmatrix} \Paz \\ \Pazb \end{pmatrix} = H \begin{pmatrix} \Paz \\ \Pazb \end{pmatrix}
-=\left(M-\frac{i}{2}\Gamma\right)\begin{pmatrix} \Paz \\ \Pazb \end{pmatrix}, \label{eq:mixMatrix}
+=\left(m-\frac{i}{2}\Gamma\right)\begin{pmatrix} \Paz \\ \Pazb \end{pmatrix}, \label{eq:mixMatrix}
 \end{equation}
-with $M$ and $H$ being 2x2 hermitian 2x2 matrices.
+with $m$ and $\Gamma$ being hermitian 2x2 matrices.
 Hence, the matrix $H$ is not hermitian and allows the \B mesons to decay and not just to oscillate.
-In possible transitions virtual intermediate states contribute to the matrix $M$ while real physical states to which \Paz and \Pazb decay contribute to the matrix $\Gamma$.
+In possible transitions, virtual intermediate states contribute to the matrix $M$, while real physical states to which \Paz and \Pazb decay contribute to the matrix $\Gamma$.
 Furthermore, as due to the $CPT$ theorem particle and antiparticles have the same masses and decay widths the following constraints apply for the matrix elements:
 \begin{equation}
 \begin{aligned}
@@ -49,7 +48,7 @@ Interpreting \Paz and \Pazb as two states distinguished by an internal quantum n
 Transitions with $\Delta N_\quark=1$ are driven by the diagonal elements, while the off diagonal elements describe transitions with $\Delta N_\quark=2$.
 These $\Delta N_\quark=2$ processes include so-called particle-antiparticle-oscillations.
 
-To solve \cref{eq:mixMatrix} and infer the time evolution the matrix $H$ needs to be diagonalised to obtain the mass eigenstates and the corresponding eigenvalues.
+To solve \cref{eq:mixMatrix} and infer the time evolution, the matrix $H$ needs to be diagonalised to obtain the mass eigenstates and the corresponding eigenvalues.
 These eigenstates can have different masses and lifetimes, however the absolute sign of the mass difference \dm or decay-width difference \DG has no physical meaning, as interchanging the two eigenstates would lead to $\dm\to-\dm$ and $\DG\to-\DG$.
 Instead, only the relative sign between both quantities is of physical interest.
 With regard to the \Bz-meson system, in which the eigenstates have quite different masses, in the following the mass eigenstates are denoted with $P_\text{H}$ and $P_\text{L}$, referring to the heavier and lighter eigenstate, respectively.
@@ -60,32 +59,33 @@ F=\sqrt{\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)\left(m_{12}^\ast-\frac{i}{2}\
 the eigenvalues can be expressed as
 \begin{equation}
 \begin{split}
-\mu_\text{H} &= m_\text{H}-\frac{i}{2}\GH = m + \mathcal{Re}\left(F\right)-\frac{i}{2}\left(\Gamma-2\mathcal{Im}\left(F\right)\right)\\
-\mu_\text{L} &= m_\text{L}-\frac{i}{2}\GL = m - \mathcal{Re}\left(F\right)-\frac{i}{2}\left(\Gamma+2\mathcal{Im}\left(F\right)\right)\label{eq:Mass_eigenvalues}
+\mu_\text{H} &= m_\text{H}-\frac{i}{2}\GH = m + \mathcal{Re}\left(F\right)-\frac{i}{2}\left(\Gamma-2\mathcal{Im}\left(F\right)\right)\,,\\
+\mu_\text{L} &= m_\text{L}-\frac{i}{2}\GL = m - \mathcal{Re}\left(F\right)-\frac{i}{2}\left(\Gamma+2\mathcal{Im}\left(F\right)\right)\,,\label{eq:Mass_eigenvalues}
 \end{split}
 \end{equation}
 with the eigenstates
 \begin{equation}
 \begin{split}
-\left|P_\text{H}\right>&= p\left|\Paz\right>+q\left|\Pazb\right>\\
-\left|P_\text{L}\right>&= p\left|\Paz\right>-q\left|\Pazb\right>.\label{eq:Mass_eigenstates}
+\left|P_\text{H}\right>&= p\left|\Paz\right>+q\left|\Pazb\right>\,,\\
+\left|P_\text{L}\right>&= p\left|\Paz\right>-q\left|\Pazb\right>\,.\label{eq:Mass_eigenstates}
 \end{split}
 \end{equation}
 The parameters $p$ and $q$ are constrained to fulfil $\left|p\right|^2\!+\left|q\right|^2=1$ by construction and their ratio $\frac{q}{p}$ can be expressed in terms of the matrix elements:
 \begin{equation}
 \frac{q}{p}=\sqrt{ \frac{ m_{12}^\ast-\frac{i}{2}\Gamma_{12}^\ast }{ m_{12}-\frac{i}{2}\Gamma_{12} }}
-=\frac{\dm-\frac{i}{2}\DG}{2\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)}.\label{eq:qoverp}
+=\frac{\dm-\frac{i}{2}\DG}{2\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)}\,,\label{eq:qoverp}
 \end{equation}
+where \dm and \DG are the differences of the masses and decay widths of the eigenstates of the weak interaction as defined below in \cref{eq:define_dmAndDG}.
 Using the mass eigenvalues from \cref{eq:Mass_eigenvalues} and mass eigenstates from \cref{eq:Mass_eigenstates}, the Schrödinger equation can be rewritten as
 \begin{equation}
 i\frac{d}{dt}\begin{pmatrix} P_\text{L} \\ P_\text{H} \end{pmatrix} = \begin{pmatrix} \mu_\text{L} & 0 \\ 0 & \mu_\text{H} \end{pmatrix}\begin{pmatrix} P_\text{L} \\ P_\text{H} \end{pmatrix},
 \end{equation}
-which can be easily solved and leads to the time evolution of the mass eigenstates with simple exponential functions $P_\text{L,H}=e^{-i\mu_\text{L,H}t}P_\text{L,H}$.
-Inverting \cref{eq:Mass_eigenstates} the time evolution for the flavour eigenstates follows straightforward:
+which can be easily solved and leads to the time evolution of the mass eigenstates with simple exponential functions $P_\text{L,H}(t)=e^{-i\mu_\text{L,H}t}P_\text{L,H}$.
+Inverting \cref{eq:Mass_eigenstates} the time evolution for the flavour eigenstates follows straightforwardly:
 \begin{equation}
 \begin{split}
-\left|\Paz\!\left(t\right)\right>&=\left|\Paz\right>g_++\frac{q}{p}\left|\Pazb\right>g_-\\
-\left|\Pazb\!\left(t\right)\right>&=\left|\Pazb\right>g_++\frac{p}{q}\left|\Paz\right>g_- \label{eq:timeEvolution}
+\left|\Paz\!\left(t\right)\right>&=\left|\Paz\right>g_++\frac{q}{p}\left|\Pazb\right>g_-\,,\\
+\left|\Pazb\!\left(t\right)\right>&=\left|\Pazb\right>g_++\frac{p}{q}\left|\Paz\right>g_-\,,\label{eq:timeEvolution}
 \end{split}
 \end{equation}
 with $g_\pm=\frac{1}{2}\left(e^{-i\mu_\text{H}t}\pm e^{-i\mu_\text{L}t}\right)$.
@@ -93,9 +93,9 @@ The associated masses and decay widths of the eigenstates of the weak interactio
 \begin{equation}
 m=\frac{m_\text{H}+m_\text{L}}{2}\hspace{0.5cm}\text{and}\hspace{0.5cm}\Gamma=\frac{\GH+\GL}{2}.
 \end{equation}
-The corresponding differences will be referred to as
+The corresponding differences are referred to as
 \begin{equation}
-\dm=m_\text{H}-m_\text{L}=2\mathcal{Re}\left(F\right)\hspace{0.5cm}\text{and}\hspace{0.5cm}\DG=\GL-\GH=4\mathcal{Im}\left(F\right),
+\dm=m_\text{H}-m_\text{L}=2\mathcal{Re}\left(F\right)\hspace{0.5cm}\text{and}\hspace{0.5cm}\DG=\GL-\GH=4\mathcal{Im}\left(F\right)\label{eq:define_dmAndDG},
 \end{equation}
 to match the convention used by \ac{HFLAV}~\cite{HFLAV2016}.
 
