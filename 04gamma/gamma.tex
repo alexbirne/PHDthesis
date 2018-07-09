@@ -7,11 +7,11 @@ The CKM angle $\gamma$ is one of five observables parametrising the CKM triangle
 The current experimental constraints on this triangle are shown in \cref{fig:ckmtriangle}.
 One can see that $\gamma$ is currently the least well known parameter.
 Hence, a more accurate determination of $\gamma$ is one of the main tasks of current research in the field of flavour physics.
-This chapter is organised as follows: Firstly it is described how $\gamma$ in general can be accessed in section \cref{sec:accessGamma}, especially the determination using tree-level decays (\cref{sec:gamamInTrees}) and loop-processes (\cref{sec:gamamInLoops}) is emphasized, followed by the explanation how the decay mode \BdToDpi can be used to derive constraints on $\gamma$ in \cref{sec:GammaInBd2Dpi}.
+This chapter is organised as follows: Firstly, a description on how $\gamma$ can be accessed in general is given in section \cref{sec:accessGamma}, especially the determination using tree-level decays (\cref{sec:gamamInTrees}) and loop-processes (\cref{sec:gamamInLoops}) is emphasized, followed by the explanation how the decay mode \BdToDpi can be used to derive constraints on $\gamma$ in \cref{sec:GammaInBd2Dpi}.
 
 \begin{figure}[tbp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{04gamma/figs/CKMTriangle.pdf}
+	\includegraphics[width=0.9\textwidth]{04gamma/figs/CKMTriangle.pdf}
 	\caption{CKM triangle in the complex plane.
 	The coloured bands show the experimental constraints.
 	The red hashed and the yellow area around the apex represent the currrent uncertainties at \SI{68}{\percent} and \SI{95}{\percent} confidence level~\cite{CKMfitter2015}.}
@@ -22,19 +22,19 @@ This chapter is organised as follows: Firstly it is described how $\gamma$ in ge
 \label{sec:accessGamma}
 
 
-From the form in \cref{eq:CKMangles} one can see that the angle $\gamma$ is the only angle which is independent of CKM elements involving the top quark.
-This makes $\gamma$ the only angle, which can be determined theoretically clean from tree-level decays.
-On the other hand the experimental challenges are huge as transitions sensitive to $\gamma$ need to be proportional to \Vub, \ie such transitions are highly suppressed by order $\mathcal{O}\!\left(\lambda^3\right)$.
+From the form in \cref{eq:CKMangles} it can be seen that the angle $\gamma$ is the only angle which is independent of CKM elements involving the top quark.
+This makes $\gamma$ the only angle, which can be theoretically cleanly determined from tree-level decays.
+On the other hand the experimental challenges are large as transitions sensitive to $\gamma$ need to be proportional to \Vub, \ie such transitions are highly suppressed by order $\mathcal{O}\!\left(\lambda^3\right)$.
 So either the precision of single measurements is limited due to small interference effects and branching fractions or in addition to the tree-level transition also penguin contributions of similar size contribute.
-These gluonic penguins usually carry a weak phase different from the one in the tree-level diagram.
+These gluonic penguins usually carry a \emph{weak} phase different from the one in the tree-level diagram.
 
 This latter possibility is briefly discussed using the example of the $\Bs\to\rho\KS$ decay.
 Similar to the case of the golden mode \BdToJPsiKS, the finalstate $\rho\KS$ is a \CP eigenstate and only the parameter \Lf needs to be calculated.
 Using the amplitudes
 \begin{equation}
 \begin{aligned}
-\Af&=\left<\rho\KS\left|T\right|\Bs\right>=-\frac{1}{2q_{\kaon}}\left<\rho\Kzb\left|T\right|\Bs\right>=-\frac{1}{2q_{\kaon}}\Vubst\Vud\\
-\Abarf&=\left<\rho\KS\left|T\right|\Bsb\right>=\frac{1}{2p_{\kaon}}\left<\rho\Kz\left|T\right|\Bsb\right>=\frac{1}{2p_{\kaon}}\Vub\Vudst
+\Af&=\left<\rho\KS\left|T\right|\Bs\right>=-\frac{1}{2q_{\kaon}}\left<\rho\Kzb\left|T\right|\Bs\right>\propto-\frac{1}{2q_{\kaon}}\Vubst\Vud\,,\\
+\Abarf&=\left<\rho\KS\left|T\right|\Bsb\right>=\frac{1}{2p_{\kaon}}\left<\rho\Kz\left|T\right|\Bsb\right>\propto\frac{1}{2p_{\kaon}}\Vub\Vudst\,,
 \end{aligned}
 \end{equation}
 where $q_{\kaon}$ and $p_{\kaon}$ are the mixing parameters for the neutral kaon system, similar to what is shwon in \cref{eq:qoverp} for the \Bz-meson system.
@@ -48,7 +48,7 @@ what simplifies \Lf being a pure phase, when using the Wolfenstein parametrisati
 \Lf=e^{-2i\gamma}.
 \end{equation}
 However, the finalstate $\rho$ in $\Bs\to\rho\KS$ has a \uquark\uquarkbar and a \dquark\dquarkbar component.
-Therefore not only the tree-level transition $\bquark\to\uquark\uquarkbar\dquarkbar$ but also the gluonic-penguin transition $\bquark\to\dquark\dquarkbar\dquarkbar$ is possible alongside the spectator \squark-quark (see \cref{fig:Bs2RhoKS}).
+Therefore, not only the tree-level transition $\bquark\to\uquark\uquarkbar\dquarkbar$ but also the gluonic-penguin transition $\bquark\to\dquark\dquarkbar\dquarkbar$ is possible alongside the spectator \squark-quark (see \cref{fig:Bs2RhoKS}).
 \begin{figure}[tbp]
 	\centering
 	\includestandalone{04gamma/figs/BsToRhoKS_Tree}
@@ -56,30 +56,30 @@ Therefore not only the tree-level transition $\bquark\to\uquark\uquarkbar\dquark
 	\caption{Tree-level diagram of $\Bs\!\to\rho\KS$ (left) and the dominantly contributing gluonic penguin (right) \cite{Ellis:2016jkw}.}
 	\label{fig:Bs2RhoKS}
 \end{figure}
-For both diagrams the CKM-factor is $\propto A\lambda^3$, but the weak phases are $\gamma$ and $\beta$ for the tree-level diagram and the penguin, respectively.
-The effect of an additional contributing amplitude with a weak phase differing from the one of the tree-level process can be quantified.
-Considering two weak phases contributing to the transitions \Af ($\Bs\to\rho\KS$) and \Abarf ($\Bsb\to\rho\KS$):
+For both diagrams the CKM-factor is $\propto A\lambda^3$, but the \emph{weak} phases are $\gamma$ and $\beta$ for the tree-level diagram and the penguin, respectively.
+The effect of an additional contributing amplitude with a \emph{weak} phase differing from the one of the tree-level process can be quantified.
+Considering two \emph{weak} phases contributing to the transitions \Af ($\Bs\to\rho\KS$) and \Abarf ($\Bsb\to\rho\KS$):
 \begin{equation}
 \begin{aligned}
 \Af&=A_1e^{i\left(\Phi_{A_1}+\delta_1\right)}+A_2e^{i\left(\Phi_{A_2}+\delta_2\right)}\\
 \Abarf&=\eta_f\left[A_1e^{i\left(-\Phi_{A_1}+\delta_1\right)}+A_2e^{i\left(-\Phi_{A_2}+\delta_2\right)}\right].
 \end{aligned}
 \end{equation}
-As shown in \cref{eq:qoverPPurePhase} the quantity $\nicefrac{q}{p}$ is a pure phase and hence one can write $\nicefrac{q}{p}=-e^{2i\Phi_\text{M}}$, what leads to
+As shown in \cref{eq:qoverPPurePhase} the quantity $\nicefrac{q}{p}$ is a pure phase and hence one can derive $\nicefrac{q}{p}=-e^{2i\Phi_\text{M}}$, what leads to
 \begin{equation}
 \Lf=-\eta_f\,e^{2i\Phi_\text{M}}\frac{ A_1 e^{i\left(-\Phi_{A_1}+\delta_1\right)} + A_2 e^{i\left(-\Phi_{A_2}+\delta_2\right)}}{A_1e^{i\left(\Phi_{A_1}+\delta_1\right)}+A_2e^{i\left(\Phi_{A_2}+\delta_2\right)}} \label{eq:LfWithPenguin}
 \end{equation}
-with the \emph{weak} and \emph{strong} phases $\Phi_{A_i}$ and $\delta_i$, respectively.
+with the \emph{weak} phases $\Phi_{A_i}$ and the \emph{strong} phases $\delta_i$.
 The phases $\Phi_{A_1}$, $\Phi_{A_2}$ and $\Phi_\text{M}$ are not rephasing-invariant, but the relative phases $\Phi_1\equiv\Phi_{A_1}-\Phi_\text{M}$, $\Phi_2\equiv\Phi_{A_2}-\Phi_\text{M}$ and $\Delta=\delta_2-\delta_1$ can be measured.
-For $\Bs\to\rho\KS$ one can \eg identify $A_1$ and $A_2$ with amplitude corresponding to the tree-level and gluonic-penguin diagram, respectively and the phase $\Phi_1$ and $\Phi_2$ would represent the CKM angles $\gamma$ and $\beta$.
+For example for the decay $\Bs\to\rho\KS$ the amplitudes $A_1$ and $A_2$ can be identified as the tree-level and gluonic-penguin amplitudes, respectively, where the phases $\Phi_1$ and $\Phi_2$ would represent the CKM angles $\gamma$ and $\beta$.
 The form of $\Lf$ in \cref{eq:LfWithPenguin} already shows that the penguin contribution in $\Bs\to\rho\KS$ makes it impossible to measure $\gamma$.
 However, even with the approximation that $r=\nicefrac{A_2}{A_1}$ is small, \ie both contributing amplitudes are not of same magnitude, one finds
 \begin{align}
 \Lf&=-\eta_f\,e^{-2i\Phi_1}\frac{1+re^{i\left(\Delta-\Phi_2+\Phi_1\right)}}{1+re^{i\left(\Delta+\Phi_2-\Phi_1\right)}}\nonumber\\
 &\approx-\eta_f\,e^{-2i\Phi_1}\left[1+2r\sin\Delta\sin\left(\Phi_2-\Phi_1\right)-2ir\cos\Delta\sin\left(\Phi_2-\Phi_1\right)\right].
 \end{align}
-Obviously in case a gluonic-penguin contributes with a different \emph{weak} phase from the one of the tree-level diagram - \ie $r\neq0$ and $\Phi_1\neq\Phi_2$ - it is not possible to measure a single weak phase.
-One finds, that in case a penguin with a different weak phase from that of the tree-level diagram contributes, \Lf does not allow to measure a single weak phase.
+Obviously in case a gluonic-penguin contributes with a different \emph{weak} phase from the one of the tree-level diagram, \ie $r\neq0$ and $\Phi_1\neq\Phi_2$, it is not possible to measure a single \emph{weak} phase.
+One finds, that in case a penguin with a different \emph{weak} phase from that of the tree-level diagram contributes, \Lf does not allow to measure a single \emph{weak} phase.
 Even in the case of vanishing final state interactions, \ie $\Delta=0$, \Lf can just be written as
 \begin{equation}
 \Lf=-\eta_f\,e^{-2i\left(\Phi_1-\delta_{\Phi_1}\right)}
@@ -88,17 +88,17 @@ where $\delta_{\Phi_1}$ is defined by
 \begin{equation}
 \tan\left(\delta_{\Phi_1}\right)=\frac{r\sin\left(\Phi_1-\Phi_2\right)}{1+r\cos\left(\Phi_1-\Phi_2\right)}.
 \end{equation}
-Additionally it is important to note that hadronic matrix elements cannot be calculated reliably.
-Consequently in case they do not cancel out as they do if only one amplitude contributes to a specific decay, the resulting \CP asymmetries cannot be interpreted without large uncertainties which need to be propagated into the determination of the sides and angles of the unitarity triangle.
+Additionally, it is important to note that hadronic matrix elements cannot be calculated reliably.
+Consequently, in case they do not cancel out as they do if only one amplitude contributes to a specific decay, the resulting \CP asymmetries cannot be interpreted without large uncertainties that need to be propagated into the determination of the sides and angles of the unitarity triangle.
 
-Therefore the current strategy to decrease the uncertainty on $\gamma$ is to measure it in many different decay modes and combine the results afterwards.
+Therefore, the current strategy to decrease the uncertainty on $\gamma$ is to measure it in many different decay modes and combine the results afterwards.
 These decay modes can be divided into the two mentioned classes: The first class are tree-level processes where either decays of charged \B mesons or neutral \B mesons are exploited.
 The second class are processes involving penguin contributions, similar to the contribution to $\Bs\to\rho\KS$ described above.
 
 \subsection[head={Determination of $\gamma$ in tree-level decays},tocentry={Determination of $\gamma$ in tree-level decays}]{Determination of $\symbfsf{\gamma}$ in tree-level decays}
 \label{sec:gamamInTrees}
 
-As $\gamma$ is propotional to the phase of the matrix element \Vub a natural way to measure it is to exploit interference effects between the Cabibbo-favoured $\bquark\to\cquark$ transitions and the Cabibbo-suppressed $\bquark\to\uquark$ transitions.
+As $\gamma$ is propotional to the phase of the matrix element \Vub, a natural way to measure its value is to exploit interference effects between the Cabibbo-favoured $\bquark\to\cquark$ transitions and the Cabibbo-suppressed $\bquark\to\uquark$ transitions.
 This interference appears in decay channels such as $\Bu\to\D\Kp$ and \BsToDsK.
 In the first case exploring different \D decay chaines requires slightly different experimental methods, whereas in the latter case a time-dependent analysis is needed.
 
@@ -107,16 +107,16 @@ The initial \Bpm meson decays into \Dz\Kpm or \Dzb\Kpm and subsequently the \D m
 Therefore the amplitudes for the decay of the \B meson can be defined as
 \begin{equation}
 \begin{aligned}
-A\!\left(\Bp\!\to\Dz\Kp\right)&=\Vubst\Vcs=Ae^{i\left(\delta+\gamma\right)}\\
-A\!\left(\Bp\!\to\Dzb\Kp\right)&=\Vcbst\Vus=\overline{\kern -1.0pt A\kern -1.0pt}\,e^{i\left(\overline{\delta}\right)}
+A\!\left(\Bp\!\to\Dz\Kp\right)&=\Vubst\Vcs=Ae^{i\left(\delta+\gamma\right)}\,,\\
+A\!\left(\Bp\!\to\Dzb\Kp\right)&=\Vcbst\Vus=\overline{\kern -1.0pt A\kern -1.0pt}\,e^{i\left(\overline{\delta}\right)}\,,
 \end{aligned}
 \end{equation}
 where the \emph{weak} phase was directly idenitified as $\gamma$, the parameters $\delta$ and $\overline{\delta}$ are the \emph{strong} phases and $A$ and $\overline{\kern -1.0pt A\kern -1.0pt}$ are the moduli of the amplitudes.
 For the \D-meson decay the amplitudes can be defined accordingly as
 \begin{equation}
 \begin{aligned}
-A\!\left(\Dz\!\to\f\right)&=A_De^{i\left(\delta_D\right)}\\
-A\!\left(\Dzb\!\to\f\right)&=\overline{\kern -1.0pt A\kern -1.0pt}_D\,e^{i\left(\overline{\delta}_D\right)}.
+A\!\left(\Dz\!\to\f\right)&=A_De^{i\left(\delta_D\right)}\,,\\
+A\!\left(\Dzb\!\to\f\right)&=\overline{\kern -1.0pt A\kern -1.0pt}_D\,e^{i\left(\overline{\delta}_D\right)}\,.
 \end{aligned}
 \end{equation}
 Hence, the transition of $\Bp\to\f$ has two contributing amplitudes, which produce an interference term containing $\gamma$ in the total decay rate
@@ -132,7 +132,7 @@ As a consequences of such choice the unknowns from the \D decay can be reduced b
 \begin{equation}
 \left|A\!\left(\Bpm\!\to f_{\CP}\Kpm\right)\right|^2=A^2A_\D^2\left(1+r_\B^2+2r_\B\cos\left(\Delta\pm\gamma\right)\right).\label{eq:totDecRateGLW}
 \end{equation}
-Experimentally for the \CP-even final state a \CP asymmetry
+Experimentally, for the \CP-even final state a \CP asymmetry
 \begin{equation}
 A_{\CP}^{\text{GLW}}=\frac{\left|A\!\left(\Bm\!\to f_{\CP}\Km\right)\right|^2-\left|A\!\left(\Bp\!\to f_{\CP}\Kp\right)\right|^2}{\left|A\!\left(\Bm\!\to f_{\CP}\Km\right)\right|^2+\left|A\!\left(\Bp\!\to f_{\CP}\Kp\right)\right|^2}=\frac{2r_\B\sin\left(\Delta\right)\sin\left(\gamma\right)}{1+r_\B^2+2r_\B\cos\left(\Delta\pm\gamma\right)}\label{eq:ACP_GLW}
 \end{equation}
@@ -151,17 +151,17 @@ with
 R_{\kaon/\pion}=\frac{\left|A\!\left(\Bm\!\to \D\left(\to\Km\pip\right)\Km\right)\right|^2+\left|A\!\left(\Bp\!\to \D\left(\to\Kp\pim\right)\Kp\right)\right|^2}{\left|A\!\left(\Bm\!\to \D\left(\to\Km\pip\right)\pim\right)\right|^2+\left|A\!\left(\Bp\!\to \D\left(\to\Kp\pim\right)\pip\right)\right|^2}.
 \end{equation}
 This double ratio $R_{+}^{\text{GLW}}$ is identical to $R_{\CP}^{\text{GLW}}$ when neglecting all terms proportional to $r_\D$ or $r_{\B_\pion}=\nicefrac{A\!\left(\Bp\!\to\Dz\pip\right)}{A\!\left(\Bm\!\to\Dz\pim\right)}$.
-However the GLW method has two disadvantages: First, the interference term is proportional to $r_\B$ which is of order \SI{10}{\percent} and therefore decreases the sensitivity on $\gamma$.
-Second, there is not only one solution for $\gamma$, but there is a eight-fold discrete ambiguity due to the fact that $\gamma$ and $\Delta$ always appear together in the product of two sine or cosine functions as in \cref{eq:ACP_GLW} and \cref{eq:RCP_GLW}.
+However, the GLW method has two disadvantages: Firstly, the interference term is proportional to $r_\B$ which is of order \SI{10}{\percent} and therefore decreases the sensitivity on $\gamma$.
+Secondly, there is not only one solution for $\gamma$, but there is a eight-fold discrete ambiguity due to the fact that $\gamma$ and $\Delta$ always appear together in the product of two sine or cosine functions as in \cref{eq:ACP_GLW} and \cref{eq:RCP_GLW}.
 
-The second method directly counteracts to the first disadvantage of the GLW method.
+The second, so-called ADS method directly counteracts to the first disadvantage of the GLW method.
 Instead of using decays into \CP-eigenstates of the \D meson, the \D is reconstructed in a final state for which $\Dz\!\to\f$ is suppressed relative to $\Dzb\!\to\f$ (\eg \f could be \Km\pip) \cite{ADS}.
 This enhances the interference term to be of the same order as the other ones, but on the other hand the $r_\D$ and $\Delta_\D$ do not cancel as before.
 Hence, to determine $\gamma$ from similar asymmetries and ratios as for the GLW method external input for both quantities is needed.
 
 The last method described in this section using charged \B decays probably is the most sophisticated one.
 The GGSZ method makes use of multibody \D decays.
-This requires an analysis of the Dalitz plane, but on the other hand $\gamma$ can be extracted without the disadvantages of the GLW or the ADS method.
+On the one hand this requires an analysis of the Dalitz plane, but on the other hand $\gamma$ can be extracted without the disadvantages of the GLW or the ADS method.
 The basic idea however is the same as before, just that the strong phase originating from the \D decay varies over the Dalitz plane.
 Furthermore, the interference term can be expressed in the form $\cos\!\left(\phi\right)c_i\pm\sin\!\left(\phi\right)s_i$, where $\phi$ is the difference (sum) of the \emph{strong} phase $\delta_\B$ originating from the \Bm (\Bp) decay and $\gamma$.
 The coefficients $c_i$ and $s_i$ contain the \emph{strong} phases from the \D decay.
@@ -181,13 +181,13 @@ This experimental technique to measure \CP violation can be also applied to \BdT
 \label{sec:gamamInLoops}
 
 Instead of exploiting decays where $\gamma$ can be accessed via the interference in tree-level diagrams between the transitions $\bquark\to\uquark$ and $\bquark\to\cquark$ also processes containing loop transitions can be used to infer information about $\gamma$.
-The first and probably most obvious possibility is to derive a result for $\gamma$ from experimental measurements of other CKM triangle quantities as the remaining two angles of the CKM triangle, $\alpha$ and $\beta$.
-As an example the angle $\beta$ can be measured quite precisely in the decay \mbox{\BdToJPsiKS} while the angle $\alpha$ is accessible via an isospin analyses of the decays $\Bd\!\to\pip\pim$, $\Bd\!\to\piz\piz$ and $\Bu\!\to\pip\piz$ \cite{IsospinAlpha} or measurements of longitudinally polarized $\Bz\!\to\rho\rho$ decays \cite{alpha_BaBar, alpha_Belle}. Though, the best precision is achieved when performing a \emph{full} fit using all available inputs as performed by the CKMfitter and UTfit collaborations \cite{CKMfitter2015, UTfit-UT}.
+The first and probably most obvious possibility is to derive a result for $\gamma$ from experimental measurements of other CKM triangle quantities as the remaining two angles of the CKM triangle, $\alpha$ and $\beta$, which are only accesible in loop processes.
+As an example, the angle $\beta$ can be measured quite precisely in the decay \mbox{\BdToJPsiKS} while the angle $\alpha$ is accessible via an isospin analyses of the decays $\Bd\!\to\pip\pim$, $\Bd\!\to\piz\piz$ and $\Bu\!\to\pip\piz$ \cite{IsospinAlpha} or measurements of longitudinally polarized $\Bz\!\to\rho\rho$ decays \cite{alpha_BaBar, alpha_Belle}. Though, the best precision is achieved when performing a \emph{full} fit using all available inputs as performed by the CKMfitter and UTfit collaborations \cite{CKMfitter2015, UTfit-UT}.
 
-However such tests of a closing CKM triangle do not directly indicate certain processes that are affected effects of \ac{NP}.
+However, such tests of a closing CKM triangle do not directly indicate certain processes that are affected effects of \ac{NP}.
 Therefore, a more direct determination of $\gamma$ is also important.
 A possibility for such determination is to extract $\gamma$ from \CP violation measurements in $B\!\to\pion\pion$ and $\Bs\!\to\Kp\Km$ \cite{GammaInLoops_Fleischer, GammaInLoops_Ciuchini}.
-To do this, the U-spin flavour symmetry of strong interactions between the two decay channels - \ie the decays are related by interchanging all \dquark-quarks with \squark-quarks - must be used.
+To do this, the U-spin flavour symmetry of strong interactions between the two decay channels, \ie the decays are related by interchanging all \dquark-quarks with \squark-quarks, must be used.
 \begin{figure}[tbp]
 	\centering
 	\includestandalone{04gamma/figs/GammaLoopsTree}
@@ -197,17 +197,17 @@ To do this, the U-spin flavour symmetry of strong interactions between the two d
 	\label{fig:feynmanGammaLoops}
 \end{figure}
 
-To briefly outline the strategy, first the transition amplitudes and \CP observables for the decay modes $\Bz\!\to\pip\pim$ and $\Bs\!\to\Kp\Km$ will be introduced in the following.
+To briefly outline the strategy, firstly the transition amplitudes and \CP observables for the decay modes $\Bz\!\to\pip\pim$ and $\Bs\!\to\Kp\Km$ will be introduced in the following.
 In \cref{fig:feynmanGammaLoops} the dominant $\bquark\!\to\uquarkbar\uquark\dquarkbar$ processes are shown, which leads to the transition amplitude
 \begin{equation}
-A\!\left(\Bd\!\to\pip\pim\right)=\lambda_\uquark\left(A_{\text{cc}}^\uquark+A_{\text{pen}}^\uquark\right)+\lambda_\cquark A_{\text{pen}}^\cquark+\lambda_\tquark A_{\text{pen}}^\tquark
+A\!\left(\Bd\!\to\pip\pim\right)=\lambda_\uquark\left(A_{\text{cc}}^\uquark+A_{\text{pen}}^\uquark\right)+\lambda_\cquark A_{\text{pen}}^\cquark+\lambda_\tquark A_{\text{pen}}^\tquark\,,
 \end{equation}
 where the amplitudes $A_{\text{pen}}^\quark$ and $A_{\text{c}}^\quark$ describe the penguin and charged-current contributions respectively.
-Furthermore the short notation $\lambda_\quark=V_{{\kern -0.1em}\quark\dquark}V^{*}_{{\kern -0.1em}\quark\bquark}$ was used.
+Furthermore, the short notation $\lambda_\quark=V_{{\kern -0.1em}\quark\dquark}V^{*}_{{\kern -0.1em}\quark\bquark}$ was used.
 Making use of the unitarity of the CKM matrix and applying the Wolfenstein parametrisation \cite{Wolfenstein:1983yz} allows to determine the parameter \Lf and the corresponding \CP coefficients
 \begin{equation}
 \begin{aligned}
-C_{f}^{\Bd\!\to\pip\pim}&=-\left[\frac{2d\sin\!\left(\theta\right)\sin\!\left(\gamma\right)}{1-2d\cos\!\left(\theta\right)\cos\!\left(\gamma\right)+d^2}\right]\\
+C_{f}^{\Bd\!\to\pip\pim}&=-\left[\frac{2d\sin\!\left(\theta\right)\sin\!\left(\gamma\right)}{1-2d\cos\!\left(\theta\right)\cos\!\left(\gamma\right)+d^2}\right]\,,\\
 S_{f}^{\Bd\!\to\pip\pim}&=\left[\frac{\sin\!\left(2\beta+2\gamma\right)-2d\cos\!\left(\theta\right)\sin\!\left(2\beta+\gamma\right)+d^2\sin\!\left(2\beta\right)}{1-2d\cos\!\left(\theta\right)\cos\!\left(\gamma\right)+d^2}\right].
 \end{aligned}
 \end{equation}
@@ -218,12 +218,12 @@ de^{i\theta}=\frac{1}{\left(1-\nicefrac{\lambda^2}{2}\right)R_b}\left(\frac{A_{\
 with $A_{\text{pen}}^{\quark\tquark}=A_{\text{pen}}^{\quark}-A_{\text{pen}}^{\tquark}$ and the CKM factor $R_b=\nicefrac{1}{\lambda}\left|\nicefrac{\Vub}{\Vcb}\right|$.
 The \CP coefficient $A_f^{\DG}$ is neglected as the decay width difference for \Bd mesons is expected to be negligibly small.
 
-Equivalent to this, the \CP coefficients for $\Bs\!\to\Kp\Km$ can be calculated as
+Equivalently to this, the \CP coefficients for $\Bs\!\to\Kp\Km$ can be calculated as
 \begin{equation}
 \begin{aligned}
-C_{f}^{\Bs\!\to\Kp\Km}&=\left[\frac{2\tilde{d'}\!\sin\!\left(\theta'\right)\sin\!\left(\gamma\right)}{1-2\tilde{d'}\!\cos\!\left(\theta'\right)\cos\!\left(\gamma\right)+\tilde{d'}^2}\right]\\
-S_{f}^{\Bs\!\to\Kp\Km}&=\left[\frac{\sin\!\left(\phi_\squark+2\gamma\right)-2\tilde{d'}\!\cos\!\left(\theta\right)\sin\!\left(\phi_\squark+\gamma\right)+\tilde{d'}{}^2\!\sin\!\left(\phi_\squark\right)}{1-2\tilde{d'}\!\cos\!\left(\theta'\right)\cos\!\left(\gamma\right)+\tilde{d'}{}^2}\right]\\
-A_f^{\DG, \Bs\!\to\Kp\Km}&=-\left[\frac{\cos\!\left(\phi_\squark+2\gamma\right)+2\tilde{d'}\!\cos\!\left(\theta'\right)\cos\!\left(\phi_\squark+\gamma\right)+\tilde{d'}{}^2\cos\!\left(\phi_\squark\right)}{1-2\tilde{d'}\!\cos\!\left(\theta'\right)\cos\!\left(\gamma\right)+\tilde{d'}{}^2}\right]
+C_{f}^{\Bs\!\to\Kp\Km}&\!=\!\left[\frac{2\tilde{d'}\!\sin\!\left(\theta'\right)\sin\!\left(\gamma\right)}{1-2\tilde{d'}\!\cos\!\left(\theta'\right)\cos\!\left(\gamma\right)+\tilde{d'}^2}\right]\,,\\
+S_{f}^{\Bs\!\to\Kp\Km}&\!=\!\left[\frac{\sin\!\left(\phi_\squark+2\gamma\right)-2\tilde{d'}\!\cos\!\left(\theta\right)\sin\!\left(\phi_\squark+\gamma\right)+\tilde{d'}{}^2\!\sin\!\left(\phi_\squark\right)}{1-2\tilde{d'}\!\cos\!\left(\theta'\right)\cos\!\left(\gamma\right)+\tilde{d'}{}^2}\right]\,,\\
+A_f^{\DG, \Bs\!\to\Kp\Km}&\!=\!-\left[\frac{\cos\!\left(\phi_\squark+2\gamma\right)+2\tilde{d'}\!\cos\!\left(\theta'\right)\cos\!\left(\phi_\squark+\gamma\right)+\tilde{d'}{}^2\cos\!\left(\phi_\squark\right)}{1-2\tilde{d'}\!\cos\!\left(\theta'\right)\cos\!\left(\gamma\right)+\tilde{d'}{}^2}\right]\,,
 \end{aligned}
 \end{equation}
 where the short notation $\tilde{d'}=\left(\nicefrac{1-\lambda^2}{\lambda^2}\right)d'$ was used.
@@ -242,36 +242,38 @@ Inserting this into $C_{f}^{\Bd\!\to\pip\pim}$ then allows to determine $\gamma$
 	\label{fig:gamma_beta_fleischer}
 \end{figure}
 Using these two solutions for $\gamma$ and inserting them together with the obtained expressions for $d$ and $\theta$ into $S_{f}^{\Bd\!\to\pip\pim}$ additionally gives a fourfold ambiguity for $\beta$ (see \cref{fig:gamma_beta_fleischer}).
-Hereby for both ambiguities the assumption is made, that $\gamma\in[0, 180]\si{\degree}$ and $\beta\in[0, 180]\si{\degree}$.
-If additionally the phase $\beta$ is used this ambiguities can be resolved by expressing $d$ and $\theta$ as functions of $\gamma$, $C_{f}^{\Bd\!\to\pip\pim}$ and $S_{f}^{\Bd\!\to\pip\pim}$ and consequently fixing the contours in the $\gamma-d$ plane.
-However assuming a \SI{15}{\percent} and \SI{20}{\percent} U-spin-breaking effect on the parameters $d$ and $\theta$, respectively, an additional uncertainty on the extracted value of $\gamma$ of roughly \SI{20}{\percent} could arise \cite{GammaInLoops_Fleischer2}.
+Hereby, for both ambiguities the assumption is made, that $\gamma\in[0, 180]\si{\degree}$ and $\beta\in[0, 180]\si{\degree}$.
+If additionally the phase $\beta$ is used, this ambiguities can be resolved by expressing $d$ and $\theta$ as functions of $\gamma$, $C_{f}^{\Bd\!\to\pip\pim}$ and $S_{f}^{\Bd\!\to\pip\pim}$ and consequently fixing the contours in the $\gamma-d$ plane.
+However, assuming a \SI{15}{\percent} and \SI{20}{\percent} U-spin-breaking effect on the parameters $d$ and $\theta$, respectively, an additional uncertainty on the extracted value of $\gamma$ of roughly \SI{20}{\percent} could arise \cite{GammaInLoops_Fleischer2}.
 Adding also the modes $\Bd\!\to\piz\piz$ and $\Bu\!\to\piz\pip$ allows additionally to either constrain \ac{NP} effects in the $\bquark\!\to\squark$ penguin contributions or in mixing \cite{GammaInLoops_Ciuchini}.
 
 \subsection[head={Comparison of tree-level and loop determinations of $\gamma$},tocentry={Comparison of tree-level and loop determinations of $\gamma$}]{Comparison of tree-level and loop determinations of $\symbfsf{\gamma}$}
 
 Both strategies described in the previous two sections were and are used to determine the angle $\gamma$.
 As shown before, the determination from tree-level decays provides theoretically clean measurements, only affected by low sensitivity or discrete ambiguities.
-Comparing these measurements with determinations using loop-processes could provide an effective handle on \ac{NP} effects contributing.
-However to properly compare the different approaches, the experimental uncertainties need to be reduced to a sensible amount; therefore the current experimental status and required improvements in the experimental precision will be given below.
+Comparing these measurements with determinations using loop-processes could provide an effective handle on contributing \ac{NP} effects.
+However to properly compare the different approaches, the experimental uncertainties need to be reduced to a sensible amount.
+Therefore, the current experimental status and required improvements in the experimental precision will be given below.
 
-At \lhcb the potential of determination via tree-level processes was studied in many different final states and is combined on a regular basis into one single $\gamma$-combination. The most recent combination was presented in \cite{GammCombo} yielding a result of
+At \lhcb the potential of determination via tree-level processes was studied in many different final states and is combined on a regular basis into one single $\gamma$-combination.
+The most recent combination was presented in \cite{GammCombo} yielding a result of
 \begin{equation}
 \gamma=\left(74.0^{+5.0}_{-5.8}\right)\!\si{\degree}.\label{eq:gammaResult_Trees}
 \end{equation}
 This result includes \num{15} different decay modes, of which ten were analysed using data corresponding to \SI{3}{\per\femto\barn} collected at centre-of-mass energies of \num{7} and \SI{8}{\tera\electronvolt}.
-The remaining five measurements use additionally data corresponding to \SI{2}{\per\femto\barn} collected at centre-of-mass energies of \SI{13}{\tera\electronvolt}.
+The remaining five measurements use additional data corresponding to \SI{2}{\per\femto\barn} collected at centre-of-mass energies of \SI{13}{\tera\electronvolt}.
 Deriving constraints on $\gamma$ by performing a \emph{full} fit using all available inputs gives
 \begin{equation}
-\gamma=\left(65.4^{+0.97}_{-1.16}\right)\!\si{\degree}\,\,\,\,\,\text{and}\,\,\,\,\,\gamma=\left(65.8\pm1.9\right)\!\si{\degree}
+\gamma=\left(65.4^{+0.97}_{-1.16}\right)\!\si{\degree}\,\,\,\,\,\text{and}\,\,\,\,\,\gamma=\left(65.8\pm1.9\right)\!\si{\degree}\,,
 \end{equation}
-performed by the CKMfitter~\cite{CKMfitter2015} and UTfit~\cite{UTfit-UT} collaborations, respectively.
+determined by the CKMfitter~\cite{CKMfitter2015} and UTfit~\cite{UTfit-UT} collaborations, respectively.
 Determining $\gamma$ with a similar strategy exploiting U-spin-symmetry as outlined in \cref{sec:gamamInLoops} leads to
 \begin{equation}
 \gamma=\left(63.5^{+7.2}_{-6.7}\right)\!\si{\degree}.\label{eq:gammaResult_Loops}
 \end{equation}
 where inputs from \babar, \belle, \cdf and \lhcb were used~\cite{Aaij:2014xba}. In contrast to the combination of tree-level measurements, the inputs from \lhcb were based on analyses using only \SI{1}{\per\femto\barn} collected at a centre-of-mass energy of \SI{7}{\tera\electronvolt}.
 
-As can be seen, the determinations from the \emph{full} fits are by far the mose precise.
+As can be seen, the determinations from the \emph{full} fits are by far the most precise.
 Furthermore the results using loop processes seem to agree quite well, while there seems to be the potential for a tension between the determinations using loop-processes and tree-level transitions.
 Though the precision on both, the tree-level transition measurements given in \cref{eq:gammaResult_Trees} and the direct loop-process measurements given in \cref{eq:gammaResult_Loops}, needs to be improved.
 
@@ -288,7 +290,7 @@ More precisely, the amplitudes of the $\bquark\!\to\cquark\left[\uquarkbar\dquar
 	\label{fig:feynmanBd2Dpi}
 \end{figure}
 Consequently, measuring the resulting \CP asymmetries gives access to the \emph{weak} and \emph{strong} phases originating in these transitions.
-Neglecting constants as the Fermi constant which cancel in the ratio anyway, the amplitudes of the four contributing transitions can be expressed in terms of the CKM matrix elements $V_{ij}^{\phantom{\ast}}$, hadronic matrix elements $M$ and $\overline{\kern -1.0pt M\kern -1.0pt}$ and potential \emph{strong} phases $\Delta$ and $\overline{\kern -1.0pt \Delta\kern -1.0pt}$:
+Neglecting constants such as the Fermi constant which cancel in the ratio anyway, the amplitudes of the four contributing transitions can be expressed in terms of the CKM matrix elements $V_{ij}^{\phantom{\ast}}$, hadronic matrix elements $M$ and $\overline{\kern -1.0pt M\kern -1.0pt}$ and potential \emph{strong} phases $\Delta$ and $\overline{\kern -1.0pt \Delta\kern -1.0pt}$:
 \begin{align}
 A\!\left(\Bz\!\to\Dm\pip\right)&=\Vud\Vcbst\times Me^{i\Delta}\\
 A\!\left(\Bzb\!\to\Dm\pip\right)&=\Vub\Vcdst\times \overline{\kern -1.0pt M\kern -1.0pt}\,e^{i\overline{\kern -1.0pt \Delta\kern -1.0pt}}\\
@@ -303,11 +305,11 @@ Denoting the finalstate \Dm\pip and \Dp\pim as \f and \fbar, respectively, and u
 where the abbreviation $\delta=\overline{\kern -1.0pt \Delta\kern -1.0pt}-\Delta$ was used.
 Using the definition of the angles of the unitarity triangle from \cref{eq:CKMangles} the fraction of CKM matrix elements can be further simplified to
 \begin{align}
-\Lf&=-\left|\frac{\Vub\Vcd}{\Vud\Vcb}\right|\frac{\overline{\kern -1.0pt M\kern -1.0pt}}{M}e^{-i\left(2\beta+\gamma-\delta\right)}=re^{-i\left(2\beta+\gamma-\delta+\pi\right)}\\
-\Lfbar&=-\left|\frac{\Vudst\Vcbst}{\Vubst\Vcdst}\right|\frac{M}{\overline{\kern -1.0pt M\kern -1.0pt}}e^{-i\left(2\beta+\gamma+\delta\right)}=\frac{1}{r}re^{-i\left(2\beta+\gamma+\delta+\pi\right)}.
+\Lf&=-\left|\frac{\Vub\Vcd}{\Vud\Vcb}\right|\frac{\overline{\kern -1.0pt M\kern -1.0pt}}{M}e^{-i\left(2\beta+\gamma-\delta\right)}=-re^{-i\left(2\beta+\gamma-\delta\right)}\,,\\
+\Lfbar&=-\left|\frac{\Vudst\Vcbst}{\Vubst\Vcdst}\right|\frac{M}{\overline{\kern -1.0pt M\kern -1.0pt}}e^{-i\left(2\beta+\gamma+\delta\right)}=-\frac{1}{r}e^{-i\left(2\beta+\gamma+\delta\right)}.
 \end{align}
 Here the ratio of the CKM matrix elements and the ratio of hadronic matrix elements were combined into the parameter $r$.
-Obviously the decay allows to probe $2\beta+\gamma$ together with a \emph{strong} phase difference $\delta$.
+Thus, the decay allows to probe $2\beta+\gamma$ together with a \emph{strong} phase difference $\delta$.
 
 Looking at the four contributing decay rates, the expressions from \crefrange{eq:Ptof}{eq:Pbartofbar} reduce to
 \begin{align}
@@ -317,7 +319,7 @@ Looking at the four contributing decay rates, the expressions from \crefrange{eq
 \Gamma\left(\Bzb(t)\!\to\Dp\pim\right)&= \frac{\overline{\kern -1.0pt A\kern -1.0pt}}{2}e^{\Gamma t}\left[1+\Sfbar\!\sin\left(\dm t\right)-\Cfbar\!\cos\left(\dm t\right)\right]\label{eq:DecRateBb2Dppim}
 \end{align}
 when doing the assumptions that the decay width difference \DG is zero and $\nicefrac{q}{p}$ is a pure phase.
-Additionally the shortcut $\kern 0.18em\optbar{\kern -0.18em A}{}=A\!\left(\Bz\!\to\Dmp\pipm\right)\big(1+\big|\lambda_{\kern 0.18em\optbar{\kern -0.18em f}{}}\big|^2\big)$ was used.
+Additionally, the shortcut $\kern 0.18em\optbar{\kern -0.18em A}{}=A\!\left(\Bz\!\to\Dmp\pipm\right)\big(1+\big|\lambda_{\kern -0.05em\shortstack{{\scalebox{.3}{(}\rule[.1ex]{0.25em}{.15mm}\scalebox{.3}{)}}\\ [-0.7ex]\kern -0.2em\scriptsize$f$}}\big|^2\big)$ was used.
 Accordingly, as $\DG=0$ is assumed, the parameters $A_f^{\DG}$ and $A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}$ are ignored while the remaining \CP parameters
 \begin{align}
 \Sf&=\frac{2r\sin\left(2\beta+\gamma-\delta\right)}{1+r^2} \label{eq:DefSf}\\
@@ -336,7 +338,7 @@ what is in good agreement with the experimental determinations \cite{Das:2010be,
 Hence, the interference and thus the sensitivity on $\gamma$ is expected to be quite small.
 
 Only the tree-level contributions shown in \cref{fig:feynmanBd2Dpi} have been taken into account so far.
-Therefore also possible contributions from penguin contributions are briefly explained in the following.
+Therefore, also possible contributions from penguin contributions are briefly discussed in the following.
 The first irreducible error on the determination of $\gamma$ arises from the box diagrams as shown in \cref{fig:feynmanBd2DpiPenguin}.
 \begin{figure}[tbp]
 	\centering
