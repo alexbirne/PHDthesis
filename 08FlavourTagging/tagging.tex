@@ -257,13 +257,10 @@ For candidates which are tagged by both, the OS tagger combination and the SS ta
 \end{align}
 
 The flavour specific control samples ($\Bu\!\to\Dz\pip$ for the OS, $\Bz\!\to\jpsi\Kstarz$ for the SS) are used to determine the functional form of the calibration function $\omega(\eta)$.
-Unlike other flavour tagged analyses at \lhcb the calibration parameter are determined directly in the decay-time fit as floating nuisance parameter of the likelihood function in \BdToDpi.
+Unlike other flavour tagged analyses at \lhcb the calibration parameters can be determined directly in the decay-time fit as floating nuisance parameter of the likelihood function in \BdToDpi.
 This is possible because the parameters \Cf and \Cfbar are fixed to \num{1} and \num{-1} as the ratio $r$ (see \cref{eq:ratioDpi}) is expected to be too small to allow a significant measurement of both parameters.
 As a result, the cosine term allows to determine the calibration parameters independently of the sine term.
-A qualitative explanation is given in \cref{fig:FTstrategy}.
-A more quantitative validation was done by a collaborator on pseudoexperiments:
-Generating pseudoexperiments and floating the parameters \Cf and \Cfbar in the fit showed a non-negligible bias for the parameters \Sf and \Sfbar, while fixing the coefficients \Cf and \Cfbar in the fit showed unbiased results on all fitted parameters.
-Finally it should be noted here that possible deviations from the assumption of $\Cf=-\Cfbar=1$ are taken into account in the systematic uncertainties (\cref{ch:systeamticUncerts}).
+A qualitative explanation of this is given in \cref{fig:FTstrategy}.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.48\textwidth]{08FlavourTagging/figs/oscillation_f.pdf}
@@ -276,16 +273,21 @@ Finally it should be noted here that possible deviations from the assumption of 
     \label{fig:FTstrategy}
 \end{figure}
 
-As all calibration parameters are directly determined in the signal sample no assumptions for the portability of the calibration from a control channel is needed.
-However, the additional degrees of freedom in the final decay-time fit lead to an increased statistical uncertainty on the \CP-parameters \Sf and \Sfbar.
-This is compensated by the fact that the systematic uncertainty for the portability of the calibration, which is often the largest systematic uncertainty for flavour tagged analyses at \lhcb, is not needed.
-Such systematic uncertainty would be accounting for kinematic differences between the control sample and the signal sample leading to different flavour tagging calibrations.
-To check the portability simulated events of both, the control sample and the signal sample are used.
+When determining all calibration parameters directly in the signal sample no assumptions for the portability of the calibration from a control channel is needed.
+This portability in principle can be limited due to kinematic differences between the control sample and the signal sample leading to different flavour tagging calibrations.
+It is probed using simulated events of both, the control sample and the signal sample.
 When checking the portability of the calibrations from $\Bu\!\to\Dz\pip$ and $\Bz\!\to\jpsi\Kstarz$ to \BdToDpi a bias on \Sf and \Sfbar of roughly the size of their statistical uncertainty arises.
 This bias can be reduced when floating the calibration parameters (more details on this are given in \cref{sec:decTimeFitVal}).
-Furthermore, the precision of the calibration parameters for the SS tagger combination obtained in the decay-time fit to \BdToDpi is much smaller compared to the precision on the control channel, while for the OS tagger combination the uncertainty on the signal sample increases only slightly compared to the uncertainty obtained on the control sample.
+Furthermore, the precision of the calibration parameters for the SS tagger combination obtained in the decay-time fit to \mbox{\BdToDpi} is much smaller compared to the precision on the control channel, while for the OS tagger combination the uncertainty on the signal sample increases only slightly compared to the uncertainty obtained on the control sample.
+However, determining the calibration parameters in the final decay-time fit leads to an increased statistical uncertainty on the \CP-parameters \Sf and \Sfbar due to the additional degrees of freedom in the fit.
+This is compensated by the fact that the systematic uncertainty for the portability of the calibration, which is often the largest systematic uncertainty for flavour tagged analyses at \lhcb, is not needed.
 
-Therefore, the studies presented in the following sections do not aim to obtain the calibration parameters.
+A quantitative validation of this strategy was done by a collaborator on pseudoexperiments:
+Generating pseudoexperiments and floating the parameters \Cf and \Cfbar in the fit showed a non-negligible bias for the parameters \Sf and \Sfbar, while fixing the coefficients \Cf and \Cfbar in the fit showed unbiased results on all fitted parameters.
+Therefore this strategy is adopted for the extraction of the calibration parameters.
+Finally it should be noted here that possible deviations from the assumption of $\Cf=-\Cfbar=1$ are taken into account in the systematic uncertainties (\cref{ch:systeamticUncerts}).
+
+Thus, the studies presented in the following sections do not aim to obtain the calibration parameters.
 Instead, on the one hand, they are used to determine the functional form of the calibration function, which is used in the decay-time fit described in \cref{sec:ExtractCPobs}.
 On the other hand, the obtained parameter values of the calibration function can be used as reference values for the decay-time fit, as even if they are not expected to agree perfectly, both parameter sets should be in the same interval.
 
@@ -302,7 +304,7 @@ The general procedure is quite similar for both tagging algorithms and looks as 
 	\item The $\Bz\!\to\jpsi\Kstarz$ sample is selected and a fit to the invariant mass is performed, in order to separate the signal and background components statistically.
 	Using the \emph{sPlot} method weights are calculated, which allow to obtain the signal-component distributions of other variables. This is reported in \cref{sec:PrepBd2JpsiKstSample}
 	\item The distributions of transverse momentum \pt, pseudo-rapidity $\eta'$ and azimuthal angle $\phi$ of the \Bz candidate, the number of tracks and the number of \ac{PV}s in the event and a distribution of Hlt2 trigger decisions for $\Bz\!\to\jpsi\Kstarz$ candidates are weighted to match those of the \BdToDpi candidates.
-	This has two reasons: First the performance of the BDT is potentially improved when applying to \BdToDpi, second the portability of the functional form of the calibration is assured, and the obtained reference values better suited as such.
+	This has two reasons: First the performance of the BDT is potentially improved when applying to \BdToDpi, second the portability of the functional form of the calibration is assured, and calibration parameters obtained can be better used as reference values.
 	\item The tagging particles, whose charge is correlated with the initial \B flavour are selected
 	\item Finally the datasample is divided into three subsamples:
 	\begin{itemize}
@@ -310,9 +312,9 @@ The general procedure is quite similar for both tagging algorithms and looks as 
 		Hereby correctly tagged means that the charge of the tagging particle would indicate the correct tag, while wrongly tagged denotes exactly the opposite situation: The tagging particles' charge would indicate the wrong tag decision.
 		To reduce the number of oscillated \Bz-mesons only \Bz-mesons with a decay time smaller than the first maximum of the oscillation are used.
 		Therefore, following the procedure in Ref.~\cite{Aaij:2016rdg}, \Bz-mesons used in the training are required to have a a decay time smaller than \SI{2.2}{\pico\second}.
-		\item On the second subsample is the BDT is tested in order to avoid effects as overtraining.
-		Furthermore, both subsamples, the first training sample and this second testing sample are used to determine the mistag as a function of the BDT response. For this latter step the requirement on the \Bz decay time is removed, as a full time-dependent analysis of the \Bz oscillation is needed.
-		\item Finally on the last third the functional form of the calibration is determined together with reference values for the calibration parameters obtained in the decay-time fit described in \cref{sec:ExtractCPobs}.
+		\item On the second subsample the BDT is tested in order to avoid effects as overtraining.
+		Furthermore, both, the first training sample and this second testing sample are used to determine the mistag as a function of the BDT response. For this latter step the requirement on the \Bz decay time is removed, as a full time-dependent analysis of the \Bz oscillation is performed.
+		\item Finally on the last third the SS taggers are combined and the functional form of the calibration is determined together with reference values for the calibration parameters obtained in the decay-time fit described in \cref{sec:ExtractCPobs}.
 	\end{itemize}
 \end{itemize}
 
@@ -320,8 +322,10 @@ The general procedure is quite similar for both tagging algorithms and looks as 
 \label{sec:PrepBd2JpsiKstSample}
 
 
-The decay $\Bz\!\to\jpsi\Kstarz$ is reconstructed using the decays $\jpsi\!\to\mup\mun$ and $\Kstarz\!\to\Kp\pim$.
+The decay $\Bz\!\to\jpsi\Kstarz$ is reconstructed using the decays $\jpsi\!\to\mup\mun$ and \mbox{$\Kstarz\!\to\Kp\pim$}.
 The cuts applied in the stripping are listed in \cref{tab:JpsiKstStripping}.
+Again, to achieve  better compatibility between $\Bz\!\to\jpsi\Kstarz$ and the signal decay \BdToDpi, the same trigger requirements as for the signal mode are applied.
+After the trigger requirements the \Kstarz- and the \jpsi-meson are requried to fulfill the cuts shown in \cref{tab:selJpsiKst}.
 \begin{table}[tbp]
 	\centering
 	\caption{Stripping cuts for the decay $\Bz\!\to\jpsi\Kstarz$ with $\jpsi\!\to\mup\mun$ and $\Kstarz\!\to\Kp\pim$.
@@ -348,8 +352,6 @@ The cuts applied in the stripping are listed in \cref{tab:JpsiKstStripping}.
 	\end{tabular}
 	\label{tab:JpsiKstStripping}
 \end{table}
-Again, to achieve  better compatibility between $\Bz\!\to\jpsi\Kstarz$ and the signal decay \BdToDpi, the same trigger requirements as for the signal mode are applied.
-After the trigger requirements the \Kstarz- and the \jpsi-meson are requried to fulfill the cuts shown in \cref{tab:selJpsiKst}.
 \begin{table}[tbp]
 	\centering
 	\caption{Cuts to select $\Bz\!\to\jpsi\Kstarz$ candidates.
@@ -376,7 +378,7 @@ The signal model consists of a sum of two double-sided Hypatia functions with a 
 The first Hypatia function describes mainly $\Bz\!\to\jpsi\Kstarz$ candidates without photon radiation in the final state, while the second Hypatia shows a large tail towards smaller invariant masses.
 The tail parameters $a_i$ and $n_i$ of both Hypatia functions are determined on simulated events.
 Moreover the fraction between both signal components and the parameter $\lambda$ of the Hypatia describing the \Bz candidates with harder photon radiation are taken from fits to simulated samples.
-All remaining parameters are left free.
+All remaining parameters are floating.
 The fit which is performed in the range $[5200, 5350]\,$\si[per-mode=symbol]{\MeVcc} is shown in \cref{fig:massFitJpsiKst} and the resulting yields are given in \cref{tab:yieldsJpsiKst}.
 \begin{figure}[tbp]
     \centering
@@ -400,7 +402,7 @@ The fit which is performed in the range $[5200, 5350]\,$\si[per-mode=symbol]{\Me
 \end{table}
 
 The last preparation step for the data sample is then to weight certain \emph{sWeighted} distributions of $\Bz\!\to\jpsi\Kstarz$ candidates to match the corresponding distributions of the \BdToDpi candidates.
-The observables which are weighted are chosen as they are known to most influence the tagging responses.
+The observables which are weighted are chosen as they are known to most influence the tagging responses:
 These observables are the transverse momentum \pt, the pseudo-rapidity $\eta'$ and the azimuthal angle $\phi$ of the \Bz candidate as well as the number of tracks and the number of \ac{PV}s in the event.
 Additionally, an observable containing the composition of the used trigger lines is weighted.
 For this observables the categories \num{1}, \num{2} and \num{3} contain candidates which are exclusively triggered TOS by the \verb!Hlt2Topo2BodyBBDTDecision!, \verb!Hlt2Topo3BodyBBDTDecision! or \verb!Hlt2Topo4BodyBBDTDecision! line, respectively.
@@ -471,10 +473,10 @@ First separating pions form other charged tracks in the event and second selecti
 \end{table}
 For each tagging-particle candidate passing the requirements shown in \cref{tab:SSPionselectionCuts}, the \B-meson gets a preliminary tag decision assigned, corresponding to the charge of the tagging particle ($\pip\rightarrow d=+1$, $\pim\rightarrow d=-1$).
 The quantities $\Delta\eta'$ and $\Delta\phi$ describe the difference between the signal and tagging-particle track pseudo-rapidity and azimuthal angle, respectively.
-To further assure that the tagging-particle is also produced at the \ac{PV} with which the \B candidate has the smallest $\text{IP}\chi^2$, the impact parameter significance with this \enquote{best} other PVs in the event (denoted as pile-up vertices) are used.
+To further assure that the tagging-particle is also produced at the \ac{PV} with which the \B candidate has the smallest $\text{IP}\chi^2$, the impact parameter significance with the next \enquote{best} PV in the event (denoted as pile-up vertex) is used.
 The corresponding quantities are $\nicefrac{\text{IP}}{\sigma_{\text{IP}}}$ and $\nicefrac{\text{IP}_{\text{PU}}}{\sigma_{\text{IP}_{\text{PU}}}}$, respectively.
 
-After that a BDT is trained to determine the mistag and to select the best tagging-particle candidate in events with more than one tagging-particle candidate after the selection.
+Subsequent a BDT is trained to determine the mistag and to select the best tagging-particle candidate in events with more than one tagging-particle candidate passing  the selection in \cref{tab:SSPionselectionCuts}.
 In the training, all candidates with the correct correlation between the preliminary tag and the \B-flavour are considered as signal, all with the wrong correlation are considered background.
 A correct or wrong correlation for the SS pion algorithm mean
 \begin{align*}
@@ -522,8 +524,8 @@ A list of the input variables is given in \cref{tab:BDTInputSSPion}.
 \end{figure}
 Most of these variables were already used in the selection, PVndof is the number of degrees of freedom in the fit to determine the position of the \ac{PV} and $\Delta R=\sqrt{\Delta\phi^2+\Delta\eta'^2}$.
 Moreover a logarithmic transformation is applied to some of the input variables to improve the performance of the BDT.
-As one can see in \cref{fig:BDTInputSSPion} the distributions of the signal and background samples are quite similar, showing the challenge developing flavour tagging algorithms in an hadronic environment.
-The same small, but significant difference can be seen in the distribution of the BDT response in \cref{fig:BDTovertrainSSPion}.
+As one can see in \cref{fig:BDTInputSSPion} the distributions of the signal and background samples are quite similar.
+This small, but significant difference is propagated to the distribution of the BDT response as shown in \cref{fig:BDTovertrainSSPion}.
 \begin{figure}[tbp]
 	\begin{center}
 		\includegraphics[width=0.6\textwidth]{08FlavourTagging/figs/SSPionBDT_overtrain.pdf}
@@ -543,8 +545,8 @@ As the fit is performed to the \emph{sWeighted} decay-time distribution the desc
 \end{equation}
 where $\mathcal{N}$ is a normalisation factor and $\omega$ and $\Delta\omega$ are the mistag and mistag difference for initial \Bz- and \Bzb-mesons, respectively.
 $\mathcal{R}(t-t')$ describes an average decay time resolution of \SI{50}{\femto\second}.
-The lifetime is constrained by means of a Gaussian function to be $\tau=\num{1.518\pm0.004}$ what allows to float the coefficients of cubic-splines describing a decay-time dependent efficiency $a(t)$, the so-called acceptance (more details in \cref{sec:acceptance}).
-The cubic-splines have five knots placed at $[0.2, 0.25, 2.0, 13.8, 14.5]\,$\si{\pico\second}.
+The lifetime is constrained by means of a Gaussian function to be $\tau=\num{1.518\pm0.004}$ what allows to float the parameters of the cubic-splines describing the decay-time acceptance $a(t)$.
+These cubic-splines have five knots placed at $[0.2, 0.25, 2.0, 13.8, 14.5]\,$\si{\pico\second} (more details in \cref{sec:acceptance}).
 At first the fit is performed in bins of the BDT response to determine pairs of the BDT response and the mistag.
 These pairs are then used to determine the functional form of the transformation and a $3^{\text{rd}}$ order polynomial of the form
 \begin{equation}
