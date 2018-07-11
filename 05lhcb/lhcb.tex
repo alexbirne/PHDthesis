@@ -1,9 +1,10 @@
 % !TEX root = main.tex
 \chapter{The \lhcb experiment}
 
-Along with \atlas, \cms and \alice, the \lhcb experiment is one of the four major experiments at the European Organisation for Nuclear Research \cern.
-The experiment is specialized on precision measurements of the physics processes with \bquark- and \cquark-quarks.
-The Large Hadron Collider (\lhc) is briefly described below, followed by a more detailed description of the \lhcb detector and its components (based on \cite{Alves:2008zz}).
+The Large Hadron Collider (\lhc) is a circular proton-proton collider at the European Organisation for Nuclear Research \cern.
+Along with \atlas, \cms and \alice, the \lhcb experiment is one of the four major experiments at the \lhc.
+The experiment is specialized on precision measurements of physics processes involving \bquark- and \cquark-quarks.
+Below, first the Large Hadron Collider (\lhc) is briefly described, followed by a more detailed description of the \lhcb detector and its components, based on \cite{Alves:2008zz} and \cite{Aaij:2014jba}.
 At the end of this chapter the \lhcb software stack will be described briefly.
 
 \section{The Large Hadron Collider}
@@ -18,10 +19,10 @@ At the end of this chapter the \lhcb software stack will be described briefly.
 \end{figure}
 The \lhc is a circular accelerator at \cern near Geneva, Switzerland, with a circumference of about \SI{27}{\kilo\metre}.
 It is designed to collide protons at a centre-of-mass energy of up to $\sqrt{s} = \SI{14}{\tera\electronvolt}$ at a luminosity of \SI{e34}{\per\cm\squared\per\second}~\cite{Bruening:782076}.
-Two proton beams area accelerated in opposite directions and brought to collision at four points.
+Two proton beams are accelerated in opposite directions and brought to collision at four points, where the \atlas, \cms and \alice, the \lhcb experiments are located.
 The first protons in the \lhc were accelerated in \num{2008}.
 
-The \lhc operates in running periods, the first from \numrange{2010}{2012} (Run I), followed by the long shutdown 1 (LS1) in \num{2013} and \num{2014}.
+The \lhc operates in running periods, the first from \numrange{2010}{2012} (Run I), followed by the long shutdown 1 in \num{2013} and \num{2014}.
 During the Run I the proton beams consisted of about \num{1380} proton bunches, colliding at centre-of-mass energies of $\sqrt{s}=\SI{7}{\tera\electronvolt}$ (\num{2010} and \num{2011}) and \SI{8}{\tera\electronvolt} (\num{2012})~\cite{LHC_statistic}.
 For the currently ongoing second running period (Run II) the energy and the number of proton bunches per beam were increased to $\sqrt{s}=\SI{13}{\tera\electronvolt}$ and \num{2220}, respectively~\cite{LHC_statistic}.
 The latter was achieved by reducing the bunch spacing from \SI{50}{\nano\second} to \SI{25}{\nano\second}.
@@ -29,7 +30,7 @@ The latter was achieved by reducing the bunch spacing from \SI{50}{\nano\second}
 Before the protons are injected into the \lhc accelerator ring, they have to be pre-accelerated.
 This is first done in a linear accelerator, the LINAC 2, followed by the booster, the proton synchrotron (PS) and the super-proton synchrotron (SPS), all of which are circular accelerators.
 From the SPS, the protons are then injected into the \lhc ring with an energy of \SI{450}{\giga\electronvolt}~\cite{Bruening:782076} (see \cref{fig:CernAccelerators}).
-In order to keep the almost high-energy protons on their circular path, \num{1232} superconducting dipole magnets with a length of \SI{14.3}{\metre} each and a field strength of up to \SI{8.33}{\tesla} are required.
+In order to keep the almost high-energy protons on their circular path, \num{1232} superconducting dipole magnets with a length of \SI{14.3}{\metre} each and a field strength of up to \SI{8.33}{\tesla} are needed.
 
 As already mentioned, four major experiments are located at the \lhc.
 \atlas and \cms are multi-purpose experiments collecting data at maximum luminosity, \alice mainly studies quark gluon plasmas.
@@ -39,7 +40,7 @@ In contrast to the three other experiments, the detector does not cover the enti
 \section{The \lhcb detector}
 
 The LHCb detector is a single-arm forward spectrometer with an angular coverage of about \SIrange{10}{250}{\milli\radian}.
-The detector geometry is based on the fact that the mainly investigated \bbbar-quark pairs have a high probability of being generated in forward or backward direction (see \cref{fig:anglePlots}).
+The detector geometry is based on the fact that the mainly investigated \bbbar-quark pairs have a high probability of being produced in forward or backward direction (see \cref{fig:anglePlots}).
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.4\textwidth]{05lhcb/figs/bbbarCorrelation_angle.pdf}
@@ -61,8 +62,8 @@ Despite the limited angular coverage, about \SI{25}{\percent} of \bbbar quark pa
 Furthermore, it is important at \lhcb to resolve individual processes as detailed as possible.
 The fewer proton-proton collisions occur simultaneously, the easier this is.
 Therefore, \lhcb does not use the maximum luminosity provided by the \lhc, but a constant luminosity of about \SI{4e32}{\per\cm\squared\per\second}~\cite{LHC_statistic}.
-This is adjusted by reducing the overlap of the colliding proton bunches at \lhcb compared to the other experiments.
-However, since the collision rate with currently \SI{20}{\mega\hertz} is still too high to store all events directly, powerful triggers are also required, which already make an initial selection of the data and receive as many signal end states as possible.
+This is adjusted by reducing the overlap of the colliding proton bunches in the \lhcb detector compared to the other experiments.
+However, since the collision rate with currently \SI{20}{\mega\hertz} is still too high to store all events directly, powerful trigger systems are also required, which already make an initial selection of the data and preserving as many different decay modes as possible.
 Furthermore, especially during the injection and accelerating phases of the \lhc beam instabilities may arise which could cause a significant damage in detector components close to the beam pipe.
 To protect the detector from such incidents, it is equipped with several safety systems.
 The main protection system is the beam conditions monitor (BCM), which measures the particle flux in close vicinity of the beam pipe at two locations downstream and upstream of the \velo~\cite{Ilgner:2010vu}.
@@ -91,11 +92,11 @@ It is used to resolve primary and secondary vertices with high precision.
     \label{fig:velo}
 \end{figure}
 The \velo is composed of \num{21} semicircular silicon modules which can be moved up to \SI{8}{\milli\metre} to the beam.
-These measure the $r$ and $\phi$ coordinates of the hits left by a traversing particle and are mounted along the beam axis as shown in \cref{fig:velo}.
+These measure the $r$ and $\phi$ coordinates of the hits left by a traversing charged particle and are mounted along the beam axis as shown in \cref{fig:velo}.
 Furthermore, the inner part close to the collision point of the protons is distinguished from an outer part downstream.
 
 To reconstruct a track for a tranversing particle in the \velo it is required that the particle generates hits in at least three stations.
-To achieve an angular acceptance of \SI{300}{\milli\radian} of the \velo under this condition, the distance between the inner stations must not exceed \SI{5}{\centi\metre} with a sensor radius of \SI{42}{\milli\metre}.
+To achieve an angular acceptance of \SI{300}{\milli\radian} of the \velo under this condition, the distance between the inner stations is smaller than \SI{5}{\centi\metre} with a sensor radius of \SI{42}{\milli\metre}.
 If this is required under the assumption of individual modules not triggering all traversing particles and hence particles must leave hits in four modules, the module distance in the inner part of the \velo has to be \SI{3.5}{\centi\metre}.
 An advantage of this small distance is that the mean extrapolation distance from the first measured hit to the interaction point is reduced.
 
