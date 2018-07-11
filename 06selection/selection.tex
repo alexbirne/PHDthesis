@@ -3,7 +3,7 @@
 
 This analysis is done on the data sample recorded by the \lhcb experiment in \num{2011} and \num{2012} at centre-of-mass energies of \SI{7}{\tera\electronvolt} and \SI{8}{\tera\electronvolt}, respectively.
 In \num{2011} the detector collected \SI{1}{\per\femto\barn}, while in \num{2012} \SI{2}{\per\femto\barn} were collected.
-In this chapter the used data samples as well as the simulated samples are described first (\cref{sec:Samples}).
+In this chapter the used data samples as well as the simulated samples are described (\cref{sec:Samples}).
 Following, the selection procedure is reported, divided into preselection and trigger requirements (\cref{sec:preselTrigger}), vetoes for \eg misidentified background events (\cref{sec:vetoes}) and a multivariate classifier to reduce combinatorial background (\cref{sec:MVADev} and \cref{sec:BDTOpt}).
 Last the handling of multiple $B$-candidates in one event is presented (\cref{sec:MultCands}) and the selection performance is given (\cref{sec:selectionPerformance}).
 
@@ -21,7 +21,7 @@ To identify other particles like protons a likelihood function assuming the corr
 Using the \dllkpi of the bachelor pion allows to split the data sample in two parts: The first sample denoted as \emph{pion}-sample with $\dllkpi\leq5.0$ and a second sample denoted as \emph{kaon}-sample with $\dllkpi>5.0$. This distinction is useful when separating \BdToDpi from $\Bd\!\to\Dm\Kp$ candidates as no dedicated selection cut is needed
 Instead this separation can be done statistically in the fit to the invariant mass distribution (see \cref{ch:massfit}).
 
-The simulated samples used in this analysis are listed in \cref{tab:simSamples}, together with short reference in which step they are needed (charge conjugation is implied throughout the whole document if not stated otherwise).
+The simulated samples used in this analysis are listed in \cref{tab:simSamples}, together with short reference in which step they are needed\footnote{charge conjugation is implied throughout the whole document if not stated otherwise}.
 \begin{table}[tbp]
 	\centering
 	\caption{Simulated samples used in this analysis with a short note in which analysis step the samples are used.
@@ -47,7 +47,7 @@ The simulated samples used in this analysis are listed in \cref{tab:simSamples},
 	\end{tabular}
 	\label{tab:simSamples}
 \end{table}
-As the PID observables are not described well in the simulation, compared to data, selection requirements on such observables can result in different distributions in other, correlated observables.
+As the PID observables are not described well in the simulation selection requirements on such observables can result in different distributions in other, correlated observables.
 Moreover efficiencies of PID requirements will be wrongly described in the simulation, what would lead to mistakes in the handling of the \emph{pion}- and \emph{kaon}-sample in the massfit, described in \cref{ch:massfit}.
 Therefore the \dllkpi and \dllppi variables are corrected using calibration samples of kinematically-clean $\Dstar\!\to\Dz\!\left(\to\Km\pip\right)\pip$ decays.
 The correction is done in bins of transverse momentum \pt and pseudorapidity $\eta$.
@@ -78,9 +78,9 @@ All requirements on single particles are given in \cref{tab:stripping}.
 		\toprule
 		\multicolumn{2}{c}{charged tracks requirements}\\
 		\midrule
-		track $\nicefrac{\chi^2}{\text{ndof}}$		& $<3.0 (<2.5)$ \\
-		momentum $p$ 								& $>\SI[per-mode=symbol]{1}{\GeVc} (>\SI[per-mode=symbol]{5}{\GeVc})$ \\
-		transverse momentum \pt 					& $>\SI[per-mode=symbol]{100}{\MeVc} (>\SI[per-mode=symbol]{500}{\MeVc})$ \\
+		track $\nicefrac{\chi^2}{\text{ndof}}$		& $<3.0 (2.5)$ \\
+		momentum $p$ 								& $>\SI[per-mode=symbol, separate-uncertainty=false]{1\pm5}{\GeVc}$ \\
+		transverse momentum \pt 					& $>\SI[per-mode=symbol, separate-uncertainty=false]{100\pm500}{\MeVc}$ \\
 		IP $\chi^2$ w.r.t. any \ac{PV}				& $>4.0$ \\
 		track ghost probability 					& $<0.4$ \\
 		\midrule
@@ -88,7 +88,7 @@ All requirements on single particles are given in \cref{tab:stripping}.
 		\midrule
 		$\sum \pt\left(hhh\right)$ 																				& $>\SI[per-mode=symbol]{1800}{\MeVc}$ \\
 		DOCA 																									& $<\SI{0.5}{\milli\metre}$ \\
-		$m_\Dm$ 																								& \SIrange[per-mode=symbol]{1769.92}{2068.49}{\MeVcc} \\
+		$m_\Dm$ 																								& \SIrange[per-mode=symbol,range-units=single]{1769.92}{2068.49}{\MeVcc} \\
 		\ac{SV} $\nicefrac{chi^2}{\text{ndof}}$ 																	& $<10.0$ \\
 		vertex separation $\chi^2$ to any \ac{PV} 																	& $>36.0$ \\
 		$\cos$ of $\sphericalangle\left[\left|\text{PV},\Dm\text{-Vtx}\right|, \vec{p}\!\left(\Dm\right)\right]$	& $>0.0$ \\
@@ -150,7 +150,8 @@ These cuts are listed in \cref{tab:preselection}.
 \subsection{Vetoes}
 \label{sec:vetoes}
 
-To train and apply a multivariate classifier on data samples, these should at best only consist of signal and combinatorial background.
+Before a multivariate classifier is trained on and applied to a data sample, this should at best only consist of the candidates which are supposed be separated by the classifier.
+In this case these candidates are \BdToDpi signal candidates and combinatorial background.
 Therefore backgrounds due to kinematic failures in the reconstruction and wrong associations between a \Bz candidate and a \ac{PV} are vetoed.
 
 \subsubsection*{Mass vetoes}
@@ -399,7 +400,7 @@ The low background suppression of the vetoes is expected, as the vetoes aim to s
 
 Finally, the contamination with non resonant $\Bz\to\Kp\pim\pim\pip$ decays is determined, as such background would show the same structure as \BdToDpi candidates in the invariant $m_{\Kp\pim\pim\pip}$-distribution, but the \emph{weak} phase would be different.
 In order to do this, two strategies are implemented, both using the datasample after applying all selection steps, except for the cut on the invariant \Dm-mass described in \cref{tab:preselection}:
-For the first strategy then the invariant \Dm-mass is plotted for candidates in a tight \Bz signal window from \SIrange[per-mode=symbol]{5240}{5320}{\MeVcc} as shown in \cref{fig:nonRes_Try1}.
+For the first strategy the invariant \Dm-mass is plotted for candidates in a tight \Bz signal window from \SIrange[per-mode=symbol]{5240}{5320}{\MeVcc} as shown in \cref{fig:nonRes_Try1}.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.49\textwidth]{06selection/figs/BmassCut.pdf}
