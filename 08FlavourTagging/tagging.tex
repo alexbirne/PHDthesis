@@ -547,7 +547,7 @@ where $\mathcal{N}$ is a normalisation factor and $\omega$ and $\Delta\omega$ ar
 $\mathcal{R}(t-t')$ describes an average decay time resolution of \SI{50}{\femto\second}.
 The lifetime is constrained by means of a Gaussian function to be $\tau=\num{1.518\pm0.004}$ what allows to float the parameters of the cubic-splines describing the decay-time acceptance $a(t)$.
 These cubic-splines have five knots placed at $[0.2, 0.25, 2.0, 13.8, 14.5]\,$\si{\pico\second} (more details in \cref{sec:acceptance}).
-At first the fit is performed in bins of the BDT response to determine pairs of the BDT response and the mistag.
+At first the fit is performed in bins of the BDT response to determine pairs of the average BDT response and mistag.
 These pairs are then used to determine the functional form of the transformation and a $3^{\text{rd}}$ order polynomial of the form
 \begin{equation}
 \omega\left(\alpha^{\text{SS}\pion}_\text{BDT}\right)=b_0+b_1\times\alpha^{\text{SS}\pion}_\text{BDT}+b_2\times{\alpha^{\text{SS}\pion}_\text{BDT}}^2+b_3\times{\alpha^{\text{SS}\pion}_\text{BDT}}^3\label{eq:tranformfunc}
@@ -597,10 +597,15 @@ In case the computed mistag $\eta'$ is larger than \num{0.5}, the tag decision i
 
 The procedure for tuning the SS proton tagger BDT and transforming the BDT response is very similar to the one described in \cref{sec:retrainSSpion} for the SS pion tagger.
 
-Besides pions, protons, which have a correlation with the initial flavour of the \B-meson, may also be formed in initial the hadronization process.
+Besides pions, protons, which have a correlation with the initial flavour of the \B-meson, may also be formed in the hadronisation process.
 These tagging-proton candidates must first meet a set of requirements for the proton track itself and the system of the tagging-proton candidate and the \B-meson.
 These cuts are listed in \cref{tab:selectionSSProton}.
-Based on the charge of the selected particles, a preliminary tag is then assigned to the \B candidates ($\proton\rightarrow  d=-1$, $\antiproton\rightarrow d=+1$).
+The correlation between charge of the proton and the \B-meson flavour for the SS proton tagger is as follows:
+\begin{align*}
+	\text{Correct tag: }& \Bz\antiproton \text{ or } \Bzb\proton\\
+	\text{Wrong tag: }& \Bz\proton \text{ or } \Bzb\antiproton.
+\end{align*}
+Based on the charge of the selected particles, consequently a preliminary tag is assigned to the \B candidates ($\proton\rightarrow  d=-1$, $\antiproton\rightarrow d=+1$).
 \begin{table}[bp]
 	\centering
 	\caption{Selection cuts for the SS proton algorithm.
@@ -618,13 +623,9 @@ Based on the charge of the selected particles, a preliminary tag is then assigne
 	\label{tab:selectionSSProton}
 \end{table}
 
-The correlation between charge of the proton and the \B-meson flavour for the SS proton tagger is as follows:
-\begin{align*}
-	\text{Correct tag: }& \Bz\antiproton \text{ or } \Bzb\proton\\
-	\text{Wrong tag: }& \Bz\proton \text{ or } \Bzb\antiproton.
-\end{align*}
 Here it is important to note that the correlation is the exact opposite to the one of the SS pion tagger.
 As a consequence, a misidentification of pions and protons would lead to a degraded performance of both taggers and the requirement on \dllppi is chosen exactly the opposite for both algorithms.
+Furthermore, this requirement reduces the correlation between both taggers as the set of selected tagging particles are completely disjoint.
 
 In the same way as for the SS pion tagger, proton candidates with the correct charge correlation with the flavor of the initial \B-meson are assumed to be signal while proton candidates with the incorrect charge correlation are considered as background for the BDT training.
 The input variables for the BDT are listed in \cref{tab:BDTInputSSProton}, most of them again already used for the selection.
@@ -665,10 +666,11 @@ However, possible effects arrising due to this are corrected when transforming a
 As for the SS pion algorithm, in case of multiple tagging-proton candidates per event the tag decision and the mistag are defined by the candidate with the largest BDT output.
 
 To determine the relation between the mistag and the BDT output, a time-dependent mixing analysis is performed.
-This means, an unbinded maximum-likelihood fit to the distribution of the decay-time $t$, the tag decision $d$ and the mixing state $\xi$ is done.
+This means, an unbinned maximum-likelihood fit to the distribution of the decay-time $t$, the tag decision $d$ and the mixing state $\xi$ is done.
 Since the \emph{sWeigthed} distributions are used for the fit again, only the signal component must be described with the PDF from \cref{eq:mixPDF}.
-With a fit, binned in the BDT output $\alpha^{\text{SS}\proton}_\text{BDT}$, firstly the functional relation between the mistag and $\alpha^{\text{SS}\proton}_\text{BDT}$ is determined; a $3^{\text{rd}}$ order polynomial as described in \cref{eq:tranformfunc} describes the data well again.
-An unbinned fit, in which the mistag is parametrised directly in the PDF, then provides the final transformation parameters, which can be found in \cref{tab:transformSSProton}.
+Firstly the functional relation between the mistag and $\alpha^{\text{SS}\proton}_\text{BDT}$ is determined with a binned fit in the BDT output $\alpha^{\text{SS}\proton}_\text{BDT}$.
+Again a $3^{\text{rd}}$ order polynomial as described in \cref{eq:tranformfunc} describes the data well.
+An unbinned fit, in which the mistag is parametrised directly in the PDF, finally provides the final transformation parameters, which can be found in \cref{tab:transformSSProton}.
 \begin{table}[tbp]
 	\centering
 	\caption{Final transformation parameters for the BDT response of the SS proton tagger.}
@@ -681,7 +683,7 @@ An unbinned fit, in which the mistag is parametrised directly in the PDF, then p
 	\end{tabular}
 	\label{tab:transformSSProton}
 \end{table}
-Figure \ref{fig:MixasymmetrieSSProton} shows the time-dependent mixing asymmetry for the SS proton tagger, in \cref{fig:transformationSSProton} the transformation functions of the binned and unbinned approach are presented.
+Figure \ref{fig:MixasymmetrieSSProton} shows the time-dependent mixing asymmetry for the SS proton tagger, the transformation functions of the binned and unbinned approach are presented in \cref{fig:transformationSSProton}.
 \begin{figure}[tbp]
 	\begin{center}
 		\includegraphics[width=0.6\textwidth]{08FlavourTagging/figs/Asymmetry_SSProton.pdf}
@@ -700,14 +702,14 @@ Figure \ref{fig:MixasymmetrieSSProton} shows the time-dependent mixing asymmetry
 	\label{fig:transformationSSProton}
 \end{figure}
 
-Finally, the mistag $\eta$ is then determined using the parameterisation from \cref{tab:transformSSProton}
+Subsequently, the mistag $\eta$ is then determined using the parameterisation from \cref{tab:transformSSProton}
 If the calculated mistag $\eta'$ is greater than \num{0.5}, the tag decision is inverted and the mistag is calculated as $\eta=1-\eta'$.
 
 \subsection{Calibration of the SS tagger combination}
 \label{sec:SScombinationcalibration}
 
 After training the taggers of the same side in \cref{sec:retrainSSpion} and \cref{sec:retrainSSproton} they need to be combined.
-This is achieved using the formalism from \cref{sec:CombAndCalib}, yielding in one global SS tagger with a tag decision $dS{\text{\tiny SS}}$ and a mistag $\eta^{\text{\tiny SS}}$.
+This is achieved using the formalism from \cref{sec:CombAndCalib}, yielding one global SS tagger with a tag decision $dS{\text{\tiny SS}}$ and a mistag $\eta^{\text{\tiny SS}}$.
 
 This global SS combination then needs to be calibrated.
 In order to do this the adopted model is a GLM with a $1^{\text{st}}$ order polynomial as \emph{basis function} and the modified logistic function from \cref{eq:modlink} as \emph{link function}.
@@ -728,7 +730,7 @@ The comparisons of GOF metrics are shown in Table \cref{tab:GOFSS}.
         \end{tabular}
         \label{tab:GOFSS}
 \end{table}
-Since the deviance $G^2$ and the le Cessie-van Houwelingen-Copas-Hosmer metric ($S$) seem to prefer the more simple, while the Pearson $\chi^2$ and the Cressie-Read ($CR$) metric prefer the more complicated model, but are assumed to fit the data equally well and the more simple is chosen (all metrics are described in Ref.~\cite{GOFmetric}).
+Since the deviance $G^2$ and the le Cessie-van Houwelingen-Copas-Hosmer metric ($S$) seem to prefer the more simple model, while the Pearson $\chi^2$ and the Cressie-Read ($CR$) metric prefer the more complicated model, both are assumed to fit the data equally well and the more simple one is chosen (all metrics are described in Ref.~\cite{GOFmetric}).
 The Calibration is then performed using the \emph{sWeights} together with the weights from \cref{sec:PrepBd2JpsiKstSample}, giving the calibration parameters shown in \cref{tab:CalibSS}.
 A graphical representation can be found in \cref{fig:CalibSS}.
 \begin{table}[tbp]
@@ -756,8 +758,8 @@ A graphical representation can be found in \cref{fig:CalibSS}.
 The portability of the SS tagger combination is tested on simulated \BdToDpi and $\Bz\!\to\jpsi\Kstarz$ candidates.
 This is done using the simulated truth information such that the calibration can be performed in the same way as on a charged decay mode, after equalising the number of initial \Bz- and \Bzb-mesons to separate tagging asymmetries from asymmetries due to \CP-violation or production asymmetries.
 Both, the individual calibration parameters and a \enquote{full} comparison from a $\chi^2$ test including the correlations between the parameters, show good agreement (\eg $0.09\sigma$ for the full test).
-Despite this good agreement, the parameters in \CP-fit on \BdToDpi are left free.
-On the one hand, this is  motivated by the higher accuracy of the \BdToDpi data sample.
+Despite this good agreement, the parameters in the \CP-fit on \BdToDpi are left free.
+On the one hand, this is  motivated by the higher accuracy fo the calibration parameters of the \BdToDpi data sample.
 On the other hand this strategy matches the approach for the OS tagger combination, where the portability is not given (\cref{sec:OScalibration}).
 In addition, this approach does not require any systematic uncertainty accounting for the portability of the calibration parameters.
 
@@ -767,7 +769,7 @@ In addition, this approach does not require any systematic uncertainty accountin
 As mentioned before, the work in this section was done by a collaborator and therefore the explanations will be less detailed than in most other parts of this thesis.
 
 As control channel for the OS tagger combination (namely the OS muon, OS electron, OS kaon, OS vertex charge and OS charm) the charged decay mode $\Bu\!\to\Dz\pip$ is used.
-As this decay mode is kinematically  similar with the signal decay \BdToDpi, the same triggers requirements can be applied with a high signal efficiency.
+As this decay mode is kinematically  similar to the signal decay \BdToDpi, the same trigger requirements can be applied with a high signal efficiency.
 The $\Bu\!\to\Dz\pip$ candidates are further selected by simple rectangular cuts on track quality variables, PID variables, the decay time of the \B-candidate and the invariant mass of the \Dz.
 Then a fit to the invariant \Bu mass is performed to extract \emph{sWeights} using the same strategy as in \cref{ch:massfit}.
 The invariant mass distribution overlaid with the fit projection from Fit B is shown in \cref{fig:OStaggerMassFit} while \cref{tab:OStaggerMassFitYields} shows the resulting signal and background yields.
@@ -795,7 +797,7 @@ The invariant mass distribution overlaid with the fit projection from Fit B is s
 \end{table}
 Furthermore, the $\Bu\!\to\Dz\pip$ candidates are weighted in the transverse momentum, pseudo-rapidity and decay time of the \B candidate, the number of tracks and PVs in the event and a distribution of trigger decisions to match the distributions of the \BdToDpi candidates.
 
-The calibration model is a GLM with a natural spline function as \emph{basis function} and also the modified logistic function from \cref{eq:modlink} as \emph{link function}.
+The calibration model is a GLM with a natural spline function as \emph{basis function} and the modified logistic function from \cref{eq:modlink} as \emph{link function}.
 The number of free parameters (\num{10}) in the calibration model is again chosen so that the goodness-of-fit metrics used in \cref{sec:SScombinationcalibration} provide sufficiently satisfactory results.
 The comparison with the next simpler model with \num{8} parameters is shown in \cref{tab:GOFOS}.
 \begin{table}[tbp]
@@ -813,7 +815,7 @@ The comparison with the next simpler model with \num{8} parameters is shown in \
         \end{tabular}
         \label{tab:GOFOS}
 \end{table}
-The Calibration is then performed using the \emph{sWeights} together with the weights to match calculated before such that the $\Bu\!\to\Dz\pip$ distributions match the \BdToDpi ones, giving the calibration parameters shown in \cref{tab:CalibOS}.
+The Calibration is performed using the \emph{sWeights} together with the weights calculated before such that the $\Bu\!\to\Dz\pip$ distributions match the \BdToDpi ones, giving the calibration parameters shown in \cref{tab:CalibOS}.
 A graphical representation can be found in \cref{fig:CalibOS}.
 \begin{table}[tbp]
 	\centering
