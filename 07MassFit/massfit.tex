@@ -15,7 +15,7 @@ Furthermore, both samples show a cross-feed component from each other.
 Using the efficiencies of the \dllkpi requirement on simulations $\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D X\right)_Y$ (with $X, Y=\pion, \kaon$) the number of cross-feed $\Bz\!\to\D\kaon$ candidates in the \emph{pion}-sample can be expressed from the yield in the \emph{kaon}-sample and vice versa as
 \begin{equation}
 \begin{aligned}
-N_{\Bz\!\to\D\pion}^{\kaon}&=\frac{1-\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \pion\right)_{\pion}}{\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \pion\right)_{\pion}}\times N_{\Bz\!\to\D\pion}^{\pion} \\
+N_{\Bz\!\to\D\pion}^{\kaon}&=\frac{1-\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \pion\right)_{\pion}}{\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \pion\right)_{\pion}}\times N_{\Bz\!\to\D\pion}^{\pion} \,\,,\\
 N_{\Bz\!\to\D\kaon}^{\pion}&=\frac{1-\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \kaon\right)_{\kaon}}{\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \kaon\right)_{\kaon}}\times N_{\Bz\!\to\D\kaon}^{\kaon}\,\,.\label{eq:ConstrainCrossFeed}
 \end{aligned}
 \end{equation}
@@ -48,20 +48,20 @@ For the \emph{pion}-sample the following PDFs are used to parameterise the peaki
 	\begin{equation}
 	\begin{aligned}
 	&G(m,\mu,\sigma,\lambda,\zeta,\beta,a,n)\propto\\
-	&\hspace{0.6cm}\left(\left(m-\mu\right)^2+A_\lambda^2(\zeta)\sigma^2\right)^{\frac{1}{2}\lambda-\frac{1}{4}}e^{\beta\left(m-\mu\right)}K_{\lambda-\frac{1}{2}}\left(\zeta\sqrt{1+\left(\frac{m-\mu}{A_\lambda(\zeta)\sigma}\right)^2}\right).
+	&\hspace{0.6cm}\left(\left(m-\mu\right)^2+A_\lambda^2(\zeta)\sigma^2\right)^{\frac{1}{2}\lambda-\frac{1}{4}}e^{\beta\left(m-\mu\right)}K_{\lambda-\frac{1}{2}}\left(\zeta\sqrt{1+\left(\frac{m-\mu}{A_\lambda(\zeta)\sigma}\right)^2}\right)\,.
 	\end{aligned}
 	\end{equation}
 	Defining the quantities
 	\begin{align*}
-	&w=e^{r^2}&\\
-	&\omega=-\nu\tau&\\
-	&c=\frac{1}{\sqrt{\frac{1}{2}\left(w-1\right)\left(w\cosh\!\left(2\omega\right)+1\right)}}&\\
-	&z=\frac{m-\left(\mu+c+\sigma\sqrt{w}\sinh\omega\right)}{c\sigma}&\\
-	&r=-\nu+\frac{\sinh^{-1}z}{\tau}&
+	&w=e^{r^2}\,,&\\
+	&\omega=-\nu\tau\,,&\\
+	&c=\frac{1}{\sqrt{\frac{1}{2}\left(w-1\right)\left(w\cosh\!\left(2\omega\right)+1\right)}}\,,&\\
+	&z=\frac{m-\left(\mu+c+\sigma\sqrt{w}\sinh\omega\right)}{c\sigma}\,,&\\
+	&r=-\nu+\frac{\sinh^{-1}z}{\tau}\,,&
 	\end{align*}
 	the Johnson SU function~\cite{JohnsonSU} can be expressed as
 	\begin{equation}
-	\mathcal{J}\!\left(m;\mu,\sigma,\nu,\tau\right)\propto\frac{1}{2\pi c(\nu,\tau)\sigma}e^{-\frac{1}{2}r(m;\mu,\sigma,\nu,\tau)^2}\frac{1}{\tau\sqrt{z(m;\mu,\sigma,\nu,\tau)^2+1}}.\label{eq:johnsonsu}
+	\mathcal{J}\!\left(m;\mu,\sigma,\nu,\tau\right)\propto\frac{1}{2\pi c(\nu,\tau)\sigma}e^{-\frac{1}{2}r(m;\mu,\sigma,\nu,\tau)^2}\frac{1}{\tau\sqrt{z(m;\mu,\sigma,\nu,\tau)^2+1}}\,.\label{eq:johnsonsu}
 	\end{equation}
 	\item $\Bz\!\to\Dm\Kp$: The cross-feed component is parametrised by a double-sided Hypatia function as described in \cref{eq:ipatia}.
 	\item $\Bz\!\to\Dm\rhop$: The first partially reconstructed background is described by a single-sided Crystal Ball function and a Gaussian function.
@@ -73,7 +73,7 @@ For the \emph{pion}-sample the following PDFs are used to parameterise the peaki
 	\end{equation}
 	with
 	\begin{equation}
-	A=\left(\frac{n}{\left|\alpha\right|}\right)^{n}e^{-\frac{\left|\alpha\right|^2}{2}}\hspace{0.5cm}\text{ and }\hspace{0.5cm}B=\frac{n}{\left|\alpha\right|}-\left|\alpha\right|.
+	A=\left(\frac{n}{\left|\alpha\right|}\right)^{n}e^{-\frac{\left|\alpha\right|^2}{2}}\hspace{0.5cm}\text{ and }\hspace{0.5cm}B=\frac{n}{\left|\alpha\right|}-\left|\alpha\right|\,.
 	\end{equation}
 	\item $\Bz\!\to\Dstarm\pip$: The second-partially reconstructed component is modelled with the sum of a single-sided Crystal Ball function (\cref{eq:CrystalBall}) and a Gaussian function.
 \end{itemize}

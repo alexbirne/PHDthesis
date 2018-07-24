@@ -73,7 +73,7 @@ with the eigenstates
 The parameters $p$ and $q$ are constrained to fulfil $\left|p\right|^2\!+\left|q\right|^2=1$ by construction and their ratio $\frac{q}{p}$ can be expressed in terms of the matrix elements:
 \begin{equation}
 \frac{q}{p}=\sqrt{ \frac{ m_{12}^\ast-\frac{i}{2}\Gamma_{12}^\ast }{ m_{12}-\frac{i}{2}\Gamma_{12} }}
-=\frac{\dm-\frac{i}{2}\DG}{2\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)}\,,\label{eq:qoverp}
+=\frac{\dm-\frac{i}{2}\DG}{2\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)}\label{eq:qoverp}
 \end{equation}
 where \dm and \DG are the differences of the masses and decay widths of the eigenstates of the weak interaction as defined below in \cref{eq:define_dmAndDG}.
 Using the mass eigenvalues from \cref{eq:Mass_eigenvalues} and mass eigenstates from \cref{eq:Mass_eigenstates}, the Schrödinger equation can be rewritten as
@@ -119,14 +119,14 @@ Transitions at quark-level, at lowest order, can be represented by Feynman-diagr
 \end{figure}
 The first corresponding matrix element $m_{12}$ can be expressed as
 \begin{equation}
-m_{12}=-\frac{G_{\text{F}}^2M_\W^2}{12\pi^2}f^2m_{\Bq}B\mathcal{F}^\ast\,, \label{eq:monetwo}
+m_{12}=-\frac{G_{\text{F}}^2M_\W^2}{12\pi^2}f^2m_{\Bq}B\mathcal{F}^\ast \label{eq:monetwo}
 \end{equation}
 where $G_{\text{F}}$ is the Fermi constant, $M_\W$ the \W-boson mass, $f$ the weak interaction constant and $B$ the \emph{bag} parameter, which describes strong interaction effects~\cite{Branco:396964}.
 The quantity $\mathcal{F}$ sums over the different box diagrams, containg a \uquark-, \cquark- or \tquark-quark, respectively.
 Using the short notation $\lambda_i=V^{*}_{{\kern -0.1em}i\bquark}V_{{\kern -0.1em}i\quark}$ it can be written as
 \begin{equation}
 \mathcal{F}=\eta_1\lambda_\cquark^2S_0\!\left(x_\cquark\right)+\eta_2\lambda_\tquark^2S_0\!\left(x_\tquark\right)
-+2\eta_3\lambda_{\cquark}\lambda_{\tquark}S_0\!\left(x_\cquark,x_\tquark\right)\,,
++2\eta_3\lambda_{\cquark}\lambda_{\tquark}S_0\!\left(x_\cquark,x_\tquark\right)
 \end{equation}
 where $\lambda_\uquark$ is eliminated by $\lambda_\cquark$ and $\lambda_\tquark$ using \cref{eq:CKMtriangleEquations}.
 Here, $\eta_i$ are QCD correction factors and $S_0$ are the Inami-Lin functions~\cite{Inami:1980fz}, which go with the up-type-quark masses through the ratio $x_\quark\equiv\nicefrac{m_\quark^2}{m_\W^2}$.
@@ -206,7 +206,7 @@ In analogy the probabilites for an initially produced antiparticle $\Pazb\!(t)$ 
 &\left|\left<\,\fbar\,\Big|T\Big|\Paz\!(t)\right>\right|^2&\kern -8.5pt{=}
 &\kern 4.0pt{\left|\Afbar\right|^2}& && &\kern -7.0pt{\left(g_+g_+^*+\left|\Lfbar\right|^2\!g_-g_-^*+\left(\Lfbarst g_+g_-^* + \Lfbar\, g_-g_+^*\right)\right)}\,,&\\
 &\left|\left<\,\fbar\,\Big|T\Big|\Pazb\!(t)\right>\right|^2&\kern -8.5pt{=}
-&\kern 4.0pt{\left|\Afbar\right|^2}& &\kern -6.5pt{\left|\frac{q}{p}\right|^2}& &\kern -7.0pt{\left(\left|\Lfbar\right|^2\!g_+g_+^*+g_-g_-^*+\left(\Lfbarst g_-g_+^* + \Lfbar\, g_+g_-^*\right)\right)}\,,&
+&\kern 4.0pt{\left|\Afbar\right|^2}& &\kern -6.5pt{\left|\frac{q}{p}\right|^2}& &\kern -7.0pt{\left(\left|\Lfbar\right|^2\!g_+g_+^*+g_-g_-^*+\left(\Lfbarst g_-g_+^* + \Lfbar\, g_+g_-^*\right)\right)}&
 \end{align}
 where the quantities \Lf and \Lfbar are defined as
 \begin{equation}
@@ -236,7 +236,7 @@ one obtains
 &\left|\left<\,\fbar\,\Big|T\Big|\Pazb\!(t)\right>\right|^2\!\!\!\!\!\!\!&=
 &\kern 1pt {\frac{1}{2}e^{-\Gamma t}\left|\Afbar\right|^2\!\left(1+\left|\Lfbar\right|^2\right)}& &\kern -10.5pt{\left|\frac{q}{p}\right|^2}&
 &\kern -11.0pt{\Bigg[\!\cosh\!\left(\frac{\DG}{2}t\!\right) + A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}\!\sinh\!\left(\frac{\DG}{2}t\!\right)}&\nonumber\\
-&& && && &\kern -7.5pt{+\Sfbar\kern -0.1em \sin\!\left(\dm t\right)-\Cfbar\kern -0.1em\cos\!\left(\dm t\right)\!\Bigg]}\,,&\label{eq:Pbartofbar}
+&& && && &\kern -7.5pt{+\Sfbar\kern -0.1em \sin\!\left(\dm t\right)-\Cfbar\kern -0.1em\cos\!\left(\dm t\right)\!\Bigg]}&\label{eq:Pbartofbar}
 \end{align}
 where the coefficients in front of the trigonometric and hyperbolic functions are defined as
 \begin{align}
@@ -279,7 +279,7 @@ Instead, considering a decay with just one amplitude
 \begin{equation}
 \begin{split}
 \Af&=Ae^{i\left(\delta+\phi\right)}\,,\\
-\Abarfbar&=Ae^{i\left(\delta-\phi\right)}\,,
+\Abarfbar&=Ae^{i\left(\delta-\phi\right)}
 \end{split}
 \end{equation}
 where $A$ is a real positive number, $\phi$ is the \emph{weak} phase and $\delta$ the \emph{strong} phase, it immediately becomes obvious that the quantity $\big|\,\Abarfbar\,\big|^2-\big|\,\Af\,\big|^2$ vanishes and therefore \CP is conserved.
@@ -387,7 +387,7 @@ The most prominent measurement probably is the analysis of the so-called golden 
 For this decay channel no \CP violation in decay and mixing is expected and with the current experimental precision $\DG=0$ can be assumed.
 Therefore the \CP asymmetry in this case can be expressed as
 \begin{equation}
-A_{\CP}(t)=\frac{\Gamma\left(\Bzb\to\jpsi\KS\right)-\Gamma\left(\BdToJPsiKS\right)}{\Gamma\left(\Bzb\to\jpsi\KS\right)+\Gamma\left(\BdToJPsiKS\right)}=\Sf\sin\left(\dmd t\right)\,,\label{eq:CPAsymBd2JpsiKS}
+A_{\CP}(t)=\frac{\Gamma\left(\Bzb\to\jpsi\KS\right)-\Gamma\left(\BdToJPsiKS\right)}{\Gamma\left(\Bzb\to\jpsi\KS\right)+\Gamma\left(\BdToJPsiKS\right)}=\Sf\sin\left(\dmd t\right)\label{eq:CPAsymBd2JpsiKS}
 \end{equation}
 where the parameter \Sf can be identified with $\sin{}\left(2\beta\right)$.
 The most recent measurement of \Sf was performed by \lhcb \cite{Aaij:2015vza} yielding a result of

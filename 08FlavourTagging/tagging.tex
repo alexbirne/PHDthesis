@@ -84,46 +84,46 @@ These imperfections can be reflected by a tagging efficiency
 \end{equation}
 and a mistag probability
 \begin{equation}
-\omega=\frac{N_{\text{W}}}{N_{\text{R}}+N_{\text{W}}}.\label{eq:mistag}
+\omega=\frac{N_{\text{W}}}{N_{\text{R}}+N_{\text{W}}}\,.\label{eq:mistag}
 \end{equation}
 Therefore, in an analysis using flavour tagging to infer the initial \B flavour the number $N_{\Bz}(t)$ ($N_{\Bzb}(t)$) of measured initial \Bz (\Bzb) candidates are
 \begin{equation}
 \begin{aligned}
 N_{\Bz}(t)&=(1-\omega)N_{\Bz}^{\text{true}}(t)+\omega N_{\Bzb}^{\text{true}}(t)\,,\\
-N_{\Bzb}(t)&=\omega N_{\Bz}^{\text{true}}(t)+(1-\omega)N_{\Bzb}^{\text{true}}(t)\,,
+N_{\Bzb}(t)&=\omega N_{\Bz}^{\text{true}}(t)+(1-\omega)N_{\Bzb}^{\text{true}}(t)
 \end{aligned}
 \end{equation}
 where $N_{\B}^{\text{true}}$ denotes the true number of initial \Bz and \Bzb candidates.
 These quantities need to be transferred further into measurements of \CP-asymmetries such as
 \begin{equation}
-A_{\CP}(t)=\frac{N_{\Bz}^{\text{true}}(t)-N_{\Bzb}^{\text{true}}(t)}{N_{\Bz}^{\text{true}}(t)+N_{\Bzb}^{\text{true}}(t)}.
+A_{\CP}(t)=\frac{N_{\Bz}^{\text{true}}(t)-N_{\Bzb}^{\text{true}}(t)}{N_{\Bz}^{\text{true}}(t)+N_{\Bzb}^{\text{true}}(t)}\,.
 \end{equation}
 For a measured asymmetry the true numbers of initial \Bz- and \Bzb-mesons need to be replaced with the observed yields which leads to
 \begin{equation}
-A_{\CP}^{\text{meas}}(t)=\frac{N_{\Bz}(t)-N_{\Bzb}(t)}{N_{\Bz}(t)+N_{\Bzb}(t)}=(1-2\omega)A_{\CP}^{\text{theo}}(t),
+A_{\CP}^{\text{meas}}(t)=\frac{N_{\Bz}(t)-N_{\Bzb}(t)}{N_{\Bz}(t)+N_{\Bzb}(t)}=(1-2\omega)A_{\CP}^{\text{theo}}(t)
 \end{equation}
 with the dilution $D=1-2\omega$.
 However, experimentally not only the dilution affects the measured asymmetry but also intrinsic asymmetries $I$ like an asymmetric production of \Bz- and \Bzb-mesons might influence a measurement so that the measured asymmetry can be expressed as
 \begin{equation}
-A_{\CP}^{\text{meas}}(t)=DA_{\CP}(t)+I.
+A_{\CP}^{\text{meas}}(t)=DA_{\CP}(t)+I\,.
 \end{equation}
 As the mistag probability is defined in the range $[0, 0.5]$ the dilution can take values between \num{0} and \num{1}.
 A large dilution factor is equivalent to a vanishing mistag and hence leads to a larger experimental sensitivity as will be shown below.
 To simplify the following discussion the intrinsic asymmetries and dilution are assumed to be time-independent, even if that is not generally valid.
 The theoretical asymmetry can then be expressed as
 \begin{equation}
-A_{\CP}(t)=\frac{1}{D}\left(A_{\CP}^{\text{meas}}(t)-I\right).
+A_{\CP}(t)=\frac{1}{D}\left(A_{\CP}^{\text{meas}}(t)-I\right)\,.
 \end{equation}
 Assuming that all quantities are uncorrelated and gaussian distributed the uncertainty on the theoretical asymmetry is given by
 \begin{equation}
 \begin{aligned}
 \sigma_{A_{\CP}}^2&=\left(\frac{\partial A_{\CP}}{\partial N_{\Bz}}\right)^2\sigma_{N_{\Bz}}^2+\left(\frac{\partial A_{\CP}}{\partial N_{\Bzb}}\right)^2\sigma_{N_{\Bzb}}^2+\left(\frac{\partial A_{\CP}}{\partial I}\right)^2\sigma_{I}^2+\left(\frac{\partial A_{\CP}}{\partial D}\right)^2\sigma_{D}^2\\
-&=\frac{1}{D^2}\frac{1}{N_{\Bz}(t)+N_{\Bzb}(t)}\left(1-A_{\CP}^{\text{meas}}(t)\right)+\frac{\sigma_{I}^2}{D^2}+\frac{A_{\CP}^2(t)}{D^2}\sigma_{D}^2.
+&=\frac{1}{D^2}\frac{1}{N_{\Bz}(t)+N_{\Bzb}(t)}\left(1-A_{\CP}^{\text{meas}}(t)\right)+\frac{\sigma_{I}^2}{D^2}+\frac{A_{\CP}^2(t)}{D^2}\sigma_{D}^2\,.
 \end{aligned}
 \end{equation}
 Neglecting the uncertainties on the intrinsic asymmetries and dilution factor and further assuming that the measured asymmetries are small, this expression can be reduced to
 \begin{equation}
-\sigma_{A_{\CP}}^2=\frac{1}{D^2}\frac{1}{N_{\Bz}(t)+N_{\Bzb}(t)}.
+\sigma_{A_{\CP}}^2=\frac{1}{D^2}\frac{1}{N_{\Bz}(t)+N_{\Bzb}(t)}\,.
 \end{equation}
 Here it is useful to identify the number of measured \Bz- and \Bzb-candidates as
 \begin{equation}
@@ -142,13 +142,13 @@ Instead the tagging efficiency, which is also denoted as tagging power, must be 
 Rather than using an average mistag $\omega$ the mistag estimate $\eta$ of the various tagging algorithms can be used.
 To do this, the estimated mistag has to be calibrated with a calibration function $\omega(\eta)$ (more details on the calibration are given in \cref{sec:CombAndCalib}), what gives a per-event tagging power, defined as
 \begin{equation}
-\varepsilon_{\text{eff}}=\frac{1}{N}\sum_{i=1}^{N}D_i^2=\frac{1}{N}\sum_{i=1}^{N}\left(1-2\omega(\eta_i)\right)^2.
+\varepsilon_{\text{eff}}=\frac{1}{N}\sum_{i=1}^{N}D_i^2=\frac{1}{N}\sum_{i=1}^{N}\left(1-2\omega(\eta_i)\right)^2\,.
 \end{equation}
 Here the sum is iterating over all candidates and for untagged candidates the mistag probability is defined to be \num{0.5} ($D_i=0$).
 
 When considering only tagged candidates, the effective tagging efficiency reduces to a pseudo tagging power, which is effectively the same as average of the dilution squared in the respective sample:
 \begin{equation}
-\left<D^2\right>=\frac{1}{N_{\text{R}}+N_{\text{W}}}\sum_{i=1}^{N_{\text{R}}+N_{\text{W}}}\left(1-2\omega(\eta_i)\right)^2.
+\left<D^2\right>=\frac{1}{N_{\text{R}}+N_{\text{W}}}\sum_{i=1}^{N_{\text{R}}+N_{\text{W}}}\left(1-2\omega(\eta_i)\right)^2\,.
 \end{equation}
 
 \subsection{Combination and calibration of flavour tagging algorithms}
@@ -157,7 +157,7 @@ When considering only tagged candidates, the effective tagging efficiency reduce
 To improve the overall performance of the flavour tagging the individual algorithms are combined to form one single tag decision and mistag for the OS ($d_{\text{OS}}$ and $\eta_{\text{OS}}$) and a tag decision and mistag for the SS ($d_{\text{SS}}$ and $\eta_{\text{SS}}$).
 This is done by calculating the combined probability, that a \B-candidate contains a \bquark-quark
 \begin{equation}
-P(\bquark)=\frac{p(\bquark)}{p(\bquark)+p(\bquarkbar)}\hspace{0.5cm}\text{and}\hspace{0.5cm}P(\bquarkbar)=1-P(\bquark).
+P(\bquark)=\frac{p(\bquark)}{p(\bquark)+p(\bquarkbar)}\hspace{0.5cm}\text{and}\hspace{0.5cm}P(\bquarkbar)=1-P(\bquark)\,.
 \end{equation}
 The probabilities $p(\bquark)$ and $p(\bquarkbar)$ are defined as
 \begin{equation}
@@ -192,8 +192,8 @@ This can be achieved by using different calibration functions for \Bz- and \Bzb-
 In the simple linear case these calibration functions are
 \begin{equation}
 \begin{aligned}
-\omega=p_0+p_1+\left(\eta-\left<\eta\right>\right)\\
-\overline{\omega}=\overline{p}_0+\overline{p}_1+\left(\eta-\left<\eta\right>\right).
+\omega&=p_0+p_1+\left(\eta-\left<\eta\right>\right)\,,\\
+\overline{\omega}&=\overline{p}_0+\overline{p}_1+\left(\eta-\left<\eta\right>\right)\,.
 \end{aligned}
 \end{equation}
 These different calibration parameters are furthermore linked to each other via the average calibration parameters $\tilde{p}_i$ used in \cref{eq:linCalib} and corresponding differences $\Delta p_i$ defined as
@@ -237,7 +237,7 @@ The use of these algorithms could therefore bias the measurement of \Sf and \Sfb
 To include the flavour tagging in the decay rates given in \crefrange{eq:DecRateB2Dmpip}{eq:DecRateBb2Dppim} the expressions for the \CP-parameters \Sf and \Cf need to be extended to
 \begin{equation}
 \begin{aligned}
-\Sf&\to\left(\Delta^--\Delta^+\right)\Sf\\
+\Sf&\to\left(\Delta^--\Delta^+\right)\Sf\,\,,\\
 \Cf&\to\left(\Delta^--\Delta^+\right)\Cf\,\,.\label{eq:decRateCorrectFT}
 \end{aligned}
 \end{equation}
@@ -253,7 +253,7 @@ To obtain the expression for candidates only tagged by the SS taggers, all super
 For candidates which are tagged by both, the OS tagger combination and the SS taggers the coefficients can be written as
 \begin{align}
 \Delta^\pm&=\frac{1}{4}\varepsilon_{\text{\tiny tag}}^{\text{\tiny OS}}\varepsilon_{\text{\tiny tag}}^{\text{\tiny SS}}\left[1+\hspace{-3mm}\sum_{j=\text{\tiny OS, SS}}\hspace{-2mm}d_j\left(1-2\omega(\eta_j)\right)+d^{\text{\tiny OS}}d^{\text{\tiny SS}}\left(1-2\omega(\eta_j)+2\omega(\eta^{\text{\tiny OS}})\omega(\eta^{\text{\tiny SS}})\right)\right]\nonumber\\
-&\pm\frac{1}{4}\varepsilon_{\text{\tiny tag}}^{\text{\tiny OS}}\varepsilon_{\text{\tiny tag}}^{\text{\tiny SS}}\left[1+\hspace{-3mm}\sum_{j=\text{\tiny OS, SS}}\hspace{-2mm}d_j\left(1-2\overline{\omega}(\eta_j)\right)+d^{\text{\tiny OS}}d^{\text{\tiny SS}}\left(1-2\overline{\omega}(\eta_j)+2\overline{\omega}(\eta^{\text{\tiny OS}})\overline{\omega}(\eta^{\text{\tiny SS}})\right)\right].
+&\pm\frac{1}{4}\varepsilon_{\text{\tiny tag}}^{\text{\tiny OS}}\varepsilon_{\text{\tiny tag}}^{\text{\tiny SS}}\left[1+\hspace{-3mm}\sum_{j=\text{\tiny OS, SS}}\hspace{-2mm}d_j\left(1-2\overline{\omega}(\eta_j)\right)+d^{\text{\tiny OS}}d^{\text{\tiny SS}}\left(1-2\overline{\omega}(\eta_j)+2\overline{\omega}(\eta^{\text{\tiny OS}})\overline{\omega}(\eta^{\text{\tiny SS}})\right)\right]\,.
 \end{align}
 
 The flavour specific control samples ($\Bu\!\to\Dz\pip$ for the OS, $\Bz\!\to\jpsi\Kstarz$ for the SS) are used to determine the functional form of the calibration function $\omega(\eta)$.
@@ -418,7 +418,7 @@ These trees maximise a symmetrised $\chi^2$
 where $N_{i,\text{source}}$ are the number of candidates in the $i$th bin of the distribution which should be weighted and $N_{i,\text{target}}$ are the number of candidates in the $i$th bin of the target distribution.
 For all leaves of a decision tree a prediction $p$ is calculated following
 \begin{equation}
-p=\log\frac{N_{i,\text{target}}}{N_{i,\text{source}}},
+p=\log\frac{N_{i,\text{target}}}{N_{i,\text{source}}}\,,
 \end{equation}
 what is used to calculate the weights as
 \begin{equation}
@@ -478,9 +478,9 @@ The corresponding quantities are $\nicefrac{\text{IP}}{\sigma_{\text{IP}}}$ and 
 
 Subsequent a BDT is trained to determine the mistag and to select the best tagging-particle candidate in events with more than one tagging-particle candidate passing  the selection in \cref{tab:SSPionselectionCuts}.
 In the training, all candidates with the correct correlation between the preliminary tag and the \B-flavour are considered as signal, all with the wrong correlation are considered background.
-A correct or wrong correlation for the SS pion algorithm mean
+A correct or wrong correlation for the SS pion algorithm means
 \begin{align*}
-	\text{Correct tag: }& \Bz\pip \text{ or } \Bzb\pim\\
+	\text{Correct tag: }& \Bz\pip \text{ or } \Bzb\pim\,,\\
 	\text{Wrong tag: }& \Bz\pim \text{ or } \Bzb\pip
 \end{align*}
 where only \B candidates with a decay time smaller than \SI{2.2}{\pico\second} are used in the BDT training to reduce the number of oscillated \B candidates.
@@ -602,8 +602,8 @@ These tagging-proton candidates must first meet a set of requirements for the pr
 These cuts are listed in \cref{tab:selectionSSProton}.
 The correlation between charge of the proton and the \B-meson flavour for the SS proton tagger is as follows:
 \begin{align*}
-	\text{Correct tag: }& \Bz\antiproton \text{ or } \Bzb\proton\\
-	\text{Wrong tag: }& \Bz\proton \text{ or } \Bzb\antiproton.
+	\text{Correct tag: }& \Bz\antiproton \text{ or } \Bzb\proton\,,\\
+	\text{Wrong tag: }& \Bz\proton \text{ or } \Bzb\antiproton\,.
 \end{align*}
 Based on the charge of the selected particles, consequently a preliminary tag is assigned to the \B candidates ($\proton\rightarrow  d=-1$, $\antiproton\rightarrow d=+1$).
 \begin{table}[bp]
