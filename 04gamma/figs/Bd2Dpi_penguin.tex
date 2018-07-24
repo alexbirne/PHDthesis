@@ -9,8 +9,8 @@
 		\begin{feynman}
 			\vertex (a1) {\small$\overline b$};
 			\vertex[right=\BdToDpiPenguinSize*0.28 cm of a1] (a2);
-			\vertex[right=\BdToDpiPenguinSize*0.19 cm of a2] (a3);
-			\vertex[right=\BdToDpiPenguinSize*0.28 cm of a3] (a4) {\small$\overline d$};
+			\vertex[right=\BdToDpiPenguinSize*0.15 cm of a2] (a3);
+			\vertex[right=\BdToDpiPenguinSize*0.32 cm of a3] (a4) {\small$\overline d$};
 			\vertex[below=\BdToDpiPenguinSize*0.34 cm of a1] (b1) {\small$d$};
 			\vertex[below=\BdToDpiPenguinSize*0.34 cm of a4] (b2) {\small$d$};
 			\vertex[below=\BdToDpiPenguinSize*0.10 cm of a4] (c1) {\small$u$};
@@ -21,8 +21,8 @@
 			(a4) -- [plain] (a3) -- [plain, edge label'={\small$\overline{u},\overline{c},\overline{t}$}] (a2) -- [plain] (a1),
 			(b1) -- [plain] (b2),
 			(c2) -- [plain] (d2) -- [plain, edge label'={\small$d,s,b$}] (d1) -- [plain] (c1),
-			(a2) -- [boson, edge label'={\small$W^{+}$}] (d1),
-			(a3) -- [boson, edge label'={\small$W^{-}$}] (d2),
+			(a2) -- [boson, bend right, pos=0.4, edge label'={\small$W^{+}$}] (d1),
+			(a3) -- [boson, bend right, pos=0.6, edge label'={\small$W^{-}$}] (d2),
 			};
 			\draw [decoration={brace}, decorate] (b1.south west) -- (a1.north west) node [pos=0.5, left] {\small$B^{0}$};
 			\draw [decoration={brace}, decorate] (a4.north east) -- (c1.south east) node [pos=0.5, right] {\small$\pi^{+}$};
