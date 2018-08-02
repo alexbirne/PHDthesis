@@ -3,61 +3,58 @@
 
 \linespread{1.08}\selectfont
 This analysis is done on the data sample recorded by the \lhcb experiment in \num{2011} and \num{2012} at centre-of-mass energies of \SI{7}{\tera\electronvolt} and \SI{8}{\tera\electronvolt}, respectively.
-In \num{2011} the detector collected \SI{1}{\per\femto\barn}, while in \num{2012} \SI{2}{\per\femto\barn} were collected.
-In this chapter the used data samples as well as the simulated samples are described (\cref{sec:Samples}).
-Following, the selection procedure is reported, divided into preselection and trigger requirements (\cref{sec:preselTrigger}), vetoes for \eg misidentified background events (\cref{sec:vetoes}) and a multivariate classifier to reduce combinatorial background (\cref{sec:MVADev} and \cref{sec:BDTOpt}).
-Last the handling of multiple $B$-candidates in one event is presented (\cref{sec:MultCands}) and the selection performance is given (\cref{sec:selectionPerformance}).
+In \num{2011}, the detector collected \SI{1}{\per\femto\barn}, while in \num{2012} \SI{2}{\per\femto\barn} were recorded.
+In this chapter, the used data samples as well as the simulated samples are described in \cref{sec:Samples}.
+The selection procedure is reported in \cref{sec:selection}, divided into preselection and trigger requirements (\cref{sec:preselTrigger}), vetoes to suppress \eg misidentified background candidates (\cref{sec:vetoes}) and a multivariate classifier to reduce combinatorial background (\cref{sec:MVADev} and \cref{sec:BDTOpt}).
+Last, the handling of multiple $B$ candidates in one event is presented in \cref{sec:MultCands} and the selection performance is given in \cref{sec:selectionPerformance}.
 
 \section{Data and simulation samples}
 \label{sec:Samples}
 
-Candidates for the decay \BdToDpi are reconstructed in the hadronic decay $\Dpm\!\to\Kmp\pipm\pipm$ with one additional pion, which will be denoted as bachelor pion in the following.
-Since the \D-decay is the one with the largest decay width it is chosen, despite the purely hadronic final state.
-It is reconstructed inclusively, \ie no resonances as the decay via a \Kstarz are excluded.
-For several tests and crosschecks the datasample can be split by year of data taking (\num{2011} and \num{2012}) and magnet polarity (up and down).
+Candidates from the decay \BdToDpi are reconstructed in the hadronic decay $\Dmp\!\to\Kpm\pimp\pimp$ with one additional pion, which will be denoted as bachelor pion in the following.
+The \D decay is chosen despite the purely hadronic final state, as it is the one with the largest decay width.
+It is reconstructed inclusively, \ie no resonances such as the decay via a \Kstarz meson into a \kaon\pion final state are excluded.
 
-To distinguish the charged hadrons in the final state a likelihood function assuming the respective particle to be a pion or a kaon is computed for every particle using information from the PID system.
-Then the difference between the two logarithmic likelihoods is calculated, in the following referred to as \dllkpi.
-To identify other particles like protons a likelihood function assuming the corresponding hypothesis can be computed and compared in the same way with the pion hypothesis.
-Using the \dllkpi of the bachelor pion allows to split the data sample in two parts: The first sample denoted as \emph{pion}-sample with $\dllkpi\leq5.0$ and a second sample denoted as \emph{kaon}-sample with $\dllkpi>5.0$. This distinction is useful when separating \BdToDpi from $\Bd\!\to\Dm\Kp$ candidates as no dedicated selection cut is needed
-Instead this separation can be done statistically in the fit to the invariant mass distribution (see \cref{ch:massfit}).
+To distinguish between the charged hadrons in the final state, a likelihood function assuming the respective particle to be a pion or kaon (proton) is computed for every particle using information from the PID system.
+Then, the difference between the two logarithmic likelihoods is calculated, which in the following is referred to as \dllkpi (\dllppi)~\cite{Aaij:2014jba}.
 
-The simulated samples used in this analysis are listed in \cref{tab:simSamples}, together with short reference in which step they are needed\footnote{charge conjugation is implied throughout the whole document if not stated otherwise}.
+As the PID observables are not described well in the simulation, selection requirements on such observables can result in different distributions in other correlated observables.
+Therefore the \dllkpi and \dllppi variables are corrected using calibration samples of kinematically-clean $\Dstar\!\to\Dz\!\left(\to\Km\pip\right)\pip$ decays.
+The correction is done in bins of transverse momentum \pt and pseudorapidity $\eta$.
+For every candidate in the simulation, the corresponding PID distribution of the calibration sample in the $(\pt,\eta)$-bin is built and used to randomly sample a PID value~\cite{Anderlini:2202412}.
+Possible effects due to the chosen $(\pt,\eta)$-binning are evaluated in the systematic uncertainties described in \cref{ch:systeamticUncerts}.
+
+The simulated samples used in this analysis are listed in \cref{tab:simSamples}, together with a short reference, in which analysis step they are needed\footnote{Charge conjugation is implied throughout the whole document if not stated otherwise}.
 \begin{table}[tbp]
 	\centering
-	\caption{Simulated samples used in this analysis with a short note in which analysis step the samples are used.
-	Charged \D-mesons are always generated with the decay $\Dm\!\to\Kp\pim\pim$, uncharged \D-mesons with the decay $\Dzb\!\to\Kp\pim$.}
-	\begin{tabular}{lc}
+	\caption{Simulated samples used in this analysis with a short note in which analysis step the samples are used and the number of available candidates before applying any analysis specific selection step.
+	Charged \D mesons are always generated with the decay $\Dm\!\to\Kp\pim\pim$, uncharged \D mesons with the decay $\Dzb\!\to\Kp\pim$.}
+	\begin{tabular}{lcS[table-format=1.2]}
 		\toprule
-		sample & analysis step \\
+		Sample & Analysis step & {Candidates [\num{e6}]}\\
 		\midrule
-		$\Bz\!\to\Dpm\pimp$ 														& selection, massfit, flavour tagging, time fit \\
-		$\Bs\!\to\Dsm\!\left(\to\Kp\Kp\pim\right)\pip$  							& selection \\
-		$\Lb\!\to\Lcbar\!\left(\to\Kp\antiproton\pim\right)\pip$ 					& selection \\
-		$\Bz\!\to\Dm\Kp$ 															& massfit \\
-		$\Bz\!\to\Dm\rhop\!\left(\to\pip\piz\!\left(\to\g\g\right)\right)$ 			& massfit \\
-		$\Bz\!\to\Dstarm\!\left(\to\Dm\piz\right)\pip$ 								& massfit \\
-		$\Bz\!\to\Dm\Kstarp\!\left(\to\Kp\piz\right)$ 								& massfit \\
-		$\Bz\!\to\jpsi\!\left(\to\mup\mun\right)\Kstarz\!\left(\to\Kp\pim\right)$ 	& flavour tagging \\
-		$\Bu\!\to\Dzb\pip$ 															& flavour tagging \\
-		$\Bu\!\to\Dzb\Kstarp\!\left(\to\Kp\pim\right)$ 								& flavour tagging \\
-		$\Bu\!\to\Dstarb\!\left(\to\Dz\g\right)\pip$ 								& flavour tagging \\
-		$\Bu\!\to\Dzb\Kstarp\!\left(\to\Kp\piz\right)$ 								& flavour tagging \\
-		$\Bz\!\to\Dzb\pip\pim$ 														& flavour tagging \\
+		$\Bz\!\to\Dpm\pimp$ 														& all steps & 3.2 \\
+		$\Bs\!\to\Dsm\!\left(\to\Kp\Kp\pim\right)\pip$  							& selection & 1.2 \\
+		$\Lb\!\to\Lcbar\!\left(\to\Kp\antiproton\pim\right)\pip$ 					& selection & 0.46 \\
+		$\Bz\!\to\Dm\Kp$ 															& mass fit & 0.26 \\
+		$\Bz\!\to\Dm\rhop\!\left(\to\pip\piz\!\left(\to\g\g\right)\right)$ 			& mass fit & 0.62 \\
+		$\Bz\!\to\Dstarm\!\left(\to\Dm\piz\right)\pip$ 								& mass fit & 0.16 \\
+		$\Bz\!\to\Dm\Kstarp\!\left(\to\Kp\piz\right)$ 								& mass fit & 0.03 \\
+		$\Bz\!\to\jpsi\!\left(\to\mup\mun\right)\Kstarz\!\left(\to\Kp\pim\right)$ 	& flavour tagging & 3.5 \\
+		$\Bu\!\to\Dzb\pip$ 															& flavour tagging & 5.1 \\
+		$\Bu\!\to\Dzb\Kp$ 															& flavour tagging & 0.05 \\
+		$\Bu\!\to\Dstarb\!\left(\to\Dz\g\right)\pip$ 								& flavour tagging & 0.06 \\
+		$\Bu\!\to\Dzb\Kstarp\!\left(\to\Kp\piz\right)$ 								& flavour tagging & 0.04 \\
+		$\Bz\!\to\Dzb\pip\pim$ 														& flavour tagging & 0.05 \\
 		\bottomrule
 	\end{tabular}
 	\label{tab:simSamples}
 \end{table}
-As the PID observables are not described well in the simulation selection requirements on such observables can result in different distributions in other, correlated observables.
-Moreover efficiencies of PID requirements will be wrongly described in the simulation, what would lead to mistakes in the handling of the \emph{pion}- and \emph{kaon}-sample in the massfit, described in \cref{ch:massfit}.
-Therefore the \dllkpi and \dllppi variables are corrected using calibration samples of kinematically-clean $\Dstar\!\to\Dz\!\left(\to\Km\pip\right)\pip$ decays.
-The correction is done in bins of transverse momentum \pt and pseudorapidity $\eta$.
-For every candidate in the simulation the corresponding PID distribution of the calibration sample in the $(\pt,\eta)$-bin is built and used to randomly sample a PID value.
 
-Last, to obtain the correct correlations and uncertainties between vertex positions, particle momenta, decay times and invariant masses decay tree fits (DTF) are performed on the data and simulations~\cite{2005NIMPA}.
-In total, three DTFs are performed: To determine observables correlated with the decay time, the \ac{PV} is constrained to the known point of the proton-proton collision.
-Observables correlated to the invariant mass stem from a DTF where the mass of the \Dm-meson is constrained to its known mass of $m_\Dm^{\text{PDG}}=\SI[per-mode=symbol]{1869.61}{\MeVcc}$~\cite{PDG_2017}.
-A third DTF is performed without any constraint, as for selection steps like optimising the vetoes described in \cref{sec:vetoes}, constraints would lead to wrong results.
+Last, to obtain the correct correlations and uncertainties between vertex positions, particle momenta, decay times and invariant masses, decay tree fits (DTF) are performed on the data and simulation~\cite{2005NIMPA}.
+In total, three DTFs are performed: To determine observables correlated with the decay time, the \ac{PV} is constrained to the known position of the proton-proton collision.
+Observables correlated with the invariant mass stem from a DTF, where the mass of the \Dm-meson is constrained to its known mass of $m_\Dm^{\text{PDG}}=\SI[per-mode=symbol]{1869.61}{\MeVcc}$~\cite{PDG_2017}.
+A third DTF is performed without any constraint as this would lead to wrong results for selection steps like optimising the vetoes described in \cref{sec:vetoes}.
 
 \section{Selection}
 \label{sec:selection}
@@ -199,7 +196,7 @@ The visible difference in \cref{fig:DsVeto} stems from the fact that those two d
     In the left plot the kaon-mass hypothesis is applied to the pion with lower transverse momentum, right to the pion with higher transverse momentum.}
     \label{fig:DsVeto}
 \end{figure}
-To further ensure that no significant contamination from $\Bs\!\to\Dsm\pip$ candidates is present in the data, resonances like \Kstarz- or $\phi$-mesons, which arise in possible \Dsm decays are studied.
+To further ensure that no significant contamination from $\Bs\!\to\Dsm\pip$ candidates is present in the data, resonances like \Kstarz- or $\phi$ mesons, which arise in possible \Dsm decays are studied.
 Those resonances would become visible in the \kaon\kaon ($\phi$) and \kaon\pion (\Kstarz) invariant mass distributions.
 Figure \ref{fig:phi_Kst_veto} shows exemplary the invariant mass distributions of the \kaon\kaon (\kaon\pion) combinations of the the daughter kaon with the
 pion with larger transverse momentum under the kaon mass hypothesis (under the initial pion mass hypothesis).
