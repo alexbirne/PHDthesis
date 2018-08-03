@@ -66,7 +66,7 @@ The criteria on the charged tracks are depending on whether the charged track is
 Three of these charged tracks are then used to form a \Dm meson, where the (transverse) momentum of one of the three tracks has to exceed (\SI[per-mode=symbol]{500}{\MeVc}) \SI[per-mode=symbol]{5}{\GeVc} and its track $\nicefrac{\chi^2}{\text{ndof}}$ has to be less than \num{2.5}.
 This \Dm meson is then combined with a charged bachelor track to form a \Bz meson.
 Finally a bagged boosted decision tree trained on simulation is applied, and its response is required to be larger than \num{0.05}.
-These requirement together with all cuts on single particles given in \cref{tab:stripping} aim to select \Bz decays into a charged \D meson including \Dst mesons and pion, where the \D mesons decays into three hadrons from combinatorial backgrounds candidates.
+These requirement together with all cuts on single particles given in \cref{tab:stripping} aim to select \Bz decays into a charged \Dmp meson including \Dstarmp mesons and pion, where the \Dmp mesons decays into three hadrons from combinatorial backgrounds candidates.
 Combinatorial background consists of candidates originating from random combinations of tracks in an event.
 \begin{table}[tbp]
 	\centering
@@ -80,7 +80,7 @@ Combinatorial background consists of candidates originating from random combinat
 		track $\nicefrac{\chi^2}{\text{ndof}}$		& $<3.0 (2.5)$ \\
 		momentum $p$ 								& $>\SI[per-mode=symbol, separate-uncertainty=false]{1\pm5}{\GeVc}$ \\
 		transverse momentum \pt 					& $>\SI[per-mode=symbol, separate-uncertainty=false]{100\pm500}{\MeVc}$ \\
-		IP $\chi^2$ w.r.t. any \ac{PV}				& $>4.0$ \\
+		\chisqip w.r.t. any \ac{PV}				& $>4.0$ \\
 		track ghost probability 					& $<0.4$ \\
 		\midrule
 		\multicolumn{2}{c}{\Dm meson requirements}\\
@@ -96,7 +96,7 @@ Combinatorial background consists of candidates originating from random combinat
 		\midrule
 		\ac{SV} $\nicefrac{\chi^2}{\text{ndof}}$ 																& $<10.0$ \\
 		reconstructed decay time $t$ 																			& $>\SI{0.2}{\pico\second}$ \\
-		IP $\chi^2$ w.r.t. the associated \ac{PV} 																& $<25.0$ \\
+		\chisqip w.r.t. the associated \ac{PV} 																& $<25.0$ \\
 		$\cos$ of $\sphericalangle\left[\left|\text{PV},\text{SV}\right|, \vec{p}\!\left(\Bz\right)\right]$		& $>0.999$ \\
 		\bottomrule
 	\end{tabular}
@@ -111,14 +111,14 @@ Before applying further selections to reduce the background, requirements on the
 In principle there are two different classes of trigger decisions at \lhcb: a trigger can fire due to a particle or event property directly connected to the signal decay - denoted as trigger on signal (TOS) - or it can fire due to some property separate to the signal decay what is denoted as a decision independent of the signal (TIS).
 Furthermore, each trigger stage has various lines, triggering on different event properties and thus being differently effective depending on the specific decay.
 Hence, a requirement on which trigger line has fired and whether this decision is TOS or TIS results in characteristic distribution of observables such that a decision which requirement is made needs to be done analysis specific.
-
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.49\textwidth]{06selection/figs/Bmass_afterStrippingAndTrigger.pdf}
-    \includegraphics[width=0.49\textwidth]{06selection/figs/Dmass_afterStrippingAndTrigger.pdf}
-    \caption{Invariant mass distributions of the $\Dm\pip$ combination using the DTF with a \Dm-mass constraint (right) and of the \Kp\pim\pim combination without any constraint (right).}
+    \includegraphics[width=0.485\textwidth]{06selection/figs/Bmass_afterStrippingAndTrigger.pdf}
+    \includegraphics[width=0.485\textwidth]{06selection/figs/Dmass_afterStrippingAndTrigger.pdf}
+    \caption{Invariant mass distributions of the $\Dm\pip$ combination using the DTF with a \Dm mass constraint (right) and of the \Kp\pim\pim combination without any constraint (right).}
     \label{fig:BAndDmassAfterStripping}
 \end{figure}
+
 For this analysis, no specifc requirements at the L0 level are needed.
 On the HLT1 level, the \Bz candidates are required to be TOS on the \verb!Hlt1TrackAllL0Decision! line.
 At the HLT2 trigger stage, the \BdToDpi candidates are required to be TOS on either the \verb!Hlt2Topo2BodyBBDTDecision! line, the \verb!Hlt2Topo3BodyBBDTDecision! line  or the \verb!Hlt2Topo4BodyBBDTDecision! line.
@@ -137,7 +137,7 @@ These cuts are listed in \cref{tab:preselection}.
 		\dllkpi for pions	& $<8.0$ \\
 		\dllkpi for kaons 	& $>-2.0$ \\
 		\midrule
-		\multicolumn{2}{c}{\Dm- and \Bz meson requirements}\\
+		\multicolumn{2}{c}{\Dm  and \Bz meson requirements}\\
 		\midrule
 		$\left|m_{\Kp\pim\pim}-m_\Dm^{\text{PDG}}\right|$	& $<\SI[per-mode=symbol]{35}{\MeVcc}$ \\
 		\Bz decay time										& $>\SI{0.2}{\pico\second}$ \\
@@ -169,8 +169,8 @@ After combining the three \D daughters again a peak around the \Lc mass becomes 
 The distributions look different, because of the pions, which are originally sorted by transverse momentum \pt.
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.49\textwidth]{06selection/figs/LcHypo1.pdf}
-    \includegraphics[width=0.49\textwidth]{06selection/figs/LcHypo2.pdf}
+    \includegraphics[width=0.485\textwidth]{06selection/figs/LcHypo1.pdf}
+    \includegraphics[width=0.485\textwidth]{06selection/figs/LcHypo2.pdf}
     \caption{Invariant mass distributions of the $\kaon\pion\proton$ combinations for both daughter pions of the \Dm meson.
     The distributions are shown without the veto (black) and with the veto applied (blue).
     The left (right) plot shows the proton-mass hypothesis applied to the pion with lower (higher) transverse momentum.}
@@ -191,8 +191,8 @@ Therefore, the invariant mass distributions of the \kaon\kaon\pion system are co
 The visible difference in \cref{fig:DsVeto} stems from the fact that those two distributions arise from different kinematic regions.
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.49\textwidth]{06selection/figs/DsHypo1.pdf}
-    \includegraphics[width=0.49\textwidth]{06selection/figs/DsHypo2.pdf}
+    \includegraphics[width=0.485\textwidth]{06selection/figs/DsHypo1.pdf}
+    \includegraphics[width=0.485\textwidth]{06selection/figs/DsHypo2.pdf}
     \caption{Invariant mass distributions of the $\kaon\kaon\pion$ combinations for both daughter pions of the \Dm meson.
     The distributions are shown in the \Bs signal region from \SIrange[per-mode=symbol]{5330}{5400}{\MeVcc} (black) and in a background region from \SIrange[per-mode=symbol]{5500}{5700}{\MeVcc} (blue)
     In the left (right)plot the kaon-mass hypothesis is applied to the pion with lower (higher) transverse momentum.}
@@ -207,8 +207,8 @@ Consequently, one would expect a peaking structure in these plots in case of a s
 As no distribution in \cref{fig:DsVeto} and \cref{fig:phi_Kst_veto} shows such a structure, background candidates from $\Bs\!\to\Dsm\pip$ decays are assumed to be negligible.
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.49\textwidth]{06selection/figs/KstarHypo2.pdf}
-    \includegraphics[width=0.49\textwidth]{06selection/figs/PhiHypo2.pdf}
+    \includegraphics[width=0.485\textwidth]{06selection/figs/KstarHypo2.pdf}
+    \includegraphics[width=0.485\textwidth]{06selection/figs/PhiHypo2.pdf}
     \caption{Invariant mass distributions of the \kaon\pion (left) and \kaon\kaon (right) combinations for the daughter pion of the \Dm meson with larger transverse momentum with the daughter kaon or remaining daughter pion, respectively.
     The distributions are shown in the in the \Bs signal region from \SIrange[per-mode=symbol]{5330}{5400}{\MeVcc} (black) and in a background region from \SIrange[per-mode=symbol]{5500}{5700}{\MeVcc} (blue).
     Only candidates with $\SI[per-mode=symbol]{1940}{\MeVcc}<m_{\kaon\kaon\pion}<\SI[per-mode=symbol]{2040}{\MeVcc}$ are considered.}
@@ -221,8 +221,8 @@ Hence, backgrounds from $\Bz\!\to\DorDbar{}^0\kaon\pion$ decays are assumed to b
 In \cref{fig:DzVeto}, the combinations of the bachelor track with the \Dm daughter pion with higher transverse momentum are shown for illustration.
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.49\textwidth]{06selection/figs/D0Hypo3.pdf}
-    \includegraphics[width=0.49\textwidth]{06selection/figs/D0Hypo4.pdf}
+    \includegraphics[width=0.48\textwidth]{06selection/figs/D0Hypo3.pdf}
+    \includegraphics[width=0.48\textwidth]{06selection/figs/D0Hypo4.pdf}
     \caption{Invariant mass distributions for the combinations of the bachelor particle with the \Dm daughter pion with higher transverse momentum.
     The distributions shows the kaon hypothesis is applied to the bachelor pion (left) and the kaon hypothesis applied to the \Dm daughter pion(right).}
     \label{fig:DzVeto}
@@ -241,8 +241,8 @@ This can be checked on simulation, where the true decay time is known.
 Weighting each (\Bz,\ac{PV})-candidate with an exponential using the true lifetime of the \Bz candidates, shows an excess of (\Bz,\ac{PV})-candidates at high decay times (see \cref{fig:WrongPVMC}).
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{06selection/figs/WrongPVs-weightedBad.pdf}
-    \includegraphics[width=0.45\textwidth]{06selection/figs/WrongPVs-weightedGoodMC.pdf}
+    \includegraphics[width=0.48\textwidth]{06selection/figs/WrongPVs-weightedBad.pdf}
+    \includegraphics[width=0.48\textwidth]{06selection/figs/WrongPVs-weightedGoodMC.pdf}
     \caption{Decay time distribution of simulated \BdToDpi candidates, weighted with an exponential using the true lifetime of the \Bz candidates.
     At high decay times an excess of (\Bz,\ac{PV})-candidates can be seen (left).
     After applying a cut on the distance between the true and the reconstructed $z$ position of the \ac{PV} the expected acceptance distribution at \lhcb is visible (right).}
@@ -250,45 +250,38 @@ Weighting each (\Bz,\ac{PV})-candidate with an exponential using the true lifeti
 \end{figure}
 In the simulation, the true $z$-position of the \ac{PV} is known and can be compared with the reconstructed $z$-position.
 Requiring that the distance between the true $z$-position of the \ac{PV} and the reconstructed $z$-position does not exceed five times the uncertainty on the reconstructed $z$-position removes the wrong associated (\Bz,\ac{PV})-candidates from the sample and the expected decay time acceptance becomes visible (\cref{fig:WrongPVMC}).
-As this approach cannot be applied to data, a criterion is developed requiring for each (\Bz,\ac{PV})-candidate the impact parameter $\chi^2_{\text{DTF,PV}}$ ($\text{IP}\chi^2$) with any other \ac{PV} in the event (denoted as $\text{MinIP}\chi^2$) to be larger than a certain value.
+As this approach cannot be applied to data, a criterion is developed requiring for each (\Bz,\ac{PV})-candidate the impact parameter $\chi^2_{\text{DTF,PV}}$ (\chisqip) with any other \ac{PV} in the event (denoted as $\text{MinIP}\chi^2$) to be larger than a certain value.
 This means that in case this $\text{MinIP}\chi^2$ is too small, the two corresponding \ac{PV}s cannot be distinguished sufficiently well from each other, and the (\Bz,\ac{PV})-candidate is rejected.
 Events which contain just one \ac{PV} are always kept.
 The cut on the $\text{MinIP}\chi^2$ variable is optimised such that \SI{98}{\percent} of the events in the simulated \BdToDpi sample are retained.
-In \cref{fig:WrongPVData} the distribution of the $\text{MinIP}\chi^2$ variable together with the cut point at \num{16.5} and the resulting decay-time-acceptance distribution of simulated candidates after rejecting candidates with $\text{MinIP}\chi^2\le\num{16.5}$ is shown.
+In \cref{fig:WrongPVData}, the distribution of the $\text{MinIP}\chi^2$ variable together with the cut point at \num{16.5} and the resulting decay-time-acceptance distribution of simulated candidates after rejecting candidates with $\text{MinIP}\chi^2\le\num{16.5}$ is shown.
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{06selection/figs/MinIPCHI2.pdf}
-    \includegraphics[width=0.45\textwidth]{06selection/figs/WrongPVs-WeightingGoodData.pdf}
-    \caption{The left plots show the $\text{MinIP}\chi^2$ variable with the chosen cut point at \num{16.5} in a narrow range.
-    For larger values of $\text{MinIP}\chi^2$ the distribution remains flat.
-    The right plot shows the decay time distribution of simulated \BdToDpi candidates, wheighted with an exponential using the true lifetime of the \Bz candidates after applying the cut on $\text{MinIP}\chi^2$ (right).
-    The expected decay-time acceptance distribution at \lhcb is visible.}
+    \includegraphics[width=0.48\textwidth]{06selection/figs/MinIPCHI2.pdf}
+    \includegraphics[width=0.48\textwidth]{06selection/figs/WrongPVs-WeightingGoodData.pdf}
+    \caption{Distributions of the $\text{MinIP}\chi^2$ variable with the chosen cut point at \num{16.5} in a narrow range (left) and the decay time of simulated \BdToDpi candidates, wheighted with an exponential using the simulated \Bz lifetime after applying the cut on $\text{MinIP}\chi^2$ (right). The $\text{MinIP}\chi^2$ the distribution also remains flat for larger values.}
     \label{fig:WrongPVData}
 \end{figure}
 
-In contrast the \ac{PV} could also be chosen using some \enquote{best} \ac{PV} criterion, \eg choosing the \ac{PV} with the smallest $\text{IP}\chi^2$ with respect to the \Bz candidate.
-Such criterion also removes most of the wrongly associated \ac{PV}s, but potentially biases the decay time distribution, whereas the strategy described above treats all \ac{PV}s equally and thus the decay time distribution remains unbiased.
+In contrast the \ac{PV} could also be chosen using some \enquote{best} \ac{PV} criterion, \eg choosing the \ac{PV} with the smallest \chisqip with respect to the \Bz candidate.
+Such a criterion also removes most of the wrongly associated \ac{PV}s, but potentially biases the decay time distribution, whereas the strategy described above treats all \ac{PV}s equally and thus the decay time distribution remains unbiased.
 
 \subsection{Development of a MVA classifier}
 \label{sec:MVADev}
 
 Combinatorial background is suppressed using a \ac{MVA}, more precisely a \ac{BDT} is used.
-A \ac{BDT} is a machine learning algorithm for classification.
-As all machine learning algorithms it needs to learn, which classes of events should be separated.
-Therefore it needs training samples, consisting only of events of the respective classes.
-In this case \BdToDpi candidates should be separated from combinatorial background candidates and therefore it needs to be provided with proxies for these classes of candidates.
+A \ac{BDT} is a machine learning algorithm used here to distinguish between two classes.
+In this case, \BdToDpi candidates should be separated from combinatorial background candidates and therefore the BDT needs to be provided with proxies for these classes of candidates.
 As proxy for the \BdToDpi candidates, simulation is used based on the conditions of the \num{2012} data taking.
-The upper-mass sideband of the \num{2012} data with $m_{\left[\Km\pip\pip\right]\pim}>\SI[per-mode=symbol]{5500}{\MeVcc}$ mimics the background.
-Further both proxy samples are divided into a training and a test sample of same size.
-When training the \ac{BDT}, the training part is used to actually classify the candidates, while the \ac{BDT} can be applied on the independent test sample to check whether the performance is the same on both samples.
+The upper mass sideband of the \num{2012} data with $m_{\left[\Km\pip\pip\right]\pim}>\SI[per-mode=symbol]{5500}{\MeVcc}$ mimics the background.
+Both proxy samples are divided into a training and a test sample of same size.
+When training the \ac{BDT}, the training part is used to actually classify the candidates, while the \ac{BDT} is then applied on the independent test sample to check whether the performance is the same on both samples.
 If the performance is different, the \ac{BDT} shows so-called overtraining, \ie the classifier is optimised on statistical fluctuations of the training samples and cannot be applied to other independent samples without a loss in performance.
 Another powerful test to check for overtraining is to compare the output distribution of the \ac{BDT} between the training and test sample - again, a difference would indicate that the \ac{BDT} is overtrained.
-Since the \ac{BDT} should also in this case learn to separate signal candidates from combinatoric background after applying the vetoes and removing backgrounds like $\Lb\!\to\Lcbar\pip$, all previous selection steps are applied to the signal- and background-proxy samples.
-
+Since the \ac{BDT} should be applied to the dataset after all specific backgrounds like $\Lb\!\to\Lcbar\pip$ or the wrong PV associations are removed all previous selection steps are applied to the signal- and background-proxy samples for the training.
 In total, the \ac{BDT} uses \num{16} input variables which are listed in \cref{tab:BDTInput}.
-To reduce the number of input variables, from pairs of variables which have a correlation of \SI{97}{\percent} or larger the variable with the smaller separation power is removed.
-The final variables cover mostly various $\text{IP}\chi^2$ variables, flight distances, momenta and flight directions.
-Furthermore, the $\chi^2$ of the DTF with a constraint on the \ac{PV} is added, as it shows a good separation power between \BdToDpi signal candidates and combinatoric background candidates.
+To reduce the number of input variables, from pairs of variables which have a correlation of $>\SI{97}{\percent}$ with each other the variable with the smaller separation power is removed.
+The final variables cover mostly various \chisqip variables, flight distances, momenta and flight directions in order to obtain a classifier output which is independent of the invariant mass of the \Bz meson as this is used in \cref{ch:massfit} to further identify signal candidates.
 \begin{table}[tbp]
 	\centering
 	\caption{List of input variables used in the training of the BDT}
@@ -297,84 +290,85 @@ Furthermore, the $\chi^2$ of the DTF with a constraint on the \ac{PV} is added, 
 		\multirow{2}{*}{\Bz candidate}	& $\cos$ of $\sphericalangle\left[\left|\text{PV},\text{SV}\right|,\vec{p}\!(\Bz)\right]$ \\
 										& \ac{SV} $\chi^2$\\
 		\midrule
-		\multirow{7}{*}{\Dm candidate}	& $\text{IP}\chi^2$ w.r.t. the \ac{SV}\\
-										& $\text{IP}\chi^2$ w.r.t. the associated PV\\
+		\multirow{7}{*}{\Dm candidate}	& \chisqip w.r.t. the \ac{SV}\\
+										& \chisqip w.r.t. the associated PV\\
 										& radial flight distance\\
 										& flight distance $\chi^2$ w.r.t. the \ac{SV}\\
-										& \Dm-vertex $\nicefrac{\chi^2}{\text{ndof}}$\\
+										& \Dm vertex $\nicefrac{\chi^2}{\text{ndof}}$\\
 										& transverse momentum \pt \\
 										& $\cos$ of $\sphericalangle\left[\left|\text{SV},\Dm\text{-Vtx}\right|,\vec{p}\!(\D)\right]$ \\
 		\midrule
-		\multirow{3}{*}{bachelor \pion}	& $\text{IP}\chi^2$ w.r.t. the associated PV\\
+		\multirow{3}{*}{bachelor \pion}	& \chisqip w.r.t. the associated PV\\
 										& transverse momentum \pt\\
 										& track $\nicefrac{\chi^2}{\text{ndof}}$\\
 		\midrule
-		\Dm daughters					& $\text{IP}\chi^2$ of the associated \ac{PV}\\
+		\Dm daughters					& \chisqip of the associated \ac{PV}\\
 		\midrule
 		DTF 							& $\chi^2$ of the DTF with \ac{PV} constraint \\
 		\bottomrule
 	\end{tabular}
 	\label{tab:BDTInput}
 \end{table}
-For the \ac{BDT} the implementation from TMVA~\cite{Hocker:2007ht} is used.
+For the \ac{BDT}, the implementation from TMVA~\cite{Hocker:2007ht} is used.
 The \ac{BDT} consists of \num{1700} decision trees with a maximum depth of four.
 The variables are scanned at \num{20} points to find the optimal cut value and each node has to contain at least \SI{2.5}{\percent} of the training candidates.
-As boosting algorithm AdaBoost~\cite{AdaBoost} is chosen with a boost factor $\beta=0.5$.
+The boosting algorithm (AdaBoost~\cite{AdaBoost}) is chosen with a boost factor $\beta=0.5$.
 The approach to find this configurations is iteratively, \ie the complexity of the \ac{BDT} is increased as long as no overtraining is visible.
-The final overtraining check is shown in \cref{fig:BDTOVertraining}.
+The final overtraining check is shown in \cref{fig:BDTOVertraining} where the good agreement between the \ac{BDT} output distributions on the training and test samples is also indicated by a Kolmogorov-Smirnov test~\cite{Bohm:389738} which gives \num{0.221} and \num{0.604} for the signal and background samples, respectively.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.7\textwidth]{06selection/figs/overtrain_BDT.pdf}
     \caption{Comparison of \ac{BDT} responses on the training and test sample.}
     \label{fig:BDTOVertraining}
 \end{figure}
-The agreement between the \ac{BDT} output distributions on the training and test samples is also checked with a Kolmogorov-Smirnov test~\cite{Bohm:389738} which gives \num{0.221} and \num{0.604} for the signal and background samples and thus indicates a good agreement.
 
 \subsection{BDT selection optimisation}
 \label{sec:BDTOpt}
 
-To optimise the cut on the \ac{BDT} response the uncertainties on the \CP parameters \Sf and \Sfbar are used.
-For the optimisation all preselection cuts, the vetoes for background from semileptonic decays and $\Lb\!\to\Lcbar\pip$ decays and the veto for wrongly associated \ac{PV}s are applied to the full dataset of both Run I.
+To optimise the cut on the \ac{BDT} response, the uncertainties on the \CP parameters \Sf and \Sfbar are used.
+For the optimisation, all preselection cuts, the vetoes for background from semileptonic decays and $\Lb\!\to\Lcbar\pip$ decays and the veto for wrongly associated \ac{PV}s are applied to the full Run I dataset.
 To determine the uncertainty of \Sf and \Sfbar depending on the \ac{BDT} response the following strategy is adopted:
-The \ac{BDT} output is scanned with a step size of \num{0.01} within a narrow range from \numrange{-0.15}{0.1} and with a step size of \num{0.05} in the outer regions.
+the \ac{BDT} output is scanned with a step size of \num{0.01} within a narrow range from \numrange{-0.15}{0.1} and with a step size of \num{0.05} in the outer regions.
 For each cut on the \ac{BDT} response a fit to the invariant \Bz mass in the range \SIrange[per-mode=symbol]{5200}{5500}{\MeVcc} using the \emph{pion}-sample is performed.
 This fit is used to determine \emph{sWeights}~\cite{Pivk:2004ty} and to obtain the mass shape which corresponds to the respective cut on the \ac{BDT} output.
 Applying the \emph{sWeights} to other observables such as the decay time makes these distributions appear like signal-only~\cite{2009arXiv0905.0724X}.
-Therefore, using \emph{sWeights} the tagging efficiencies, the shapes of the mistag distributions of the OS and SS tagging algorithms (more details on the flavour tagging can be found in \cref{ch:flavourtagging}) and the shape of the decay-time acceptance are obtained for the \enquote{signal} distributions.
-The shape of the last is obtained in the same way as described in \cref{sec:acceptance}.
-For each cut point then a single pseudoexperiment is performed: The invariant mass distribution is generated using the obtained signal and background yields and shapes from the mass fit, for the mistag and decay time distribution signal and background are both generated using the signal shapes.
+The tagging efficiencies, the shapes of the mistag distributions of the OS and SS tagging algorithms (more details on the flavour tagging can be found in \cref{ch:flavourtagging}) and the shape of the decay-time acceptance are obtained for these \emph{sWeighted} distributions.
+The shape of the latter is obtained in the same way as described in \cref{sec:acceptance}.
+At each cut point the invariant mass distribution is generated using the obtained signal and background yields and shapes from the mass fit.
+For the mistag and decaytime distribution, signal and background are both generated using the signal shapes.
 The generated values for the \CP parameters are taken from simulation.
-This pseudoexperiment sample is then fitted back: After determining \emph{sWeights} from a fit to the invariant \Bz mass distribution, a \CP fit to the decay time distribution is performed, where the flavour tagging calibration is assumed to be perfect.
-In \cref{fig:BDTopt} the uncertainties on \Sf and \Sfbar are shown as a function of the \ac{BDT} response.
-The final cut point is chosen at the right end of the plateau at \num{0.0}, to have as few background as possible while achieving the best possible sensitivity.
+For this pseudoexperiment sample the statistical uncertainty on the \CP parameters is then determined: after determining \emph{sWeights} from a fit to the invariant \Bz mass distribution, a \CP fit to the \emph{sWeighted} decay time distribution is performed, where the flavour tagging calibration is assumed to be perfect.
+In \cref{fig:BDTopt}, the uncertainties on \Sf and \Sfbar are shown as a function of the \ac{BDT} response.
+The final cut point is chosen to be \num{0.0}, to minimise the background as much as possible while achieving the best possible sensitivity.
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.49\textwidth]{06selection/figs/sensitiv_Sf.pdf}
-    \includegraphics[width=0.49\textwidth]{06selection/figs/sensitiv_Sfbar.pdf}
+    \includegraphics[width=0.47\textwidth]{06selection/figs/sensitiv_Sf.pdf}
+    \includegraphics[width=0.47\textwidth]{06selection/figs/sensitiv_Sfbar.pdf}
     \caption{Uncertainty on \Sf (left) and \Sfbar (right) as a function of the \ac{BDT} response.}
     \label{fig:BDTopt}
 \end{figure}
 
-\subsection{Multiple candidates}
+\subsection[head={Multiple \B candidates},tocentry={Multiple \B candidates}]{Multiple $\symbfsf{\B}$ candidates}
 \label{sec:MultCands}
 
-In the stripping and trigger all used variables rely on the association of the \Bz candidate with the \ac{PV} to which the candidate has the smallest $\text{IP}\chi^2$, also denoted as best \ac{PV}.
-To be consistent with this strategy for each event also the best \ac{PV} is chosen.
+In the stripping and trigger, all used variables rely on the association of the \Bz candidate with the \ac{PV} to which the candidate has the smallest \chisqip, also denoted as best \ac{PV}.
+To be consistent with this strategy for each event also the best \ac{PV} in terms of \chisqip is chosen.
 Events where the formerly best \ac{PV} is no longer present after the selection are removed.
 Besides, events can contain more than one \Bz candidate.
 After the stripping this is the case for \SI{9}{\percent} of the events and \SIrange{18}{20}{\percent} of the \Bz candidates share the same event.
 This is reduced after applying the described selection steps, so that after selection only \SI{0.4}{\percent} of the events contain multiple candidates and \SI{0.8}{\percent} of the \Bz candidates share one event.
-Following the proposal in \cite{Koppenburg:2017zsh} the remaining candidates are assumed to be equally likely signal candidates and one candidate per event is chosen at random.
+Following the proposal in Ref.~\cite{Koppenburg:2017zsh}. the remaining candidates are assumed to be equally likely signal candidates and one candidate per event is chosen at random.
 
-\subsection{Selection performance}
+\subsection{Selection performance and cross checks}
 \label{sec:selectionPerformance}
 
 The final selection performance is determined on the upper mass sideband with \mbox{$m_{\left[\Km\pip\pip\right]\pim}>\SI[per-mode=symbol]{5500}{\MeVcc}$} of the data and simulation based on the conditions of the \num{2012} data taking.
 The corresponding signal efficiencies $\varepsilon_{\text{sig}}$ and background rejections $1-\varepsilon_{\text{bkg}}$ are given in \cref{tab:selPerform}.
 \begin{table}[tbp]
 	\centering
-	\caption{Performances of all selection steps, where background refers to combinatorial background candidates.
-	All efficiencies are calculated using the number of candidates after the previous selection step as \SI{100}{\percent}.
+	\caption{Performances of all selection steps.
+	As proxy for the \BdToDpi candidates, simulation is used, while the rejection of the combinatorial background is calculated on data for candidates with $m_{\Dmp\pipm}>\SI[per-mode=symbol]{5500}{\MeVcc}$.
+	All efficiencies are calculated with respect to the previous selection step indicated by the vertical lines.
 	The overall performance is given in the last row.}
 	\begin{tabular}{ccc}
 		\toprule
@@ -394,29 +388,28 @@ The corresponding signal efficiencies $\varepsilon_{\text{sig}}$ and background 
 	\end{tabular}
 	\label{tab:selPerform}
 \end{table}
-The low background suppression of the vetoes is expected, as the vetoes aim to suppress specific backgrounds, but not the combinatorial background which is used to determine the given efficiencies.
+The low background suppression of the vetoes is expected as the vetoes aim to suppress specific backgrounds but not the combinatorial background, which is used to determine the given efficiencies.
 
-Finally, the contamination with non resonant $\Bz\to\Kp\pim\pim\pip$ decays is determined, as such background would show the same structure as \BdToDpi candidates in the invariant $m_{\Kp\pim\pim\pip}$-distribution, but the \emph{weak} phase would be different.
-In order to do this, two strategies are implemented, both using the datasample after applying all selection steps, except for the cut on the invariant \Dm-mass described in \cref{tab:preselection}:
-For the first strategy the invariant \Dm-mass is plotted for candidates in a tight \Bz signal window from \SIrange[per-mode=symbol]{5240}{5320}{\MeVcc} as shown in \cref{fig:nonRes_Try1}.
-\begin{figure}[tbp]
+Finally, the contamination with non-resonant $\Bz\to\Kp\pim\pim\pip$ decays is determined, as such background would show the same structure as \BdToDpi candidates in the invariant $m_{\Kp\pim\pim\pip}$ distribution but the \emph{weak} phase would be different.
+In order to do this, two strategies are implemented, both using the datasample after applying all selection steps, except for the cut on the invariant \Dm mass described in \cref{tab:preselection}:
+for the first strategy the invariant \Dm mass is plotted for candidates in a tight \Bz signal window from \SIrange[per-mode=symbol]{5240}{5320}{\MeVcc} as shown in \cref{fig:nonRes_Try1}.
+Combinatorial background candidates in the resulting \Dm mass distribtution could be origin from non-resonant \Kpm\pimp\pimp\pipm candidates.
+\begin{figure}[tb]
     \centering
-    \includegraphics[width=0.49\textwidth]{06selection/figs/BmassCut.pdf}
-    \includegraphics[width=0.49\textwidth]{06selection/figs/Resulting_Dmass.pdf}
-    \caption{Left: Invariant \Bz-mass distribution with the selected signal region between the red vertical lines.
-    Right: Resulting invariant \Dm-mass distribution.}
+    \includegraphics[width=0.48\textwidth]{06selection/figs/BmassCut.pdf}
+    \includegraphics[width=0.48\textwidth]{06selection/figs/Resulting_Dmass.pdf}
+    \caption{Distribution of the invariant \Bz mass distribution with the selected signal region between the red vertical lines (right) and the resulting invariant \Dm mass distribution (right).}
     \label{fig:nonRes_Try1}
 \end{figure}
-From the invariant \Dm-mass distribution the non-resonant contamination can be estimated to be roughly \SI{1}{\percent}.
-In the second strategy a cut on the invariant \Dm-mass distribution removing the \Dm-peak is applied.
-Then the invariant \Bz-mass without constraint on the \Dm-mass is inspected and a fit using an exponential to model the background and a gaussian with fixed shape to model the signal is performed to estimate the number of non-resonant $\Bz\!\to\Kp\pim\pim\pip$ candidates (see \cref{fig:nonRes_Try2}).
-\begin{figure}[tbp]
+Hence, the non-resonant contamination can be estimated to a maximum at the percent level from the \Dm mass distribution.
+In the second strategy a cut on the invariant \Dm mass distribution removing the \Dm peak is applied.
+Then the invariant \Bz mass without constraint on the \Dm mass is inspected and a fit using an exponential to model the background and a Gaussian with fixed shape from simulation to model the signal is performed to estimate the number of non-resonant $\Bz\!\to\Kp\pim\pim\pip$ candidates (see \cref{fig:nonRes_Try2}).
+\begin{figure}[tb]
     \centering
-    \includegraphics[width=0.49\textwidth]{06selection/figs/DmassCut.pdf}
-    \includegraphics[width=0.49\textwidth]{06selection/figs/Resulting_Bmass.pdf}
-    \caption{Left: Invariant \Dm-mass distribution with the excluded signal region between the red vertical lines.
-    Right: Resulting invariant \Bz-mass distribution with the fit overlaid. The red dashed line describes the combinatorial background, the blue dotted line the signal component.}
+    \includegraphics[width=0.48\textwidth]{06selection/figs/DmassCut.pdf}
+    \includegraphics[width=0.48\textwidth]{06selection/figs/Resulting_Bmass.pdf}
+    \caption{Distributions of the invariant \Dm mass with the excluded signal region between the red vertical lines (left) and the resulting invariant \Bz mass distribution with the fit overlaid (right). The red dashed line describes the combinatorial background, the blue dotted line the signal component.}
     \label{fig:nonRes_Try2}
 \end{figure}
-This fit yields \num{645\pm242} signal candidates.
-As both strategies do not show a significant amount of a non-resonant contamination of the sample, this is assumed to be negligible.
+This fit yields \num{645\pm242} signal candidates which is negligible compared to the expected number of \BdToDpi signal candidates of roughly \num{500000}.
+Therefore the contamination of the sample with non-resonant background candidates is assumed to be negligible.

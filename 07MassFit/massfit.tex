@@ -3,11 +3,9 @@
 \label{ch:massfit}
 
 \linespread{1.08}\selectfont
-Using the \dllkpi of the bachelor pion allows to split the data sample in two parts: The first sample denoted as \emph{pion}-sample with $\dllkpi\leq5.0$ and a second sample denoted as \emph{kaon}-sample with $\dllkpi>5.0$. This distinction is useful when separating \BdToDpi from $\Bd\!\to\Dm\Kp$ candidates as no dedicated selection cut is needed
-Instead this separation can be done statistically in the fit to the invariant mass distribution (see \cref{ch:massfit}).
+Using the \dllkpi of the bachelor pion allows to split the data sample into the two samples, referred to as \emph{pion} and \emph{kaon} sample: The \emph{pion} sample has $\dllkpi\leq5.0$ and the \emph{kaon} sample $\dllkpi>5.0$. This distinction is useful when separating \BdToDpi from $\Bd\!\to\Dm\Kp$ candidates as no dedicated selection cut is needed.
+Instead this separation is done statistically in the fit to the invariant mass distribution.
 
-
-After selection the datasample is split into the two samples described in \cref{sec:Samples}, referred to as \emph{pion}- and \emph{kaon}-sample.
 The invariant \Bz mass distributions of candidates with a tag of one of the flavour tagging algorithms are fitted simultaneously in these samples in order to calculate \emph{sWeights}~\cite{Pivk:2004ty}, which are used in the following analysis steps to separate signal from background candidates statistically.
 Before reporting in greater detail about these fits it is important to note that the work described in this chapter was done by a collaborator.
 However, since this is an essential part of the analysis required to follow the subsequent steps, it is not omitted completely, but the extent to which \eg experimental techniques are described is less comprehensive compared to the other parts.
@@ -93,7 +91,7 @@ The combinatorial background is described with a sum of two exponentials in the 
 \section{Fit to data}
 \label{sec:MassFitData}
 
-To determine \emph{sWeights} the invariant \Bz mass is fitted with a two-stage strategy:
+To determine \emph{sWeights}~\cite{Pivk:2004ty} the invariant \Bz mass is fitted with a two-stage strategy:
 First, a simultaneous binned extended maximum-likelihood fit in the invariant-mass range $[5090, 6000]\,\si[per-mode=symbol]{\MeVcc}$ is performed (Fit A).
 This allows to control the contamination with $\Bz\!\to\Dm\Kp$ candidates in the \emph{pion}-samples.
 A binned fit is performed due to the very large number of candidates.
@@ -112,7 +110,7 @@ In \cref{fig:MassFitPlot} the invariant $\D\pion$  and $\D\kaon$ mass distributi
 \end{figure}
 
 After Fit A, a unbinned maximum-likelihood fit in the \emph{pion}-sample is performed for which all background components are combined into one single background component and the shapes are fixed to the values found in Fit A.
-Futhermore, the fit range is reduced to $[5220, 5600]\,\si[per-mode=symbol]{\MeVcc}$, in order to prevent a dilution of the \emph{sWeights} in later steps of the analysis, as all background components which are neither combinatorial nor close to the signal are removed.
+Futhermore, the fit range is reduced to $[5220, 5600]\,\si[per-mode=symbol]{\MeVcc}$, in order to prevent a dilution of the \emph{sWeights}~\cite{Pivk:2004ty} in later steps of the analysis, as all background components which are neither combinatorial nor close to the signal are removed.
 In this second fit (Fit B) only two parameters are floating: The yield $N_{\Bz\!\to\D\pion}^{\pion}$ of the signal \BdToDpi component and a yield $N_{\text{bkg}}^{\pion}$ for the combination of all backgrounds.
 These fitted yields are given in \cref{tab:fittedSignalYield}.
 \begin{table}[tbp]
