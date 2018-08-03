@@ -11,7 +11,7 @@ Last, the handling of multiple $B$ candidates in one event is presented in \cref
 \section{Data and simulation samples}
 \label{sec:Samples}
 
-Candidates from the decay \BdToDpi are reconstructed in the hadronic decay $\Dmp\!\to\Kpm\pimp\pimp$ with one additional pion, which will be denoted as bachelor pion in the following.
+Candidates from the decay \BdToDpi\footnote{Charge conjugation is implied throughout the whole document if not stated otherwise} are reconstructed in the hadronic decay $\Dmp\!\to\Kpm\pimp\pimp$ with one additional pion, which will be denoted as bachelor pion in the following.
 The \D decay is chosen despite the purely hadronic final state, as it is the one with the largest decay width.
 It is reconstructed inclusively, \ie no resonances such as the decay via a \Kstarz meson into a \kaon\pion final state are excluded.
 
@@ -19,12 +19,12 @@ To distinguish between the charged hadrons in the final state, a likelihood func
 Then, the difference between the two logarithmic likelihoods is calculated, which in the following is referred to as \dllkpi (\dllppi)~\cite{Aaij:2014jba}.
 
 As the PID observables are not described well in the simulation, selection requirements on such observables can result in different distributions in other correlated observables.
-Therefore the \dllkpi and \dllppi variables are corrected using calibration samples of kinematically-clean $\Dstar\!\to\Dz\!\left(\to\Km\pip\right)\pip$ decays.
+Therefore the \dllkpi and \dllppi variables are corrected using calibration samples of kinematically-clean $\Dstarp\!\to\Dz\!\left(\to\Km\pip\right)\pip$ decays.
 The correction is done in bins of transverse momentum \pt and pseudorapidity $\eta$.
 For every candidate in the simulation, the corresponding PID distribution of the calibration sample in the $(\pt,\eta)$-bin is built and used to randomly sample a PID value~\cite{Anderlini:2202412}.
 Possible effects due to the chosen $(\pt,\eta)$-binning are evaluated in the systematic uncertainties described in \cref{ch:systeamticUncerts}.
 
-The simulated samples used in this analysis are listed in \cref{tab:simSamples}, together with a short reference, in which analysis step they are needed\footnote{Charge conjugation is implied throughout the whole document if not stated otherwise}.
+The simulated samples used in this analysis are listed in \cref{tab:simSamples}, together with a short reference, in which analysis step they are needed.
 \begin{table}[tbp]
 	\centering
 	\caption{Simulated samples used in this analysis with a short note in which analysis step the samples are used and the number of available candidates before applying any analysis specific selection step.
