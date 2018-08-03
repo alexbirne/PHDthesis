@@ -143,13 +143,13 @@ Instead the tagging efficiency, which is also denoted as tagging power, must be 
 Rather than using an average mistag $\omega$ the mistag estimate $\eta$ of the various tagging algorithms can be used.
 To do this, the estimated mistag has to be calibrated with a calibration function $\omega(\eta)$ (more details on the calibration are given in \cref{sec:CombAndCalib}), what gives a per-event tagging power, defined as
 \begin{equation}
-\varepsilon_{\text{eff}}=\frac{1}{N}\sum_{i=1}^{N}D_i^2=\frac{1}{N}\sum_{i=1}^{N}\left(1-2\omega(\eta_i)\right)^2\,.
+\varepsilon_{\text{eff}}=\frac{1}{N}\sum_{i=1}^{N}D_i^2=\frac{1}{N}\sum_{i=1}^{N}\left(1-2\omega(\eta_i)\right)^2\,.\label{eq:perEenttaggingpower}
 \end{equation}
 Here the sum is iterating over all candidates and for untagged candidates the mistag probability is defined to be \num{0.5} ($D_i=0$).
 
 When considering only tagged candidates, the effective tagging efficiency reduces to a pseudo tagging power, which is effectively the same as average of the dilution squared in the respective sample:
 \begin{equation}
-\left<D^2\right>=\frac{1}{N_{\text{R}}+N_{\text{W}}}\sum_{i=1}^{N_{\text{R}}+N_{\text{W}}}\left(1-2\omega(\eta_i)\right)^2\,.
+\left<D^2\right>=\frac{1}{N_{\text{R}}+N_{\text{W}}}\sum_{i=1}^{N_{\text{R}}+N_{\text{W}}}\left(1-2\omega(\eta_i)\right)^2\,.\label{eq:avgDilution}
 \end{equation}
 
 \subsection{Combination and calibration of flavour tagging algorithms}
@@ -229,10 +229,10 @@ To not rely on possible binning effects on the estimated mistag $\eta$ or the mi
 \label{sec:taggingstrategy}
 
 In this analysis the combination of all available OS algorithms is used, while for the SS both taggers designed to infer the initial flavour of \Bz-mesons are combined into one single tag decision and mistag.
-The OS taggers were all developed and trained on a datasample of $\Bu\!\to\jpsi\Kp$ decays, except for the OS charm tagger, whose BDT was trained on a mixed sample of simulated $\Bu\!\to\jpsi\Kp$, $\Bz\!\to\jpsi\Kstarz$ and $\Bs\!\to\jpsi\phi$ decays.
+The OS taggers were all developed and trained on a data sample of $\Bu\!\to\jpsi\Kp$ decays, except for the OS charm tagger, whose BDT was trained on a mixed sample of simulated $\Bu\!\to\jpsi\Kp$, $\Bz\!\to\jpsi\Kstarz$ and $\Bs\!\to\jpsi\phi$ decays.
 As the OS taggers are independent of the initial signal \B they can be used in this default version.
 As control channel the decay $\Bu\!\to\Dz\pip$ is used.
-As mentioned before, the SS pion and the SS proton taggers were deveolped and trained on a datasample of \BdToDpi decays, assuming no \CP-violation.
+As mentioned before, the SS pion and the SS proton taggers were deveolped and trained on a data sample of \BdToDpi decays, assuming no \CP-violation.
 The use of these algorithms could therefore bias the measurement of \Sf and \Sfbar and hence both taggers are retrained (more details given in \cref{sec:retrainSSpion} and \cref{sec:retrainSSproton}).
 
 To include the flavour tagging in the decay rates given in \crefrange{eq:DecRateB2Dmpip}{eq:DecRateBb2Dppim} the expressions for the \CP-parameters \Sf and \Cf need to be extended to
@@ -295,7 +295,7 @@ On the other hand, the obtained parameter values of the calibration function can
 \section{Same side tagging calibration}
 \label{sec:SScalibration}
 
-The SS tagger combination is retrained and calibrated on the datasample of $\Bz\!\to\jpsi\Kstarz$ candidates corresponding to \SI{3}{\per\femto\barn}, recorded in \num{2011} and \num{2012} at centre-of-mass energies of \SI{7}{\tera\electronvolt} and \SI{8}{\tera\electronvolt}, respectively.
+The SS tagger combination is retrained and calibrated on the data sample of $\Bz\!\to\jpsi\Kstarz$ candidates corresponding to \SI{3}{\per\femto\barn}, recorded in \num{2011} and \num{2012} at centre-of-mass energies of \SI{7}{\tera\electronvolt} and \SI{8}{\tera\electronvolt}, respectively.
 It is used because $\Bz\!\to\jpsi\Kstarz$ is the only flavour-specific decay mode of \Bz-mesons with a sufficient large statistic beside the signal mode of \BdToDpi at \lhcb.
 The strategy follows mainly the one which was used to train the original taggers on \BdToDpi what is described in Ref.~\cite{Aaij:2016rdg}.
 Only one additional step is implemented:
@@ -307,13 +307,13 @@ The general procedure is quite similar for both tagging algorithms and looks as 
 	\item The distributions of transverse momentum \pt, pseudo-rapidity $\eta'$ and azimuthal angle $\phi$ of the \Bz candidate, the number of tracks and the number of \ac{PV}s in the event and a distribution of Hlt2 trigger decisions for $\Bz\!\to\jpsi\Kstarz$ candidates are weighted to match those of the \BdToDpi candidates.
 	This has two reasons: First the performance of the BDT is potentially improved when applying to \BdToDpi, second the portability of the functional form of the calibration is assured, and calibration parameters obtained can be better used as reference values.
 	\item The tagging particles, whose charge is correlated with the initial \B flavour are selected
-	\item Finally the datasample is divided into three subsamples:
+	\item Finally the data sample is divided into three sub samples:
 	\begin{itemize}
 		\item The first third of the sample is used to train a BDT to separate correctly and wrongly charged tagging particles.
 		Hereby correctly tagged means that the charge of the tagging particle would indicate the correct tag, while wrongly tagged denotes exactly the opposite situation: The tagging particles' charge would indicate the wrong tag decision.
 		To reduce the number of oscillated \Bz-mesons only \Bz-mesons with a decay time smaller than the first maximum of the oscillation are used.
 		Therefore, following the procedure in Ref.~\cite{Aaij:2016rdg}, \Bz-mesons used in the training are required to have a a decay time smaller than \SI{2.2}{\pico\second}.
-		\item On the second subsample the BDT is tested in order to avoid effects as overtraining.
+		\item On the second sub sample the BDT is tested in order to avoid effects as overtraining.
 		Furthermore, both, the first training sample and this second testing sample are used to determine the mistag as a function of the BDT response. For this latter step the requirement on the \Bz decay time is removed, as a full time-dependent analysis of the \Bz oscillation is performed.
 		\item Finally on the last third the SS taggers are combined and the functional form of the calibration is determined together with reference values for the calibration parameters obtained in the decay-time fit described in \cref{sec:ExtractCPobs}.
 	\end{itemize}
@@ -374,7 +374,7 @@ Additionally only \Bz-candidates with an invariant mass within the range $[5100,
 Last the DTF $\nicefrac{\chi^2}{\text{ndof}}$ is required to be smaller than five and the number of \ac{PV}s in the event has to be one, or in case an event has more than one \ac{PV} the impact parameter $\chi^2$ has to be larger than \num{50}.
 In case of multiple \Bz candidates the one with the smallest DTF $\nicefrac{\chi^2}{\text{ndof}}$ is chosen.
 
-To extract \emph{sWeights} a fit to the invariant \Bz mass, stemming from the DTF with a constraint on the known \jpsi mass is performed.
+To extract \emph{sWeights}~\cite{Pivk:2004ty} a fit to the invariant \Bz mass, stemming from the DTF with a constraint on the known \jpsi mass is performed.
 The signal model consists of a sum of two double-sided Hypatia functions with a shared mean value, the background is parametrised using an exponential function.
 The first Hypatia function describes mainly $\Bz\!\to\jpsi\Kstarz$ candidates without photon radiation in the final state, while the second Hypatia shows a large tail towards smaller invariant masses.
 The tail parameters $a_i$ and $n_i$ of both Hypatia functions are determined on simulated events.
@@ -650,7 +650,7 @@ The input variables for the BDT are listed in \cref{tab:BDTInputSSProton}, most 
 	\end{tabular}
 	\label{tab:BDTInputSSProton}
 \end{table}
-As in \cref{sec:retrainSSpion}, the distributions of the input variables are very similar for the datasets considered as signal and background.
+As in \cref{sec:retrainSSpion}, the distributions of the input variables are very similar for the data sets considered as signal and background.
 Again, only \B candidates with a decay time below \SI{2.2}{\pico\second} are used for the BDT training and some of the input variables are logarithmically transformed to improve the performance.
 All further configurations of the BDT are same as described in \cref{sec:retrainSSpion}, in \cref{fig:SSProtonBDTOutput} the BDT response is shown.
 \begin{figure}[htbp]
@@ -732,7 +732,7 @@ The comparisons of GOF metrics are shown in Table \cref{tab:GOFSS}.
         \label{tab:GOFSS}
 \end{table}
 Since the deviance $G^2$ and the le Cessie-van Houwelingen-Copas-Hosmer metric ($S$) seem to prefer the more simple model, while the Pearson $\chi^2$ and the Cressie-Read ($CR$) metric prefer the more complicated model, both are assumed to fit the data equally well and the more simple one is chosen (all metrics are described in Ref.~\cite{GOFmetric}).
-The Calibration is then performed using the \emph{sWeights} together with the weights from \cref{sec:PrepBd2JpsiKstSample}, giving the calibration parameters shown in \cref{tab:CalibSS}.
+The Calibration is then performed using the \emph{sWeights}~\cite{Pivk:2004ty} together with the weights from \cref{sec:PrepBd2JpsiKstSample}, giving the calibration parameters shown in \cref{tab:CalibSS}.
 A graphical representation can be found in \cref{fig:CalibSS}.
 \begin{table}[tbp]
 	\centering

@@ -200,7 +200,7 @@ The visible difference in \cref{fig:DsVeto} stems from the fact that those two d
 \end{figure}
 To further ensure that no significant contamination from $\Bs\!\to\Dsm\pip$ candidates is present in the data, resonances like \Kstarz- or $\phi$ mesons, which arise in possible \Dsm decays are studied.
 Those resonances would become visible in the \kaon\kaon ($\phi$) and \kaon\pion (\Kstarz) invariant mass distributions.
-Figure \ref{fig:phi_Kst_veto} shows illustratively the invariant mass distributions of the \kaon\kaon (\kaon\pion) combinations of the the daughter kaon with the
+Figure \ref{fig:phi_Kst_veto} shows representatively the invariant mass distributions of the \kaon\kaon (\kaon\pion) combinations of the the daughter kaon with the
 pion with larger transverse momentum under the kaon mass hypothesis (under the initial pion mass hypothesis).
 In addition to the beforehand defined signal and background regions, only candidates within \a range from \SIrange[per-mode=symbol]{1940}{2040}{\MeVcc} from \cref{fig:DsVeto} are considered for these plots as the invariant mass of true \Ds candidates would be in this range.
 Consequently, one would expect a peaking structure in these plots in case of a significant contamination with $\Bs\!\to\Dsm\pip$ decays.
@@ -278,7 +278,7 @@ Both proxy samples are divided into a training and a test sample of same size.
 When training the \ac{BDT}, the training part is used to actually classify the candidates, while the \ac{BDT} is then applied on the independent test sample to check whether the performance is the same on both samples.
 If the performance is different, the \ac{BDT} shows so-called overtraining, \ie the classifier is optimised on statistical fluctuations of the training samples and cannot be applied to other independent samples without a loss in performance.
 Another powerful test to check for overtraining is to compare the output distribution of the \ac{BDT} between the training and test sample - again, a difference would indicate that the \ac{BDT} is overtrained.
-Since the \ac{BDT} should be applied to the dataset after all specific backgrounds like $\Lb\!\to\Lcbar\pip$ or the wrong PV associations are removed all previous selection steps are applied to the signal- and background-proxy samples for the training.
+Since the \ac{BDT} should be applied to the dataset after all specific backgrounds like $\Lb\!\to\Lcbar\pip$ or the wrong PV associations are removed  all previous selection steps are applied to the signal- and background-proxy samples for the training.
 In total, the \ac{BDT} uses \num{16} input variables which are listed in \cref{tab:BDTInput}.
 To reduce the number of input variables, from pairs of variables which have a correlation of $>\SI{97}{\percent}$ with each other the variable with the smaller separation power is removed.
 The final variables cover mostly various \chisqip variables, flight distances, momenta and flight directions in order to obtain a classifier output which is independent of the invariant mass of the \Bz meson as this is used in \cref{ch:massfit} to further identify signal candidates.
@@ -326,7 +326,7 @@ The final overtraining check is shown in \cref{fig:BDTOVertraining} where the go
 \label{sec:BDTOpt}
 
 To optimise the cut on the \ac{BDT} response, the uncertainties on the \CP parameters \Sf and \Sfbar are used.
-For the optimisation, all preselection cuts, the vetoes for background from semileptonic decays and $\Lb\!\to\Lcbar\pip$ decays and the veto for wrongly associated \ac{PV}s are applied to the full Run I dataset.
+For the optimisation, all preselection cuts, the vetoes for background from semileptonic decays and $\Lb\!\to\Lcbar\pip$ decays and the veto for wrongly associated \ac{PV}s are applied to the full Run I data set.
 To determine the uncertainty of \Sf and \Sfbar depending on the \ac{BDT} response the following strategy is adopted:
 the \ac{BDT} output is scanned with a step size of \num{0.01} within a narrow range from \numrange{-0.15}{0.1} and with a step size of \num{0.05} in the outer regions.
 For each cut on the \ac{BDT} response a fit to the invariant \Bz mass in the range \SIrange[per-mode=symbol]{5200}{5500}{\MeVcc} using the \emph{pion}-sample is performed.
@@ -391,7 +391,7 @@ The corresponding signal efficiencies $\varepsilon_{\text{sig}}$ and background 
 The low background suppression of the vetoes is expected as the vetoes aim to suppress specific backgrounds but not the combinatorial background, which is used to determine the given efficiencies.
 
 Finally, the contamination with non-resonant $\Bz\to\Kp\pim\pim\pip$ decays is determined, as such background would show the same structure as \BdToDpi candidates in the invariant $m_{\Kp\pim\pim\pip}$ distribution but the \emph{weak} phase would be different.
-In order to do this, two strategies are implemented, both using the datasample after applying all selection steps, except for the cut on the invariant \Dm mass described in \cref{tab:preselection}:
+In order to do this, two strategies are implemented, both using the data sample after applying all selection steps, except for the cut on the invariant \Dm mass described in \cref{tab:preselection}:
 for the first strategy the invariant \Dm mass is plotted for candidates in a tight \Bz signal window from \SIrange[per-mode=symbol]{5240}{5320}{\MeVcc} as shown in \cref{fig:nonRes_Try1}.
 Combinatorial background candidates in the resulting \Dm mass distribtution could be origin from non-resonant \Kpm\pimp\pimp\pipm candidates.
 \begin{figure}[tb]
