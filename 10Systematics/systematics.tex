@@ -3,23 +3,26 @@
 \label{ch:systeamticUncerts}
 
 \linespread{1.08}\selectfont
-The maximum likelihood fits to the invariant mass and decay time of the \BdToDpi candidates are designed to describe the data and take uncertainties on all parameters correctly intpo account.
-However, no all effects possibly influencing the result can be accounted for direclty in the fit and therefore systeamtic uncertainties need to be calculated:
+The maximum likelihood fits to the invariant mass and decay time of the \mbox{\BdToDpi} candidates are designed to describe the data and take uncertainties on all parameters correctly into account.
+However, not all effects possibly influencing the result can be accounted for directly in the fit and therefore systematic uncertainties need to be calculated:
 Parameters are constrained by means of Gaussian functions in various steps of the analysis and the influence of these constraints on the resulting uncertainties is estimated in \cref{sec:SystUncertsGauss}.
 Further ensembles of pseudoexperiments are used to test the systematic effects of certain assumptions such as $\DG=0$  as described in \cref{sec:systUncertsPseudo}.
 Systematic effects related to the mass model and the associated determination of the \emph{sWeights} are discussed in \cref{sec:SystUncertMass}.
+Furthermore, the potential fit biases observed in the fits to simulated events in \cref{sec:valOnSim} are assigned as systematic uncertainties.
 
 It is further important to mentioned that all work in this chapter related to the mass fit was done by a collaborator.
 This includes parts of the estimated uncertainties in \cref{sec:SystUncertsGauss} and the estimations presented in \cref{sec:SystUncertMass}.
 
-A summary of all systeamtic uncertainties is given in \cref{tab:SystUncertsFull}.
-The total uncertainty is calculated from the sum of the squared individual contributions, \ie the individual contributions are assumed to be uncorrelated.
+A summary of all systematic uncertainties is given in \cref{tab:SystUncertsFull}, all are assumed to be symmetric for both \CP parameters.
+The total uncertainty of \num{0.0111} and \num{0.0073} on \Sf and \Sfbar, respectively, is calculated from the sum of the squared individual contributions, \ie the individual contributions are assumed to be uncorrelated.
+The correlation between the systematic uncertainties on the \CP parameters is \SI{-41}{\percent}.
 
 \begin{table}[tbp]
 	\centering
 	\caption{Systematic uncertainties on the \CP parameters \Sf and \Sfbar listed by decreasing order for \Sf.
 	The \enquote{fit biases} are the residuals of the fits to bootstrapped simulated candidates described in \cref{sec:valOnSim}.
-	The total uncertainty is calculated from the sum of the squared individual contributions.}
+	The total uncertainty is calculated from the sum of the squared individual contributions.
+    The correlation between the uncertainties on \Sf and \Sfbar is \SI{-41}{\percent}.}
 	\begin{tabular}{lS[table-format=1.4]S[table-format=1.4]}
 		\toprule
 		Source & \Sf & \Sfbar\\
@@ -87,6 +90,19 @@ In the fit, the polynomials of the calibration models are then increased by one 
     \label{fig:systUncertFTmodel}
 \end{figure}
 
+\subsection*{Fixed flavour tagging efficiency asymmetries}
+
+Pseudoexperiments are generated with the flavour tagging efficiency asymmetries set to the values obtained on simulated events decreased by their uncertainty, namely \SI{-0.14}{\percent} and \SI{-0.13}{\percent} for the OS and SS taggers, respectively.
+The samples are then fitted with the efficiency asymmetries fixed to zero.
+The distributions of residuals for the \CP parameters shown in \cref{fig:systUncertFTeffasym} results in systematic uncertainties of \num{0.0012} and \num{0.0015} for \Sf and \Sfbar, respectively.
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.48\textwidth]{10Systematics/figs/TagEffAsym_Sf_res.pdf}
+    \includegraphics[width=0.48\textwidth]{10Systematics/figs/TagEffAsym_Sfbar_res.pdf}
+    \caption{Distribution of residuals for \Sf (left) and \Sfbar (right) to determine the systematic uncertainty due to the flavour tagging efficiency asymmetry.}
+    \label{fig:systUncertFTeffasym}
+\end{figure}
+
 \subsection*{Decay-time resolution}
 
 Two different sets of samples are generated to determine the systematic uncertainty due to the decay-time resolution: the first with an average resolution of \SI{20}{\femto\second} higher than the nominal resolution of \SI{54.91}{\femto\second}, the second with an average resolution of \SI{20}{\femto\second} lower than the nominal one.
@@ -151,17 +167,20 @@ The distribution of residuals for \Sf and \Sfbar is shown in \cref{fig:systUncer
 \section{Mass model}
 \label{sec:SystUncertMass}
 
-Since the model to describe the invariant mass is the essential ingredient for the calculation of the \emph{sWeights}, which are used in all subsequent steps of the analysis to make distributions look background subtracted, systematic effects from the parameterisation of the invariant mass can also influence the measurement of \Sf and \Sfbar.
-To estimate a systematic uncertainty, the fit strategy, \ie the restriction of the invariant-mass range in Fit B, is checked.
-For this purpose, Fit B is also performed in the wide range of the invariant mass, which leads to a larger background contamination in the subsequently used data sample.
-With the \emph{sWeights} extracted from this fit, the decay-time fit is performed again.
-The result shows a deviation of $2.3\sigma$ and $1.8\sigma$ for \Sf and \Sfbar, respectively.
-Therefore, the difference between these newly obtained values and the nominal results for \Sf and \Sfbar parameters is taken as systematic uncertainty, namely \num{0.0042} and \num{0.0023}.
-Additionally a second test to check the strategy of splitting of the data sample in order to control the $\Bu\!\to\Dm\Kp$ component is performed.
-This test yields a good agreement of $0.4\sigma$ and $1.5\sigma$ for \Sf and \Sfbar, respectively, and therefore no additional systematic uncertainty is assigned, especially given the fact that a systematic uncertainty concerning the requirement on \dllkpi is already assigned in \cref{sec:SystUncertsGauss}.
-
-As a last test, the fit of the invariant mass as a tool to subtract the background is simply \enquote{replaced} by a narrow mass range of $[5250,5330]\,$\si[per-mode=symbol]{\MeVcc}, \ie no \emph{sWeights} are calculated.
+Since the model to describe the invariant mass is the essential ingredient for the calculation of the \emph{sWeights}, which are used in all subsequent steps of the analysis to statistically subtract background candidates, systematic effects from the parameterisation of the invariant mass can also influence the measurement of \Sf and \Sfbar.
+In order to do this, the fit of the invariant mass as a tool to subtract the background is simply \enquote{replaced} by a narrow mass range of $[5250,5330]\,$\si[per-mode=symbol]{\MeVcc}, \ie no \emph{sWeights} are calculated.
 This is possible due to the high purity in the signal range,
 The decay-time fit is then performed on a data sample containing both, signal and backgrounds which are distributed under the signal peak in the invariant mass distribution.
 The agreement between the nominal result and the result obtained without \emph{sWeights} is $0.2\sigma$ and $1.3\sigma$ for \Sf and \Sfbar, respectively.
 Due to this good agreement, despite the extreme test without any background suppression in the signal range, no further systematic uncertainty is assigned.
+
+Further, a systematic uncertainty due to the fit strategy, \ie the restriction of the invariant-mass range in Fit B, is estimated.
+For this purpose, Fit B is also performed in the wide range of the invariant mass, which leads to a larger background contamination in the subsequently used data sample.
+With the \emph{sWeights} extracted from this fit, the decay-time fit is performed again.
+The result shows a deviation of $2.3\sigma$ and $1.8\sigma$ for \Sf and \Sfbar, respectively.
+The difference between these newly obtained values and the nominal results for \Sf and \Sfbar parameters is taken as systematic uncertainty, namely \num{0.0042} and \num{0.0023}.
+
+Last, the strategy of splitting the data sample in order to control the $\Bu\!\to\Dm\Kp$ component is verified, by tightening the cut on the \dllkpi, which defines the \emph{pion} sample and repeating Fit A and B only for this sample in the narrow signal region $[5220, 5600]\,$\si[per-mode=symbol]{\MeVcc}.
+This test yields a good agreement of $0.4\sigma$ and $1.6\sigma$ for \Sf and \Sfbar, respectively, and therefore no additional systematic uncertainty is assigned.
+This is further supported by the fact that a systematic uncertainty due to the requirement on the \dllkpi is already calculated in \cref{sec:SystUncertsGauss} and hence two separate systematic uncertainties would be taken into account for the same experimental effect.
+
