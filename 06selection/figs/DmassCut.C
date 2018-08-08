@@ -5,9 +5,12 @@ void DmassCut()
    TCanvas *canv = new TCanvas("canv", "canv",0,0,2000,1200);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
+   gStyle->SetLineWidth(2);
+   gROOT->SetBatch(true);
    canv->SetHighLightColor(2);
    canv->Range(1767.273,-34726.4,2001.039,182313.6);
    canv->SetFillColor(0);
+   canv->SetLineWidth(2);
    canv->SetBorderMode(0);
    canv->SetBorderSize(2);
    canv->SetTickx(1);
@@ -17,7 +20,7 @@ void DmassCut()
    canv->SetBottomMargin(0.16);
    canv->SetFrameBorderMode(0);
    canv->SetFrameBorderMode(0);
-   
+
    TH1D *histdata1lab0_FitwithoutConst_Dplus_M_flat__7 = new TH1D("histdata1lab0_FitwithoutConst_Dplus_M_flat__7","histdata1lab0_FitwithoutConst_Dplus_M_flat",100,1800,1980);
    histdata1lab0_FitwithoutConst_Dplus_M_flat__7->SetBinContent(1,6698);
    histdata1lab0_FitwithoutConst_Dplus_M_flat__7->SetBinContent(2,6459);
@@ -124,6 +127,7 @@ void DmassCut()
    histdata1lab0_FitwithoutConst_Dplus_M_flat__7->SetEntries(1975343);
    histdata1lab0_FitwithoutConst_Dplus_M_flat__7->SetStats(0);
    histdata1lab0_FitwithoutConst_Dplus_M_flat__7->SetLineWidth(2);
+   histdata1lab0_FitwithoutConst_Dplus_M_flat__7->SetLineColor(kBlack);
    histdata1lab0_FitwithoutConst_Dplus_M_flat__7->SetMarkerStyle(20);
    histdata1lab0_FitwithoutConst_Dplus_M_flat__7->GetXaxis()->SetTitle("#it{K}^{#kern[-0.0]{#pm}}#it{#pi}^{#kern[-0.0]{#mp}}#it{#pi}^{#kern[-0.0]{#mp}} mass [MeV/#it{c}^{2}]");
    histdata1lab0_FitwithoutConst_Dplus_M_flat__7->GetXaxis()->SetNdivisions(505);
@@ -146,7 +150,7 @@ void DmassCut()
    histdata1lab0_FitwithoutConst_Dplus_M_flat__7->GetZaxis()->SetTitleOffset(1.2);
    histdata1lab0_FitwithoutConst_Dplus_M_flat__7->GetZaxis()->SetTitleFont(132);
    histdata1lab0_FitwithoutConst_Dplus_M_flat__7->Draw("E1");
-   
+
    TH1D *histdata2lab0_FitwithoutConst_Dplus_M_flat__8 = new TH1D("histdata2lab0_FitwithoutConst_Dplus_M_flat__8","histdata2lab0_FitwithoutConst_Dplus_M_flat",100,1800,1980);
    histdata2lab0_FitwithoutConst_Dplus_M_flat__8->SetBinContent(1,6698);
    histdata2lab0_FitwithoutConst_Dplus_M_flat__8->SetBinContent(2,6459);
@@ -253,6 +257,7 @@ void DmassCut()
    histdata2lab0_FitwithoutConst_Dplus_M_flat__8->SetEntries(1975343);
    histdata2lab0_FitwithoutConst_Dplus_M_flat__8->SetStats(0);
    histdata2lab0_FitwithoutConst_Dplus_M_flat__8->SetLineWidth(2);
+   histdata2lab0_FitwithoutConst_Dplus_M_flat__8->SetLineColor(kBlack);
    histdata2lab0_FitwithoutConst_Dplus_M_flat__8->SetMarkerStyle(20);
    histdata2lab0_FitwithoutConst_Dplus_M_flat__8->GetXaxis()->SetTitle("#it{K}^{#kern[-0.0]{#pm}}#it{#pi}^{#kern[-0.0]{#mp}}#it{#pi}^{#kern[-0.0]{#mp}} mass [MeV/#it{c}^{2}]");
    histdata2lab0_FitwithoutConst_Dplus_M_flat__8->GetXaxis()->SetNdivisions(505);
@@ -276,7 +281,7 @@ void DmassCut()
    histdata2lab0_FitwithoutConst_Dplus_M_flat__8->GetZaxis()->SetTitleFont(132);
    histdata2lab0_FitwithoutConst_Dplus_M_flat__8->Draw("Same E1");
    TLatex *   tex = new TLatex(0.75,0.84,"LHCb");
-tex->SetNDC();
+   tex->SetNDC();
    tex->SetTextFont(132);
    tex->SetTextSize(0.08);
    tex->SetLineWidth(2);
@@ -284,12 +289,30 @@ tex->SetNDC();
    TLine *line = new TLine(1840,0,1840,169291.2);
    line->SetLineColor(2);
    line->SetLineWidth(2);
-   line->Draw();
+   // line->Draw();
    line = new TLine(1900,0,1900,169291.2);
    line->SetLineColor(2);
    line->SetLineWidth(2);
-   line->Draw();
-   
+   // line->Draw();
+
+   // double x[2] = {1870, 1870};
+   // double y[2] = {100000, 130000.2};
+   // double xerrors[2] = {30, 30};
+   // double yerrors[2] = {0, 0};
+   // TGraphErrors *pTot_gr = new TGraphErrors(2, x, y, xerrors, yerrors);
+   // pTot_gr->SetFillColor(kRed);
+   // pTot_gr->SetFillStyle(3004);
+   // pTot_gr->SetLineColor(kRed);
+   // pTot_gr->SetLineWidth(2);
+   // pTot_gr->Draw("3");
+
+   TH1D *errorHist = new TH1D("errorHist","errorHist",1 ,1840, 1900);
+   errorHist->SetBinContent(1,179291.2);
+   errorHist->SetFillColor(kRed);
+   errorHist->SetFillStyle(3004);
+   errorHist->SetLineColor(kRed);
+   errorHist->Draw("SAME");
+
    TH1D *histdata1lab0_FitwithoutConst_Dplus_M_flat_copy__9 = new TH1D("histdata1lab0_FitwithoutConst_Dplus_M_flat_copy__9","histdata1lab0_FitwithoutConst_Dplus_M_flat",100,1800,1980);
    histdata1lab0_FitwithoutConst_Dplus_M_flat_copy__9->SetBinContent(1,6698);
    histdata1lab0_FitwithoutConst_Dplus_M_flat_copy__9->SetBinContent(2,6459);
@@ -397,6 +420,7 @@ tex->SetNDC();
    histdata1lab0_FitwithoutConst_Dplus_M_flat_copy__9->SetDirectory(0);
    histdata1lab0_FitwithoutConst_Dplus_M_flat_copy__9->SetStats(0);
    histdata1lab0_FitwithoutConst_Dplus_M_flat_copy__9->SetLineWidth(2);
+   histdata1lab0_FitwithoutConst_Dplus_M_flat_copy__9->SetLineColor(kBlack);
    histdata1lab0_FitwithoutConst_Dplus_M_flat_copy__9->SetMarkerStyle(20);
    histdata1lab0_FitwithoutConst_Dplus_M_flat_copy__9->GetXaxis()->SetTitle("#it{K}^{#kern[-0.0]{#pm}}#it{#pi}^{#kern[-0.0]{#mp}}#it{#pi}^{#kern[-0.0]{#mp}} mass [MeV/#it{c}^{2}]");
    histdata1lab0_FitwithoutConst_Dplus_M_flat_copy__9->GetXaxis()->SetNdivisions(505);
@@ -422,4 +446,8 @@ tex->SetNDC();
    canv->Modified();
    canv->cd();
    canv->SetSelected(canv);
+   canv->Update();
+
+   canv->SaveAs("DmassCut.pdf");
+   canv->SaveAs("DmassCut.tex");
 }
