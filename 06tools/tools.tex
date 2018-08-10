@@ -3,14 +3,61 @@
 \label{chap:tools}
 
 \linespread{1.08}\selectfont
-This chapter describes the used statistical tools.
-
-\section{The sPlot technique}
-here the sPlot technique is introduced
+In this chapter several statistical tools used in the analysis are introduced.
+A multivariate classifier called boosted decision tree (BDT) is described in \cref{sec:BDT} based in \cite{QuelleBDT}. In the analysis BDTs are used in the selection of \BdToDpi candidates and when determining the production flavour of the \Bz mesons.
+In \cref{sec:MLFit} the maximum-likelihood method which is used to fit the invariant \Bz mass and to estimate the \CP asymmetries is detailed~\cite{Bohm:389738}.
+Finallz the \emph{sPlot} technique~\cite{Pivk:2004ty} is described in \cref{sec:splot}, which is used in to statistically separate signal from background candidates.
 
 \section{Boosted decision trees}
+\label{sec:BDT}
 
 this section explains BDTs and the AdaBoost method
 
+
 \section{The maximum-likelihood method}
-explaing how ml fits work
+\label{sec:MLFit}
+
+The maximum-likelihood method is a common tool for parameter estimation from a data sample.
+In simple terms, the parameter values are selected as an estimate according to which the shape of the observed data appears most probable.
+This estimation is possible in either one or multiple dimensions.
+Assuming $n$ measurements of a set of observables $\vec{x}$ the maximum-likelihood function is given as
+\begin{equation}
+\mathcal{L}(\vec{a})=\mathcal{P}(\vec{x}_1|\vec{a})\times\mathcal{P}(\vec{x}_2|\vec{a})\times...\times\mathcal{P}(\vec{x}_n|\vec{a})=\prod_{i=1}^{n}\mathcal{P}(\vec{x}_i|\vec{a})\,,\label{eq:mlfunc}
+\end{equation}
+where $\mathcal{P}(\vec{x}_i|\vec{a})$ are properly normalised the probability densitiy function (PDF) with a set of parameters $\vec{a}$ to estimate.
+The function $\mathcal{L}(\vec{a})$ gives the probability of obtaining the given measured values for a set of parameters $\vec{a}$ in a sample $\vec{x}_i$ .
+However, even if the maximum-likelihood function becomes maximal if the probability of obtaining the data set $\vec{x}_i$ becomes maximal, it is not a probability density in the parameters $\vec{a}$.
+Extending the function in \cref{eq:mlfunc} with a Poisson term
+\begin{equation}
+\mathcal{L}(\vec{a})=\frac{e{-n}n^N}{N!}\prod_{i=1}^{n}\mathcal{P}(\vec{x}_i|\vec{a})\,,
+\end{equation}
+where $n$ is the number of expected events, although the sample containts $N$ measurements allows to distinguish different categories of events by multiplying several likelihood functions.
+Usually the negative logarithmic likelihood function is minimised because this is numerically more stable and it leads to the same results, since the logarithm is a monotone function.
+
+Besides, it is possible to use an external input to constrain a parameter $\mu$ to be $\mu_0\pm\Delta\mu$ by means of a Gaussian function.
+This implies that the likelihood is multiplied with a Gaussian with the mean and width set to $\mu_0$ and $\Delta\mu$, respectively.
+In this analysis, the maximum-likelihood fits were implemented using the \root framework~\cite{Antcheva:2009zz}, which makes use of the Minuit package~\cite{James:1975dr} for the minimisation of the likelihood function.
+
+
+\section{The sPlot technique}
+\label{sec:splot}
+
+The \emph{sPlot} technique~\cite{Pivk:2004ty} uses a maximum-likelihood fit to calculate the so-called \emph{sWeights} by performing a \emph{sPlot} fit to one or multiple discriminating observables.
+Considering a data sample, containing a mixture of $N_c$ different categories of events, the \emph{sWeights} are per-event weights ${}_sw$, which allow to to reconstruct the distributions of variables separately for each category present in the initial sample.
+However, one important assumption is, that the \emph{sWeights} are applied to observables which are independent of the discriminating observables.
+To perform a \emph{sPlot} fit the PDFs for all categories of events are needed, so that the \emph{sWeights} can be calculated as
+\begin{equation}
+{}_sw=\frac{\sum_{j=1}^{N_c}V_{nj}f_j(\vec{y}_e)}{\sum_{k=1}^{N_c}N_kf_k(\vec{y}_e)}\,,
+\end{equation}
+where the sums iterate over all categories of events, the $f_i$ are the corresponding PDFs of the discriminating set of observables $\vec{y}$ for an event $e$, $N_k$ is the yield in the corresponding category and $V$ the covariance matrix of the yields.
+In practice, a first fit to the observables $\vec{y}$ is performed to determine the parameters of the PDFs $f_i(\vec{y}_e)$, before all parameters except for the yields are fixed and the \emph{sWeights} are calculated in a second fit.
+The normalisation of the \emph{sWeights} is such that the sum over the weights for one category provides the number of events $N$ of this category in the sample.
+The statistical uncertainty on this number of events is defined for each bin $\delta x$ by
+\begin{equation}
+\sigma_N=\sqrt{\sum_{e\subset\delta x}({}_sw)^2}\,.
+\end{equation}
+
+In the scope of this analysis signal and background candidates for the signal decay \mbox{\BdToDpi} and for the flavour tagging control modes $\Bz\!\to\jpsi\Kstarz$ and $\Bu\!\to\Dz\pip$ are separated using this technique by performing fits to the invariant mass distributions (more details in \cref{ch:massfit} and \cref{ch:flavourtagging}).
+The choice of the invariant mass as discriminating obersvable has two advantages:
+on the one hand, it is independent of the decay-time, for which the distribution of signal candidates is needed to \eg extract the \CP asymmetries.
+On the other hand, the distributions of the different contributions in the distribution are well known and allow a reliable parametrisation.
