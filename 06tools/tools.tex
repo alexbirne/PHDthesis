@@ -4,14 +4,80 @@
 
 \linespread{1.08}\selectfont
 In this chapter several statistical tools used in the analysis are introduced.
-A multivariate classifier called boosted decision tree (BDT) is described in \cref{sec:BDT} based in \cite{QuelleBDT}. In the analysis BDTs are used in the selection of \BdToDpi candidates and when determining the production flavour of the \Bz mesons.
+A multivariate classifier called \ac{BDT} is described in \cref{sec:BDT} based on Ref.\cite{Bohm:389738}. In the analysis \ac{BDT}s are used in the selection of \BdToDpi candidates and when determining the production flavour of the \Bz mesons.
 In \cref{sec:MLFit} the maximum-likelihood method which is used to fit the invariant \Bz mass and to estimate the \CP asymmetries is detailed~\cite{Bohm:389738}.
 Finallz the \emph{sPlot} technique~\cite{Pivk:2004ty} is described in \cref{sec:splot}, which is used in to statistically separate signal from background candidates.
 
 \section{Boosted decision trees}
 \label{sec:BDT}
 
-this section explains BDTs and the AdaBoost method
+Decision trees are the multivariate classifiers, \ie they analyse multiple randomly distributed variables simultaneously in contrast to simple univariate analyses that examine each variable individually.
+A decision tree divides a data set of different types of events by applying hierarchically ordered logical rules to different properties of these events.
+The tree always consists of a root node and an arbitrary number of sub nodes, as well as at least two leaves.
+For binary decision trees, as used in the scope of this thesis, the rule applied at each node has only two possible outcomes.
+Figure \ref{fig:BDTexample} shows a decision tree with a depth of two, \ie two consecutive binary decisions are made before the events are assigned to the classes $A$ and $B$, depending on their final leave.
+\begin{figure}[tbp]
+    \centering
+    \includestandalone{06tools/figs/BDT}
+    \caption{Binary decision tree with a depth of two, dividing events into the classes $A$ and $B$ based on the variables $v_i$.}
+    \label{fig:BDTexample}
+\end{figure}
+In principle, each decision tree starts applying a rule to the variable with the best separation power (here $v_1$) in the root node.
+Subsequently, further rules are applied in the lower sub nodes until certain limits are reached, \eg a minimum number of events in each leave.
+
+Before applying a decision tree to a data sample, it first needs to be trained with data samples labelled according to their class.
+Furthermore, a measure to estimate the separating power of the different variables is needed.
+An easy way for example is to maximize the difference $\Delta N=N_r-N_w$ between right ($N_r$) and wrong ($N_w$) assignments in a node.
+However, the cut point of the binary rule remains random to some extent, since the value $\Delta N$ only changes when the cut-point is shifted by so much that it hits the nearest variable value.
+A slightly more complicated, but very popular measure is the following:
+The purity $P$ of events from class $A$
+\begin{equation}
+P_A=\frac{N_A}{N_A+N_B}\,,
+\end{equation}
+where $N_i$ are the number of events from class $A$ and $B$, becomes $0$ or $1$ if the classification is perfect.
+Therefore, minimising the Gini Index~\cite{Bohm:389738}
+\begin{equation}
+G=P_A\left(1-P_A\right)+P_B\left(1-P_B\right)
+\end{equation}
+provides the variable with the largest separation power.
+As the selection of variables depend on the chosen variables and applied cuts in higher nodes of the decision tree, correlations are automatically taken into account.
+
+The overall classification performance can be improved by not only using one moderately effective classifier but instead calculating the weighted average of many different decision trees.
+In order to do so, many decision trees are grown.
+Each time a new tree is built, events, which were assigned to the wrong class by the previous tree, are weighted (boosted) in order to reduce the probability that they are again wrongly classified.
+Such a combination of decision trees is denoted as boosted decision tree (\ac{BDT}).
+Well known boosting algorithms are the gradient boosting technique~\cite{gradientBoost} or the adaptive boosting (AdaBoost) method~\cite{AdaBoost}.
+Since the latter is used in the selection of \BdToDpi candidates in \cref{chap:selection} and the development of flavour-tagging algorithms in \cref{ch:flavourtagging} it is shortly described here.
+
+Considering a boosted decision tree consisting of $T$ trees, where the trees are distinguished by the subscript $t$ counting.
+The first decision tree is trained with $N$ events equally weighted providing a hypothesis $h_1(x^i)$ being \num{+1} (\num{-1}) for signal (background) for the $i$-th event.
+This hypothesis is compared with the label $y_i$ and the total error rate is calculated as
+\begin{equation}
+\varepsilon_1=\sum_{i=1}^{N}p^i_1\left|h_1(x^i)-y^i\right|\,,
+\end{equation}
+where $p_1^i=\nicefrac{w_1^i}{\sum_{i}w_1^i}$ is the normalised weight for each event.
+This can be generalised by replacing the subscript $1$ with $t$.
+Using this error rate the weights for the next tree are computed using the boost weight
+\begin{equation}
+\alpha^i=\left(\frac{\varepsilon_t}{1-\varepsilon_t}\right)^{\beta\left(1-\left|h_t(x^i)-y^i\right|\right)}
+\end{equation}
+as $w_{t+1}^i=\alpha w_t^i$, where $\beta$ is the boosting factor,  which, in simple terms, modifies the learning rate during the training.
+The final BDT output is then given by
+\begin{equation}
+h_f(x^i)=\frac{1}{T}\sum_{i=1}^{T}\ln\left(\alpha^i\right)\times h_t(x^i)\,,
+\end{equation}
+which is distributed between \num{-1} and \num{+1}, implying that the event is more likely signal (background) when the value is close to \num{+1} (\num{-1}).
+
+When training a \ac{BDT}, some caveats must be taken into account.
+On the one hand, the labelled data samples used in the training are usually only proxies for the \emph{real} data.
+For example, differences between simulated events and \emph{real} data can lead to a bad performance of the \ac{BDT}.
+Furthermore, the \ac{BDT} can learn to distinguish the training data samples by statistical fluctuations.
+This phenomenon, denoted as over-fitting or overtraining, can be avoided by splitting the labelled training data sample before devloping the \ac{BDT}.
+The first half is then used as training data set and following the \ac{BDT} is applied to the second data set denoted as test sample.
+If the \ac{BDT} output distributions on both data sets are the same, it can be assumed that there is no overtraining.
+
+To train \ac{BDT}s various implementations exist.
+In the course of this thesis always the implementation from TMVA~\cite{Hocker:2007ht} is used.
 
 
 \section{The maximum-likelihood method}

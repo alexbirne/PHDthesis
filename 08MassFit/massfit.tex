@@ -9,7 +9,7 @@ the \emph{pion} sample has $\dllkpi\leq5.0$ and the \emph{kaon} sample $\dllkpi>
 This distinction is useful when separating \mbox{\BdToDpi} from $\Bd\!\to\Dm\Kp$ candidates as no dedicated selection cut is needed.
 Instead this separation is done statistically in the fit to the invariant mass distribution.
 
-The invariant \Bz mass distributions of candidates with a tag of one of the flavour tagging algorithms are fitted simultaneously in these samples in order to calculate \emph{sWeights}~\cite{Pivk:2004ty}, which are used in the following analysis steps to statistically separate signal from background candidates.
+The invariant \Bz mass distributions of candidates with known initial flavour based on one of the flavour tagging algorithms are fitted simultaneously in these samples in order to calculate \emph{sWeights}~\cite{Pivk:2004ty}, which are used in the following analysis steps to statistically separate signal from background candidates.
 It is important to note that the work described in this chapter was done by a collaborator.
 However, since this is an essential part of the analysis required to follow the subsequent steps, it is not omitted completely, but the extent to which \eg experimental techniques are described is less comprehensive compared to the other parts.
 
@@ -37,49 +37,57 @@ In contrast, the combinatorial background is determined directly in the fit to d
 For the \emph{pion} sample, the following PDFs are used to parameterise the peaking components:
 \begin{itemize}
 	\item $\Bz\!\to\Dpm\pimp$: The signal component is described by a double-sided Hypatia and a Johnson SU function.
-	The Hypatia~\cite{Santos:2013ky} is defined as
+	Assuming a symmetric peak of the distribution, the Hypatia function~\cite{Santos:2013ky} is defined as
 	\begin{equation}
 	\begin{aligned}
-	&\mathcal{I}(m;\mu,\sigma,\lambda,\zeta,\beta,a_1,n_1,a_2,n_2) \propto\\
+	&\mathcal{I}(m;\mu,\sigma,\lambda,\zeta,a_1,n_1,a_2,n_2) \propto\\
 	&\hspace{2.8cm}\begin{cases}
-	G(m,\mu,\sigma,\lambda,\zeta,\beta,a,n), &\,   - a_1 < \frac{m - \mu}{\sigma} < a_2 \\
-	\frac{G(\mu - a_1 \sigma,\mu,\sigma,\lambda,\zeta,\beta)}{\left(1 - m/(n \frac{G(\mu - a_1\sigma,\mu,\sigma,\lambda,\zeta,\beta)}{G^\prime(\mu - a_1 \sigma,\mu,\sigma,\lambda,\zeta,\beta)} -a_1 \sigma)\right)^{n_1}},	&\,  - a_1 > \frac{m - \mu}{\sigma} \\
-	\frac{G(\mu - a_2 \sigma,\mu,\sigma,\lambda,\zeta,\beta)}{\left(1 - m/(n \frac{G(\mu - a_2\sigma,\mu,\sigma,\lambda,\zeta,\beta)}{G^\prime(\mu - a_2 \sigma,\mu,\sigma,\lambda,\zeta,\beta)} -a_2 \sigma)\right)^{n_2}},	&\quad a_2 < \frac{m - \mu}{\sigma} \\
+	G(m,\mu,\sigma,\lambda,\zeta), &\,   - a_1 < \frac{m - \mu}{\sigma} < a_2 \\
+	\frac{G(\mu - a_1\sigma,\mu,\sigma,\lambda,\zeta)}{\left(1 - mR_1^{-1}\right)^{n_1}},	&\,  - a_1 > \frac{m - \mu}{\sigma} \\
+	\frac{G(\mu - a_2 \sigma,\mu,\sigma,\lambda,\zeta)}{\left(1 - mR_2^{-1}\right)^{n_2}},	&\quad a_2 < \frac{m - \mu}{\sigma} \\
 	\end{cases}
 	\label{eq:ipatia}
 	\end{aligned}
 	\end{equation}
 	with
 	\begin{equation}
+	R_i=n_i\frac{G(\mu - a_i\sigma,\mu,\sigma,\lambda,\zeta)}{G^\prime(\mu - a_i \sigma,\mu,\sigma,\lambda,\zeta)}-a_i\sigma\,,
+	\end{equation}
+	where $G(m,\mu,\sigma,\lambda,\zeta,a,n)$ is a limit case of the generalised hyperbolic function
+	\begin{equation}
 	\begin{aligned}
-	&G(m,\mu,\sigma,\lambda,\zeta,\beta,a,n)\propto\\
-	&\hspace{0.6cm}\left(\left(m-\mu\right)^2+A_\lambda^2(\zeta)\sigma^2\right)^{\frac{1}{2}\lambda-\frac{1}{4}}e^{\beta\left(m-\mu\right)}K_{\lambda-\frac{1}{2}}\left(\zeta\sqrt{1+\left(\frac{m-\mu}{A_\lambda(\zeta)\sigma}\right)^2}\right)\,.
+	&G(x,\mu,\sigma,\lambda,\zeta)=\\
+	&\hspace{1.0cm}\left(\left(x-\mu\right)^2+A_\lambda^2(\zeta)\sigma^2\right)^{\frac{1}{2}\lambda-\frac{1}{4}}K_{\lambda-\frac{1}{2}}\left(\zeta\sqrt{1+\left(\frac{m-\mu}{A_\lambda(\zeta)\sigma}\right)^2}\right)\,.
 	\end{aligned}
 	\end{equation}
-	Defining the quantities
-	\begin{align*}
-	&w=e^{r^2}\,,&\\
-	&\omega=-\nu\tau\,,&\\
-	&c=\frac{1}{\sqrt{\frac{1}{2}\left(w-1\right)\left(w\cosh\!\left(2\omega\right)+1\right)}}\,,&\\
-	&z=\frac{m-\left(\mu+c+\sigma\sqrt{w}\sinh\omega\right)}{c\sigma}\,,&\\
-	&r=-\nu+\frac{\sinh^{-1}z}{\tau}\,,&
-	\end{align*}
-	the Johnson SU function~\cite{JohnsonSU} can be expressed as
+	The quantities $K_{\lambda}(\zeta)$ are the cylindrical harmonics also needed to parametrise
 	\begin{equation}
-	\mathcal{J}\!\left(m;\mu,\sigma,\nu,\tau\right)\propto\frac{1}{2\pi c(\nu,\tau)\sigma}e^{-\frac{1}{2}r(m;\mu,\sigma,\nu,\tau)^2}\frac{1}{\tau\sqrt{z(m;\mu,\sigma,\nu,\tau)^2+1}}\,.\label{eq:johnsonsu}
+	A_\lambda^2(\zeta)=\frac{\zeta K_{\lambda}(\zeta)}{K_{\lambda+1}(\zeta)}\,.
 	\end{equation}
+	This parametrisation describes a distribution with a Gaussian core with mean $\mu$ and width $\sigma$.
+	The parameters $\lambda$ and $\zeta$ are further degrees of freedom to model the shape of the peak while the parameters $a_i$ and $n_i$ describe power-law tails to both sides of the distribution.
+	The Johnson SU function~\cite{JohnsonSU} is defined as
+	\begin{equation}
+	\mathcal{J}\!\left(m;\mu,\sigma,\delta,\gamma\right)\propto\frac{1}{\sqrt{2\pi\left(\left(m-\mu\right)^2+\sigma^2\right)}}\times e^{-\frac{1}{2}\left(\gamma+\delta\sinh^{-1}\!\left(\frac{m-\mu}{\sigma}\right)\right)^2\delta}\,.
+	\end{equation}
+	The mean $\mu'$ of this distribution, which features a single peak though its overall shape is completely determined by its parameter values, is given by
+	\begin{equation}
+	\mu'=\mu-e^{\frac{1}{2\delta^2}}\sigma\sinh\!\left(\frac{\gamma}{\delta}\right)\,.
+	\end{equation}
+	Thereby, the parameter $\mu$ describes the location of the peak, $\sigma$ mainly contributes to the width of the distribution and $\delta$ and $\gamma$ parametrise the shape.
 	\item $\Bz\!\to\Dm\Kp$: The cross-feed component is parametrised by a double-sided Hypatia function as described in \cref{eq:ipatia}.
 	\item $\Bz\!\to\Dm\rhop\!\left(\to\pip\piz\right)$: The first partially-reconstructed background is described by a single-sided Crystal Ball function and a Gaussian function.
 	The single-sided Crystal Ball function is defined as
 	\begin{equation}
 	\mathcal{C\!B}\!\left(m;\mu,\sigma,\alpha,n\right)\propto\begin{cases}
-	e^{-frac{(m-\mu)^2}{2\sigma^2}}, &\, \frac{m-\mu}{\sigma}>-\alpha\\
+	e^{-\frac{(m-\mu)^2}{2\sigma^2}}, &\, \frac{m-\mu}{\sigma}>-\alpha\\
 	A\left(B-\frac{m-\mu}{\sigma}\right)^{-n}, &\, \frac{m-\mu}{\sigma}\leq-\alpha\\\end{cases}\label{eq:CrystalBall}
 	\end{equation}
 	with
 	\begin{equation}
 	A=\left(\frac{n}{\left|\alpha\right|}\right)^{n}e^{-\frac{\left|\alpha\right|^2}{2}}\hspace{0.5cm}\text{ and }\hspace{0.5cm}B=\frac{n}{\left|\alpha\right|}-\left|\alpha\right|\,.
 	\end{equation}
+	The parameters $\mu$ and $\sigma$ are the mean and width of a Gaussian core, while the parameters $a$ and $n$ describe a power-law tail.
 	\item $\Bz\!\to\Dstarm\!\left(\to\Dm\piz\right)\pip$: The second partially-reconstructed component is modelled by the sum of a single-sided Crystal Ball function defined in \cref{eq:CrystalBall} and a Gaussian function.
 \end{itemize}
 For the \emph{kaon} sample the peaking components are modelled as following:

@@ -1,0 +1,39 @@
+\documentclass[preview=true, border=10pt]{standalone}
+
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{calc}
+
+\definecolor{rootNode}{HTML}{f7f7f7}
+\definecolor{ANodes}{HTML}{f1a340}
+\definecolor{BNodes}{HTML}{998ec3}
+
+\newcommand{\BDTPicSize}{1.0}
+
+\begin{document}
+\tikzset{
+    head/.style = {fill = rootNode},
+    AN/.style = {fill = ANodes, text = black},
+    BN/.style = {fill = BNodes, text = black}
+}
+
+\begin{tikzpicture}[
+    transform shape, thick,
+    grow = down,  % alignment of characters
+    level 1/.style = {sibling distance=7*\BDTPicSize cm},
+    level 2/.style = {sibling distance=3.8*\BDTPicSize cm},
+    level distance = 1.8*\BDTPicSize cm
+  ]
+
+  \node[draw, circle, minimum size = 14*\BDTPicSize mm, fill = rootNode] (Root) {\small $v_1>x$}
+    child { node [draw, circle, minimum size = 14*\BDTPicSize mm, fill = rootNode] (A) {\small $v_2<y$}
+        child { node [draw, circle, minimum size = 14*\BDTPicSize mm, AN] (B) {\Large A} edge from parent node[text width=2cm, text centered, sloped, above] {true} }
+        child { node [draw, circle, minimum size = 14*\BDTPicSize mm, AN] (C) {\Large A} edge from parent node[text width=2cm, text centered, sloped, above] {false} }
+        edge from parent node[text width=2cm, text centered, sloped, above] {true} }
+    child { node [draw, circle, minimum size = 14*\BDTPicSize mm, fill = rootNode] (D) {\small $v_3>z$}
+        child { node [draw, circle, minimum size = 14*\BDTPicSize mm, BN] (E) {\Large B} edge from parent node[text width=2cm, text centered, sloped, above] {true} }
+        child { node [draw, circle, minimum size = 14*\BDTPicSize mm, AN] (F) {\Large A} edge from parent node[text width=2cm, text centered, sloped, above] {false} }
+        edge from parent node[text width=2cm, text centered, sloped, above] {false} };
+
+\end{tikzpicture}
+\end{document}

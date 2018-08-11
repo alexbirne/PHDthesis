@@ -5,6 +5,10 @@
 \linespread{1.08}\selectfont
 This analysis is done on the data sample recorded by the \lhcb experiment in \num{2011} and \num{2012} at centre-of-mass energies of \num{7} and \SI{8}{\tera\electronvolt}, respectively.
 In \num{2011}, the detector collected \SI{1}{\per\femto\barn}, while in \num{2012} \SI{2}{\per\femto\barn} were recorded.
+
+Before doing a \emph{sPlot} fit physical backgrounds with different \CP characteristics turning up in the same invariant mass region as the signal \BdToDpi candidates need to be removed as they cannot be distinguished in this dimension.
+Furthermore, as much combinatorial background as possible is rejected for two main reasons.
+On the one hand a cleaner sample simplfies the parametrisation of the invariant mass as the signal shape becomes more significant and on the other hand the background contamination, which dilutes the \emph{sWeights} for the final decay-time fit in \cref{chap:dectimeFit} is reduced.
 In this chapter, the used data samples as well as the simulated samples are described in \cref{sec:Samples}.
 The selection procedure is reported in \cref{sec:selection}, divided into preselection and trigger requirements (\cref{sec:preselTrigger}), vetoes to suppress \eg misidentified background candidates (\cref{sec:vetoes}) and a multivariate classifier to reduce combinatorial background (\cref{sec:MVADev} and \cref{sec:BDTOpt}).
 Last, the handling of multiple $B$ candidates in one event is presented in \cref{sec:MultCands} and the selection performance is given in \cref{sec:selectionPerformance}.
@@ -52,10 +56,11 @@ The simulated samples used in this analysis are listed in \cref{tab:simSamples},
 	\label{tab:simSamples}
 \end{table}
 
-Last, to obtain the correct correlations and uncertainties between vertex positions, particle momenta, decay times and invariant masses, decay tree fits (DTF) are performed on the data and simulation~\cite{2005NIMPA}.
-In total, three DTFs are performed: To determine observables correlated with the decay time, the \ac{PV} is constrained to the known position of the proton-proton collision.
-Observables correlated with the invariant mass stem from a DTF, where the mass of the \Dm meson is constrained to its known mass of $m_\Dm^{\text{PDG}}=\SI[per-mode=symbol]{1869.61}{\MeVcc}$~\cite{PDG2018}.
-A third DTF is performed without any constraint as this would lead to wrong results for selection steps like optimising the vetoes described in \cref{sec:vetoes}.
+Last, to obtain the correct correlations and uncertainties between vertex positions, particle momenta, decay times and invariant masses, kinematic fits to the whole decay chain are performed on the data and simulation~\cite{2005NIMPA}.
+These fits allow to determine several parameters such as decay times, particle momenta, track positions and their uncertainties.
+In total, three of these fits are performed: To determine observables correlated with the decay time, the \ac{PV} is constrained to the known position of the proton-proton collision.
+Observables correlated with the invariant mass stem from a fit, where the mass of the \Dm meson is constrained to its known mass of $m_\Dm^{\text{PDG}}=\SI[per-mode=symbol]{1869.61}{\MeVcc}$~\cite{PDG2018}.
+A third fit is performed without any constraint as this would lead to wrong results for selection steps like optimising the vetoes described in \cref{sec:vetoes}.
 
 \section{Selection}
 \label{sec:selection}
@@ -66,8 +71,8 @@ Events with more than \num{500} tracks, which are constructed from hits in the \
 The criteria on the charged tracks are depending on whether the charged track is considered as the bachelor particle, or as a \Dm daughter.
 Three of these charged tracks are then used to form a \Dm meson, where the (transverse) momentum of one of the three tracks has to exceed (\SI[per-mode=symbol]{500}{\MeVc}) \SI[per-mode=symbol]{5}{\GeVc} and its track $\nicefrac{\chi^2}{\text{ndof}}$ has to be less than \num{2.5}.
 This \Dm meson is then combined with a charged bachelor track to form a \Bz meson.
-Finally a bagged boosted decision tree trained on simulation is applied, and its response is required to be larger than \num{0.05}.
-These requirement together with all cuts on single particles given in \cref{tab:stripping} aim to select \Bz decays into a charged \Dmp meson including \Dstarmp mesons and pion, where the \Dmp mesons decays into three hadrons from combinatorial backgrounds candidates.
+Finally a boosted decision tree trained on simulation is applied, and its response is required to be larger than \num{0.05}.
+These requirements together with all cuts on single particles given in \cref{tab:stripping}, consisting of cuts to the vertex \chisqip, where the \chisqip is defined as the difference in the vertex-fit of a given \ac{PV} reconstructed with and without the originating particles, momenta, track and vertex fit qualities and flight direction quantities, aim to select \Bz decays into a charged \Dmp meson including \Dstarmp mesons and pion, where the \Dmp mesons decays into three hadrons from combinatorial backgrounds candidates.
 Combinatorial background consists of candidates originating from random combinations of tracks in an event.
 \begin{table}[tbp]
 	\centering
@@ -89,7 +94,7 @@ Combinatorial background consists of candidates originating from random combinat
 		$\sum \pt\left(hhh\right)$ 																				& $>\SI[per-mode=symbol]{1800}{\MeVc}$ \\
 		DOCA 																									& $<\SI{0.5}{\milli\metre}$ \\
 		$m_\Dm$ 																								& \SIrange[per-mode=symbol,range-units=single]{1769.92}{2068.49}{\MeVcc} \\
-		\ac{SV} $\nicefrac{chi^2}{\text{ndof}}$ 																	& $<10.0$ \\
+		\ac{SV} $\nicefrac{\chi^2}{\text{ndof}}$ 																	& $<10.0$ \\
 		vertex separation $\chi^2$ to any \ac{PV} 																	& $>36.0$ \\
 		$\cos$ of $\sphericalangle\left[\left|\text{PV},\Dm\text{-Vtx}\right|, \vec{p}\!\left(\Dm\right)\right]$	& $>0.0$ \\
 		\midrule
@@ -108,7 +113,7 @@ Following the stripping, a decay-specific selection described in the following i
 \subsection{Preselection and trigger requirements}
 \label{sec:preselTrigger}
 
-Before applying further selections to reduce the background, requirements on the trigger are made.
+Before applying further selections to reduce the various background components, requirements on the trigger are made.
 In principle there are two different classes of trigger decisions at \lhcb: a trigger can fire due to a particle or event property directly connected to the signal decay - denoted as trigger on signal (TOS) - or it can fire due to some property separate to the signal decay what is denoted as a decision independent of the signal (TIS).
 Furthermore, each trigger stage has various lines, triggering on different event properties and thus being differently effective depending on the specific decay.
 Hence, a requirement on which trigger line has fired and whether this decision is TOS or TIS results in characteristic distribution of observables such that a decision which requirement is made needs to be done analysis specific.
@@ -120,10 +125,9 @@ Hence, a requirement on which trigger line has fired and whether this decision i
     \label{fig:BAndDmassAfterStripping}
 \end{figure}
 
-For this analysis, no specifc requirements at the L0 level are needed.
+For this analysis, no specifc requirements at the L0 level are applied, \ie events from all available L0 trigger lines and also both TOS and TIS triggered events are accepted.
 On the HLT1 level, the \Bz candidates are required to be TOS on the \verb!Hlt1TrackAllL0Decision! line.
-At the HLT2 trigger stage, the \BdToDpi candidates are required to be TOS on either the \verb!Hlt2Topo2BodyBBDTDecision! line, the \verb!Hlt2Topo3BodyBBDTDecision! line  or the \verb!Hlt2Topo4BodyBBDTDecision! line.
-These lines are chosen as they require a \ac{SV} formed out of two, three or four tracks with a significant separation from the \ac{PV}~\cite{Trigger_Gligorov}.
+At the HLT2 trigger stage, the \BdToDpi candidates are required to form a \ac{SV} out of two, three or four tracks with a significant separation from the \ac{PV}, \ie they need to be TOS on one of the \verb!Hlt2Topo! lines. More details on the trigger lines can be found in Ref.~\cite{Trigger_Gligorov}.
 In \cref{fig:BAndDmassAfterStripping}, the invariant mass distributions of the \Bz and \Dm candidates are shown. The \Bz peak is clearly visible together with structures from the partially reconstructed decays $\Bz\!\to\Dm\rhop$ and $\Bz\!\to\Dstarm\pip$ in the lower mass region.
 The distribution of the invariant mass of the \D meson shows the \Dm peak around \SI[per-mode=symbol]{1870}{\MeVcc} and a \Dstarm peak at \SI[per-mode=symbol]{2010}{\MeVcc}.
 After the trigger requirements, some looe sanity cuts to remove clear combinatorial background candidates are applied.
@@ -179,7 +183,7 @@ The distributions look different, because of the pions, which are originally sor
 \end{figure}
 To remove this background a two-stage veto is applied: In the first stage candidates are rejected if the invariant mass of the three hadrons is inside a \SI[per-mode=symbol]{\pm30}{\MeVcc}  window around the nominal \mbox{\Lcbar mass} $m_\Lcbar^{\text{PDG}}=\SI[per-mode=symbol]{2286.46}{\MeVcc}$ and the \dllppi is larger than \num{-8.0}.
 At the second stage, the mass window is enlarged to \SI[per-mode=symbol]{\pm50}{\MeVcc} around the nominal \Lcbar mass, but the \dllppi is loosened, only requiring $\dllppi>-5.0$.
-This strategy was adopted in order to remove all \Lcbar candidates, where the width of the mass windows was optimised on simulated \Lcbar candidates, after applying the reconstruction for \BdToDpi candidates.
+This strategy was adopted in order to remove all \Lcbar candidates, where the width of the mass windows was optimised on simulated \Lcbar candidates showing a resololution about \SI[per-mode=symbol]{20}{\MeVcc}, after applying the reconstruction for \BdToDpi candidates and subsequently again the proton mass hypothesis.
 After the preselection, \SI{99.720\pm0.004}{\percent} of the $\Lb\!\to\Lcbar\pip$ candidates are rejected.
 This veto rejects another \SI{76.6\pm0.6}{\percent} at a signal efficiency of \SI{93.48\pm0.06}{\percent}.
 
@@ -271,7 +275,6 @@ Such a criterion also removes most of the wrongly associated \ac{PV}s, but poten
 \label{sec:MVADev}
 
 Combinatorial background is suppressed using a \ac{MVA}, more precisely a \ac{BDT} is used.
-A \ac{BDT} is a machine learning algorithm used here to distinguish between two classes.
 In this case, \BdToDpi candidates should be separated from combinatorial background candidates and therefore the BDT needs to be provided with proxies for these classes of candidates.
 As proxy for the \BdToDpi candidates, simulation is used based on the conditions of the \num{2012} data taking.
 The upper mass sideband of the \num{2012} data with $m_{\left[\Km\pip\pip\right]\pim}>\SI[per-mode=symbol]{5500}{\MeVcc}$ mimics the background.
@@ -310,12 +313,13 @@ The final variables cover mostly various \chisqip variables, flight distances, m
 	\end{tabular}
 	\label{tab:BDTInput}
 \end{table}
-For the \ac{BDT}, the implementation from TMVA~\cite{Hocker:2007ht} is used.
 The \ac{BDT} consists of \num{1700} decision trees with a maximum depth of four.
 The variables are scanned at \num{20} points to find the optimal cut value and each node has to contain at least \SI{2.5}{\percent} of the training candidates.
 The boosting algorithm (AdaBoost~\cite{AdaBoost}) is chosen with a boost factor $\beta=0.5$.
 The approach to find this configurations is iteratively, \ie the complexity of the \ac{BDT} is increased as long as no overtraining is visible.
-The final overtraining check is shown in \cref{fig:BDTOVertraining} where the good agreement between the \ac{BDT} output distributions on the training and test samples is also indicated by a Kolmogorov-Smirnov test~\cite{Bohm:389738} which gives \num{0.221} and \num{0.604} for the signal and background samples, respectively.
+The final overtraining check is shown in \cref{fig:BDTOVertraining} where the good agreement between the \ac{BDT} output distributions on the training and test samples is also indicated at least for the background by a Kolmogorov-Smirnov test~\cite{Bohm:389738}.
+For this test the empirical distribution functions are compared and the supremum of all deviations between the two studied distributions is calculated.
+The given values represent the confidence values that the distributions are the same.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.7\textwidth]{07selection/figs/overtrain_BDT.pdf}
