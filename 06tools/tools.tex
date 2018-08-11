@@ -4,9 +4,10 @@
 
 \linespread{1.08}\selectfont
 In this chapter several statistical tools used in the analysis are introduced.
-A multivariate classifier called \ac{BDT} is described in \cref{sec:BDT} based on Ref.\cite{Bohm:389738}. In the analysis \ac{BDT}s are used in the selection of \BdToDpi candidates and when determining the production flavour of the \Bz mesons.
-In \cref{sec:MLFit} the maximum-likelihood method which is used to fit the invariant \Bz mass and to estimate the \CP asymmetries is detailed~\cite{Bohm:389738}.
-Finallz the \emph{sPlot} technique~\cite{Pivk:2004ty} is described in \cref{sec:splot}, which is used in to statistically separate signal from background candidates.
+A multivariate classifier called \ac{BDT} is described in \cref{sec:BDT} based on Ref.\cite{Bohm:389738}.
+In the analysis, \ac{BDT}s are used in the selection of \BdToDpi candidates and when determining the production flavour of the \Bz mesons.
+The maximum-likelihood method which is used to fit the invariant \Bz mass and to estimate the \CP asymmetries is detailed in \cref{sec:MLFit}~\cite{Bohm:389738}.
+Finally the \emph{sPlot} technique~\cite{Pivk:2004ty} is described in \cref{sec:splot}, which is used to statistically separate signal from background candidates.
 
 \section{Boosted decision trees}
 \label{sec:BDT}
@@ -25,12 +26,12 @@ Figure \ref{fig:BDTexample} shows a decision tree with a depth of two, \ie two c
 In principle, each decision tree starts applying a rule to the variable with the best separation power (here $v_1$) in the root node.
 Subsequently, further rules are applied in the lower sub nodes until certain limits are reached, \eg a minimum number of events in each leave.
 
-Before applying a decision tree to a data sample, it first needs to be trained with data samples labelled according to their class.
+Before applying a decision tree to a data sample, first it needs to be trained with data samples labelled according to their class.
 Furthermore, a measure to estimate the separating power of the different variables is needed.
-An easy way for example is to maximize the difference $\Delta N=N_r-N_w$ between right ($N_r$) and wrong ($N_w$) assignments in a node.
+An easy way for example is to maximise the difference $\Delta N=N_r-N_w$ between right ($N_r$) and wrong ($N_w$) assignments in a node.
 However, the cut point of the binary rule remains random to some extent, since the value $\Delta N$ only changes when the cut-point is shifted by so much that it hits the nearest variable value.
 A slightly more complicated, but very popular measure is the following:
-The purity $P$ of events from class $A$
+the purity $P$ of events from class $A$
 \begin{equation}
 P_A=\frac{N_A}{N_A+N_B}\,,
 \end{equation}
@@ -44,7 +45,7 @@ As the selection of variables depend on the chosen variables and applied cuts in
 
 The overall classification performance can be improved by not only using one moderately effective classifier but instead calculating the weighted average of many different decision trees.
 In order to do so, many decision trees are grown.
-Each time a new tree is built, events, which were assigned to the wrong class by the previous tree, are weighted (boosted) in order to reduce the probability that they are again wrongly classified.
+Each time a new tree is built, events, which were assigned to the wrong class by the previous tree, are weighted (boosted) in order to reduce the probability that they are wrongly classified again.
 Such a combination of decision trees is denoted as boosted decision tree (\ac{BDT}).
 Well known boosting algorithms are the gradient boosting technique~\cite{gradientBoost} or the adaptive boosting (AdaBoost) method~\cite{AdaBoost}.
 Since the latter is used in the selection of \BdToDpi candidates in \cref{chap:selection} and the development of flavour-tagging algorithms in \cref{ch:flavourtagging} it is shortly described here.
@@ -72,11 +73,11 @@ When training a \ac{BDT}, some caveats must be taken into account.
 On the one hand, the labelled data samples used in the training are usually only proxies for the \emph{real} data.
 For example, differences between simulated events and \emph{real} data can lead to a bad performance of the \ac{BDT}.
 Furthermore, the \ac{BDT} can learn to distinguish the training data samples by statistical fluctuations.
-This phenomenon, denoted as over-fitting or overtraining, can be avoided by splitting the labelled training data sample before devloping the \ac{BDT}.
+This phenomenon, denoted as over-fitting or overtraining, can be avoided by splitting the labelled training data sample before developing the \ac{BDT}.
 The first half is then used as training data set and following the \ac{BDT} is applied to the second data set denoted as test sample.
 If the \ac{BDT} output distributions on both data sets are the same, it can be assumed that there is no overtraining.
 
-To train \ac{BDT}s various implementations exist.
+To train \ac{BDT}s, various implementations exist.
 In the course of this thesis always the implementation from TMVA~\cite{Hocker:2007ht} is used.
 
 
@@ -91,17 +92,17 @@ Assuming $n$ measurements of a set of observables $\vec{x}$ the maximum-likeliho
 \mathcal{L}(\vec{a})=\mathcal{P}(\vec{x}_1|\vec{a})\times\mathcal{P}(\vec{x}_2|\vec{a})\times...\times\mathcal{P}(\vec{x}_n|\vec{a})=\prod_{i=1}^{n}\mathcal{P}(\vec{x}_i|\vec{a})\,,\label{eq:mlfunc}
 \end{equation}
 where $\mathcal{P}(\vec{x}_i|\vec{a})$ are properly normalised the probability densitiy function (PDF) with a set of parameters $\vec{a}$ to estimate.
-The function $\mathcal{L}(\vec{a})$ gives the probability of obtaining the given measured values for a set of parameters $\vec{a}$ in a sample $\vec{x}_i$ .
-However, even if the maximum-likelihood function becomes maximal if the probability of obtaining the data set $\vec{x}_i$ becomes maximal, it is not a probability density in the parameters $\vec{a}$.
+The function $\mathcal{L}(\vec{a})$ gives the probability of obtaining the measured values for a set of parameters $\vec{a}$ in a sample $\vec{x}_i$.
+However, even if the maximum-likelihood function becomes maximal for the maximum probability of obtaining the data set $\vec{x}_i$, it is not a probability density in the parameters $\vec{a}$.
 Extending the function in \cref{eq:mlfunc} with a Poisson term
 \begin{equation}
 \mathcal{L}(\vec{a})=\frac{e{-n}n^N}{N!}\prod_{i=1}^{n}\mathcal{P}(\vec{x}_i|\vec{a})\,,
 \end{equation}
 where $n$ is the number of expected events, although the sample containts $N$ measurements allows to distinguish different categories of events by multiplying several likelihood functions.
-Usually the negative logarithmic likelihood function is minimised because this is numerically more stable and it leads to the same results, since the logarithm is a monotone function.
+Usually, the negative logarithmic likelihood function is minimised because this is numerically more stable and it leads to the same results, since the logarithm is a monotone function.
 
 Besides, it is possible to use an external input to constrain a parameter $\mu$ to be $\mu_0\pm\Delta\mu$ by means of a Gaussian function.
-This implies that the likelihood is multiplied with a Gaussian with the mean and width set to $\mu_0$ and $\Delta\mu$, respectively.
+This implies that the likelihood is multiplied by a Gaussian with the mean and width set to $\mu_0$ and $\Delta\mu$, respectively.
 In this analysis, the maximum-likelihood fits were implemented using the \root framework~\cite{Antcheva:2009zz}, which makes use of the Minuit package~\cite{James:1975dr} for the minimisation of the likelihood function.
 
 
@@ -109,13 +110,14 @@ In this analysis, the maximum-likelihood fits were implemented using the \root f
 \label{sec:splot}
 
 The \emph{sPlot} technique~\cite{Pivk:2004ty} uses a maximum-likelihood fit to calculate the so-called \emph{sWeights} by performing a \emph{sPlot} fit to one or multiple discriminating observables.
-Considering a data sample, containing a mixture of $N_c$ different categories of events, the \emph{sWeights} are per-event weights ${}_sw$, which allow to to reconstruct the distributions of variables separately for each category present in the initial sample.
-However, one important assumption is, that the \emph{sWeights} are applied to observables which are independent of the discriminating observables.
+Considering a data sample, containing a mixture of $N_c$ different categories of events, the \emph{sWeights} are per-event weights ${}_sw$, which allow to reconstruct the distributions of variables separately for each category present in the initial sample.
+However, one important assumption is that the \emph{sWeights} are applied to observables, which are independent of the discriminating observables.
 To perform a \emph{sPlot} fit the PDFs for all categories of events are needed, so that the \emph{sWeights} can be calculated as
 \begin{equation}
-{}_sw=\frac{\sum_{j=1}^{N_c}V_{nj}f_j(\vec{y}_e)}{\sum_{k=1}^{N_c}N_kf_k(\vec{y}_e)}\,,
+{}_sw=\frac{\sum_{j=1}^{N_c}V_{nj}\,f_j(\vec{y}_e)}{\sum_{k=1}^{N_c}N_k\,f_k(\vec{y}_e)}\,,
 \end{equation}
-where the sums iterate over all categories of events, the $f_i$ are the corresponding PDFs of the discriminating set of observables $\vec{y}$ for an event $e$, $N_k$ is the yield in the corresponding category and $V$ the covariance matrix of the yields.
+where the sums iterate over all categories of events.
+Moreover, the functions $f_i$ are the corresponding PDFs of the discriminating set of observables $\vec{y}$ for an event $e$, $N_k$ is the yield in the corresponding category and $V$ the covariance matrix of the yields.
 In practice, a first fit to the observables $\vec{y}$ is performed to determine the parameters of the PDFs $f_i(\vec{y}_e)$, before all parameters except for the yields are fixed and the \emph{sWeights} are calculated in a second fit.
 The normalisation of the \emph{sWeights} is such that the sum over the weights for one category provides the number of events $N$ of this category in the sample.
 The statistical uncertainty on this number of events is defined for each bin $\delta x$ by
@@ -124,6 +126,6 @@ The statistical uncertainty on this number of events is defined for each bin $\d
 \end{equation}
 
 In the scope of this analysis signal and background candidates for the signal decay \mbox{\BdToDpi} and for the flavour tagging control modes $\Bz\!\to\jpsi\Kstarz$ and $\Bu\!\to\Dz\pip$ are separated using this technique by performing fits to the invariant mass distributions (more details in \cref{ch:massfit} and \cref{ch:flavourtagging}).
-The choice of the invariant mass as discriminating obersvable has two advantages:
+The choice of the invariant mass as discriminating observable has two advantages:
 on the one hand, it is independent of the decay-time, for which the distribution of signal candidates is needed to \eg extract the \CP asymmetries.
 On the other hand, the distributions of the different contributions in the distribution are well known and allow a reliable parametrisation.
