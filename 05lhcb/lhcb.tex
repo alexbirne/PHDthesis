@@ -39,7 +39,7 @@ As already mentioned, four major experiments are located at the \lhc.
 
 \section{The \lhcb detector}
 
-In contrast to the three other experiments, the \lhcb detector does not cover the entire spatial angle, but is designed as a single-arm forward spectrometer with an angular coverage of about \SIrange{10}{300}{\milli\radian} in the bending plane.
+In contrast to the three other experiments, the \lhcb detector does not cover the entire spatial angle, but is designed as a single-arm forward spectrometer with an angular coverage of about \SIrange[range-units=single]{10}{300}{\milli\radian} in the bending plane.
 The detector geometry is based on the fact that the mainly investigated \bbbar-quark pairs have a high probability of being produced in forward or backward direction (see \cref{fig:anglePlots}).
 \begin{figure}[tbp]
     \centering
@@ -76,7 +76,7 @@ In the following, the individual components of the LHCb detector (see \cref{fig:
 \label{sec:tracking}
 
 The tracking system consists of the \velo, which encloses the collision point, the \ttracker and the tracking stations T1-T3.
-Furthermore, a dipole magnet bend the tracks of charged particles is part of the tracking system.
+Furthermore, a dipole magnet bending the tracks of charged particles is part of the tracking system.
 
 \subsubsection*{The \velo}
 \label{sec:velo}
@@ -100,7 +100,6 @@ To achieve an angular acceptance of \SI{300}{\milli\radian} of the \velo under t
 This small distance leads to a quite short extrapolation distance from the first measured hit to the interaction point.
 The resolution of the interaction point, also denoted as \ac{PV}, depends on the number of tracks forming the vertex.
 For a \ac{PV} with \num{25} tracks, the resolution was \SI{13}{\micro\metre} in the $x$ and $y$ coordinates and \SI{71}{\micro\metre} in $z$ in Run I~\cite{Aaij:2014jba}.
-
 For particles, which are created at $z=\SI{10.6}{\centi\metre}$ downstream of the nominal interaction point, the lower limit of the angular accceptance is \SI{15}{\milli\radian}.
 
 To cover the full azimuthal acceptance, the two detector halves of each module overlap.
@@ -114,7 +113,7 @@ The stations T1 to T3 are further divided into an inner area close to the beam p
 A dipole magnet is located between the \ttracker and the tracking station T1, which is described in \cref{sec:magnet}.
 Technologically, both the \ttracker and the \intr are silicon trackers (\st).
 
-The \st{}s are made of silicon strips with a width of \SI{200}{\micro\metre}, what leads to spatial resolution of \SI{50}{\micro\metre}~\cite{Aaij:2014jba} in the \intr and the \ttracker.
+The \st{}s are made of silicon strips with a width of \SI{200}{\micro\metre}, what leads to a spatial resolution of \SI{50}{\micro\metre}~\cite{Aaij:2014jba} in the \intr and the \ttracker.
 The \ttracker is directly located downstream of the \richone while the \intr is installed in the central part around the beam pipe of the three stations T1 to T3.
 It covers a region \SI{120}{\centi\metre} wide and \SI{40}{\centi\metre} high as shown in \cref{fig:InnerTracker}.
 \begin{figure}[tbp]
@@ -148,7 +147,7 @@ Tracks of charged particles are bent within the accelerator plane ($x$-plane) du
     \caption{Magnetic field along the $z$-axis~\cite{Alves:2008zz}.}
     \label{fig:MagField}
 \end{figure}
-The relative precision of the magnetic field required to achieve the desired momentum resolution is $\mathcal{O}\!\left(10^{-4}\right)$.
+The relative precision of the magnetic field required to achieve the desired momentum resolution is of $\mathcal{O}\!\left(10^{-4}\right)$.
 During data taking, the polarity is inverted regularly to prevent systematic effects due to \eg different performances detector areas which the particles traverse.
 
 \subsection{The particle identification system}
@@ -198,9 +197,9 @@ Since the hit density varies by two orders of magnitude over the calorimeter sur
 \label{sec:muonchambers}
 
 The detection of muons is of fundamental importance at \lhcb.
-In many \CP-sensitive decays, such as \BdToJPsiKS in which the \jpsi is reconstructed in the decay into two muons, as well as in rare $B$ decays with flavour-changing neutral currents, such as \Bsmm, they appear in the final states.
+They are used in the reconstruction of many \mbox{\CP-sensitive} decays, such as \BdToJPsiKS in which the \jpsi is reconstructed in the decay into two muons, as well as in the reconstruction of rare $B$ decays with flavour-changing neutral currents, such as \Bsmm.
 There are five muon chambers at \lhcb.
-The chamber M1 is located in upstream of the calorimeters, while M2 to M5 are positioned downstream of the \hcal.
+The chamber M1 is located upstream of the calorimeters, while M2 to M5 are positioned downstream of the \hcal.
 The individual stations consist of \SI{80}{\centi\metre} thick iron absorbers, so that the minimum momentum of a muon to pass all five stations must be \SI{6}{\giga\electronvolt}.
 Stations M1 to M3 have a relatively high spatial resolution along the $x$-coordinate.
 They are mainly used to identify the track directions and to measure the transverse momentum \pt of the muon candidates with a resolution of \SI{20}{\percent}.
@@ -210,7 +209,7 @@ The stations M4 and M5 are used for particle identification of traversing muons.
 \label{sec:trigger}
 
 In contrast to the general-purpose experiments \atlas and \cms, the \lhcb experiment does not operate at the maximum luminosity of $L=\SI{7e33}{\per\centi\metre\squared\per\second}$ provided by the \lhc in Run I but at a constant instantaneous luminosity of $L=\SI{4e32}{\per\centi\metre\squared\per\second}$ in order to reduce the pile-up per bunch crossing.
-Nevertheless, to be stored the data rate must still be reduced from about \SI{20}{\mega\hertz} to about \SI{4}{\kilo\hertz}.
+Nevertheless, to be stored, the data rate must still be reduced from about \SI{20}{\mega\hertz} to about \SI{4}{\kilo\hertz}.
 Two trigger stages are available for this purpose: the first stage (L0) works synchronously to the interaction rate of \SI{40}{\mega\hertz} and reduces it to \SI{1}{\mega\hertz}, whereupon the second trigger stage, the high-level trigger (HLT), processes the data independently of the interaction rate.
 At a luminosity of $L=\SI{4e32}{\per\centi\metre\squared\per\second}$, events containing a $B$ meson are generated at a rate of about \SI{15}{\kilo\hertz}.
 Furthermore, many partial decay widths of the $B$ mesons are smaller than \num{e-3}, so that the trigger system is optimized to select these interesting decays for subsequent analyses with maximum efficiency, while the backgrounds created in the hadronic environment at the \lhc are suppressed to the minimum.
@@ -228,6 +227,8 @@ The HLT1 reconstructs the partial candidates in the \velo and in the tracking st
 In addition for photons and neutral pions the absence of charged particles that could be associated with these candidates is confirmed.
 Overall, the HLT1 has the task of reducing the data rate to such an extent that a full full pattern recognition is possible in the next step, the HLT2.
 At a sufficiently low data rate, the HLT2 then even reconstructs specific $B$ decays .
+
+\newpage
 
 \section{The LHCb software stack}
 
@@ -251,6 +252,6 @@ After the stripping, the data has the form of so-called nTuples, which can be an
 The generation and simulation of events within the \lhcb detector is implemented in the \gauss package.
 The proton-proton-collisions and the hadronisation process are generated using \pythia \cite{pythia6, pythia8}, which runs with a special \lhcb configuration \cite{LHCb-PROC-2010-056}.
 Decays and the interaction with the detector are then simulated using the \evtgen \cite{evtgen} and \geant \cite{geant1, geant2} packages, respectively.
-This is followed by the \boole project, in which the data is digitized so it can then be further processed as the raw data collected by the detecor.
+This is followed by the \boole project, in which the data is digitized so it can then be further processed in the same way as the raw data collected by the detecor.
 Furthermore, the generated information (truth information) is stored and can be retrieved after the simulated events have been processed.
 Thus, in addition to the detector response, the initially generated states are also known for simulated events, which is important to check the reliability of reconstruction steps or experimental techniques such as the flavour tagging described in \cref{ch:flavourtagging}.
