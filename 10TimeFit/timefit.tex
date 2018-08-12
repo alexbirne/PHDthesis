@@ -161,22 +161,30 @@ Repeating the fit with \dm and $\tau$ fixed to the central values of the constra
 	\end{tabular}
 	\label{tab:DecTimeProjection}
 \end{table}
-In \cref{fig:AsymProjection}, the \CP asymmetries given by
+In \cref{fig:AsymProjection}, the signal yield asymmetries given by
 \begin{equation}
 \begin{aligned}
-A_{\CP}^{\,f}(t)=\frac{\Gamma\!\left(\Bz\!\to\Dm\pip\right)-\Gamma\!\left(\Bzb\!\to\Dm\pip\right)}{\Gamma\!\left(\Bz\!\to\Dm\pip\right)+\Gamma\!\left(\Bzb\!\to\Dm\pip\right)}\,,\\
-A_{\CP}^{\,\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}(t)=\frac{\Gamma\!\left(\Bz\!\to\Dp\pim\right)-\Gamma\!\left(\Bzb\!\to\Dp\pim\right)}{\Gamma\!\left(\Bz\!\to\Dp\pim\right)+\Gamma\!\left(\Bzb\!\to\Dp\pim\right)}
+A_{\CP}^{\,f}(t)\!=\!\frac{\Gamma\!\left(\Bz\!\to\Dm\pip\right)-\Gamma\!\left(\Bzb\!\to\Dm\pip\right)}{\Gamma\!\left(\Bz\!\to\Dm\pip\right)+\Gamma\!\left(\Bzb\!\to\Dm\pip\right)}\!\propto\!-\Sf\sin\!\left(\dm t\right)+\Cf\cos\!\left(\dm t\right)\,,\\
+A_{\CP}^{\,\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}(t)\!=\!\frac{\Gamma\!\left(\Bz\!\to\Dp\pim\right)-\Gamma\!\left(\Bzb\!\to\Dp\pim\right)}{\Gamma\!\left(\Bz\!\to\Dp\pim\right)+\Gamma\!\left(\Bzb\!\to\Dp\pim\right)}\!\propto\!-\Sfbar\sin\!\left(\dm t\right)+\Cfbar\cos\!\left(\dm t\right)\,,
 \end{aligned}
 \end{equation}
-are shown.
-However, as these are mainly dominated by the cosine term in the decay rates and therefore the effect of \CP violation is barely visible, the signal-yield asymmetries between candidates tagged as \Bz and \Bzb split according to the favoured (F) $\bquarkbar\!\to\cquarkbar\uquark\dquarkbar$ and the suppressed (S) $\bquarkbar\!\to\uquarkbar\cquark\dquarkbar$ transitions
+when neglecting the asymmetries from the flavour tagging and in the the detection and production are shown.
+Obviously, for these asymmetries values for \Sf and \Sfbar different from zero would show a shifted oscillation with respect to the cosine oscillation, which stems from the \Bz-\Bzb mixing.
+However, such shift would only be a necessary but not sufficient condition for \CP violation as pointed out in \cref{eq:condForIntCPV}:
+in the case that \CP violation occurs in the decay \BdToDpi the shift must be different for the asymmetries $A_{\CP}^{\,f}(t)$ and $\smash{A_{\CP}^{\,\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}(t)}$.
+Unfortunately, the values for \Sf and \Sfbar are small, so that these asymmetries are mainly dominated by the cosine term and therefore even a shift is barely visible.
+A better alternative, not suffering from this discrepancies in magnitude between $\Sf/\Sfbar$ and $\Cf/\Cfbar$, are the signal yield asymmetries between candidates tagged as \Bz and \Bzb split according to the favoured (F) $\bquarkbar\!\to\cquarkbar\uquark\dquarkbar$ and the suppressed (S) $\bquarkbar\!\to\uquarkbar\cquark\dquarkbar$ transitions.
+Neglecting again asymmetries in the flavour tagging and in the detection and production these can be expressed as
 \begin{equation}
 \begin{aligned}
-A_{\text{F}}(t)=\frac{\Gamma\!\left(\Bz\!\to\Dm\pip\right)-\Gamma\!\left(\Bzb\!\to\Dp\pim\right)}{\Gamma\!\left(\Bz\!\to\Dm\pip\right)+\Gamma\!\left(\Bzb\!\to\Dp\pim\right)}\,,\\
-A_{\text{S}}(t)=\frac{\Gamma\!\left(\Bzb\!\to\Dm\pip\right)-\Gamma\!\left(\Bz\!\to\Dp\pim\right)}{\Gamma\!\left(\Bzb\!\to\Dm\pip\right)+\Gamma\!\left(\Bz\!\to\Dp\pim\right)}\label{eq:AsymeSuppFav}
+A_{\text{F}}(t)&=\frac{\Gamma\!\left(\Bz\!\to\Dm\pip\right)-\Gamma\!\left(\Bzb\!\to\Dp\pim\right)}{\Gamma\!\left(\Bz\!\to\Dm\pip\right)+\Gamma\!\left(\Bzb\!\to\Dp\pim\right)}\propto-\left(\Sf+\Sfbar\right)\sin\!\left(\dm t\right)\,,\\
+A_{\text{S}}(t)&=\frac{\Gamma\!\left(\Bzb\!\to\Dm\pip\right)-\Gamma\!\left(\Bz\!\to\Dp\pim\right)}{\Gamma\!\left(\Bzb\!\to\Dm\pip\right)+\Gamma\!\left(\Bz\!\to\Dp\pim\right)}\propto\left(\Sf+\Sfbar\right)\sin\!\left(\dm t\right)\,.\label{eq:AsymeSuppFav}
 \end{aligned}
 \end{equation}
-are shown in \cref{fig:AsymProjection}.
+Apparently, the cosine terms in the numerator vanishes, so that in case of no \CP violation, \ie $\Sf=\Sfbar$, the asymmetries vanish.
+However, as shown in \cref{fig:AsymProjection} an oscillation indicating \CP violation can be seen.
+Yet, neglecting the contributing experimental asymmetries in \cref{eq:AsymeSuppFav} oversimplified the expressions, as indicated by an alternative fit under the asumption of no \CP violation: the resulting fit projection is not flat, but also shows an oscillating structure from contributions of the asymmetries in the nominator on the one hand and from sine and cosine contributions arising in the denominator of $A_{\text{F}}(t)$ and $A_{\text{S}}(t)$ on the other hand.
+The difference between these two fits yields a significance of $2.7\sigma$ for \mbox{\CP violation} according to Wilk's theorem~\cite{wilks1938}.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.48\textwidth]{10TimeFit/figs/Asym_f.pdf}

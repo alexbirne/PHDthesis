@@ -283,7 +283,7 @@ When training the \ac{BDT}, the training part is used to actually classify the c
 If the performance is different, the \ac{BDT} shows so-called overtraining, \ie the classifier is optimised on statistical fluctuations of the training samples and cannot be applied to other independent samples without a loss in performance.
 Another powerful test to check for overtraining is to compare the output distribution of the \ac{BDT} between the training and test sample - again, a difference would indicate that the \ac{BDT} is overtrained.
 Since the \ac{BDT} should be applied to the dataset after all specific backgrounds like $\Lb\!\to\Lcbar\pip$ or the wrong PV associations are removed  all previous selection steps are applied to the signal- and background-proxy samples for the training.
-In total, the \ac{BDT} uses \num{16} input variables which are listed in \cref{tab:BDTInput}.
+In total, the \ac{BDT} uses \num{16} input variables which are listed in \cref{tab:BDTInput} and shown in Figs.~\ref{fig:BDTInput1} and \ref{fig:BDTInput2}.
 To reduce the number of input variables, from pairs of variables which have a correlation of $>\SI{97}{\percent}$ with each other the variable with the smaller separation power is removed.
 The final variables cover mostly various \chisqip variables, flight distances, momenta and flight directions in order to obtain a classifier output which is independent of the invariant mass of the \Bz meson as this is used in \cref{ch:massfit} to further identify signal candidates.
 \begin{table}[tbp]
@@ -291,7 +291,7 @@ The final variables cover mostly various \chisqip variables, flight distances, m
 	\caption{List of input variables used in the training of the BDT}
 	\begin{tabular}{cc}
 		\toprule
-		\multirow{2}{*}{\Bz candidate}	& $\cos$ of $\sphericalangle\left[\left|\text{PV},\text{SV}\right|,\vec{p}\!(\Bz)\right]$ \\
+		\multirow{2}{*}{\Bz candidate}	& $\cos$ of $\sphericalangle\left[\left|\text{PV},\text{SV}\right|,\vec{p}(\Bz)\right]$ \\
 										& \ac{SV} $\chi^2$\\
 		\midrule
 		\multirow{7}{*}{\Dm candidate}	& \chisqip w.r.t. the \ac{SV}\\
@@ -313,6 +313,36 @@ The final variables cover mostly various \chisqip variables, flight distances, m
 	\end{tabular}
 	\label{tab:BDTInput}
 \end{table}
+\begin{figure}[tbp]
+	\begin{center}
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab0_DIRA_OWNPV.pdf}
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab0_ENDVERTEX_CHI2.pdf}\\
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab0_FitPVConst_chi2_flat.pdf}
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab1_IPCHI2_OWNPV.pdf}\\
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab1_PT.pdf}
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab1_TRACK_CHI2NDOF.pdf}\\
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab2_DIRA_ORIVX.pdf}
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab2_ENDVERTEX_CHI2NDOF.pdf}
+	\end{center}
+	\caption{Distributions of the input variables used in the BDT training.
+	The black (blue) points represent the signal-proxy (background-proxy) samples.}
+	\label{fig:BDTInput1}
+\end{figure}
+\begin{figure}[tbp]
+	\begin{center}
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab2_FDCHI2_ORIVX.pdf}
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab2_IPCHI2_ORIVX.pdf}\\
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab2_IPCHI2_OWNPV.pdf}
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab2_PT.pdf}\\
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab2_RadialFD_squared.pdf}
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab3_IPCHI2_OWNPV.pdf}\\
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab4_IPCHI2_OWNPV.pdf}
+		\includegraphics[width=0.40\textwidth]{07selection/figs/BDTInputs/ab5_IPCHI2_OWNPV.pdf}
+	\end{center}
+	\caption{Distributions of the input variables used in the BDT training.
+	The black (blue) points represent the signal-proxy (background-proxy) samples.}
+	\label{fig:BDTInput2}
+\end{figure}
 The \ac{BDT} consists of \num{1700} decision trees with a maximum depth of four.
 The variables are scanned at \num{20} points to find the optimal cut value and each node has to contain at least \SI{2.5}{\percent} of the training candidates.
 The boosting algorithm (AdaBoost~\cite{AdaBoost}) is chosen with a boost factor $\beta=0.5$.
