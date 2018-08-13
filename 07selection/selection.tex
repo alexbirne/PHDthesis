@@ -8,7 +8,7 @@ In \num{2011}, the detector collected \SI{1}{\per\femto\barn}, while in \num{201
 
 Before doing a \emph{sPlot} fit physical backgrounds with different \CP characteristics turning up in the same invariant mass region as the signal \BdToDpi candidates need to be removed as they cannot be distinguished in this dimension.
 Furthermore, as much combinatorial background as possible is rejected for two main reasons.
-On the one hand a cleaner sample simplfies the parametrisation of the invariant mass as the signal shape becomes more significant and on the other hand the background contamination, which dilutes the \emph{sWeights} for the final decay-time fit in \cref{chap:dectimeFit} is reduced.
+On the one hand a cleaner sample simplifies the parametrisation of the invariant mass as the signal shape becomes more significant and on the other hand the background contamination, which dilutes the \emph{sWeights} for the final decay-time fit in \cref{chap:dectimeFit} is reduced.
 In this chapter, the used data samples as well as the simulated samples are described in \cref{sec:Samples}.
 The selection procedure is reported in \cref{sec:selection}, divided into preselection and trigger requirements (\cref{sec:preselTrigger}), vetoes to suppress \eg misidentified background candidates (\cref{sec:vetoes}) and a multivariate classifier to reduce combinatorial background (\cref{sec:MVADev} and \cref{sec:BDTOpt}).
 Last, the handling of multiple $B$ candidates in one event is presented in \cref{sec:MultCands} and the selection performance is given in \cref{sec:selectionPerformance}.
@@ -28,7 +28,6 @@ Therefore the \dllkpi and \dllppi variables are corrected using calibration samp
 The correction is done in bins of transverse momentum \pt and pseudorapidity $\eta$.
 For every candidate in the simulation, the corresponding PID distribution of the calibration sample in the $(\pt,\eta)$-bin is built and used to randomly sample a PID value~\cite{Anderlini:2202412}.
 Possible effects due to the chosen $(\pt,\eta)$-binning are evaluated in the systematic uncertainties described in \cref{ch:systeamticUncerts}.
-
 The simulated samples used in this analysis are listed in \cref{tab:simSamples}, together with a short reference, in which analysis step they are needed.
 \begin{table}[tbp]
 	\centering
@@ -56,24 +55,24 @@ The simulated samples used in this analysis are listed in \cref{tab:simSamples},
 	\label{tab:simSamples}
 \end{table}
 
-Last, to obtain the correct correlations and uncertainties between vertex positions, particle momenta, decay times and invariant masses, kinematic fits to the whole decay chain are performed on the data and simulation~\cite{2005NIMPA}.
-These fits allow to determine several parameters such as decay times, particle momenta, track positions and their uncertainties.
+Last, to obtain the correct correlations and uncertainties between vertex positions, particle momenta, decay times and invariant masses, kinematic fits to the whole decay chain are performed on data and simulated events~\cite{2005NIMPA}.
+These fits allow to determine several parameters such as decay times, particle momenta, track positions and the corresponding uncertainties and correlations.
 In total, three of these fits are performed: To determine observables correlated with the decay time, the \ac{PV} is constrained to the known position of the proton-proton collision.
-Observables correlated with the invariant mass stem from a fit, where the mass of the \Dm meson is constrained to its known mass of $m_\Dm^{\text{PDG}}=\SI[per-mode=symbol]{1869.61}{\MeVcc}$~\cite{PDG2018}.
+Observables correlated with the invariant mass stem from a fit, where the mass of the \Dm meson is constrained to its known mass of \mbox{$m_\Dm^{\text{PDG}}=\SI[per-mode=symbol]{1869.61}{\MeVcc}$~\cite{PDG2018}}.
 A third fit is performed without any constraint as this would lead to wrong results for selection steps like optimising the vetoes described in \cref{sec:vetoes}.
 
 \section{Selection}
 \label{sec:selection}
 
-As a first step, the so-called stripping is applied to the built \BdToDpi candidates with \mbox{$\Dpm\!\to\Kmp\pipm\pipm$}.
+As a first step, the so-called stripping is applied to build \BdToDpi candidates with \mbox{$\Dpm\!\to\Kmp\pipm\pipm$}.
 The stripping is a first loose preselection common to a set of kinematically similar decays.
 Events with more than \num{500} tracks, which are constructed from hits in the \velo and the tracking stations T1 to T3, are rejected.
-The criteria on the charged tracks are depending on whether the charged track is considered as the bachelor particle, or as a \Dm daughter.
+The criteria on the charged tracks depend on whether the charged track is considered as the bachelor particle, or as a \Dm daughter.
 Three of these charged tracks are then used to form a \Dm meson, where the (transverse) momentum of one of the three tracks has to exceed (\SI[per-mode=symbol]{500}{\MeVc}) \SI[per-mode=symbol]{5}{\GeVc} and its track $\nicefrac{\chi^2}{\text{ndof}}$ has to be less than \num{2.5}.
 This \Dm meson is then combined with a charged bachelor track to form a \Bz meson.
 Finally a boosted decision tree trained on simulation is applied, and its response is required to be larger than \num{0.05}.
 These requirements together with all cuts on single particles given in \cref{tab:stripping}, consisting of cuts to the vertex \chisqip, where the \chisqip is defined as the difference in the vertex-fit of a given \ac{PV} reconstructed with and without the originating particles, momenta, track and vertex fit qualities and flight direction quantities, aim to select \Bz decays into a charged \Dmp meson including \Dstarmp mesons and pion, where the \Dmp mesons decays into three hadrons from combinatorial backgrounds candidates.
-Combinatorial background consists of candidates originating from random combinations of tracks in an event.
+Thereby, the term combinatorial background means candidates originating from random combinations of tracks in an event.
 \begin{table}[tbp]
 	\centering
 	\caption{Stripping cuts for the decay \BdToDpi with $\Dpm\!\to\Kmp\pipm\pipm$.
@@ -116,12 +115,12 @@ Following the stripping, a decay-specific selection described in the following i
 Before applying further selections to reduce the various background components, requirements on the trigger are made.
 In principle there are two different classes of trigger decisions at \lhcb: a trigger can fire due to a particle or event property directly connected to the signal decay - denoted as trigger on signal (TOS) - or it can fire due to some property separate to the signal decay what is denoted as a decision independent of the signal (TIS).
 Furthermore, each trigger stage has various lines, triggering on different event properties and thus being differently effective depending on the specific decay.
-Hence, a requirement on which trigger line has fired and whether this decision is TOS or TIS results in characteristic distribution of observables such that a decision which requirement is made needs to be done analysis specific.
+Hence, a requirement on which trigger line has fired and whether this decision is TOS or TIS results in characteristic distributions of observables such that a decision which requirement is made needs to be done analysis specific.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.485\textwidth]{07selection/figs/Bmass_afterStrippingAndTrigger.pdf}
     \includegraphics[width=0.485\textwidth]{07selection/figs/Dmass_afterStrippingAndTrigger.pdf}
-    \caption{Invariant mass distributions of the $\Dm\pip$ combination using the DTF with a \Dm mass constraint (right) and of the \Kp\pim\pim combination without any constraint (right).}
+    \caption{Invariant mass distributions of the $\Dm\pip$ combination using the kinematic decay chain fit with a \Dm mass constraint (right) and of the \Kp\pim\pim combination without any constraint (right).}
     \label{fig:BAndDmassAfterStripping}
 \end{figure}
 
@@ -129,8 +128,8 @@ For this analysis, no specifc requirements at the L0 level are applied, \ie even
 On the HLT1 level, the \Bz candidates are required to be TOS on the \verb!Hlt1TrackAllL0Decision! line.
 At the HLT2 trigger stage, the \BdToDpi candidates are required to form a \ac{SV} out of two, three or four tracks with a significant separation from the \ac{PV}, \ie they need to be TOS on one of the \verb!Hlt2Topo! lines. More details on the trigger lines can be found in Ref.~\cite{Trigger_Gligorov}.
 In \cref{fig:BAndDmassAfterStripping}, the invariant mass distributions of the \Bz and \Dm candidates are shown. The \Bz peak is clearly visible together with structures from the partially reconstructed decays $\Bz\!\to\Dm\rhop$ and $\Bz\!\to\Dstarm\pip$ in the lower mass region.
-The distribution of the invariant mass of the \D meson shows the \Dm peak around \SI[per-mode=symbol]{1870}{\MeVcc} and a \Dstarm peak at \SI[per-mode=symbol]{2010}{\MeVcc}.
-After the trigger requirements, some looe sanity cuts to remove clear combinatorial background candidates are applied.
+The distribution of the invariant mass of the \D meson shows the \Dm peak around \SI[per-mode=symbol]{1870}{\MeVcc} and a \mbox{\Dstarm peak} at \SI[per-mode=symbol]{2010}{\MeVcc}.
+After the trigger requirements, some loose sanity cuts to remove clear combinatorial background candidates are applied.
 These cuts are listed in \cref{tab:preselection}.
 \begin{table}[tbp]
 	\centering
@@ -154,7 +153,7 @@ These cuts are listed in \cref{tab:preselection}.
 \subsection{Background vetoes}
 \label{sec:vetoes}
 
-When a multivariate classifier is trained on and applied to a data sample, this should at best only consist of the candidates which are supposed be separated by the classifier.
+When a multivariate classifier is trained on and applied to a data sample, this sample should at best only consist of the candidates which are supposed be separated by the classifier.
 In this case the classifier described in \cref{sec:MVADev} is supposed to separate \BdToDpi signal candidates and combinatorial background candidates.
 Therefore, backgrounds due to kinematic failures as misidentifications of particles in the reconstruction and wrong associations between a \Bz candidate and a \ac{PV} are vetoed.
 
@@ -165,13 +164,13 @@ Such failures can be missed neutral particles or misidentified particles in the 
 
 The first type of backgrounds arises from the decay $\Bz\!\to\Dm\mup\neum$. When missing the neutrino and misidentifying the muon as a pion this decay would falsely be reconstructed as the signal decay \BdToDpi.
 This is vetoed with a binary requirement on the bachelor particle not to be a muon.
-This binary requirement is based on the number and the region of the muon stations where hits are found and the momentum of the track~\cite{Archilli:2013npa}.
+This binary requirement is based on the momentum of the track of the corresponding particle and the number and the region of the muon stations where hits are found~\cite{Archilli:2013npa}.
 
 The following kinematic backgrounds are all due to misidentification of particles in the final state.
 Misidentification between protons and pions can lead to backgrounds from $\Lb\!\to\Lcbar\pip$ decays where the \Lcbar decays into a kaon, a pion and an antiproton.
 To identify such background candidates a proton-mass hypothesis is applied to both daughter pions of the \Dm meson.
 After combining the three \D daughters again a peak around the \Lc mass becomes visible in the distributions shown in \cref{fig:LcVeto}.
-The distributions look different, because of the pions, which are originally sorted by transverse momentum \pt.
+The distributions look different, because the pions are originally sorted by transverse momentum.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.485\textwidth]{07selection/figs/LcHypo1.pdf}
@@ -182,8 +181,8 @@ The distributions look different, because of the pions, which are originally sor
     \label{fig:LcVeto}
 \end{figure}
 To remove this background a two-stage veto is applied: In the first stage candidates are rejected if the invariant mass of the three hadrons is inside a \SI[per-mode=symbol]{\pm30}{\MeVcc}  window around the nominal \mbox{\Lcbar mass} $m_\Lcbar^{\text{PDG}}=\SI[per-mode=symbol]{2286.46}{\MeVcc}$ and the \dllppi is larger than \num{-8.0}.
-At the second stage, the mass window is enlarged to \SI[per-mode=symbol]{\pm50}{\MeVcc} around the nominal \Lcbar mass, but the \dllppi is loosened, only requiring $\dllppi>-5.0$.
-This strategy was adopted in order to remove all \Lcbar candidates, where the width of the mass windows was optimised on simulated \Lcbar candidates showing a resololution about \SI[per-mode=symbol]{20}{\MeVcc}, after applying the reconstruction for \BdToDpi candidates and subsequently again the proton mass hypothesis.
+At the second stage, the mass window is enlarged to \SI[per-mode=symbol]{\pm50}{\MeVcc} around the nominal \Lcbar mass, but the \dllppi requirement is loosened, only requiring $\dllppi>-5.0$.
+This strategy is adopted in order to remove all \Lcbar candidates, where the width of the mass windows was optimised on simulated \Lcbar candidates showing a resololution about \SI[per-mode=symbol]{20}{\MeVcc}, after applying the reconstruction for \BdToDpi candidates and subsequently again the proton mass hypothesis.
 After the preselection, \SI{99.720\pm0.004}{\percent} of the $\Lb\!\to\Lcbar\pip$ candidates are rejected.
 This veto rejects another \SI{76.6\pm0.6}{\percent} at a signal efficiency of \SI{93.48\pm0.06}{\percent}.
 
@@ -207,7 +206,7 @@ To further ensure that no significant contamination from $\Bs\!\to\Dsm\pip$ cand
 Those resonances would become visible in the \kaon\kaon ($\phi$) and \kaon\pion (\Kstarz) invariant mass distributions.
 Figure \ref{fig:phi_Kst_veto} shows representatively the invariant mass distributions of the \kaon\kaon (\kaon\pion) combinations of the the daughter kaon with the
 pion with larger transverse momentum under the kaon mass hypothesis (under the initial pion mass hypothesis).
-In addition to the beforehand defined signal and background regions, only candidates within \a range from \SIrange[per-mode=symbol]{1940}{2040}{\MeVcc} from \cref{fig:DsVeto} are considered for these plots as the invariant mass of true \Ds candidates would be in this range.
+In addition to the beforehand defined signal and background regions, only candidates within a range from \SIrange[per-mode=symbol,range-units=single]{1940}{2040}{\MeVcc} from \cref{fig:DsVeto} are considered for these plots as the invariant mass of true \Ds candidates would be in this range.
 Consequently, one would expect a peaking structure in these plots in case of a significant contamination with $\Bs\!\to\Dsm\pip$ decays.
 As no distribution in \cref{fig:DsVeto} and \cref{fig:phi_Kst_veto} shows such a structure, background candidates from $\Bs\!\to\Dsm\pip$ decays are assumed to be negligible.
 \begin{figure}[tbp]
@@ -222,7 +221,7 @@ As no distribution in \cref{fig:DsVeto} and \cref{fig:phi_Kst_veto} shows such a
 
 The last considered background comes from $\Bz\!\to\DorDbar\kaon\pion$ decays, arising due to a kaon-pion misidentification of the bachelor particle or a \Dm daughter particle followed by a combination of the bachelor particle with a \Dm daughter particle.
 Performing the four possible combinations of the bachelor particle with the kaon mass hypothesis applied with the two \Dm daughter pions shows that all distributions have a flat shape.
-Hence, backgrounds from $\Bz\!\to\DorDbar{}^0\kaon\pion$ decays are assumed to be negligible.
+Hence, backgrounds from $\Bz\!\to\DorDbar{}^0\kaon\pion$ decays are assumed to be negligible as well.
 In \cref{fig:DzVeto}, the combinations of the bachelor track with the \Dm daughter pion with higher transverse momentum are shown for illustration.
 \begin{figure}[tbp]
     \centering
@@ -235,7 +234,7 @@ In \cref{fig:DzVeto}, the combinations of the bachelor track with the \Dm daught
 
 \subsubsection*{Wrongly associated PVs}
 
-The average number of \proton\proton-collisions per bunch crossing is $\nu=2.5$.
+The average number of \proton\proton-collisions per bunch crossing at \lhcb is $\nu=2.5$.
 Therefore, a considerable amount of events has more than one \ac{PV} and in these events a \Bz candidate can be associated with each of them.
 Besides that, an event can also contain more than one \Bz candidate; in this case the \Bz candidate is chosen randomly (more details in \cref{sec:MultCands}).
 However, in case of multiple \ac{PV}s per event, the \Bz candidate can be associated with the wrong PV leading to an incorrect decay time for this candidate.
@@ -243,7 +242,7 @@ Usually a decay-time dependent selection efficiency is expected at \lhcb, which 
 This efficiency, further denoted as decay-time acceptance, is caused by the track reconstruction in the \velo and certain trigger requirements (more details are given in \cref{sec:acceptance}).
 Yet, due to the wrong \ac{PV} association, a large unexpected tail at high decay times arises.
 This can be checked on simulation, where the true decay time is known.
-Weighting each (\Bz,\ac{PV})-candidate with an exponential using the true lifetime of the \Bz candidates, shows an excess of (\Bz,\ac{PV})-candidates at high decay times (see \cref{fig:WrongPVMC}).
+Weighting each (\Bz,\ac{PV})-pair with an exponential using the true lifetime of the \Bz candidates, shows an excess of (\Bz,\ac{PV})-pairs at high decay times (see \cref{fig:WrongPVMC}).
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.48\textwidth]{07selection/figs/WrongPVs-weightedBad.pdf}
@@ -255,7 +254,7 @@ Weighting each (\Bz,\ac{PV})-candidate with an exponential using the true lifeti
 \end{figure}
 In the simulation, the true $z$-position of the \ac{PV} is known and can be compared with the reconstructed $z$-position.
 Requiring that the distance between the true $z$-position of the \ac{PV} and the reconstructed $z$-position does not exceed five times the uncertainty on the reconstructed $z$-position removes the wrong associated (\Bz,\ac{PV})-candidates from the sample and the expected decay time acceptance becomes visible (\cref{fig:WrongPVMC}).
-As this approach cannot be applied to data, a criterion is developed requiring for each (\Bz,\ac{PV})-candidate the impact parameter $\chi^2_{\text{DTF,PV}}$ (\chisqip) with any other \ac{PV} in the event (denoted as $\text{MinIP}\chi^2$) to be larger than a certain value.
+As this approach cannot be applied to data, a criterion is developed requiring for each (\Bz,\ac{PV})-candidate the impact parameter $\chi^2$ (\chisqip) with any other \ac{PV} in the event (denoted as $\text{MinIP}\chi^2$) to be larger than a certain value.
 This means that in case this $\text{MinIP}\chi^2$ is too small, the two corresponding \ac{PV}s cannot be distinguished sufficiently well from each other, and the (\Bz,\ac{PV})-candidate is rejected.
 Events which contain just one \ac{PV} are always kept.
 The cut on the $\text{MinIP}\chi^2$ variable is optimised such that \SI{98}{\percent} of the events in the simulated \BdToDpi sample are retained.
@@ -276,13 +275,10 @@ Such a criterion also removes most of the wrongly associated \ac{PV}s, but poten
 
 Combinatorial background is suppressed using a \ac{MVA}, more precisely a \ac{BDT} is used.
 In this case, \BdToDpi candidates should be separated from combinatorial background candidates and therefore the BDT needs to be provided with proxies for these classes of candidates.
-As proxy for the \BdToDpi candidates, simulation is used based on the conditions of the \num{2012} data taking.
+As proxy for the \BdToDpi candidates, simulation based on the conditions of the \num{2012} data taking is used.
 The upper mass sideband of the \num{2012} data with $m_{\left[\Km\pip\pip\right]\pim}>\SI[per-mode=symbol]{5500}{\MeVcc}$ mimics the background.
 Both proxy samples are divided into a training and a test sample of same size.
-When training the \ac{BDT}, the training part is used to actually classify the candidates, while the \ac{BDT} is then applied on the independent test sample to check whether the performance is the same on both samples.
-If the performance is different, the \ac{BDT} shows so-called overtraining, \ie the classifier is optimised on statistical fluctuations of the training samples and cannot be applied to other independent samples without a loss in performance.
-Another powerful test to check for overtraining is to compare the output distribution of the \ac{BDT} between the training and test sample - again, a difference would indicate that the \ac{BDT} is overtrained.
-Since the \ac{BDT} should be applied to the dataset after all specific backgrounds like $\Lb\!\to\Lcbar\pip$ or the wrong PV associations are removed  all previous selection steps are applied to the signal- and background-proxy samples for the training.
+Since the \ac{BDT} should be applied to the dataset after all specific backgrounds like $\Lb\!\to\Lcbar\pip$ or the wrong PV associations are removed, all previous selection steps are applied to the signal- and background-proxy samples for the training.
 In total, the \ac{BDT} uses \num{16} input variables which are listed in \cref{tab:BDTInput} and shown in Figs.~\ref{fig:BDTInput1} and \ref{fig:BDTInput2}.
 To reduce the number of input variables, from pairs of variables which have a correlation of $>\SI{97}{\percent}$ with each other the variable with the smaller separation power is removed.
 The final variables cover mostly various \chisqip variables, flight distances, momenta and flight directions in order to obtain a classifier output which is independent of the invariant mass of the \Bz meson as this is used in \cref{ch:massfit} to further identify signal candidates.
@@ -308,7 +304,7 @@ The final variables cover mostly various \chisqip variables, flight distances, m
 		\midrule
 		\Dm daughters					& \chisqip of the associated \ac{PV}\\
 		\midrule
-		DTF 							& $\chi^2$ of the DTF with \ac{PV} constraint \\
+		decay chain fit					& $\chi^2$ of the kinematic fit with \ac{PV} constraint \\
 		\bottomrule
 	\end{tabular}
 	\label{tab:BDTInput}
@@ -360,14 +356,14 @@ The given values represent the confidence values that the distributions are the 
 \subsection{BDT selection optimisation}
 \label{sec:BDTOpt}
 
-To optimise the cut on the \ac{BDT} response, the uncertainties on the \CP parameters \Sf and \Sfbar are used.
+To optimise the cut on the \ac{BDT} response, the uncertainties on the \CP asymmetries \Sf and \Sfbar are used.
 For the optimisation, all preselection cuts, the vetoes for background from semileptonic decays and $\Lb\!\to\Lcbar\pip$ decays and the veto for wrongly associated \ac{PV}s are applied to the full Run I data set.
-To determine the uncertainty of \Sf and \Sfbar depending on the \ac{BDT} response the following strategy is adopted:
+To determine the uncertainty on \Sf and \Sfbar depending on the \ac{BDT} response the following strategy is adopted:
 the \ac{BDT} output is scanned with a step size of \num{0.01} within a narrow range from \numrange{-0.15}{0.1} and with a step size of \num{0.05} in the outer regions.
 For each cut on the \ac{BDT} response a fit to the invariant \Bz mass in the range \SIrange[per-mode=symbol]{5200}{5500}{\MeVcc} using the \emph{pion}-sample is performed.
 This fit is used to determine \emph{sWeights}~\cite{Pivk:2004ty} and to obtain the mass shape which corresponds to the respective cut on the \ac{BDT} output.
 Applying the \emph{sWeights} to other observables such as the decay time makes these distributions appear like signal-only~\cite{2009arXiv0905.0724X}.
-The tagging efficiencies, the shapes of the mistag distributions of the OS and SS tagging algorithms (more details on the flavour tagging can be found in \cref{ch:flavourtagging}) and the shape of the decay-time acceptance are obtained for these \emph{sWeighted} distributions.
+The tagging efficiencies, the shapes of the mistag distributions of the OS and SS tagging algorithms and the shape of the decay-time acceptance are obtained for these \emph{sWeighted} distributions.
 The shape of the latter is obtained in the same way as described in \cref{sec:acceptance}.
 At each cut point the invariant mass distribution is generated using the obtained signal and background yields and shapes from the mass fit.
 For the mistag and decaytime distribution, signal and background are both generated using the signal shapes.
@@ -388,11 +384,11 @@ The final cut point is chosen to be \num{0.0}, to minimise the background as muc
 \label{sec:MultCands}
 \setmathfont{Tex Gyre Pagella Math}
 
-In the stripping and trigger, all used variables rely on the association of the \Bz candidate with the \ac{PV} to which the candidate has the smallest \chisqip, also denoted as best \ac{PV}.
-To be consistent with this strategy for each event also the best \ac{PV} in terms of \chisqip is chosen.
+In the stripping and trigger, all used variables rely on the association of the \mbox{\Bz candidate} with the \ac{PV} to which the candidate has the smallest \chisqip, also denoted as best \ac{PV}.
+To be consistent with this strategy for each event also the best \ac{PV} in terms of \chisqip is chosen, after the wrong associations are rejected in \cref{sec:vetoes}.
 Events where the formerly best \ac{PV} is no longer present after the selection are removed.
-Besides, events can contain more than one \Bz candidate.
-After the stripping this is the case for \SI{9}{\percent} of the events and \SIrange{18}{20}{\percent} of the \Bz candidates share the same event.
+Besides, events can contain more than one \mbox{\Bz candidate}.
+After the stripping this is the case for \SI{9}{\percent} of the events and \SIrange[range-units=single]{18}{20}{\percent} of the \Bz candidates share the same event.
 This is reduced after applying the described selection steps, so that after selection only \SI{0.4}{\percent} of the events contain multiple candidates and \SI{0.8}{\percent} of the \Bz candidates share one event.
 Following the proposal in Ref.~\cite{Koppenburg:2017zsh}. the remaining candidates are assumed to be equally likely signal candidates and one candidate per event is chosen at random.
 
@@ -428,9 +424,9 @@ The corresponding signal efficiencies $\varepsilon_{\text{sig}}$ and background 
 The low background suppression of the vetoes is expected as the vetoes aim to suppress specific backgrounds but not the combinatorial background, which is used to determine the given efficiencies.
 
 Finally, the contamination with non-resonant $\Bz\to\Kp\pim\pim\pip$ decays is determined, as such background would show the same structure as \BdToDpi candidates in the invariant $m_{\Kp\pim\pim\pip}$ distribution but the \emph{weak} phase would be different.
-In order to do this, two strategies are implemented, both using the data sample after applying all selection steps, except for the cut on the invariant \Dm mass described in \cref{tab:preselection}:
+In order to do this, two strategies are implemented, both using the data sample after applying all selection steps, except for the cut on the invariant \mbox{\Dm mass} described in \cref{tab:preselection}:
 for the first strategy the invariant \Dm mass is plotted for candidates in a tight \Bz signal window from \SIrange[per-mode=symbol]{5240}{5320}{\MeVcc} as shown in \cref{fig:nonRes_Try1}.
-Combinatorial background candidates in the resulting \Dm mass distribtution could be origin from non-resonant \Kpm\pimp\pimp\pipm candidates.
+Combinatorial background candidates in the resulting \Dm mass distribtution could stem from non-resonant \Kpm\pimp\pimp\pipm candidates.
 \begin{figure}[tb]
     \centering
     \includegraphics[width=0.48\textwidth]{07selection/figs/BmassCut.pdf}

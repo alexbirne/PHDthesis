@@ -4,7 +4,7 @@
 
 \linespread{1.08}\selectfont
 
-After the full selection, the data sample is split into two samples using \dllkpi of the bachelor pion, referred to as \emph{pion} and \emph{kaon} sample:
+After the full selection, the data sample is split into two samples using the \dllkpi of the bachelor pion, referred to as \emph{pion} and \emph{kaon} sample:
 the \emph{pion} sample has $\dllkpi\leq5.0$ and the \emph{kaon} sample $\dllkpi>5.0$.
 This distinction is useful when separating \mbox{\BdToDpi} from $\Bd\!\to\Dm\Kp$ candidates as no dedicated selection cut is needed.
 Instead this separation is done statistically in the fit to the invariant mass distribution.
@@ -14,7 +14,7 @@ It is important to note that the work described in this chapter was done by a co
 However, since this is an essential part of the analysis required to follow the subsequent steps, it is not omitted completely, but the extent to which \eg experimental techniques are described is less comprehensive compared to the other parts.
 
 When parametrising the invariant \Bz mass, all contributing components need to be described. Backgrounds from semileptonic decays, \mbox{$\Lb\!\to\Lcbar\pip$} decays and \mbox{$\Bs\!\to\Dsm\pip$} decays are either removed in the selection or found to be at a negligible level.
-However, beside the signal component and the combinatorial background both, the \emph{pion}- and \emph{kaon} sample show additional backgrounds which arise due to missing neutral particles in the reconstruction or pion-kaon-misidentifications.
+However, besides the signal component and the combinatorial background both, the \emph{pion}- and \emph{kaon} sample show additional backgrounds which arise due to missing neutral particles in the reconstruction or pion-kaon-misidentifications.
 In the \emph{pion} sample contributions from $\Bz\!\to\Dm\rhop\!\left(\to\pip\piz\right)$ and $\Bz\!\to\Dstarm\!\left(\to\Dm\piz/\g\right)\pip$ decays arise, the \emph{kaon} sample shows a component from $\Bz\!\to\Dm\Kstarp\!\left(\to\Kp\piz\right)$ and also $\Bz\!\to\Dm\rhop\!\left(\to\pip\piz\right)$ decays which need to be described.
 Furthermore, both samples show a cross-feed component from each other.
 The number of cross-feed $\Bz\!\to\D\kaon$ candidates in the \emph{pion} sample is expressed from the yield in the \emph{kaon} sample and vice versa as
@@ -26,7 +26,7 @@ N_{\Bz\!\to\D\kaon}^{\pion}&=\frac{1-\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D 
 \end{equation}
 Here, the quantities $N_{\Bz\!\to\D X}^{Y}$ ($X,Y=\pion,\kaon$) are the numbers of $\Bz\!\to\D X$ candidates in the $Y$ sample, while $\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D X\right)_Y$ are the corresponding efficiencies of the \dllkpi requirements on simulation.
 
-Before describing the mass fit to data {\cref{sec:MassFitData}}, first the probability density functions (PDFs) used for the different components are introduced in the following.
+Before describing the mass fit to data {\cref{sec:MassFitData}}, the probability density functions (PDFs) used for the different components are introduced in the following.
 
 \section{Probability densitiy functions}
 \label{sec:PDFs}
@@ -104,7 +104,7 @@ The combinatorial background is described with a sum of two exponentials in the 
 
 To determine \emph{sWeights}~\cite{Pivk:2004ty}, the invariant \Bz mass is fitted in two stages:
 first, a simultaneous binned extended maximum-likelihood fit in the invariant-mass range $[5090, 6000]\,\si[per-mode=symbol]{\MeVcc}$ is performed to the \emph{pion} and \emph{kaon} samples (Fit A).
-This allows to control the contamination with $\Bz\!\to\Dm\Kp$ candidates in the \emph{pion} samples.
+This allows to control the contamination with $\Bz\!\to\Dm\Kp$ candidates in the \emph{pion} sample.
 A binned fit is performed due to the very large number of candidates.
 In this fit, the mean and width parameters of the signal components in the \emph{pion} and \emph{kaon} samples are floated, while for the tail parameters the values are taken from simulation, multiplied by a scale factor, which is then floated to allow for differences between the simulation and data.
 All yields in the fit are floating, except for the cross-feed yields, which are constrained using \cref{eq:ConstrainCrossFeed}, \ie the efficiencies $\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \pion\right)_{\pion}$ and $\varepsilon_{\text{PID}}\!\left(\Bz\!\to\D \kaon\right)_{\kaon}$ are constrained by means of a Gaussian function to their values determined from simulated $\Bz\!\to\Dpm\pimp$ and $\Bz\!\to\Dm\Kp$ candidates.
@@ -121,7 +121,7 @@ In \cref{fig:MassFitPlot}, the invariant $\D\pion$  and $\D\kaon$ mass distribut
 \end{figure}
 
 After Fit A, an unbinned maximum-likelihood fit to the \emph{pion} sample is performed for which all background components are combined into one single background component and the shapes are fixed to the values found in Fit A.
-Futhermore, the fit range is reduced to $[5220, 5600]\,\si[per-mode=symbol]{\MeVcc}$ in order to prevent a dilution of the \emph{sWeights}~\cite{Pivk:2004ty} in later steps of the analysis as all background components, which are neither combinatorial nor close to the signal are removed.
+Furthermore, the fit range is reduced to $[5220, 5600]\,\si[per-mode=symbol]{\MeVcc}$ in order to prevent a dilution of the \emph{sWeights}~\cite{Pivk:2004ty} in later steps of the analysis as all background components, which are neither combinatorial nor close to the signal are removed.
 In this second fit (Fit B) only two parameters are floating: the yield $N_{\Bz\!\to\D\pion}^{\pion}$ of the signal \BdToDpi component and a yield $N_{\text{bkg}}^{\pion}$ for the combination of all backgrounds.
 These fitted yields are given in \cref{tab:fittedSignalYield}.
 \begin{table}[tbp]
