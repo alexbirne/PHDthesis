@@ -3,17 +3,17 @@
 \label{ch:systeamticUncerts}
 
 \linespread{1.08}\selectfont
-The maximum likelihood fits to the invariant mass and decay time of the \mbox{\BdToDpi} candidates are designed to describe the data and take uncertainties on all parameters correctly into account.
+The maximum-likelihood fits to the invariant mass and decay-time of the \mbox{\BdToDpi} candidates are designed to describe the data and take uncertainties on all parameters correctly into account.
 However, not all effects possibly influencing the result can be accounted for directly in the fit and therefore systematic uncertainties need to be calculated:
 Parameters are constrained by means of Gaussian functions in various steps of the analysis and the influence of these constraints on the resulting uncertainties is estimated in \cref{sec:SystUncertsGauss}.
 Further ensembles of pseudoexperiments are used to test the systematic effects of certain assumptions such as $\DG=0$  as described in \cref{sec:systUncertsPseudo}.
 Systematic effects related to the mass model and the associated determination of the \emph{sWeights} are discussed in \cref{sec:SystUncertMass}.
 Furthermore, the potential fit biases observed in the fits to simulated events in \cref{sec:valOnSim} are assigned as systematic uncertainties.
 
-It is further important to mentioned that all work in this chapter related to the mass fit was done by a collaborator.
+It is further important to mention that all work in this chapter related to the mass fit was done by a collaborator.
 This includes parts of the estimated uncertainties in \cref{sec:SystUncertsGauss} and the estimations presented in \cref{sec:SystUncertMass}.
 
-A summary of all systematic uncertainties is given in \cref{tab:SystUncertsFull}, all are assumed to be symmetric for both \CP parameters.
+A summary of all systematic uncertainties is given in \cref{tab:SystUncertsFull}; all are assumed to be symmetric for both \CP parameters.
 The total uncertainty of \num{0.0111} and \num{0.0073} on \Sf and \Sfbar, respectively, is calculated from the sum of the squared individual contributions, \ie the individual contributions are assumed to be uncorrelated.
 The correlation between the systematic uncertainties on the \CP parameters is \SI{-41}{\percent}.
 
@@ -76,7 +76,7 @@ In order to prevent observer bias, the analysis was performed blind for these pa
 For each pseudoexperiment, the PDF from \cref{eq:FinalDecayTimePDF} is modified with alternate models in the generation, corresponding to the various assumptions, which are made in the analysis and are then fitted with the nominal model.
 Each study consists of \num{1000} pseudoexperiments for which the distribution of residuals of \Sf and \Sfbar are studied.
 Like in \cref{sec:valOnSim}, this residual distributions are fitted with Gaussian functions, where the deviation from zero of the mean value of this function is taken as systematic uncertainty; if the mean value is compatible within one standard deviation with zero, the error on the mean is taken as systematic uncertainty.
-In this way, uncertainties are determined for the flavour tagging calibration model, the acceptance model, the decay-time resolution and the assumptions on \DG and \Cf.
+In this way, uncertainties are determined for the flavour-tagging calibration model, the assumption on the flavour-tagging efficiency asymmetries, the acceptance model, the decay-time resolution and the assumptions on \DG and \Cf.
 
 \subsection*{Flavour tagging calibration model}
 
@@ -136,7 +136,9 @@ Since the mean values of the fitted distributions are compatible with zero, a sy
     \label{fig:systUncertAcc}
 \end{figure}
 
+\setmathfont[Scale=MatchUppercase]{XITS Math}
 \subsection*{Assumption on $\symbfsf{\DG}$}
+\setmathfont{Tex Gyre Pagella Math}
 
 The value of \DG is set to the world average increased by its uncertainty in the generation, namely \SI{0.0079}{\per\pico\second}~\cite{HFLAV2016}.
 Since the hyperbolic sine from \crefrange{eq:Ptof}{eq:Pbartofbar} does not vanish with $\DG\neq0$, the values for $A_f^{\DG}$ and $A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}$ need to be defined.
@@ -151,7 +153,9 @@ As systematic uncertainty follows \num{0.0007} for both, \Sf and \Sfbar.
     \label{fig:systUncertDG}
 \end{figure}
 
+\setmathfont[Scale=MatchUppercase]{XITS Math}
 \subsection*{Assumption on $\symbfsf{\Cf}$}
+\setmathfont{Tex Gyre Pagella Math}
 
 Due to the small value of $r$ (see \cref{sec:GammaInBd2Dpi}) the values of \Cf and \Cfbar were fixed to \num{1} and \num{-1} in the nominal fit as described in \cref{sec:ExtractCPobs}. To estimate the systematic uncertainty, in the generation, the values for \Cf and \Cfbar are calculated from the average measurements by \belle and \babar for the parameter $r$ increased by one statistical uncertainty, namely $\Cf=0.993$~\cite{Aubert:2008zi, Das:2010be}.
 In the fit, \Cf and \Cfbar are then set to \num{1} and \num{-1} as in the nominal strategy.
@@ -169,7 +173,7 @@ The distribution of residuals for \Sf and \Sfbar is shown in \cref{fig:systUncer
 
 Since the model to describe the invariant mass is the essential ingredient for the calculation of the \emph{sWeights}, which are used in all subsequent steps of the analysis to statistically subtract background candidates, systematic effects from the parameterisation of the invariant mass can also influence the measurement of \Sf and \Sfbar.
 In order to do this, the fit of the invariant mass as a tool to subtract the background is simply \enquote{replaced} by a narrow mass range of $[5250,5330]\,$\si[per-mode=symbol]{\MeVcc}, \ie no \emph{sWeights} are calculated.
-This is possible due to the high purity in the signal range,
+This is possible due to the high purity in the signal range.
 The decay-time fit is then performed on a data sample containing both, signal and backgrounds which are distributed under the signal peak in the invariant mass distribution.
 The agreement between the nominal result and the result obtained without \emph{sWeights} is $0.2\sigma$ and $1.3\sigma$ for \Sf and \Sfbar, respectively.
 Due to this good agreement, despite the extreme test without any background suppression in the signal range, no further systematic uncertainty is assigned.
