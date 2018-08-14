@@ -1,9 +1,7 @@
 % !TEX root = main.tex
-\setmathfont[Scale=MatchUppercase]{XITS Math}
 \chapter[head={\CP violation in the $B$ meson sector},tocentry={$\symbfsf{C{}P}$ violation in the $\symbfsf{B}$ meson sector}]
 {$\symbfsf{C{}P}$ violation in the $\symbfsf{B}$ meson sector}
 \label{chap:CPV}
-\setmathfont{Tex Gyre Pagella Math}
 
 \linespread{1.08}\selectfont
 Since in the \ac{SM} all physical interactions are conserved under the $CPT$ transformation, the violation of \CP is equivalent to a violation of the $T$ symmetry.
@@ -18,8 +16,8 @@ The denotations \emph{weak} and \emph{strong} do not mean that the phases origin
 Consequently, the \mbox{\CP transformations} of the initial and final states are defined with \emph{weak} phases $\xi_i$ and $\xi_f$ as
 \begin{equation}
 \begin{aligned}
-&\CP\left|\Bz\right> =e^{i\xi_i}\left|\Bzb\right>&&\CP\left|\Bzb\right>=e^{-i\xi_i}\left|\Bz\right>\,,&\\
-&\CP\left|\,\f\,\right> =e^{i\xi_f}\left|\,\fbar\,\right>&&\CP\left|\,\fbar\,\right>=e^{-i\xi_f}\left|\,\f\,\right>\,.& \label{eq:CPTransInitFinal}
+&\CP\big|\Bz\big> =e^{i\xi_i}\big|\Bzb\big>&&\CP\big|\Bzb\big>=e^{-i\xi_i}\big|\Bz\big>\,,&\\
+&\CP\big|\,\f\,\big> =e^{i\xi_f}\big|\,\fbar\,\big>&&\CP\big|\,\fbar\,\big>=e^{-i\xi_f}\big|\,\f\,\big>\,.& \label{eq:CPTransInitFinal}
 \end{aligned}
 \end{equation}
 
@@ -64,8 +62,8 @@ F=\sqrt{\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)\left(m_{12}^\ast-\frac{i}{2}\
 the eigenvalues can be expressed as
 \begin{equation}
 \begin{split}
-\mu_\text{H} &= m_\text{H}-\frac{i}{2}\GH = m + \mathcal{Re}\left(F\right)-\frac{i}{2}\left(\Gamma-2\mathcal{Im}\left(F\right)\right)\,,\\
-\mu_\text{L} &= m_\text{L}-\frac{i}{2}\GL = m - \mathcal{Re}\left(F\right)-\frac{i}{2}\left(\Gamma+2\mathcal{Im}\left(F\right)\right)\label{eq:Mass_eigenvalues}
+\mu_\text{H} &= m_\text{H}-\frac{i}{2}\GH = m + \mathcal{R{}e}\left(F\right)-\frac{i}{2}\left(\Gamma-2\mathcal{I{}m}\left(F\right)\right)\,,\\
+\mu_\text{L} &= m_\text{L}-\frac{i}{2}\GL = m - \mathcal{R{}e}\left(F\right)-\frac{i}{2}\left(\Gamma+2\mathcal{I{}m}\left(F\right)\right)\label{eq:Mass_eigenvalues}
 \end{split}
 \end{equation}
 with the eigenstates
@@ -82,7 +80,7 @@ The parameters $p$ and $q$ are constrained to fulfil $\left|p\right|^2\!+\left|q
 \end{equation}
 where \dm and \DG are the differences of the masses and decay widths of the eigenstates of the weak interaction defined as
 \begin{equation}
-\dm=m_\text{H}-m_\text{L}=2\mathcal{Re}\left(F\right)\hspace{0.5cm}\text{and}\hspace{0.5cm}\DG=\GL-\GH=4\mathcal{Im}\left(F\right).\label{eq:define_dmAndDG}
+\dm=m_\text{H}-m_\text{L}=2\mathcal{R{}e}\left(F\right)\hspace{0.5cm}\text{and}\hspace{0.5cm}\DG=\GL-\GH=4\mathcal{I{}m}\left(F\right).\label{eq:define_dmAndDG}
 \end{equation}
 This definition is chosen such that it matches the convention used by \ac{HFLAV}~\cite{HFLAV2016}.
 
@@ -106,12 +104,10 @@ m=\frac{m_\text{H}+m_\text{L}}{2}\hspace{0.5cm}\text{and}\hspace{0.5cm}\Gamma=\f
 
 \newpage
 
-\setmathfont[Scale=MatchUppercase]{XITS Math}
 \section[head={\Bz-\Bzb mixing},tocentry={\Bz-\Bzb mixing}]{$\symbfsf{\Bz}$-$\symbfsf{\kern 0.2em\overline{\kern -0.25em \PB}{}^{\kern 0.1em 0}}$ mixing}
 \label{sec:BBbarMixing}
-\setmathfont{Tex Gyre Pagella Math}
 
-As described above, the mixing of the flavour eigenstates \Bq and \Bqb is characterised by the mass difference \dm, the decay-width difference \DG and the ratio $\nicefrac{q}{p}$.
+As described above, the mixing of the flavour eigenstates \Bq and \Bqb is characterised by the mass difference \dm, the decay-width difference \DG and the ratio $q/p$.
 All of these quantities are connected to the off-diagonal matrix elements $m_{12}-\nicefrac{i}{2}\,\Gamma_{12}$ and hence $m_{12}$ and $\Gamma_{12}$ must be calculated to further probe mixing phenomena.
 In the \ac{SM}, transitions from \Bq to \Bqb mesons can only happen through $\Delta N_\quark=2$ dynamics, which can be further separated into short-distance transitions (transitions at quark-level) and long-distance transitions (transitions at hadron-level).
 
@@ -147,7 +143,7 @@ Hence, the summand containing $S_0\left(x_\tquark\right)$ is dominant and with t
 
 The second matrix element $\Gamma_{12}$ corresponding to the short-distance transitions is given by
 \begin{equation}
-\Gamma_{12}=\sum_f\left<\,\f\,\Big|T\Big|\Bq\right>^\ast\left<\,\f\,\Big|T\Big|\Bqb\right>\,.\label{eq:gamma12}
+\Gamma_{12}=\sum_f\big<\f\,\big|T\,\big|\Bq\big>^{\kern -0.08em *}\big<\f\,\big|T\,\big|\Bqb\big>\,.\label{eq:gamma12}
 \end{equation}
 Here \f describes the possible physical states to which both \Bq and \Bqb decay.
 As the mass of the \tquark quark is much larger than the mass of any \B meson, \Bq and \Bqb cannot decay in any top-flavoured state.
@@ -166,33 +162,31 @@ Squaring \cref{eq:DeltaEigenvalues} and separating the real and imaginary parts 
 \begin{equation}
 \begin{aligned}
 \dm^2-\frac{1}{4}\DG^{\kern 3.4pt2}&=4\left|m_{12}\right|^2-\left|\Gamma_{12}\right|^2\,,\\
-\dm\DG&=4\mathcal{Re}\left(m_{12}^\ast\Gamma_{12}\right)\,.
+\dm\DG&=4\mathcal{R{}e}\left(m_{12}^\ast\Gamma_{12}\right)\,.
 \end{aligned}
 \end{equation}
 Taking into account the GIM enhancement~\cite{PhysRevD.2.1285} of $m_{12}$ and the bound on $\Gamma_{12}$ to be of order $m_\Bq$ (\cref{eq:m12vsG12}), this can be simplified to
 \begin{equation}
 \begin{aligned}
 \dm&\approx2\left|m_{12}\right|\,,\\
-\DG&\approx\frac{2\mathcal{Re}\left(m_{12}^\ast\Gamma_{12}\right)}{\left|m_{12}\right|}\,,
+\DG&\approx\frac{2\mathcal{R{}e}\left(m_{12}^\ast\Gamma_{12}\right)}{\left|m_{12}\right|}\,,
 \end{aligned}
 \end{equation}
 which shows that for the \Bz-system the decay width difference is expected to be much smaller than the mass difference.
 
-Further, the ratio $\nicefrac{q}{p}$ from \cref{eq:qoverp} can be expressed as
+Further, the ratio $q/p$ from \cref{eq:qoverp} can be expressed as
 \begin{equation}
 \frac{q}{p}\approx\frac{\left|m_{12}\right|}{m_{12}}=\frac{m_{12}^\ast}{\left|m_{12}\right|}\,,\label{eq:qoverPPurePhase}
 \end{equation}
-by applying the reasoning from \cref{eq:m12vsG12}, \ie the quantity $\nicefrac{q}{p}$ is a pure phase.
+by applying the reasoning from \cref{eq:m12vsG12}, \ie the quantity $q/p$ is a pure phase.
 Using \cref{eq:monetwo}, the ratio can be connected to the CKM matrix elements
 \begin{equation}
 \frac{q}{p}\approx-\frac{\Vtbst V_{\tquark\quark}}{\Vtb V_{\tquark\quark}^\ast}\label{eq:qoverpCKM}\,.
 \end{equation}
 As explained above, the CKM combination $\Vtbst V_{\tquark\quark}$ appears here because the box diagrams for $m_{12}$ shown in \cref{fig:FeynmanMixing} are dominated by the top-quark contribution.
 
-\setmathfont[Scale=MatchUppercase]{XITS Math}
 \section[head={Master equations of \CP violation},tocentry={Master equations of \CP violation}]{Master equations of $\symbfsf{\CP}$ violation}
 \label{sec:formulaeCPV}
-\setmathfont{Tex Gyre Pagella Math}
 
 Using the time evolution presented in \cref{sec:TimeEvolution}, one can also study the time evolution of decaying particles.
 In the following, the notation for the decay amplitudes
@@ -250,11 +244,11 @@ Substituting this in \crefrange{eq:ProbTransPtof}{eq:ProbTransPbartofbar}, one o
 \end{align}
 where the coefficients in front of the trigonometric and hyperbolic functions are defined as
 \begin{align}
-&A_f^{\DG}=-\frac{2\mathcal{Re}\left(\Lf\right)}{1+\left|\Lf\,\right|^2}\,,&
-&\Sf=\frac{2\mathcal{Im}\left(\Lf\right)}{1+\left|\Lf\,\right|^2}\,,&
+&A_f^{\DG}=-\frac{2\mathcal{R{}e}\left(\Lf\right)}{1+\left|\Lf\,\right|^2}\,,&
+&\Sf=\frac{2\mathcal{I{}m}\left(\Lf\right)}{1+\left|\Lf\,\right|^2}\,,&
 &\Cf=\frac{1-\left|\Lf\,\right|^2}{1+\left|\Lf\,\right|^2}\,,&\label{eq:cpcoeff}\\
-&A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}=-\frac{2\mathcal{Re}\left(\Lfbar\kern -0.1em\right)}{1+\left|\Lfbar\right|^2}\,,&
-&\Sfbar=\frac{2\mathcal{Im}\left(\Lfbar\kern -0.1em\right)}{1+\left|\Lfbar\right|^2}\,,&
+&A_{\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^{\DG}=-\frac{2\mathcal{R{}e}\left(\Lfbar\kern -0.1em\right)}{1+\left|\Lfbar\right|^2}\,,&
+&\Sfbar=\frac{2\mathcal{I{}m}\left(\Lfbar\kern -0.1em\right)}{1+\left|\Lfbar\right|^2}\,,&
 &\Cfbar=\frac{1-\left|\Lfbar\right|^2}{1+\left|\Lfbar\right|^2}\,.&\label{eq:cpcoeffbar}
 \end{align}
 These coefficients satisfy the conditions
@@ -265,20 +259,16 @@ Also, they are not necessarily constant over the whole phase space, \ie for mult
 
 \newpage
 
-\setmathfont[Scale=MatchUppercase]{XITS Math}
 \section[head={Classes of \CP violation},tocentry={Classes of \CP violation}]{Classes of $\symbfsf{C{}P}$ violation}
 \label{sec:CPVClasses}
-\setmathfont{Tex Gyre Pagella Math}
 
 Depending on the type of transition in which \CP violation occurs, its manifestation is different.
 Transitions with $\Delta N_\quark=1$ are affected by direct \CP violation, transitions with $\Delta N_\quark=2$ might be subject to \CP violation in mixing and
 transitions affected by both $\Delta N_\quark=1$ and $\Delta N_\quark=2$ dynamics can be affected by interference \CP violation in the interference of decay and decay after mixing.
 These three types of \CP violation are described in more detail below.
 
-\setmathfont[Scale=MatchUppercase]{XITS Math}
 \subsection[head={Direct \CP violation},tocentry={Direct \CP violation}]{Direct $\symbfsf{C{}P}$ violation}
 \label{sec:DirectCPV}
-\setmathfont{Tex Gyre Pagella Math}
 
 Direct \CP violation or \CP violation in decay means that a specific decay amplitude differs between the decay of a particle into a specific final state and its corresponding antiparticle decay into the charge conjugated final state.
 It is the only type of \CP violation which can occur for charged particles.
@@ -326,10 +316,8 @@ Figure \ref{fig:DirectCPV} shows the invariant mass spectra of \Bz and \Bs meson
 	\label{fig:DirectCPV}
 \end{figure}
 
-\setmathfont[Scale=MatchUppercase]{XITS Math}
 \subsection[head={\CP violation in mixing},tocentry={\CP violation in mixing}]{$\symbfsf{C{}P}$ violation in mixing}
 \label{sec:MixingCPV}
-\setmathfont{Tex Gyre Pagella Math}
 
 Indirect \CP violation, also denoted as \CP violation in mixing, implies that the transition probabilities for a meson \Paz to oscillate into its antiparticle state \Pazb and vice versa are different.
 Due to charge conservation, mixing is only possible for uncharged mesons and hence this type of \CP violation cannot occur for charged particles.
@@ -356,13 +344,11 @@ Instead, the \B mesons need to be reconstructed in flavour specific decays, \ie 
 Thus, the flavour of the meson at decay can be inferred from the final state and compared to the initial production flavour.
 For the \Bz and \Bs meson system, \CP violation in mixing has been measured to be negligible \cite{HFLAV2016}, which is in good agreement with the \ac{SM} predictions (see \cref{sec:BBbarMixing}).
 
-\setmathfont[Scale=MatchUppercase]{XITS Math}
 \subsection[head={Interference \CP violation},tocentry={Interference \CP violation}]{Interference $\symbfsf{C{}P}$ violation}
 \label{sec:InterferenceCPV}
-\setmathfont{Tex Gyre Pagella Math}
 
 So far \CP violation arising from a clash between the phases of two interfering decay amplitudes or a clash between the phases of $m_{12}$ and $\Gamma_{12}$ has been discussed.
-The third possibility is a clash between the phase of $\nicefrac{q}{p}$ and the phase of the decay amplitude what results in the so-called \CP violation in the interference of decay and decay after mixing.
+The third possibility is a clash between the phase of $q/p$ and the phase of the decay amplitude what results in the so-called \CP violation in the interference of decay and decay after mixing.
 For this type of \CP violation the initial particle \Paz and antiparticle \Pazb must decay into both the final state \f and its \CP-conjugate \fbar.
 
 Inverting the requirement for \CP violation in mixing shows that \CP is conserved in mixing if there is a phase $\xi'$ such that
@@ -383,7 +369,7 @@ Multiplying \cref{eq:amplitudetransformation_1} and \cref{eq:amplitudetransforma
 \begin{equation}
 \Af\,\Afbar=e^{2i\xi_i}\,\Abarfbar\,\Abarf\,\,.
 \end{equation}
-Under the assumption that the phase $\xi'$ of $\nicefrac{q}{p}$ and the \emph{weak} phase $\xi_i$ are the same, one finds \CP conservation and
+Under the assumption that the phase $\xi'$ of $q/p$ and the \emph{weak} phase $\xi_i$ are the same, one finds \CP conservation and
 \begin{equation}
 \arg\left(\frac{p^2}{q^2}\Af \,\overline{\kern -1.0pt A\kern -1.0pt}_{\kern 1.0pt f}^\ast\,\Afbar\overline{\kern -1.0pt \,A\kern -1.0pt}_{\kern 2.5pt\overline{\kern -1.5pt f\kern 1.5pt}}^\ast\right)=0
 \end{equation}
