@@ -4,7 +4,7 @@
 \label{chap:CPV}
 
 \linespread{1.08}\selectfont
-Since in the \ac{SM} all physical interactions are conserved under the $CPT$ transformation, the violation of \CP is equivalent to a violation of the $T$ symmetry.
+Since in the \ac{SM} all physical interactions are conserved under the $\CPT$ transformation, the violation of \CP is equivalent to a violation of the $T$ symmetry.
 As described in \cref{sec:symmetriesInSM}, the $T$ operator is antiunitary and it therefore transforms numbers into their complex conjugate.
 Hence, \CP transformations only affect the complex phases of the wave functions describing initial and final states.
 However, the absolute values of phases describing transitions between different states are not physically meaningful as the initial and final states can be rephased convention dependent.
@@ -16,8 +16,8 @@ The denotations \emph{weak} and \emph{strong} do not mean that the phases origin
 Consequently, the \mbox{\CP transformations} of the initial and final states are defined with \emph{weak} phases $\xi_i$ and $\xi_f$ as
 \begin{equation}
 \begin{aligned}
-&\CP\big|\Bz\big> =e^{i\xi_i}\big|\Bzb\big>&&\CP\big|\Bzb\big>=e^{-i\xi_i}\big|\Bz\big>\,,&\\
-&\CP\big|\,\f\,\big> =e^{i\xi_f}\big|\,\fbar\,\big>&&\CP\big|\,\fbar\,\big>=e^{-i\xi_f}\big|\,\f\,\big>\,.& \label{eq:CPTransInitFinal}
+&\CP\,\big|\Bz\bigs> =e^{i\xi_i}\big|\Bzb\bigs>&&\CP\,\big|\Bzb\bigs>=e^{-i\xi_i}\big|\Bz\bigs>\,,&\\
+&\CP\,\big|\,\f\,\bigs> =e^{i\xi_f}\big|\,\fbar\,\bigs>&&\CP\,\big|\,\fbar\,\bigs>=e^{-i\xi_f}\big|\,\f\,\bigs>\,.& \label{eq:CPTransInitFinal}
 \end{aligned}
 \end{equation}
 
@@ -34,13 +34,13 @@ As previously described in \cref{sec:unitarityTriangle} the mass eigenstates and
 The same applies for bound states of quarks like \B mesons.
 Studying the system of a neutral particle \Paz and its antiparticle \Pazb, the most general description to determine the time evolution is the Schrödinger equation
 \begin{equation}
-i\frac{d}{dt}\begin{pmatrix} \Paz \\ \Pazb \end{pmatrix} = H \begin{pmatrix} \Paz \\ \Pazb \end{pmatrix}
+i\frac{d}{d{}t}\begin{pmatrix} \Paz \\ \Pazb \end{pmatrix} = H \begin{pmatrix} \Paz \\ \Pazb \end{pmatrix}
 =\left(m-\frac{i}{2}\Gamma\right)\begin{pmatrix} \Paz \\ \Pazb \end{pmatrix} \label{eq:mixMatrix}
 \end{equation}
 with $m$ and $\Gamma$ being hermitian 2x2 matrices.
 Hence, the matrix $H$ is not hermitian and allows neutral particles \Paz to decay and not only to oscillate.
 In possible transitions, virtual intermediate states contribute to the matrix $M$, while real physical states to which \Paz and \Pazb decay contribute to the matrix $\Gamma$.
-Due to the $CPT$ theorem, particles and antiparticles have the same masses and decay widths and the following constraints apply for the matrix elements:
+Due to the $\CPT$ theorem, particles and antiparticles have the same masses and decay widths and the following constraints apply for the matrix elements:
 \begin{equation}
 \begin{aligned}
 &m_{11}=m_{22}\equiv m\,,&&m_{12}=m_{21}^\ast\,,&\\
@@ -69,8 +69,8 @@ the eigenvalues can be expressed as
 with the eigenstates
 \begin{equation}
 \begin{split}
-\left|P_\text{H}\right>&= p\left|\Paz\right>+q\left|\Pazb\right>\,,\\
-\left|P_\text{L}\right>&= p\left|\Paz\right>-q\left|\Pazb\right>\,.\label{eq:Mass_eigenstates}
+\big|P_\text{H}\bigs>&= p\bigs|\Paz\bigs>+q\big|\Pazb\bigs>\,,\\
+\big|P_\text{L}\bigs\rangle&= p\big|\Paz\bigs\rangle-q\big|\Pazb\bigs\rangle\,.\label{eq:Mass_eigenstates}
 \end{split}
 \end{equation}
 The parameters $p$ and $q$ are constrained to fulfil $\left|p\right|^2\!+\left|q\right|^2=1$ by construction and their ratio $\frac{q}{p}$ can be expressed in terms of the matrix elements:
@@ -80,20 +80,20 @@ The parameters $p$ and $q$ are constrained to fulfil $\left|p\right|^2\!+\left|q
 \end{equation}
 where \dm and \DG are the differences of the masses and decay widths of the eigenstates of the weak interaction defined as
 \begin{equation}
-\dm=m_\text{H}-m_\text{L}=2\mathcal{R{}e}\left(F\right)\hspace{0.5cm}\text{and}\hspace{0.5cm}\DG=\GL-\GH=4\mathcal{I{}m}\left(F\right).\label{eq:define_dmAndDG}
+\dm=m_\text{H}-m_\text{L}=2\mathcal{R{}e}\left(F\,\right)\hspace{0.5cm}\text{and}\hspace{0.5cm}\DG=\GL-\GH=4\mathcal{I{}m}\left(F\,\right).\label{eq:define_dmAndDG}
 \end{equation}
 This definition is chosen such that it matches the convention used by \ac{HFLAV}~\cite{HFLAV2016}.
 
 After diagonalising the Schrödinger equation can be rewritten as
 \begin{equation}
-i\frac{d}{dt}\begin{pmatrix} P_\text{L} \\ P_\text{H} \end{pmatrix} = \begin{pmatrix} \mu_\text{L} & 0 \\ 0 & \mu_\text{H} \end{pmatrix}\begin{pmatrix} P_\text{L} \\ P_\text{H} \end{pmatrix}\,,
+i\frac{d}{d{}t}\begin{pmatrix} P_\text{L} \\ P_\text{H} \end{pmatrix} = \begin{pmatrix} \mu_\text{L} & 0 \\ 0 & \mu_\text{H} \end{pmatrix}\begin{pmatrix} P_\text{L} \\ P_\text{H} \end{pmatrix}\,,
 \end{equation}
 using the mass eigenvalues from \cref{eq:Mass_eigenvalues} and mass eigenstates from \cref{eq:Mass_eigenstates}, which can be easily solved and leads to the time evolution of the mass eigenstates with simple exponential functions $P_\text{L,H}(t)=e^{-i\mu_\text{L,H}t}P_\text{L,H}$.
 Inverting \cref{eq:Mass_eigenstates} the time evolution for the flavour eigenstates follows:
 \begin{equation}
 \begin{split}
-\left|\Paz\!\left(t\right)\right>&=\left|\Paz\right>g_++\frac{q}{p}\left|\Pazb\right>g_-\,,\\
-\left|\Pazb\!\left(t\right)\right>&=\left|\Pazb\right>g_++\frac{p}{q}\left|\Paz\right>g_-\label{eq:timeEvolution}
+\big|\Paz\!\left(t\right)\bigs>&=\big|\Paz\bigs> g_++\frac{q}{p}\big|\Pazb\bigs>g_-\,,\\
+\big|\Pazb\!\left(t\right)\bigs>&=\big|\Pazb\bigs>g_++\frac{p}{q}\big|\Paz\bigs>g_-\label{eq:timeEvolution}
 \end{split}
 \end{equation}
 with $g_\pm=\frac{1}{2}\left(e^{-i\mu_\text{H}t}\pm e^{-i\mu_\text{L}t}\right)$.
@@ -102,12 +102,10 @@ The associated masses and decay widths of the eigenstates of the weak interactio
 m=\frac{m_\text{H}+m_\text{L}}{2}\hspace{0.5cm}\text{and}\hspace{0.5cm}\Gamma=\frac{\GH+\GL}{2}\,.
 \end{equation}
 
-\newpage
-
 \section[head={\Bz-\Bzb mixing},tocentry={\Bz-\Bzb mixing}]{$\symbfsf{\Bz}$-$\symbfsf{\kern 0.2em\overline{\kern -0.25em \PB}{}^{\kern 0.1em 0}}$ mixing}
 \label{sec:BBbarMixing}
 
-As described above, the mixing of the flavour eigenstates \Bq and \Bqb is characterised by the mass difference \dm, the decay-width difference \DG and the ratio $q/p$.
+As described above, the mixing of the flavour eigenstates \Bq and \Bqb is characterised by the mass difference \dm, the decay-width difference \DG and the ratio $\nicefrac{q\,}{p}$.
 All of these quantities are connected to the off-diagonal matrix elements $m_{12}-\nicefrac{i}{2}\,\Gamma_{12}$ and hence $m_{12}$ and $\Gamma_{12}$ must be calculated to further probe mixing phenomena.
 In the \ac{SM}, transitions from \Bq to \Bqb mesons can only happen through $\Delta N_\quark=2$ dynamics, which can be further separated into short-distance transitions (transitions at quark-level) and long-distance transitions (transitions at hadron-level).
 
@@ -119,7 +117,7 @@ Transitions at quark-level at lowest order can be represented by Feynman diagram
 	\includestandalone{03CPV/figs/Bmixing_1}
 	\hspace{0.5cm}
 	\includestandalone{03CPV/figs/Bmixing_2}
-	\caption{Box diagrams of lowest order for \Bq-\Bqb-oscillations. Both diagrams are dominated by the \tquark quark exchange\cite{Ellis:2016jkw}.}
+	\caption{Box diagrams of lowest order for \Bq-\Bqb{}-oscillations. Both diagrams are dominated by the \tquark quark exchange\cite{Ellis:2016jkw}.}
 	\label{fig:FeynmanMixing}
 \end{figure}
 The first corresponding matrix element $m_{12}$ can be expressed as
@@ -143,7 +141,7 @@ Hence, the summand containing $S_0\left(x_\tquark\right)$ is dominant and with t
 
 The second matrix element $\Gamma_{12}$ corresponding to the short-distance transitions is given by
 \begin{equation}
-\Gamma_{12}=\sum_f\big<\f\,\big|T\,\big|\Bq\big>^{\kern -0.08em *}\big<\f\,\big|T\,\big|\Bqb\big>\,.\label{eq:gamma12}
+\Gamma_{12}=\sum_f\bigs<\f\,\big|T\,\big|\Bq\bigs>^{\kern -0.08em *}\bigs<\f\,\big|T\,\big|\Bqb\bigs>\,.\label{eq:gamma12}
 \end{equation}
 Here \f describes the possible physical states to which both \Bq and \Bqb decay.
 As the mass of the \tquark quark is much larger than the mass of any \B meson, \Bq and \Bqb cannot decay in any top-flavoured state.
@@ -151,7 +149,7 @@ Therefore the contributing diagrams to \cref{eq:gamma12} must be dominated by th
 
 Consequently, the off-diagonal matrix elements $m_{12}-\nicefrac{i}{2}\Gamma_{12}$ are clearly dominated by $m_{12}$ as
 \begin{equation}
-\left|\frac{\Gamma_{12}}{m_{12}}\right|\propto\frac{m_\Bq^2}{m_\tquark^2}\propto10^{-3}\,.\label{eq:m12vsG12}
+\left|\frac{\Gamma_{12}}{m_{12}}\right|\propto\frac{m_{\Bq}^2}{m_\tquark^2}\propto10^{-3}\,.\label{eq:m12vsG12}
 \end{equation}
 This can be used to derive a prediction of the relative size of \DG compared to \dm.
 The difference between the mass eigenvalues $\mu_\text{H}$ and $\mu_\text{L}$ can be expressed as
