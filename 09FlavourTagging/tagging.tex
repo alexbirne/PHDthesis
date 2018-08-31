@@ -110,7 +110,7 @@ The general procedure is similar for both tagging algorithms and follows these s
 The decay $\Bz\!\to\jpsi\Kstarz$ is reconstructed using the muonic decay $\jpsi\!\to\mup\mun$ and the domninant \mbox{$\Kstarz\!\to\Kp\pim$} decay.
 The cuts applied in the stripping are listed in \cref{tab:JpsiKstStripping}.
 Again, to achieve  better compatibility between $\Bz\!\to\jpsi\Kstarz$ and the signal decay \BdToDpi, the same trigger requirements as for the signal mode are applied, although the signal efficiency is only about \SI{66}{\percent}.
-After the trigger requirements, the \Kstarz- and the \jpsi meson are requried to fulfill the cuts shown in \cref{tab:selJpsiKst}.
+After the trigger requirements, the \Kstarz and the \jpsi meson are requried to fulfill the cuts shown in \cref{tab:selJpsiKst}.
 \begin{table}[tbp]
 	\centering
 	\caption{Stripping cuts for the decay $\Bz\!\to\jpsi\Kstarz$ with $\jpsi\!\to\mup\mun$ and $\Kstarz\!\to\Kp\pim$.
@@ -258,7 +258,7 @@ First separating pions form other charged tracks in the event and second selecti
 For each tagging-particle candidate passing the requirements shown in \cref{tab:SSPionselectionCuts}, the \B meson gets a preliminary tag decision assigned, corresponding to the charge of the tagging particle (\mbox{$\pip\rightarrow d=+1$}, \mbox{$\pim\rightarrow d=-1$}).
 The quantities $\Delta\eta'$ and $\Delta\phi$ describe the difference of pseudo-rapidity and azimuthal angle between the signal and tagging-particle track.
 To further assure that the tagging-particle is also produced at the \ac{PV} with which the \B candidate has the smallest \chisqip, the impact parameter significance with the next \enquote{best} PV in the event (denoted as pile-up vertex) is used.
-The corresponding quantities are $\nicefrac{\text{IP}}{\sigma_{\text{IP}}}$ and $\nicefrac{\text{IP}_{\text{PU}}}{\sigma_{\text{IP}_{\text{PU}}}}$, respectively.
+The corresponding quantities are $\nicefrac{\text{IP}\,}{\sigma_{\text{IP}}}$ and $\nicefrac{\text{IP}_{\text{PU}}\,}{\sigma_{\text{IP}_{\text{PU}}}}$, respectively.
 
 Subsequently, a BDT is trained to determine the mistag and to select the best tagging-particle candidate in events with more than one tagging-particle candidate passing  the selection in \cref{tab:SSPionselectionCuts}.
 In the training, all candidates with the correct correlation between the preliminary tag and the \B flavour are considered as signal, all with the wrong correlation are considered to be background.
@@ -519,7 +519,7 @@ The comparisons of GOF metrics are shown in Table \cref{tab:GOFSS}.
                 \midrule
                 {$\chi^2$} 	& 3.3214 & -2.0864 \\
                 {$G^2$} 	& 2.5524 & -2.6624 \\
-                {$CR$} 		& 3.1819 & -2.7763 \\
+                {$C\!R$} 		& 3.1819 & -2.7763 \\
                 {$S$} 		& 1.5426 & -2.3908 \\
                 \bottomrule
         \end{tabular}
@@ -527,7 +527,7 @@ The comparisons of GOF metrics are shown in Table \cref{tab:GOFSS}.
 \end{table}
 All presented metrix are expected to be normally distributed, \ie to follow Gaussian distributions with a mean of zero and a width of one.
 This means, that the given values, can be interpreted directly as the deviation in terms of standard deviations from the perfectly calibrated case.
-Since the deviance $G^2$ and the le Cessie-van Houwelingen-Copas-Hosmer metric ($S$) seem to prefer the more simple model, while the Pearson $\chi^2$ and the Cressie-Read ($CR$) metric prefer the more complicated model, both are assumed to fit the data equally well and the more simple one is chosen (all metrics are described in Ref.~\cite{GOFmetric}).
+Since the deviance $G^2$ and the le Cessie-van Houwelingen-Copas-Hosmer metric ($S$) seem to prefer the more simple model, while the Pearson $\chi^2$ and the Cressie-Read ($C\!R$) metric prefer the more complicated model, both are assumed to fit the data equally well and the more simple one is chosen (all metrics are described in Ref.~\cite{GOFmetric}).
 The Calibration is then performed using the \emph{sWeights}~\cite{Pivk:2004ty} together with the weights from \cref{sec:PrepBd2JpsiKstSample}, giving the calibration parameters shown in \cref{tab:CalibSS}.
 A graphical representation can be found in \cref{fig:CalibSS}.
 \begin{table}[tbp]
@@ -606,7 +606,7 @@ The comparison with the next simpler model with \num{8} parameters shown in \cre
             \midrule
             {$\chi^2$} 	& 4.1312  & -2.197 \\
             {$G^2$} 	& -3.8699 & 0.7199 \\
-            $CR$ 		& 2.9273  & -1.6896 \\
+            $C\!R$ 		& 2.9273  & -1.6896 \\
             $S$ 		& -4.2701 & 1.8470 \\
             \bottomrule
         \end{tabular}
