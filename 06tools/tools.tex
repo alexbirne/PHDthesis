@@ -58,7 +58,7 @@ This hypothesis is compared with the label $y_i$ and the total error rate is cal
 \begin{equation}
 \varepsilon_1=\sum_{i=1}^{N}p^i_1\left|h_1(x^i)-y^i\right|\,,
 \end{equation}
-where $p_1^i=\nicefrac{w_1^i}{\sum_{i}w_1^i}$ is the normalised weight for each event.
+where $p_1^i=\nicefrac{w_1^i\,}{\sum_{i}w_1^i}$ is the normalised weight for each event.
 This can be generalised by replacing the subscript $1$ with $t$.
 Using this error rate the weights for the next tree are computed using the boost weight
 \begin{equation}
@@ -116,10 +116,10 @@ Considering a data sample, containing a mixture of $N_c$ different categories of
 However, one important assumption is that the \emph{sWeights} are applied to observables, which are independent of the discriminating observables.
 To perform a \emph{sPlot} fit the PDFs for all categories of events are needed, so that the \emph{sWeights} can be calculated as
 \begin{equation}
-{}_sw=\frac{\sum_{j=1}^{N_c}V_{nj}\,f_j(\vec{y}_e)}{\sum_{k=1}^{N_c}N_k\,f_k(\vec{y}_e)}\,,
+{}_sw=\frac{\sum_{j=1}^{N_{\!c}}V_{\!nj}\,f_{\!j}(\vec{y}_e)}{\sum_{k=1}^{N_{\!c}}N_{\!k}\,f_{\!k}(\vec{y}_e)}\,,
 \end{equation}
 where the sums iterate over all categories of events.
-Moreover, the functions $f_i$ are the corresponding PDFs of the discriminating set of observables $\vec{y}$ for an event $e$, $N_k$ is the yield in the corresponding category and $V$ the covariance matrix of the yields.
+Moreover, the functions $f_{\!i}$ are the corresponding PDFs of the discriminating set of observables $\vec{y}$ for an event $e$, $N_{\!k}$ is the yield in the corresponding category and $V$ the covariance matrix of the yields.
 In practice, a first fit to the observables $\vec{y}$ is performed to determine the parameters of the PDFs $f_i(\vec{y})$, before all parameters except for the yields are fixed and the \emph{sWeights} are calculated in a second fit.
 The normalisation of the \emph{sWeights} is such that the sum over the weights for one category provides the number of events $N$ of this category in the sample.
 The statistical uncertainty on this number of events is defined for each bin $\delta x$ by
@@ -139,7 +139,7 @@ To measure interference \CP-violation the production flavour of $B$-mesons under
 At \lhcb this is inferred using the so-called flavour tagging.
 A decision (tag) $d$ whether a \B candidate was initially produced as a \Bz-meson or a \Bzb-meson and a probability-estimate (mistag) $\eta$ of being wrong with this decision is provided by the flavour tagging algorithms (taggers).
 They can be divided into two classes: opposite side (OS) and same side (SS) algorithms.
-In the following, a general description of the different algorithms available at \lhcb, their performance characteristics and their calibration is given
+In the following, a general description of the different algorithms available at \lhcb, their performance characteristics and their calibration is given.
 
 \subsection{Tagging algorithms}
 \label{sec:taggingalgorithms}
@@ -162,7 +162,7 @@ As the hadronisation and the decay of the OS \bquark-hadron is independent of th
     \item The OS muon and OS electron tagger use the charge of muons and electrons from semileptonic $\bquark\!\to Xl^-$ decays to take a decision on the initial $B$-flavour.
     The charged leptons are selected using a simple cut-based selection.
     To suppress contributions from $\bquark\!\to\cquark\!\to l^+$ decays, which would give the wrong tag decision, for example the transverse momentum of the muon (electron) is required to be larger than \SI[per-mode=symbol]{1.2}{\GeVc} (\SI[per-mode=symbol]{1.0}{\GeVc}).
-    Electrons have additionally to satisfy criteria on electron identification variables such as the ratio $\nicefrac{E}{p}>0.8$.
+    Electrons have additionally to satisfy criteria on electron identification variables such as the ratio $\nicefrac{E\,}{p}>0.8$.
     Here $E$ denotes the energy deposited in the ECAL and $p$ the electron momentum.
     If more than one muon or electron per event survives the selection, the lepton with the highest transverse momentum is chosen to define the flavour of the signal $B$.
     The mistag is estimated with an artificial neural network, which takes as inputs event properties as the number of \ac{PV}s and tracks in the event, $B$-properties as the transverse momentum and various geometrical and kinematic properties of the tagging lepton.
