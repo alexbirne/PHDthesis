@@ -19,15 +19,14 @@
 \setotherlanguages{german}
 
 \usepackage[style=numeric-comp,sorting=none,backend=biber,giveninits=true,doi=false]{biblatex}
-% Define fields for "article' entries"
+% Define fields for "article" entries"
 \DeclareFieldFormat[article]{title}{\emph{#1},}
 \DeclareFieldFormat[article]{journaltitle}{#1}
 \DeclareFieldFormat[article]{volume}{\textbf{#1}}
-\DeclareFieldFormat[article]{pages}{#1}
 \DeclareFieldFormat[article]{year}{(#1)\nopunct}
-% Define fields for "report' entries"
+% Define fields for "report" entries"
 \DeclareFieldFormat[report]{title}{\emph{#1},}
-% Define fields for "book' entries"
+% Define fields for "book" entries"
 \DeclareFieldFormat[book]{title}{\emph{#1},}
 \DeclareFieldFormat[book]{edition}{\ifnum#1=1%
                                     \emph{#1st ed\adddot}
@@ -36,11 +35,11 @@
                                          \else \ifnum#1=3%
                                                  \emph{#1rd ed\adddot}
                                                \else \emph{#1th ed\adddot} \fi \fi \fi}
-
-\DefineBibliographyStrings{english}{andothers = {{et\:al\adddot}},}%et al statt u.a.
-\renewcommand*{\newunitpunct}{\addcomma\space}  % Komma statt Punkt als defaulttrennzeichen zwischen Einträgen in Bibliography
-
-% remove comma after date/before 'identifier' of journal - therefore at the moment no comma before pages is visible...TODO
+% et al statt u.a.
+\DefineBibliographyStrings{english}{andothers = {{et\:al\adddot}},}
+% Komma statt Punkt als defaulttrennzeichen zwischen Einträgen in Bibliography
+\renewcommand*{\newunitpunct}{\addcomma\space}
+% remove comma after date/before 'identifier' of journal and adding eid after date
 \renewbibmacro{issue+date}{%
   \printtext[parens]{%
     \iffieldundef{issue}
@@ -48,7 +47,12 @@
       {\printfield{issue}%
        \setunit*{\addspace}%
        \usebibmacro{date}}}%
-  \nopunct\newunit}
+  \setunit*{\addspace}\printfield{eid}\newunit}
+% remove eid in front of date/after volume
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+  \setunit*{\adddot}%
+  \printfield{number}}%
 
 % skipping the "in" before editing the journal
 \renewbibmacro{in:}{}
