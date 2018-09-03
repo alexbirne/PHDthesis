@@ -12,7 +12,7 @@ At last, the fit to extract the \CP parameters is repeated on different sub samp
 \section{Fit to data}
 
 In the following, the decay-time fit to extract \Sf and \Sfbar and its components are presented.
-The fit is performed on the decay-time range from \SIrange{0.4}{12}{\pico\second}.
+The fit is performed on the decay-time range from \SIrange[range-units=single]{0.4}{12}{\pico\second}.
 The lower limit was chosen in order to obtain a good description of the decay-time distribution at low decay-times without losing sensitivity to the parameters \Sf and \Sfbar.
 The upper limit was set to a value such that the statistics is already too small so that an enlarged range would no longer add sensitivity to the \CP parameters.
 
@@ -22,11 +22,11 @@ The upper limit was set to a value such that the statistics is already too small
 Since the work in this section was done by a collaborator, the contents are described only briefly.
 
 The decay-time resolution is determined on a sample of \emph{fake} \Bz candidates, formed from a prompt \Dpm candidate and another track originating from the PV.
-These \emph{fake} \Bz candidates are expected to have a decay time of zero and therefore the sample also is referred to as prompt sample.
+These \emph{fake} \mbox{\Bz candidates} are expected to have a decay time of zero and therefore the sample also is referred to as prompt sample.
 The candidates are selected with the same selection as presented in \cref{sec:selection}, except for the cut on the BDT output.
-Additionally, the \emph{fake} \Bz candidates are required to have an \chisqip with the PV less than nine and the number of \ac{PV}s in the event must be one to exclude wrong \ac{PV} associations.
+Additionally, the \emph{fake} \mbox{\Bz candidates} are required to have an \chisqip with the PV less than nine and the number of \ac{PV}s in the event must be one to exclude wrong \ac{PV} associations.
 Subsequently, \emph{sWeights}~\cite{Pivk:2004ty} are determined by a fit to the invariant mass of the \Dpm meson in order to examine only signal distributions in the following.
-Since the time resolution depends on the transverse momentum of the bachelor particle, this needs to be corrected in the sample of \emph{fake} \Bz candidates.
+Since the time resolution depends on the transverse momentum of the bachelor particle, this needs to be corrected in the sample of \emph{fake} \mbox{\Bz candidates}.
 Therefore, the prompt sample is weighted by the ratio of the distributions of the logarithmic transverse momenta of the bachelor candidate in the signal \BdToDpi and the prompt sample.
 
 To resolve the decay-time resolution, fits are then performed to the decay-time distribution of the prompt sample in \num{20} bins of the decay-time error.
@@ -102,7 +102,7 @@ Figure \ref{fig:acceptance} shows a graphical representation of the used paramet
 \subsection[head={Extraction of \CP observables},tocentry={Extraction of \CP observables}]{Extraction of $\symbfsf{\CP}$ observables}
 \label{sec:ExtractCPobs}
 
-The \CP parameters \Sf and \Sfbar are determined through a multi-dimensional unbinned maximum-likelihood fit to the \emph{sWeighted} (background-subtracted) distributions of \BdToDpi.
+The \CP parameters \Sf and \Sfbar are determined through a multi-dimensional unbinned maximum-likelihood fit to the \emph{sWeighted} (background-subtracted) distributions of the \mbox{\BdToDpi} candidates.
 The PDF to describe the decay time $t$, the tags $\vec{d}=(d^{\text{\tiny OS}}, d^{\text{\tiny SS}})$ and the final state $F$ taking the values \f and \fbar given the mistags $\vec{\eta}=(\eta^{\text{\tiny OS}}, \eta^{\text{\tiny SS}})$ is defined by
 \begin{equation}
 \mathcal{P}(t, F, \vec{d}|\vec{\eta})\propto a(t)\left(P(t', F, \vec{d}|\vec{\eta})\otimes R(t'-t)\right)\label{eq:FinalDecayTimePDF}
@@ -164,21 +164,21 @@ Repeating the fit with \dm and $\tau$ fixed to the central values of the constra
 In \cref{fig:AsymProjection}, the signal yield asymmetries given by
 \begin{equation}
 \begin{aligned}
-A_{\CP}^{\,f}(t)\!=\!\frac{\Gamma\!\left(\Bz\!\to\Dm\pip\right)-\Gamma\!\left(\Bzb\!\to\Dm\pip\right)}{\Gamma\!\left(\Bz\!\to\Dm\pip\right)+\Gamma\!\left(\Bzb\!\to\Dm\pip\right)}\!\propto\!-\Sf\sin\!\left(\dm t\right)+\Cf\cos\!\left(\dm t\right)\,,\\
-A_{\CP}^{\,\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}(t)\!=\!\frac{\Gamma\!\left(\Bz\!\to\Dp\pim\right)-\Gamma\!\left(\Bzb\!\to\Dp\pim\right)}{\Gamma\!\left(\Bz\!\to\Dp\pim\right)+\Gamma\!\left(\Bzb\!\to\Dp\pim\right)}\!\propto\!-\Sfbar\sin\!\left(\dm t\right)+\Cfbar\cos\!\left(\dm t\right)\,,
+A_{\CP}^{f}(t)\!=\!\frac{\Gamma\bigs(\!\Bz\!\to\Dm\pip\bigs)-\Gamma\bigs(\!\Bzb\!\to\Dm\pip\bigs)}{\Gamma\bigs(\!\Bz\!\to\Dm\pip\bigs)+\Gamma\bigs(\!\Bzb\!\to\Dm\pip\bigs)}\!\propto\!-\Sf\sin\!\left(\dm t\right)+\Cf\cos\!\left(\dm t\right)\,,\\
+A_{\CP}^{\kern 2.5pt\overline{\kern -2.5pt f\kern 1.0pt}}(t)\!=\!\frac{\Gamma\bigs(\!\Bz\!\to\Dp\pim\bigs)-\Gamma\bigs(\!\Bzb\!\to\Dp\pim\bigs)}{\Gamma\bigs(\!\Bz\!\to\Dp\pim\bigs)+\Gamma\bigs(\!\Bzb\!\to\Dp\pim\bigs)}\!\propto\!-\Sfbar\sin\!\left(\dm t\right)+\Cfbar\cos\!\left(\dm t\right)\,,
 \end{aligned}
 \end{equation}
 when neglecting the asymmetries from the flavour tagging and in the detection and production are shown.
 Obviously, for these asymmetries values for \Sf and \Sfbar different from zero would show a shifted oscillation with respect to the cosine oscillation, which stems from the \Bz-\Bzb mixing.
 However, such shift would only be a necessary but not sufficient condition for \CP violation as pointed out in \cref{eq:condForIntCPV}:
-in the case that \CP violation occurs in the decay \BdToDpi the shift must be different for the asymmetries $A_{\CP}^{\,f}(t)$ and $\smash{A_{\CP}^{\,\kern 1.5pt\overline{\kern -1.5pt f\kern 1.5pt}}(t)}$.
+in the case that \CP violation occurs in the decay \BdToDpi the shift must be different for the asymmetries $A_{\CP}^{f}(t)$ and $\smash{A_{\CP}^{\kern 2.5pt\overline{\kern -2.5pt f\kern 1.0pt}}(t)}$.
 Unfortunately, the values for \Sf and \Sfbar are small, so that these asymmetries are mainly dominated by the cosine term and therefore even a shift is barely visible.
-A better alternative, not suffering from this discrepancies in magnitude between $\smash{\Sf/\Sfbar}$ and $\Cf/\Cfbar$, are the signal yield asymmetries between candidates tagged as \Bz and \Bzb split according to the favoured (F) $\bquarkbar\!\to\cquarkbar\uquark\dquarkbar$ and the suppressed (S) $\bquarkbar\!\to\uquarkbar\cquark\dquarkbar$ transitions.
+A better alternative, not suffering from this discrepancies in magnitude between $\smash{\Sf\,/\Sfbar}$ and $\Cf\,/\Cfbar$, are the signal yield asymmetries between candidates tagged as \Bz and \Bzb split according to the favoured (F) $\bquarkbar\!\to\cquarkbar\,[\uquark\dquarkbar]$ and the suppressed (S) $\bquarkbar\!\to\uquarkbar\,[\cquark\dquarkbar]$ transitions.
 Neglecting again asymmetries in the flavour tagging and in the detection and production these can be expressed as
 \begin{equation}
 \begin{aligned}
-A_{\text{F}}(t)&=\frac{\Gamma\!\left(\Bz\!\to\Dm\pip\right)-\Gamma\!\left(\Bzb\!\to\Dp\pim\right)}{\Gamma\!\left(\Bz\!\to\Dm\pip\right)+\Gamma\!\left(\Bzb\!\to\Dp\pim\right)}\propto-\left(\Sf+\Sfbar\right)\sin\!\left(\dm t\right)\,,\\
-A_{\text{S}}(t)&=\frac{\Gamma\!\left(\Bzb\!\to\Dm\pip\right)-\Gamma\!\left(\Bz\!\to\Dp\pim\right)}{\Gamma\!\left(\Bzb\!\to\Dm\pip\right)+\Gamma\!\left(\Bz\!\to\Dp\pim\right)}\propto\left(\Sf+\Sfbar\right)\sin\!\left(\dm t\right)\,.\label{eq:AsymeSuppFav}
+A_{\text{F}}(t)&=\frac{\Gamma\bigs(\!\Bz\!\to\Dm\pip\bigs)-\Gamma\bigs(\!\Bzb\!\to\Dp\pim\bigs)}{\Gamma\bigs(\!\Bz\!\to\Dm\pip\bigs)+\Gamma\bigs(\!\Bzb\!\to\Dp\pim\bigs)}\propto-\bigs(\!\Sf+\Sfbar\bigs)\sin\!\left(\dm t\right)\,,\\
+A_{\text{S}}(t)&=\frac{\Gamma\bigs(\!\Bzb\!\to\Dm\pip\bigs)-\Gamma\bigs(\!\Bz\!\to\Dp\pim\bigs)}{\Gamma\bigs(\!\Bzb\!\to\Dm\pip\bigs)+\Gamma\bigs(\!\Bz\!\to\Dp\pim\bigs)}\propto\bigs(\!\Sf+\Sfbar\bigs)\sin\!\left(\dm t\right)\,.\label{eq:AsymeSuppFav}
 \end{aligned}
 \end{equation}
 Apparently, the cosine terms in the numerator vanishes, so that in case of no \mbox{\CP violation}, \ie $\Sf=\Sfbar$, the asymmetries vanish.
@@ -346,7 +346,7 @@ However, all results show compatible results and no trends are observed.
 
 To validate the fit using simulated events, these are bootstrapped, \ie the simulated data sample is resampled $n$ times, whereby it is allowed that single events can be taken more than once, \eg a bootstrapped sample can contain the same event multiple times.
 This is statistically valid because individual events are not correlated with each other.
-Each generated sample then contains as many candidates as signal candidates in the full \BdToDpi data sample used in \cref{sec:ExtractCPobs} in order to obtain the same statistical uncertainties.
+Each generated sample then contains as many candidates as signal candidates in the full \mbox{\BdToDpi} data sample used in \cref{sec:ExtractCPobs} in order to obtain the same statistical uncertainties.
 
 After generation, the samples are fitted with the same strategy as the nominal fit to extract the \CP observables.
 The constrained parameters $\tau$ and \dm are treated as follows:
