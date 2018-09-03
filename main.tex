@@ -135,6 +135,13 @@
 \usetikzlibrary{calc,positioning,shadows.blur,decorations.pathreplacing}
 \usepackage[compat=1.1.0]{tikz-feynman}
 
+\newcommand\Overline[2][1pt]{%
+  \begin{tikzpicture}[baseline=(a.base)]
+    \node[inner xsep=0pt,inner ysep=1.5pt] (a) {$#2$};
+    \draw[line width= #1] (a.north west) -- (a.north east);
+  \end{tikzpicture}
+}
+
 \usepackage{acronym}
 \acrodef{SM}{Standard Model}
 \acrodef{HFLAV}{the Heavy Flavour Averaging Group}
