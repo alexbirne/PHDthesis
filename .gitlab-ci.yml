@@ -2,7 +2,7 @@ image: alexbirne/texlive2018
 
 thesis:
     stage: build
-    script: make
+    script: cd && pwd && make
     cache:
         untracked: true
     artifacts:
