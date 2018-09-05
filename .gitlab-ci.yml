@@ -1,0 +1,12 @@
+image: alexbirne/texlive2018
+
+thesis:
+    stage: build
+    script: make
+    cache:
+        untracked: true
+    artifacts:
+        paths:
+            - thesis.pdf
+    only:
+        - master
