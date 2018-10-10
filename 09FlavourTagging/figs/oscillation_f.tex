@@ -6,7 +6,7 @@
 \definecolor{color2}{rgb}{0.850980392156863,0.372549019607843,0.00784313725490196}
 
 \begin{axis}[
-xlabel={Decay time $t$ [ps]},
+xlabel={Decay time [ps]},
 ylabel={Signal yield asymmetry},
 xmin=0.4, xmax=12,
 ymin=-1, ymax=1,
@@ -18,9 +18,9 @@ tick align=outside,
 tick pos=left,
 x grid style={white!69.019607843137251!black},
 y grid style={white!69.019607843137251!black},
+legend cell align={left},
 legend style={at={(0.5,0.91)}, anchor=north, draw=white!80.0!black},
-legend entries={{$S_{f}\sin(\Delta mt)$},{$C_{f}\cos(\Delta mt)$},{$C_{f}\cos(\Delta mt) - S_{f}\sin(\Delta mt)$},{sensitive region}},
-legend cell align={left}
+legend entries={{$S_{f}\sin(\Delta mt)$},{$C_{f}\cos(\Delta mt)$},{$C_{f}\cos(\Delta mt) - S_{f}\sin(\Delta mt)$},{sensitive region}}
 ]
 \path [draw=color0] (axis cs:2.39191919191919,1)
 --(axis cs:2.39191919191919,-1)
